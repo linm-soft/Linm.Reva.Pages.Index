@@ -1,0 +1,114 @@
+/* Đánh số trang — preview (sheet) + in */
+
+.doc-print-sheet,
+.phu-luc-cover,
+.phu-luc-section,
+.phu-luc-bo-sung-doc {
+  position: relative;
+  padding-bottom: 28px;
+}
+
+.doc-sheet-page-footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 6px;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 10pt;
+  color: #475569;
+  pointer-events: none;
+  user-select: none;
+}
+
+.doc-sheet-page-footer--excluded {
+  font-size: 9pt;
+  font-style: italic;
+  color: #94a3b8;
+}
+
+/* Hop đồng — tờ A4 ảo trên desktop */
+@media screen {
+  .hop-dong-page .hop-dong-doc-body > .doc-print-sheet {
+    background: #fff;
+    padding: 48px 56px 36px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    box-shadow: 0 8px 28px rgba(15, 23, 42, 0.08);
+    margin-bottom: 24px;
+  }
+
+  .hop-dong-page.phu-luc-page .hop-dong-doc-body > .doc-print-sheet {
+    padding: 48px 56px 36px;
+  }
+}
+
+.doc-thong-tin-bo-sung {
+  position: relative;
+  padding-bottom: 28px;
+}
+
+@media screen {
+  body.bao-gia-printing .doc-thong-tin-bo-sung,
+  #contract-app .doc-thong-tin-bo-sung {
+    margin: 20px 0;
+    padding: 16px 18px 32px;
+    border: 1px dashed #cbd5e1;
+    border-radius: 4px;
+    background: #f8fafc;
+  }
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 14mm 14mm 18mm;
+  }
+
+  @page {
+    @bottom-center {
+      content: 'Foodmart (FM) - Linm - Trang ' counter(page) '/' counter(pages);
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 9pt;
+      color: #333;
+    }
+  }
+
+  .doc-sheet-page-footer {
+    display: none !important;
+  }
+
+  body.phu-luc-page.phu-luc-print-main .plan-nav,
+  body.phu-luc-page.phu-luc-print-main .hop-dong-toolbar,
+  body.phu-luc-page.phu-luc-print-bo-sung .plan-nav,
+  body.phu-luc-page.phu-luc-print-bo-sung .hop-dong-toolbar,
+  body.phu-luc-page.phu-luc-print-main .plan-footer,
+  body.phu-luc-page.phu-luc-print-bo-sung .plan-footer {
+    display: none !important;
+  }
+
+  .doc-thong-tin-bo-sung,
+  .phu-luc-bo-sung-doc,
+  [data-page-numbering='exclude'] {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  .phu-luc-page .hop-dong-doc-body .doc-footer {
+    display: none !important;
+  }
+}
+
+@media screen {
+  body.doc-print-paginated .hop-dong-page .hop-dong-preview {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  #contract-app [data-tien-do-panel] > .doc-print-sheet {
+    margin-bottom: 20px;
+    padding-bottom: 36px;
+  }
+}

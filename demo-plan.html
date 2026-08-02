@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan Demo ERP · FM</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="icons/linm-logo.svg">
+<link rel="icon" type="image/png" href="icons/linm-logo.png">
+<link rel="apple-touch-icon" href="icons/linm-logo.png">
+<meta name="theme-color" content="#4facfe">
+<link rel="stylesheet" href="ds-tokens.css">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="contract.css">
+<style>
+/* Demo plan specific styles */
+.demo-hero-note {
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 24px auto 0;
+  max-width: 680px;
+  text-align: left;
+  font-size: .85rem;
+  color: rgba(255,255,255,.8);
+  line-height: 1.5;
+}
+.demo-hero-note strong { color: #fff; }
+
+/* 60-minute timeline bar */
+.demo-timeline-bar {
+  display: flex;
+  max-width: 680px;
+  margin: 20px auto 0;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 32px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+}
+.demo-tl-seg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: .72rem;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+  cursor: default;
+  transition: opacity .15s;
+}
+.demo-tl-seg:hover { opacity: .9; }
+.demo-tl-1 { background: #6366f1; }
+.demo-tl-2 { background: #059669; }
+.demo-tl-3 { background: #d97706; }
+.demo-tl-4 { background: #2563eb; }
+.demo-tl-lbl { opacity: .9; }
+.demo-tl-tip {
+  font-size: .65rem;
+  opacity: .7;
+}
+
+.demo-header-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.demo-email-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background: var(--green);
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: .85rem;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background .15s;
+}
+.demo-email-btn:hover { background: #047857; }
+.demo-email-btn:active { transform: scale(.97); }
+.demo-email-btn.copied { background: #0d9488; }
+
+/* Force hidden for admin-only buttons — parent flex can override [hidden] */
+[data-admin-only][hidden] { display: none !important; }
+
+.email-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: .85rem;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(0,0,0,.2);
+  opacity: 0;
+  transition: transform .3s ease, opacity .3s ease;
+  z-index: 999;
+  pointer-events: none;
+}
+.email-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Agenda sections */
+.agenda-section {
+  margin: 32px 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+}
+.agenda-section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 22px;
+  background: var(--slate);
+  border-bottom: 1px solid var(--border);
+  cursor: default;
+}
+.agenda-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: var(--navy);
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+.agenda-section-header h2 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+.agenda-section-header .agenda-badge {
+  font-size: .72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--green-light);
+  color: var(--green);
+  margin-left: auto;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.agenda-body {
+  padding: 22px;
+}
+.agenda-body p {
+  font-size: .88rem;
+  color: var(--txt2);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+.agenda-body p:last-child { margin-bottom: 0; }
+.agenda-body strong { color: var(--navy); }
+
+.agenda-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+.agenda-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--slate);
+}
+.agenda-feature .f-icon {
+  font-size: 1.15rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.agenda-feature .f-text {
+  font-size: .82rem;
+  color: var(--txt2);
+  line-height: 1.45;
+}
+.agenda-feature .f-text strong {
+  display: block;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+
+.flow-steps {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+  padding: 16px 20px;
+  background: var(--slate);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.flow-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .82rem;
+  color: var(--txt2);
+}
+.flow-step .step-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .72rem;
+  font-weight: 800;
+  color: #fff;
+  background: var(--green);
+  flex-shrink: 0;
+}
+.flow-step .step-dot.indigo { background: var(--indigo); }
+.flow-step .step-dot.amber { background: var(--amber); }
+.flow-step .step-dot.blue { background: var(--blue); }
+
+.agenda-route-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px 0;
+}
+.agenda-route-list code {
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--slate2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: .78rem;
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.agenda-highlight-box {
+  background: var(--indigo-light);
+  border: 1px solid var(--indigo);
+  border-left: 4px solid var(--indigo);
+  border-radius: 0 8px 8px 0;
+  padding: 14px 18px;
+  margin: 16px 0;
+  font-size: .84rem;
+  color: var(--txt2);
+  line-height: 1.55;
+}
+
+/* Email preview modal */
+.email-preview-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.email-preview-overlay.is-open { display: flex; }
+.email-preview-modal {
+  background: #fff;
+  border-radius: var(--radius);
+  max-width: 680px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 16px 48px rgba(0,0,0,.2);
+}
+.email-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1;
+}
+.email-preview-header h3 {
+  font-size: .95rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0;
+}
+.email-preview-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--txt2);
+  font-family: inherit;
+}
+.email-preview-close:hover { background: var(--slate2); }
+.email-preview-body {
+  padding: 20px 22px;
+  font-size: .85rem;
+  line-height: 1.65;
+  color: var(--txt2);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.email-preview-footer {
+  padding: 14px 22px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.email-preview-footer .btn-copy {
+  padding: 8px 18px;
+  background: var(--green);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: .82rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+.email-preview-footer .btn-copy:hover { background: #047857; }
+
+.agenda-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: .78rem;
+  color: var(--txt3);
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 720px) {
+  .agenda-section-header { flex-wrap: wrap; }
+  .agenda-section-header .agenda-badge { margin-left: 0; }
+  .flow-steps { flex-direction: column; gap: 12px; }
+}
+</style>
+</head>
+<body>
+
+<div class="contract-app">
+
+<nav class="plan-nav">
+  <a href="index.html" class="nav-logo"><div class="dot"></div> FM - Hệ thống kế toán - quản trị siêu thị</a>
+  <div class="nav-links">
+    <a href="demo-plan.html" class="active">ERP Demo</a>
+    <a href="demo-plan-kpi.html">FPC Demo</a>
+    <a href="demo-success.html">Demo &amp; Triển khai</a>
+    <a href="tien-do/tien-do-2026.html">Tiến độ (DA1 &amp; DA2)</a>
+  </div>
+  <div class="nav-right">
+    <a href="index.html" class="nav-back">← Trang chủ</a>
+    <button type="button" class="nav-action nav-action-print" onclick="window.print()">In</button>
+    <button type="button" class="nav-action nav-action-export" id="email-trigger-btn" data-admin-only hidden>📧 Gửi email</button>
+  </div>
+</nav>
+
+<div class="hero compact">
+  <div class="hero-badge">Kế hoạch Demo · FM / Foodmart</div>
+  <h1>Plan <span>Demo Hệ thống ERP</span></h1>
+  <p>Bốn nội dung demo chính — từ tổng quan hệ thống, nhập liệu chứng từ, import sao kê ngân hàng (3 khung giờ: 8:30 · 14:00 · 16:50) đến báo cáo kế toán.</p>
+
+  <div class="demo-hero-note">
+    <strong>Mục đích:</strong> Trình diễn toàn diện phân hệ kế toán ERP trên dữ liệu thực tế của FM / Foodmart.
+    Thời lượng: <strong>~60 phút</strong> (10' + 20' + 15' + 15') · Trình bày trực tiếp tại văn phòng Linm.
+  </div>
+
+  <!-- Timeline bar 60 min -->
+  <div class="demo-timeline-bar">
+    <div class="demo-tl-seg demo-tl-1" style="width:16.66%">
+      <span class="demo-tl-lbl">P1</span>
+      <span class="demo-tl-tip">10'</span>
+    </div>
+    <div class="demo-tl-seg demo-tl-2" style="width:33.33%">
+      <span class="demo-tl-lbl">P2</span>
+      <span class="demo-tl-tip">20'</span>
+    </div>
+    <div class="demo-tl-seg demo-tl-3" style="width:25%">
+      <span class="demo-tl-lbl">P3</span>
+      <span class="demo-tl-tip">15'</span>
+    </div>
+    <div class="demo-tl-seg demo-tl-4" style="width:25%">
+      <span class="demo-tl-lbl">P4</span>
+      <span class="demo-tl-tip">15'</span>
+    </div>
+  </div>
+
+  <div class="demo-header-actions">
+    <button type="button" class="demo-email-btn" id="copy-email-btn" data-admin-only hidden>
+      <span>📋</span> Copy Email gửi khách hàng
+    </button>
+  </div>
+</div>
+
+<main>
+
+  <section class="page-section">
+    <div class="section-tag">Demo plan</div>
+    <h2 class="section-title">Kịch bản <span>Demo ERP</span></h2>
+    <p class="section-sub">Bốn nội dung demo chính dành cho FM / Foodmart, tổng thời lượng <strong>~60 phút</strong>. Mỗi phần thiết kế để thể hiện rõ luồng nghiệp vụ và kết quả đầu ra.</p>
+
+    <!-- AGENDA 1 -->
+    <div class="agenda-section">
+      <div class="agenda-section-header">
+        <div class="agenda-num">1</div>
+        <h2>Tổng quan hệ thống — Đăng nhập, Menu làm việc</h2>
+        <span class="agenda-badge">10 phút</span>
+      </div>
+      <div class="agenda-body">
+        <p>Giới thiệu tổng quan kiến trúc hệ thống ERP, cách thức đăng nhập và tổ chức menu làm việc theo <strong>phân quyền người dùng</strong>. Thể hiện rõ sự khác biệt giữa giao diện web ERP hiện đại so với phần mềm desktop truyền thống.</p>
+
+        <div class="agenda-features">
+          <div class="agenda-feature">
+            <span class="f-icon">🔐</span>
+            <span class="f-text"><strong>Đăng nhập &amp; Bảo mật</strong>Đăng nhập bằng tài khoản cá nhân · JWT token · Xác thực đa lớp</span>
+          </div>
+          <div class="agenda-feature">
+            <span class="f-icon">📋</span>
+            <span class="f-text"><strong>Menu phân quyền</strong>Menu động theo vai trò (Kế toán trưởng, Kế toán viên, Giám đốc) · 68 menu items</span>
+          </div>
+          <div class="agenda-feature">
+            <span class="f-icon">🏢</span>
+            <span class="f-text"><strong>Đơn vị cơ sở</strong>Chọn 12 cửa hàng · Dữ liệu riêng theo chi nhánh · Báo cáo hợp nhất tập đoàn</span>
+          </div>
+          <div class="agenda-feature">
+            <span class="f-icon">🔗</span>
+            <span class="f-text"><strong>Shell POS</strong>Tích hợp POS trực tiếp trong ERP · <code>/reva/pos</code> · Chuyển đổi qua lại giữa hai hệ thống</span>
+          </div>
+        </div>
+
+        <div class="agenda-route-list">
+          <code>/reva/pos</code>
+          <code>/kt/</code>
+          <code>/dm/</code>
+          <code>/ns/</code>
+          <code>/baocao/</code>
+        </div>
+
+        <p><strong>Luồng demo:</strong> Đăng nhập (2') → Duyệt menu các phân hệ (4') → Shell POS &amp; đơn vị cơ sở (4').</p>
+      </div>
+    </div>
+
+    <!-- AGENDA 2 -->
+    <div class="agenda-section">
+      <div class="agenda-section-header">
+        <div class="agenda-num">2</div>
+        <h2>Demo nhập liệu chứng từ kế toán — Thu/chi tiền mặt, ngân hàng, hóa đơn bán hàng</h2>
+        <span class="agenda-badge">20 phút</span>
+      </div>
+      <div class="agenda-body">
+        <p>Trình diễn <strong>quy trình nhập liệu chứng từ kế toán</strong> thực tế, bao gồm các loại chứng từ nghiệp vụ phát sinh hàng ngày tại FM / Foodmart. Mỗi chứng từ được demo từ tạo mới → nhập chi tiết → kiểm tra → ghi sổ.</p>
+
+        <div class="agenda-features">
+          <div class="agenda-feature">
+            <span class="f-icon">🧾</span>
+            <span class="f-text"><strong>Hóa đơn bán hàng</strong><code>/bh/hoa-don</code> · Tạo HĐ từ POS sync · Chọn khách hàng, hàng hóa, thuế · Tính tiền tự động</span>
+          </div>
+          <div class="agenda-feature">
+            <span class="f-icon">💰</span>
+            <span class="f-text"><strong>Phiếu thu tiền mặt</strong><code>/kt/pt</code> · Thu tiền bán hàng, thu khác · Chọn kênh thanh toán, tài khoản, định khoản</span>
+          </div>
+          <div class="agenda-feature">
+            <span class="f-icon">💳</span>
+            <span class="f-text"><strong>Phiếu chi tiền mặt</strong><code>/kt/pc</code> · Chi trả nhà cung cấp, chi phí · Kiểm soát hạn mức chi · Kèm chứng từ gốc</span>
+          </div>
+          <div class="agenda-feature">
+            <span class="f-icon">🏦</span>
+            <span class="f-text"><strong>Giao dịch ngân hàng</strong><code>/kt/bao-co</code> · <code>/kt/bao-no</code> · <code>/kt/unc</code> · <code>/kt/ctnb</code> · Báo có/nợ, UNC, chuyển tiền nội bộ</span>
+          </div>
+          <div class="agenda-feature">
+            <span class="f-icon">📎</span>
+            <span class="f-text"><strong>Định khoản tự động</strong>Mẫu định khoản nghiệp vụ · TK Nợ/Có mặc định theo loại CT · Kiểm tra cân đối</span>
+          </div>
+          <div class="agenda-feature">
+            <span class="f-icon">✅</span>
+            <span class="f-text"><strong>Ghi sổ &amp; Hoạch toán</strong>Post chứng từ lên sổ cái · Cập nhật số dư tài khoản · Xem bút toán</span>
+          </div>
+        </div>
+
+        <div class="flow-steps">
+          <div class="flow-step"><span class="step-dot">1</span>Tạo mới chứng từ</div>
+          <div class="flow-step"><span class="step-dot indigo">2</span>Chọn đối tượng, tài khoản</div>
+          <div class="flow-step"><span class="step-dot amber">3</span>Nhập chi tiết &amp; định khoản</div>
+          <div class="flow-step"><span class="step-dot blue">4</span>Kiểm tra &amp; Ghi sổ</div>
+          <div class="flow-step"><span class="step-dot">5</span>Xem kết quả trên báo cáo</div>
+        </div>
+
+        <div class="agenda-highlight-box">
+          <strong>Điểm nổi bật:</strong> Dữ liệu POS tự động đồng bộ qua cơ chế <strong>event thời gian thực</strong> + <strong>đối soát cuối ngày</strong> — không cần nhập liệu thủ công từ POS. Hóa đơn bán từ POS xuất hiện ngay trên ERP.
+        </div>
+
+        <div class="agenda-route-list">
+          <code>/bh/hoa-don</code>
+          <code>/kt/pt</code>
+          <code>/kt/pc</code>
+          <code>/kt/bao-co</code>
+          <code>/kt/bao-no</code>
+          <code>/kt/unc</code>
+          <code>/kt/ctnb</code>
+          <code>/kt/pnm</code>
+        </div>
+      </div>
+    </div>
+
+    <!-- AGENDA 3 -->
+    <div class="agenda-section">
+      <div class="agenda-section-header">
+        <div class="agenda-num">3</div>
+        <h2>Demo import file sao kê ngân hàng và tạo đối tượng</h2>
+        <span class="agenda-badge">15 phút</span>
+      </div>
+      <div class="agenda-body">
+        <p>Trình diễn quy trình <strong>import file sao kê ngân hàng</strong> theo 3 khung giờ trong ngày <strong>(8:30 · 14:00 · 16:50)</strong>. Hệ thống <strong>tự động sinh chứng từ</strong> báo có, báo nợ, ủy nhiệm chi, chuyển tiền nội bộ từ file sao kê. Đây là tính năng trọng tâm giúp FM giảm thiểu thời gian nhập liệu ngân hàng thủ công.</p>
+
+        <div class="agenda-features">
+          <div class="agenda-feature">
+            <span class="f-icon">📄</span>
+            <span class="f-text"><strong>Upload file sao kê CSV</strong>Kéo thả file · Xem trước dữ liệu · Validate cột bắt buộc · Mapping tự động</span>
+          </div>
+          <div class="agenda-feature">
+            <span class="f-icon">🔄</span>
+            <span class="f-text"><strong>Import wizard 4 bước</strong>Upload → Validate → Phân loại (BC/BN/UNC/CTNB) → Import · Dry-run trước khi import thật</span>
+          </div>
+          <div class="agenda-feature">
+            <span class="f-icon">🤖</span>
+            <span class="f-text"><strong>Tự động tạo chứng từ</strong>Sinh BC/BN/UNC theo từng giao dịch · Gán tài khoản ngân hàng · Định khoản nghiệp vụ</span>
+          </div>
+          <div class="agenda-feature">
+            <span class="f-icon">🏷️</span>
+            <span class="f-text"><strong>Tạo đối tượng từ sao kê</strong>Trích xuất tên nhà cung cấp/khách hàng từ nội dung giao dịch · Tạo mới hoặc gắn với đối tượng có sẵn</span>
+          </div>
+        </div>
+
+        <div class="flow-steps">
+          <div class="flow-step"><span class="step-dot" style="background:#6366f1">8:30</span><span><strong>Đầu ngày</strong> · Tồn ngày hôm trước</span></div>
+          <div class="flow-step"><span class="step-dot" style="background:#d97706">14:00</span><span><strong>Giữa ngày</strong> · Giao dịch trong ngày</span></div>
+          <div class="flow-step"><span class="step-dot" style="background:#059669">16:50</span><span><strong>Cuối ngày</strong> · Chốt số liệu</span></div>
+        </div>
+
+        <div class="agenda-highlight-box">
+          <strong>Kết quả thực tế:</strong> <strong>62.800+</strong> giao dịch sao kê từ nhiều ngân hàng đã được import dry-run thành công (30.500 BC, 29.600 UNC, 1.700 CTNB). Import thực tế sẵn sàng với lịch trình: <strong>8:30 (tồn trước)</strong> · <strong>14:00 (trong ngày)</strong> · <strong>16:50 (cuối ngày)</strong>.
+        </div>
+
+        <div class="agenda-route-list">
+          <code>/kt/bao-co</code>
+          <code>/kt/bao-no</code>
+          <code>/kt/unc</code>
+          <code>/kt/ctnb</code>
+          <code>/dm/doi-tuong</code>
+        </div>
+      </div>
+    </div>
+
+    <!-- AGENDA 4 -->
+    <div class="agenda-section">
+      <div class="agenda-section-header">
+        <div class="agenda-num">4</div>
+        <h2>Demo phân hệ báo cáo kế toán chính — Sổ cái, Sổ tổng hợp &amp; chi tiết tài khoản, Bảng kê chứng từ</h2>
+        <span class="agenda-badge">15 phút</span>
+      </div>
+      <div class="agenda-body">
+        <p>Trình diễn toàn bộ <strong>phân hệ báo cáo kế toán</strong> — từ báo cáo tổng hợp đến chi tiết, đáp ứng chế độ kế toán <strong>TT200</strong> và <strong>TT99</strong>. Các báo cáo được xây dựng theo đúng biểu mẫu quy định, hỗ trợ tra cứu theo thời gian và nhiều chiều dữ liệu.</p>
+
+        <div class="agenda-features">
+          <div class="agenda-feature">
+            <span class="f-icon">📊</span>
+            <span class="f-text"><strong>Sổ cái tài khoản</strong><code>/baocao/so-cai</code> · Xem sổ cái theo từng TK · Lọc kỳ, ngày tháng · So sánh số dư đầu kỳ, phát sinh, cuối kỳ</span>
+          </div>
+          <div class="agenda-feature">
+            <span class="f-icon">📑</span>
+            <span class="f-text"><strong>Sổ tổng hợp &amp; Chi tiết TK</strong><code>/kt/so-tong-hop</code> · <code>/kt/so-chi-tiet</code> · Sổ tổng hợp, chi tiết theo tài khoản, đối tượng</span>
+          </div>
+          <div class="agenda-feature">
+            <span class="f-icon">📋</span>
+            <span class="f-text"><strong>Bảng kê chứng từ (NKCT)</strong><code>/baocao/nhat-ky-chung-tu</code> · Liệt kê chứng từ theo loại, ngày · Hỗ trợ xem chi tiết từng chứng từ gốc</span>
+          </div>
+          <div class="agenda-feature">
+            <span class="f-icon">📈</span>
+            <span class="f-text"><strong>Báo cáo doanh thu / chi phí</strong><code>/baocao/doanh-thu</code> · <code>/baocao/chi-phi</code> · Phân tích theo cửa hàng, nhóm hàng, thời gian</span>
+          </div>
+          <div class="agenda-feature">
+            <span class="f-icon">🔄</span>
+            <span class="f-text"><strong>Sổ quỹ &amp; Sổ kho</strong><code>/kt/so-quy</code> · <code>/baocao/thu-chi</code> · Dư quỹ tiền mặt, tồn kho, nhập xuất tồn</span>
+          </div>
+          <div class="agenda-feature">
+            <span class="f-icon">📤</span>
+            <span class="f-text"><strong>Xuất Excel / In ấn</strong>Xuất báo cáo ra Excel · In trực tiếp từ trình duyệt · Gửi báo cáo qua email</span>
+          </div>
+        </div>
+
+        <div class="flow-steps">
+          <div class="flow-step"><span class="step-dot">1</span>Chọn báo cáo &amp; kỳ</div>
+          <div class="flow-step"><span class="step-dot indigo">2</span>Lọc tài khoản, đối tượng</div>
+          <div class="flow-step"><span class="step-dot amber">3</span>Xem dữ liệu &amp; Drill-down</div>
+          <div class="flow-step"><span class="step-dot blue">4</span>So sánh số liệu legacy</div>
+          <div class="flow-step"><span class="step-dot">5</span>Xuất Excel / In ấn</div>
+        </div>
+
+        <div class="agenda-highlight-box">
+          <strong>Điểm đặc biệt:</strong> Báo cáo hỗ trợ cả <strong>TT200</strong> và <strong>TT99</strong> — đáp ứng đầy đủ biểu mẫu B01-DN, B02-DN, B03-DN. Dữ liệu báo cáo được đồng bộ từ sổ cái qua cơ chế event, đảm bảo số liệu thời gian thực. Có thể drill-down từ báo cáo xuống chứng từ gốc. <strong>Mốc nghiệm thu báo cáo: 31/08/2026</strong>.
+        </div>
+
+        <div class="agenda-route-list">
+          <code>/kt/so-cai</code>
+          <code>/kt/so-tong-hop</code>
+          <code>/kt/so-chi-tiet</code>
+          <code>/kt/so-quy</code>
+          <code>/baocao/nhat-ky-chung-tu</code>
+          <code>/baocao/doanh-thu</code>
+          <code>/baocao/chi-phi</code>
+          <code>/baocao/thu-chi</code>
+          <code>/baocao/tong-quan</code>
+        </div>
+
+        <div class="agenda-time">⏱️ ~15 phút · Có thể tùy chỉnh theo nhu cầu</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Total time card -->
+  <div class="agenda-section" style="border-top:4px solid var(--green)">
+    <div class="agenda-section-header" style="background:#fff">
+      <div class="agenda-num" style="background:var(--green);font-size:1.15rem">∑</div>
+      <h2>Tổng thời lượng: <strong>~60 phút</strong></h2>
+      <span class="agenda-badge" style="background:var(--green-light);color:var(--green);font-size:.82rem">60 phút</span>
+    </div>
+    <div class="agenda-body">
+      <div class="flow-steps" style="justify-content:center">
+        <div class="flow-step"><span class="step-dot" style="background:#6366f1">1</span><span><strong>10'</strong> · Tổng quan</span></div>
+        <div class="flow-step"><span class="step-dot" style="background:#059669">2</span><span><strong>20'</strong> · Nhập liệu CT</span></div>
+        <div class="flow-step"><span class="step-dot" style="background:#d97706">3</span><span><strong>15'</strong> · Import sao kê (3 khung giờ)</span></div>
+        <div class="flow-step"><span class="step-dot" style="background:#2563eb">4</span><span><strong>15'</strong> · Báo cáo KT</span></div>
+      </div>
+      <p style="text-align:center;margin:12px 0 0;font-size:.82rem;color:var(--txt3)">
+        Có thể tùy chỉnh thời lượng theo nhu cầu thực tế của Quý doanh nghiệp.
+      </p>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-top">
+      <div class="site-footer-brand">
+        <strong>Linm Soft</strong>
+        <span>Đối tác phát triển - triển khai - vận hành phần mềm quản trị doanh nghiệp - ERP - Tích Hợp - Cloud</span>
+      </div>
+      <nav class="site-footer-links" aria-label="Liên kết tài liệu">
+        <a href="demo-plan.html">ERP Demo</a>
+        <a href="demo-plan-kpi.html">FPC Demo</a>
+        <a href="demo-success.html">Demo &amp; Triển khai</a>
+        <a href="tien-do/tien-do-2026.html">Tiến độ (DA1 &amp; DA2)</a>
+      </nav>
+    </div>
+    <p class="site-footer-copy">© 2026 Linm Soft · Tài liệu dành riêng FM / Foodmart · Plan Demo cho khách hàng</p>
+  </div>
+</footer>
+</div>
+
+<!-- Email preview modal -->
+<div class="email-preview-overlay" id="email-preview-overlay">
+  <div class="email-preview-modal">
+    <div class="email-preview-header">
+      <h3>📧 Email gửi khách hàng</h3>
+      <button type="button" class="email-preview-close" id="email-preview-close">✕</button>
+    </div>
+    <div class="email-preview-body" id="email-body-content"></div>
+    <div class="email-preview-footer">
+      <button type="button" class="btn-copy" id="email-preview-copy-btn">📋 Copy nội dung</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast notification -->
+<div class="email-toast" id="email-toast">Đã copy vào clipboard!</div>
+
+<script>
+(function() {
+  'use strict';
+
+  // ── Role gating: show admin buttons only when ?role=admin ──
+  var urlParams = new URLSearchParams(location.search);
+  var isAdmin = urlParams.get('role') === 'admin';
+  document.querySelectorAll('[data-admin-only]').forEach(function(el) {
+    if (isAdmin) {
+      el.hidden = false;
+      el.removeAttribute('hidden');
+    } else {
+      el.hidden = true;
+      el.setAttribute('hidden', '');
+    }
+  });
+
+  function escapeHtml(str) {
+    if (!str) return '';
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
+  // The email content template
+  function getEmailContent() {
+    return [
+      'Kính gửi Quý doanh nghiệp FM / Foodmart,',
+      '',
+      'Linm Soft trân trọng gửi đến Quý doanh nghiệp kế hoạch demo hệ thống ERP với 4 nội dung chính như sau:',
+      '',
+      '═══════════════════════════════════════',
+      'KẾ HOẠCH DEMO HỆ THỐNG ERP',
+      '═══════════════════════════════════════',
+      '',
+      '1. TỔNG QUAN HỆ THỐNG (10 phút)',
+      '   • Đăng nhập & bảo mật (JWT token, xác thực đa lớp)',
+      '   • Menu làm việc phân quyền — 68 menu items',
+      '   • Chọn đơn vị cơ sở (12 cửa hàng)',
+      '   • Tích hợp shell POS (/reva/pos)',
+      '',
+      '2. NHẬP LIỆU CHỨNG TỪ KẾ TOÁN (20 phút)',
+      '   • Hóa đơn bán hàng (/bh/hoa-don) — từ POS sync',
+      '   • Phiếu thu tiền mặt (/kt/pt)',
+      '   • Phiếu chi tiền mặt (/kt/pc)',
+      '   • Giao dịch ngân hàng: Báo có (/kt/bao-co), Báo nợ (/kt/bao-no),',
+      '     UNC (/kt/unc), Chuyển tiền nội bộ (/kt/ctnb)',
+      '   • Định khoản tự động & Ghi sổ hoạch toán',
+      '   • Dữ liệu POS đồng bộ event thời gian thực',
+      '',
+      '3. IMPORT FILE SAO KÊ NGÂN HÀNG (15 phút)',
+      '   • 3 khung giờ trong ngày: 8:30 (tồn trước) → 14:00 (trong ngày) → 16:50 (cuối ngày)',
+      '   • Import wizard 4 bước: Upload → Validate → Phân loại → Import',
+      '   • Tự động sinh BC/BN/UNC/CTNB theo từng giao dịch',
+      '   • Tạo đối tượng (KH/NCC) từ nội dung giao dịch',
+      '   • Kết quả thực tế: 62.800+ giao dịch import dry-run thành công',
+      '',
+      '4. PHÂN HỆ BÁO CÁO KẾ TOÁN (15 phút)',
+      '   • Sổ cái tài khoản (/baocao/so-cai)',
+      '   • B01-DN: Bảng cân đối phát sinh',
+      '   • B02-DN: Báo cáo kết quả HĐKD',
+      '   • B03-DN: Bảng kê chứng từ',
+      '   • Báo cáo doanh thu, chi phí',
+      '   • Sổ quỹ, sổ kho, thu/chi',
+      '   • Drill-down từ báo cáo → chứng từ gốc',
+      '   • Xuất Excel / In ấn',
+      '',
+      '───────────────────────────────────────',
+      'Thời lượng: ~60 phút (10 phút + 20 phút + 15 phút + 15 phút)',
+      'Hình thức: Online (Google Meet / Teamviewer) hoặc trực tiếp',
+      '───────────────────────────────────────',
+      '',
+      'Tài liệu tham khảo:',
+      '• Tiến độ triển khai: https://reva.linm-soft.com/tien-do/tien-do-2026.html',
+      '• Báo giá triển khai: https://reva.linm-soft.com/bao-gia/',
+      '• Plan demo: https://reva.linm-soft.com/demo-plan.html',
+      '',
+      'Chúng tôi sẵn sàng điều chỉnh nội dung demo theo nhu cầu thực tế của Quý doanh nghiệp.',
+      '',
+      'Trân trọng,',
+      'Linm Soft',
+      'Liên hệ: [Email] · [Số điện thoại]',
+      'Website: https://linm-soft.com'
+    ].join('\n');
+  }
+
+  // Show toast
+  function showToast(msg) {
+    var toast = document.getElementById('email-toast');
+    if (!toast) return;
+    toast.textContent = msg || 'Đã copy vào clipboard!';
+    toast.classList.add('show');
+    setTimeout(function() {
+      toast.classList.remove('show');
+    }, 2500);
+  }
+
+  // Copy text to clipboard
+  function copyToClipboard(text, label) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function() {
+        showToast(label || 'Đã copy vào clipboard!');
+      })['catch'](function() {
+        fallbackCopy(text, label);
+      });
+    } else {
+      fallbackCopy(text, label);
+    }
+  }
+
+  function fallbackCopy(text, label) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      document.execCommand('copy');
+      showToast(label || 'Đã copy vào clipboard!');
+    } catch(e) {
+      showToast('Không thể copy. Vui lòng copy thủ công.');
+    }
+    document.body.removeChild(ta);
+  }
+
+  // ── Copy Email button (hero) ──
+  var copyBtn = document.getElementById('copy-email-btn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      var content = getEmailContent();
+      // Show preview modal instead of direct copy
+      var overlay = document.getElementById('email-preview-overlay');
+      var body = document.getElementById('email-body-content');
+      if (overlay && body) {
+        body.textContent = content;
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  }
+
+  // ── Email preview modal ──
+  var overlay = document.getElementById('email-preview-overlay');
+  var closeBtn = document.getElementById('email-preview-close');
+  var previewCopyBtn = document.getElementById('email-preview-copy-btn');
+
+  function closeEmailPreview() {
+    if (overlay) overlay.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeEmailPreview);
+  }
+
+  if (overlay) {
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) closeEmailPreview();
+    });
+  }
+
+  // ESC close
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && overlay && overlay.classList.contains('is-open')) {
+      closeEmailPreview();
+    }
+  });
+
+  if (previewCopyBtn) {
+    previewCopyBtn.addEventListener('click', function() {
+      var content = getEmailContent();
+      copyToClipboard(content, '📋 Đã copy email vào clipboard!');
+    });
+  }
+
+  // ── Email trigger button (nav) ──
+  var emailTrigger = document.getElementById('email-trigger-btn');
+  if (emailTrigger) {
+    emailTrigger.addEventListener('click', function() {
+      var content = getEmailContent();
+      var body = document.getElementById('email-body-content');
+      if (overlay && body) {
+        body.textContent = content;
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

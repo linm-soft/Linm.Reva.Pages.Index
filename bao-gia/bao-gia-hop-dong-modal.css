@@ -1,0 +1,197 @@
+/* Modal tạo Hợp đồng chính theo báo giá */
+.hop-dong-modal[hidden] {
+  display: none !important;
+}
+
+.hop-dong-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.hop-dong-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 22, 40, 0.45);
+}
+
+.hop-dong-modal-card {
+  position: relative;
+  width: min(440px, 100%);
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid var(--border, #e2e8f0);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  padding: 22px 22px 18px;
+}
+
+.hop-dong-modal-card h2 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--navy, #0a1628);
+  margin: 0 0 6px;
+}
+
+.hop-dong-modal-lead {
+  font-size: 0.82rem;
+  color: var(--txt2, #64748b);
+  margin: 0 0 16px;
+  line-height: 1.45;
+}
+
+.hop-dong-modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+
+.hop-dong-modal .btn-ghost {
+  padding: 8px 16px;
+  background: transparent;
+  color: var(--txt2, #64748b);
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.hop-dong-modal .btn-ghost:hover {
+  background: #f8fafc;
+  color: var(--navy, #0a1628);
+}
+
+.hop-dong-modal .btn-primary {
+  padding: 8px 18px;
+  background: var(--green, #16a34a);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.hop-dong-modal .btn-primary:hover {
+  filter: brightness(1.05);
+}
+
+.hop-dong-modal .btn-primary:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.hop-dong-so-row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.hop-dong-so-row .field-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.hop-dong-so-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.hop-dong-so-btn {
+  padding: 5px 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--navy, #0a1628);
+  background: #f1f5f9;
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.hop-dong-so-btn:hover {
+  background: #e2e8f0;
+}
+
+.hop-dong-so-btn-copy.is-copied {
+  background: #dcfce7;
+  border-color: #86efac;
+  color: #166534;
+}
+
+.hop-dong-so-hint-link {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  font-family: ui-monospace, monospace;
+  font-size: 0.68rem;
+  color: #1d4ed8;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.hop-dong-so-hint-link:hover {
+  color: #1e40af;
+}
+
+.hop-dong-modal .field {
+  margin-bottom: 12px;
+}
+
+.hop-dong-so-hint {
+  margin: 6px 0 0;
+  font-size: 0.72rem;
+  color: var(--txt2, #64748b);
+  line-height: 1.4;
+}
+
+.hop-dong-so-hint code {
+  font-size: 0.68rem;
+  background: #f1f5f9;
+  padding: 2px 5px;
+  border-radius: 4px;
+  word-break: break-all;
+}
+
+.hop-dong-so-hint-label {
+  font-weight: 600;
+}
+
+.nav-action-contract {
+  background: var(--navy, #0a1628);
+  color: #fff;
+  border-color: var(--navy, #0a1628);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.nav-action-contract:hover {
+  background: #1a3a6e;
+  color: #fff;
+  border-color: #1a3a6e;
+}
+
+.nav-action-contract:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+@media print {
+  .hop-dong-modal {
+    display: none !important;
+  }
+}

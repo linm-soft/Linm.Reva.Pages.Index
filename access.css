@@ -1,0 +1,288 @@
+/* Access gate — Linm Input / FieldMessage parity (common-field-control · CCM-5) */
+body.contract-locked {
+  overflow: hidden;
+}
+
+.contract-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: linear-gradient(135deg, var(--navy) 0%, #1a3a6e 100%);
+}
+
+.contract-gate[hidden] {
+  display: none;
+}
+
+.contract-gate-card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--ds-color-bg-white, #fff);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25);
+}
+
+.contract-gate-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.contract-gate-brand-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.contract-gate-brand-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.contract-gate-brand-logo-reva {
+  border-radius: 12px;
+}
+
+.contract-gate-brand-amp {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--txt3);
+  line-height: 1;
+}
+
+.contract-gate-brand-text {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: 0.02em;
+}
+
+.contract-gate-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--txt2);
+  margin-bottom: 20px;
+  line-height: 1.35;
+  text-align: center;
+  justify-content: center;
+}
+
+.contract-gate-logo .dot {
+  display: none;
+}
+
+.contract-gate-card h1 {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.contract-gate-card > p {
+  font-size: 0.85rem;
+  color: var(--txt2);
+  margin-bottom: 20px;
+}
+
+.contract-gate-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-gap-field, 16px);
+}
+
+/* .field — parity Input.module.css .container */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-gap-label-control, 4px);
+}
+
+.field-full {
+  width: 100%;
+}
+
+.field-label {
+  display: block;
+  flex-shrink: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: var(--ds-font-size-field-label, 13px);
+  font-weight: var(--ds-font-weight-field-label, 500);
+  color: var(--ds-color-text-field-label, #4a4a4a);
+  line-height: 1.2;
+}
+
+.field-input {
+  width: 100%;
+  height: var(--ds-height-input-desktop, 32px);
+  padding: var(--ds-padding-input-desktop, 6px 8px);
+  font-family: inherit;
+  font-size: var(--ds-font-size-input-desktop, 14px);
+  line-height: 1.29;
+  color: var(--ds-color-text-primary, #000);
+  background: var(--ds-color-bg-white, #fff);
+  border: var(--ds-border, 1px solid #babcbe);
+  border-radius: var(--ds-radius-md, 4px);
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field-input::placeholder {
+  color: var(--ds-color-text-placeholder, #b2b2b2);
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: var(--ds-color-border, #babcbe);
+  box-shadow: var(--ds-focus-shadow, 0 0 4px #babcbe);
+}
+
+.field-input:disabled {
+  background: var(--ds-color-bg-disabled, #eee);
+  cursor: not-allowed;
+  color: var(--ds-color-text-disabled, rgba(0, 0, 0, 0.5));
+}
+
+.field-input.is-error {
+  border-color: var(--ds-color-error, #c33a00);
+}
+
+.field-input.is-error:focus {
+  border-color: var(--ds-color-error, #c33a00);
+  box-shadow: 0 0 4px var(--ds-color-error, #c33a00);
+}
+
+/* FieldControlMessageSlot — gap 4px, min-height 18px when open */
+.field-message {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  margin: 0;
+  min-height: 0;
+  overflow: hidden;
+  transition: grid-template-rows 0.22s ease, opacity 0.22s ease, margin-top 0.22s ease;
+}
+
+.field-message.is-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  margin-top: var(--ds-gap-control-message, 4px);
+  min-height: var(--ds-field-message-min-height, 18px);
+}
+
+.field-message-inner {
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  font-size: var(--ds-font-size-input-desktop, 14px);
+  line-height: 1.29;
+}
+
+.field-message-error .field-message-icon {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  margin-top: 2px;
+  color: var(--ds-color-error, #c33a00);
+}
+
+.field-message-error .field-message-text {
+  color: var(--ds-color-error, #c33a00);
+}
+
+/* Button — parity Button.module.css .primary */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ds-gap-icon, 4px);
+  height: var(--ds-height-input-desktop, 32px);
+  padding: var(--ds-padding-input-desktop, 6px 8px);
+  border: none;
+  border-radius: var(--ds-radius-md, 4px);
+  font-family: inherit;
+  font-size: var(--ds-font-size-button, 12px);
+  font-weight: var(--ds-font-weight-label-desktop, 600);
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.btn-primary {
+  background: var(--ds-color-primary, #2563eb);
+  color: #fff;
+}
+
+.btn-primary:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: var(--ds-shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+}
+
+.btn-primary:not(:disabled):active {
+  transform: translateY(0);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.contract-gate-setup {
+  margin-top: 12px;
+  font-size: 0.75rem;
+  color: var(--txt3);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.contract-app.is-locked,
+#contract-app.is-locked,
+#contract-app[hidden] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Báo giá locked — chỉ nav tiến độ công khai; ẩn khi đã unlock */
+body:not(.contract-locked) #plan-nav-public {
+  display: none !important;
+}
+
+@media (max-width: 640px) {
+  .contract-gate-brand-logos {
+    gap: 10px;
+  }
+
+  .field-label {
+    font-size: var(--ds-font-size-input-mobile, 16px);
+  }
+
+  .field-input {
+    height: var(--ds-height-input-mobile, 40px);
+    padding: var(--ds-padding-input-mobile, 9px 8px);
+    font-size: var(--ds-font-size-input-mobile, 16px);
+  }
+
+  .btn {
+    min-height: var(--ds-height-input-mobile, 40px);
+    height: auto;
+  }
+}

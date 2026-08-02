@@ -1,0 +1,1754 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<base href="/bao-gia/">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Báo giá triển khai REVA · ERP &amp; tích hợp · Linm Soft · 28/06/2026</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="../icons/linm-logo.svg">
+<link rel="icon" type="image/png" href="../icons/linm-logo.png">
+<link rel="apple-touch-icon" href="../icons/linm-logo.png">
+<meta name="theme-color" content="#4facfe">
+<link rel="stylesheet" href="../ds-tokens.css">
+<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="../contract.css">
+<link rel="stylesheet" href="../access.css">
+<link rel="stylesheet" href="../tien-do/tien-do-shared.css">
+<link rel="stylesheet" href="bao-gia-shared.css">
+<link rel="stylesheet" href="bao-gia-hop-dong-modal.css">
+<link rel="stylesheet" href="../contract/doc-page-numbers.css">
+<style>#contract-app[hidden],#contract-app.is-locked{display:none!important}</style>
+</head>
+<body class="contract-locked">
+
+<div id="contract-gate" class="contract-gate" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+  <div class="contract-gate-card">
+    <div class="contract-gate-logo"><div class="dot"></div> FM - Hệ thống kế toán - quản trị siêu thị</div>
+    <h1 id="gate-title">Báo giá triển khai</h1>
+    <p>Nhập mã truy cập do Linm cung cấp để xem nội dung báo giá.</p>
+    <form id="contract-gate-form" class="contract-gate-form" autocomplete="off">
+      <div class="field field-full">
+        <label for="contract-gate-code" class="field-label">Mã truy cập</label>
+        <input type="password" id="contract-gate-code" class="field-input" name="code" autocomplete="off" required aria-describedby="contract-gate-error">
+        <p id="contract-gate-error" class="field-message field-message-error" role="alert" hidden><span id="contract-gate-error-text" class="field-message-text"></span></p>
+      </div>
+      <button type="submit" class="btn btn-primary btn-full">Vào xem</button>
+    </form>
+    <p id="contract-gate-setup" class="contract-gate-setup" hidden></p>
+  </div>
+</div>
+
+<nav class="plan-nav plan-nav-public" id="plan-nav-public" aria-label="Tiến độ công khai">
+  <a href="../index.html" class="nav-logo"><div class="dot"></div> FM - Hệ thống kế toán - quản trị siêu thị</a>
+  <div class="nav-links">
+    <a href="../tien-do/tien-do-2026.html">Tiến độ (DA1 &amp; DA2)</a>
+  </div>
+  <div class="nav-right">
+    <a href="../index.html" class="nav-back">← Trang chủ</a>
+  </div>
+</nav>
+
+<div id="contract-app" class="contract-app is-locked" aria-hidden="true" hidden>
+
+<nav class="plan-nav">
+  <a href="../index.html" class="nav-logo"><div class="dot"></div> FM - Hệ thống kế toán - quản trị siêu thị</a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Báo giá</a>
+    <a href="../tien-do/tien-do-2026.html">Tiến độ (DA1 &amp; DA2)</a>
+  </div>
+  <div class="nav-right">
+    <a href="../index.html" class="nav-back">← Trang chủ</a>
+    <button type="button" class="nav-action nav-action-print" onclick="window.print()">In báo giá</button>
+  </div>
+</nav>
+
+<div class="hero compact">
+  <div class="hero-badge">Báo giá triển khai · REVA / Foodmart · 2026</div>
+  <h1>Báo giá <span>ERP Linm &amp; tích hợp</span></h1>
+  <p>Phạm vi gồm <strong>chuẩn hóa dữ liệu 2023–2025</strong>, <strong>phân hệ kế toán · bán hàng · mua hàng · kho · nhân sự &amp; lương</strong>, <strong>API kết nối bên thứ 3</strong> và các hạng mục mở rộng (<strong>Mobile app REVA end-user</strong> · MoZa · Thợ). Tham chiếu tiến độ: <a href="../tien-do/phase1-fm02.html" class="hero-progress-link">báo cáo FM02-A1 Eratown</a>.</p>
+  <div class="hero-stats quote-hero-stats">
+    <div class="hero-stat"><div class="val">290 tr</div><div class="lbl">Giá trị HĐ cốt lõi</div></div>
+    <div class="hero-stat"><div class="val">+100 tr</div><div class="lbl">Thưởng theo hạng mục<br><small>(tối thiểu · tách từ giá trị HĐ)</small></div></div>
+    <div class="hero-stat"><div class="val">10·20×4·10</div><div class="lbl">Lộ trình thanh toán<br><small>6 đợt / dự án</small></div></div>
+  </div>
+</div>
+
+<div class="tien-do-tabs-wrap">
+  <div class="tien-do-tabs" role="tablist" aria-label="Báo giá REVA">
+    <button type="button" class="tien-do-tab active" role="tab" aria-selected="true" aria-controls="bao-gia-panel-hang-muc" data-tien-do-tab="hang-muc">1 · Hạng mục (ERP &amp; API)</button>
+    <button type="button" class="tien-do-tab" role="tab" aria-selected="false" aria-controls="bao-gia-panel-phan-he" data-tien-do-tab="phan-he">2 · Danh mục · CT · BC</button>
+    <button type="button" class="tien-do-tab" role="tab" aria-selected="false" aria-controls="bao-gia-panel-timeline" data-tien-do-tab="timeline">3 · Timeline Release</button>
+    <button type="button" class="tien-do-tab" role="tab" aria-selected="false" aria-controls="bao-gia-panel-ban-giao" data-tien-do-tab="ban-giao">4 · Bàn giao · Hạ tầng</button>
+    <button type="button" class="tien-do-tab" role="tab" aria-selected="false" aria-controls="bao-gia-panel-bao-tri" data-tien-do-tab="bao-tri">5 · Bảo trì phần mềm</button>
+    <button type="button" class="tien-do-tab" role="tab" aria-selected="false" aria-controls="bao-gia-panel-dieu-khoan" data-tien-do-tab="dieu-khoan">6 · Điều khoản triển khai</button>
+  </div>
+</div>
+
+<!-- TAB 1 -->
+<article id="bao-gia-panel-hang-muc" class="tien-do-doc bao-gia-doc tien-do-page tien-do-panel is-active" data-tien-do-panel="hang-muc" role="tabpanel">
+
+<p class="print-tab-label" aria-hidden="true">Phần 1 · Hạng mục (ERP &amp; API)</p>
+<div class="doc-print-sheet">
+<div class="doc-header">
+  <p class="kicker">Báo giá triển khai · FM - Hệ thống kế toán - quản trị siêu thị</p>
+  <h1 class="doc-title">Báo giá theo hạng mục — ERP &amp; API kết nối</h1>
+  <p class="doc-meta">
+    <strong>Kính gửi:</strong> Ban lãnh đạo REVA / Foodmart<br>
+    <strong>Ngày:</strong> 28/06/2026<br>
+    <strong>Đơn vị:</strong> Linm Soft
+  </p>
+</div>
+
+<h2>Tổng hợp giá trị</h2>
+<div class="quote-sum-grid">
+  <div class="quote-sum-grid-cards">
+  <div class="quote-sum-card featured">
+    <div class="price">150 tr</div>
+    <div class="lbl">Dữ liệu 2023–2025<br><small>12 cửa hàng · đối soát FM02-A1 Eratown</small></div>
+  </div>
+  <div class="quote-sum-card featured">
+    <div class="price">140 tr</div>
+    <div class="lbl">Phân hệ ERP<br><small>KT · BH · MH · Kho · HR · Lương</small></div>
+  </div>
+  <div class="quote-sum-card">
+    <div class="price">+50 tr</div>
+    <div class="lbl">Thưởng BC kế toán<br><small>Tối thiểu · NT BC KT · 31/08/2026</small></div>
+  </div>
+  <div class="quote-sum-card">
+    <div class="price">+50 tr</div>
+    <div class="lbl">Thưởng BC tập đoàn<br><small>Tối thiểu · NT BC tập đoàn · 05/01/2027</small></div>
+  </div>
+  <div class="quote-sum-card">
+    <div class="price">290 tr</div>
+    <div class="lbl">Thanh toán theo dự án (10·20×4·10)<br><small>2 dự án riêng · chưa gồm API có phí · Mobile · MoZa · Thợ</small></div>
+  </div>
+  </div>
+  <div class="quote-sum-card featured quote-sum-card-total">
+    <div class="price">390 tr</div>
+    <div class="lbl">Giá trị HĐ thỏa thuận<br><small>290 tr + 100 tr thưởng tối thiểu (tách từ giá trị HĐ)</small></div>
+  </div>
+</div>
+
+<h2>1 · Dữ liệu lịch sử 2023–2025 — 150 triệu VND</h2>
+<p class="lead">Bao gồm các hạng mục theo tiến độ triển khai tại <a href="../tien-do/phase1-fm02.html">báo cáo tiến độ FM02-A1 Eratown</a>: chuẩn hóa master, đồng bộ POS → ERP, import chi phí, đối soát và báo cáo quản trị trên 12 cửa hàng.</p>
+
+<table class="deliver-table quote-table">
+<thead><tr><th>STT</th><th>Hạng mục</th><th>Nội dung</th><th>Giá (tr)</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>Danh mục dùng chung</strong></td><td>NCC (575 + nhóm L1/L2), KH (~34.300), VT (~31.700), Nhân viên (45 · mã <code>IMP.NNNNN</code>), quy tắc định khoản (129), TK TT200/TT99, kênh TT (18), 12 đơn vị cơ sở</td><td class="price-col">—</td></tr>
+<tr><td>2</td><td><strong>Kết nối POS → ERP</strong></td><td>Hóa đơn bán · Phiếu thu · Phiếu chi — connector <code>reva-fm-*</code></td><td class="price-col">—</td></tr>
+<tr><td>3</td><td><strong>Dữ liệu chi phí / PNM</strong></td><td>Import phiếu nhập kho · hạch toán theo REVA</td><td class="price-col">—</td></tr>
+<tr><td>4</td><td><strong>Báo có / báo nợ · Ủy nhiệm chi</strong></td><td>Danh mục định khoản BC/BN · <strong>UNC</strong> (phiếu chi ngân hàng) · import &amp; đối soát sao kê khi REVA cung cấp dữ liệu</td><td class="price-col">—</td></tr>
+<tr><td>5</td><td><strong>Báo cáo bảng kê &amp; thống kê</strong></td><td>Đối soát HĐ/PT/PC · báo cáo quản trị 2023–2025 · mở rộng 11 CH còn lại</td><td class="price-col">—</td></tr>
+<tr class="total-row"><td colspan="3"><strong>Gói dữ liệu 2023–2025 (gộp 5 hạng mục)</strong></td><td class="price-col"><strong>150</strong></td></tr>
+</tbody>
+</table>
+
+<h2>2 · Phân hệ quản lý ERP — 140 triệu VND</h2>
+<p class="lead">Triển khai và vận hành <strong>Hệ thống ERP</strong> cho <strong>nghiệp vụ từ năm 2026 trở đi</strong>: <strong>Kế toán — Tài chính</strong>, <strong>Bán hàng</strong>, <strong>Mua hàng</strong>, <strong>Kho</strong>, <strong>Nhân sự &amp; Lương</strong>, <strong>Quản lý chi phí</strong>. Khác với gói <strong>dữ liệu lịch sử 2023–2025</strong> (nhập liệu và đối soát), phân hệ ERP cho phép <strong>cập nhật sổ sách và báo cáo theo thời gian thực</strong> — mỗi chứng từ phát sinh trên hệ thống được phản ánh ngay vào báo cáo.</p>
+
+<table class="deliver-table quote-table">
+<thead><tr><th>Phân hệ</th><th>Phạm vi chính</th><th>Giá HĐ (tr)</th></tr></thead>
+<tbody>
+<tr><td><strong>Kế toán — Tài chính</strong></td><td>Phiếu thu, Phiếu chi, sổ cái, sổ quỹ, báo cáo tài chính B01/B02/B03, kết chuyển cuối kỳ</td><td class="price-col price-col--center" rowspan="5"><strong>140</strong><br><small>(gói phân hệ)</small></td></tr>
+<tr><td><strong>Bán hàng</strong></td><td>Hóa đơn bán, báo cáo doanh thu / bán hàng theo cửa hàng</td></tr>
+<tr><td><strong>Mua hàng</strong></td><td>Phiếu nhập mua, đơn mua hàng, đối soát nhà cung cấp · thay thế website mua hàng REVA hiện tại</td></tr>
+<tr><td><strong>Kho</strong></td><td>Nhập — xuất — tồn, khóa sổ kho, tính giá vốn (theo cấu hình REVA)</td></tr>
+<tr><td><strong>Nhân sự &amp; Lương</strong></td><td>Danh mục nhân viên (mã <code>IMP.NNNNN</code>), bảng lương, chi phí nhân sự</td></tr>
+</tbody>
+</table>
+
+<div class="section-block erp-outcome">
+<h3>2a · Kết quả kỳ vọng khi vận hành (từ 2026)</h3>
+<p class="lead lead--compact">Khi nghiệm thu phân hệ ERP, REVA nhận được <strong>bộ báo cáo tương đương giai đoạn 2023–2025</strong> (báo cáo kế toán, báo cáo quản trị cửa hàng, báo cáo Ban quản trị) và <strong>bổ sung khả năng xem theo thời gian vận hành thực tế</strong>. Vì dữ liệu phát sinh liên tục trên ERP, mọi báo cáo <strong>cập nhật theo thời gian thực</strong> theo kỳ người dùng chọn.</p>
+
+<div class="quote-table-group quote-table-group--compact">
+<table class="deliver-table quote-table">
+<thead><tr><th>Loại báo cáo</th><th>Nội dung</th><th>Ghi chú</th></tr></thead>
+<tbody>
+<tr><td><strong>Báo cáo kế toán &amp; quản trị</strong></td><td>Kết quả kinh doanh (P&amp;L) theo cửa hàng · Doanh thu · Chi phí · Lợi nhuận · So sánh chi phí chuẩn · Bảng cân đối kế toán (B01) · Báo cáo KQ hoạt động kinh doanh (B02) · Báo cáo lưu chuyển tiền tệ (B03) · Bảng kê thu chi · Sổ cái · Sổ quỹ</td><td>Tương đương <a href="../tien-do/phase1-fm02.html">báo cáo 2023–2025</a> · chi tiết Tab 2</td></tr>
+<tr><td><strong>Chọn kỳ xem báo cáo</strong></td><td>Theo ngày (từ ngày — đến ngày), tuần, tháng, quý, năm hoặc kỳ tùy chọn — áp dụng thống nhất trên báo cáo quản trị và kế toán</td><td>Theo thời gian thực · không chờ chốt cuối ngày</td></tr>
+<tr><td><strong>Báo cáo thuế</strong></td><td>Báo cáo và tờ khai thuế theo quy định nhà nước (Thông tư 200/99 và phụ lục — theo phạm vi thỏa thuận từng loại)</td><td>Phân hệ Kế toán · Báo cáo</td></tr>
+<tr><td><strong>Báo cáo quản trị &amp; tổng quan</strong></td><td>Bảng <strong>Kế hoạch — Thực đạt</strong> · Báo cáo <strong>Dòng tiền</strong> · <strong>Dashboard</strong> tổng quan tài chính · Chỉ số quản trị theo cửa hàng / tập đoàn</td><td>Hạng mục thưởng báo cáo</td></tr>
+<tr><td><strong>Một nguồn số liệu thống nhất</strong></td><td>Toàn bộ nghiệp vụ <strong>kế toán, kho, bán hàng, mua hàng, lương</strong> trên ERP được hạch toán và tổng hợp thành <strong>bộ báo cáo kế toán — quản trị cuối cùng</strong> — một nguồn số liệu duy nhất, cập nhật ngay khi có chứng từ phát sinh</td><td>Gói phân hệ ERP 140 tr</td></tr>
+</tbody>
+</table>
+<div class="panel-note"><strong>Tóm lại:</strong> Hệ thống ERP không chỉ lưu chứng từ — mục tiêu là biến toàn bộ nghiệp vụ siêu thị (kế toán, kho, bán hàng, mua hàng, nhân sự) thành <strong>bộ báo cáo kế toán — quản trị đầy đủ</strong>, xem được <strong>theo bất kỳ kỳ thời gian nào</strong> và phản ánh số liệu tại thời điểm truy vấn.</div>
+</div>
+</div>
+
+<div class="section-block erp-platform">
+<h3>2b · Nền tảng REVA — gom hệ thống vận hành</h3>
+<p class="lead lead--compact">Phạm vi kiến trúc đã trao đổi và <strong>xác nhận với phòng IT REVA (anh Tuấn)</strong>: gom các hệ thống vận hành vào <strong>một nền tảng REVA thống nhất</strong>, trong đó <strong>Hệ thống ERP Linm</strong> là lõi kế toán và quản trị.</p>
+
+<table class="deliver-table quote-table">
+<thead><tr><th>Hạng mục</th><th>Định hướng triển khai</th><th>Ghi chú</th></tr></thead>
+<tbody>
+<tr><td><strong>Nền tảng REVA</strong></td><td>Một cổng truy cập, cùng tên miền: <strong>Kế toán (ERP)</strong>, <strong>POS bán hàng</strong>, <strong>Mua hàng &amp; Kho</strong>, và các phân hệ khác (Hội viên, Báo cáo tập đoàn, …)</td><td>Đã trao đổi · IT REVA xác nhận</td></tr>
+<tr><td><strong>POS và ERP</strong></td><td>Từ 2026: POS <strong>liên kết trực tiếp</strong> vào ERP trên <strong>cùng cổng REVA</strong> (cùng tên miền), người dùng chuyển qua lại thuận tiện; <strong>không</strong> nhúng POS vào giao diện ERP dưới dạng module con</td><td>2023–2025: đồng bộ Hóa đơn · Phiếu thu · Phiếu chi qua kết nối API</td></tr>
+<tr class="bonus-row"><td><strong>Shell link · <code>@linm/shell-url</code></strong></td><td>POS và các ứng dụng web <strong>hiện do Foodmart sở hữu</strong> mở qua menu sidebar cổng REVA (<strong>iframe shell</strong> — MFE <code>Linm.Web.ShellUrl</code>); URL giữ domain REVA · nút Home về dashboard ERP — <strong>không</strong> migrate lại dưới dạng microfrontend con</td><td><span class="badge done">Miễn phí</span> · trong phạm vi HĐ cốt lõi</td></tr>
+<tr><td><strong>Website mua hàng REVA</strong></td><td>Chuyển sang dùng <strong>Phân hệ Mua hàng</strong> trên ERP — thay website mua hàng riêng hiện tại</td><td>Linm hỗ trợ <strong>chuyển đổi chứng từ mua hàng cũ</strong> sang ERP</td></tr>
+<tr><td><strong>Dữ liệu lịch sử và vận hành mới</strong></td><td>Nhập và đối soát <strong>2023–2025</strong> (Dự án 1) tách biệt với <strong>vận hành từ 2026</strong> (Dự án 2)</td><td>Tab 1 · mục 1</td></tr>
+</tbody>
+</table>
+<p><em>Chi tiết danh mục · chứng từ · báo cáo: <a href="#phan-he">Tab 2</a> · Kiến trúc bàn giao: <a href="#ban-giao">Tab 4</a>.</em></p>
+
+<div class="section-block section-block--surface section-block--spaced" id="shell-url-reva">
+<h3>2c · Shell link — liên kết ứng dụng Foodmart trên cổng REVA</h3>
+<p class="lead lead--compact">Triển khai kỹ thuật theo platform MFE <strong><code>Linm.Web.ShellUrl</code></strong> (<code>@linm/shell-url</code>): menu Auth loại <strong><code>shell</code></strong> — mỗi mục trỏ tới URL ứng dụng ngoài (vd. POS BossSoft) nhưng người dùng vẫn ở <strong>cùng tên miền REVA</strong> (route vd. <code>/reva/pos</code>) · iframe load <code>DefaultUrl</code> · FAB / nút <strong>Home</strong> quay về dashboard ERP.</p>
+
+<table class="deliver-table quote-table">
+<thead><tr><th>Hạng mục</th><th>Cam kết triển khai</th><th>Chi phí</th></tr></thead>
+<tbody>
+<tr class="bonus-row"><td><strong>POS bán hàng (BossSoft / FM)</strong></td><td>Menu shell trên cổng REVA — liên kết trực tiếp, chuyển qua lại ERP thuận tiện; đồng bộ chứng từ qua API (Tab 1 · mục 1)</td><td rowspan="3"><span class="badge done">Không phát sinh chi phí</span><br><small>Trong phạm vi HĐ cốt lõi</small></td></tr>
+<tr><td><strong>Ứng dụng web Foodmart khác</strong> (theo yêu cầu đã thống nhất)</td><td>Cấu hình menu <code>menuType=shell</code> + <code>DefaultUrl</code> — <strong>không</strong> viết lại UI dưới dạng MFE ERP con</td></tr>
+<tr><td><strong>Phạm vi loại trừ</strong></td><td>Migrate / refactor POS (hoặc app khác) thành microfrontend native ERP · thay đổi nghiệp vụ POS · hosting app ngoài do Foodmart tự quản — báo giá riêng nếu yêu cầu</td></tr>
+</tbody>
+</table>
+
+<div class="panel-note"><strong>Pilot cấu hình (tham chiếu):</strong> Path <code>/reva/pos</code> · DefaultUrl <code>https://quanlyfoodmart.bosssoft.vn/</code> · package <code>@linm/shell-url</code>. Foodmart / IT REVA cung cấp URL chính thức và quyền truy cập iframe (CSP / X-Frame-Options) trước go-live.</div>
+</div>
+</div>
+
+<h2>3 · Hạng mục thưởng — tối thiểu 100 triệu VND <small class="bonus-heading-note">(tách từ giá trị HĐ · Dự án ERP)</small></h2>
+<p class="lead lead--compact">Phần thưởng <strong>50 tr + 50 tr</strong> là mức <strong>tối thiểu</strong>, được <strong>tách riêng</strong> khỏi gói phân hệ 140 tr và thanh toán theo <strong>mốc nghiệm thu báo cáo</strong> (không gộp vào lộ trình <strong>10·20×4·10</strong> của gói ERP).</p>
+<table class="deliver-table quote-table">
+<thead><tr><th>Hạng mục thưởng</th><th>Điều kiện nghiệm thu</th><th>Mốc dự kiến</th><th>Giá tối thiểu (tr)</th></tr></thead>
+<tbody>
+<tr class="bonus-row"><td><strong>Release hệ thống báo cáo kế toán</strong></td><td>Nghiệm thu BC kế toán đúng hạn</td><td><strong>31/08/2026</strong></td><td class="price-col">50</td></tr>
+<tr class="bonus-row"><td><strong>Release hệ thống báo cáo tập đoàn</strong></td><td>Nghiệm thu BC tập đoàn / ban quản trị đúng hạn</td><td>05/01/2027</td><td class="price-col">50</td></tr>
+<tr class="total-row"><td colspan="3"><strong>Tổng thưởng tối thiểu (tách từ giá trị HĐ)</strong></td><td class="price-col"><strong>100</strong></td></tr>
+</tbody>
+</table>
+
+<h2>4 · API &amp; kết nối bên thứ 3</h2>
+<p class="lead lead--compact">Áp dụng cho mọi <strong>API bên thứ 3 do REVA quản lý</strong> (ngân hàng, hội viên, đối tác, …) khi tích hợp vào ERP Linm. REVA cung cấp <strong>danh mục API đầy đủ</strong> trước kick-off từng luồng — Linm đối chiếu trạng thái để xác định miễn phí hay có phí.</p>
+
+<div class="section-block api-reva">
+<h3>API phía REVA — nguyên tắc miễn phí / có phí</h3>
+<table class="deliver-table quote-table quote-table--cols-3 quote-table--api-pricing">
+<colgroup>
+  <col class="col-a">
+  <col class="col-b">
+  <col class="col-c">
+</colgroup>
+<thead><tr><th>Trạng thái API tại REVA</th><th>Điều kiện</th><th>Tính phí kết nối Linm</th></tr></thead>
+<tbody>
+<tr><td><strong>Đã kết nối · đang hoạt động</strong></td><td>REVA đã tích hợp với đơn vị cung cấp; có <strong>đầy đủ thông số kết nối</strong> (URL, loại xác thực, luồng GET/PUT); đang chạy <strong>realtime / production</strong></td><td class="api-fee-col"><div class="api-fee-cell"><span class="badge done">Không tính phí</span><small>Chỉ map sang ERP Linm</small></div></td></tr>
+<tr><td><strong>Chưa kết nối · chưa vận hành chính thức</strong></td><td>REVA mới làm việc / POC; <strong>chưa</strong> kết nối và sử dụng chính thức; API <strong>chưa hoạt động</strong> ổn định</td><td class="api-fee-col"><div class="api-fee-cell"><span class="badge partial">Có tính phí</span><small>Kết nối mới — bắt buộc testing &amp; check kết nối cùng đơn vị cung cấp</small></div></td></tr>
+</tbody>
+</table>
+<p><em>Trường hợp API phức tạp hoặc thiếu tài liệu kỹ thuật: Linm trao đổi báo giá riêng trước khi triển khai — chỉ thực hiện khi REVA đồng ý.</em></p>
+</div>
+
+<div class="section-block api-reva-inventory">
+<h3>Danh mục API REVA cần cung cấp (theo từng API)</h3>
+<p class="lead lead--compact">REVA gửi bảng kê khai (Excel/Sheet hoặc tài liệu kỹ thuật) <strong>trước khi Linm bắt đầu tích hợp</strong>. Mỗi dòng API gồm các cột sau — <strong>không cần gửi key/token thật</strong>, chỉ mô tả loại xác thực và tham số kết nối.</p>
+<table class="deliver-table quote-table">
+<thead><tr><th>STT</th><th>Trường thông tin</th><th>Mô tả / ví dụ</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>API name</strong></td><td>Tên nghiệp vụ / hệ thống — vd: <code>Membership · tra cứu điểm</code>, <code>NH · sao kê TK doanh nghiệp</code></td></tr>
+<tr><td>2</td><td><strong>API URL</strong></td><td>Base URL hoặc endpoint chính — vd: <code>https://api.reva.vn/mbs/v1/...</code></td></tr>
+<tr><td>3</td><td><strong>Thông số kết nối</strong></td><td>Token, credential, header bắt buộc — <strong>chỉ ghi loại xác thực</strong> (Bearer JWT · API Key · OAuth2 client · Basic · certificate mTLS …), <em>không gửi secret/key thật qua email/chat</em></td></tr>
+<tr><td>4</td><td><strong>Trạng thái kết nối</strong></td><td><strong>Chưa kết nối</strong> · hoặc <strong>Đã kết nối — run realtime</strong> (production / UAT có traffic thật)</td></tr>
+<tr><td>5</td><td><strong>Cơ chế sync dữ liệu</strong></td><td>HTTP method &amp; hướng luồng — <strong>GET</strong> (lấy dữ liệu) · <strong>PUT/POST</strong> (đẩy dữ liệu) · webhook callback · lịch batch (cron)</td></tr>
+<tr><td>6</td><td><strong>Thời gian đã hoạt động</strong></td><td>Mốc vận hành ổn định — vd: <em>Đã hoạt động từ 2025</em>, <em>POC từ 06/2026 — chưa production</em> — dùng xác định độ ổn định &amp; miễn phí / có phí</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="section-block api-free">
+<h3>Miễn phí triển khai (trong thời gian dự án)</h3>
+<ul>
+<li><strong>API POS → chứng từ Thu / Chi / Hóa đơn</strong> — đồng bộ bill, phiếu thu/chi về ERP Linm</li>
+<li><strong>API Membership</strong> — kết nối hệ thống hội viên REVA (đọc hồ sơ, điểm, lịch sử theo phạm vi thỏa thuận) — khi API đã <strong>đang hoạt động</strong> tại REVA và đủ thông số theo bảng trên</li>
+</ul>
+</div>
+
+<div class="section-block api-paid">
+<h3>Triển khai có phí (trong giai đoạn dự án)</h3>
+<p class="lead lead--compact">Áp dụng cho API <strong>chưa kết nối / chưa hoạt động chính thức</strong> tại REVA, hoặc luồng <strong>kết nối mới</strong> cần testing phối hợp đơn vị cung cấp.</p>
+<table class="deliver-table quote-table">
+<thead><tr><th>Loại API</th><th>Mô tả</th><th>Đơn giá</th></tr></thead>
+<tbody>
+<tr><td><strong>Ngân hàng — lấy dữ liệu</strong></td><td>API đối soát sao kê, báo có/báo nợ, giao dịch NH</td><td class="price-col"><strong>2 tr</strong> / 1 API</td></tr>
+<tr><td><strong>Ngân hàng — đẩy dữ liệu</strong></td><td>API lịch chuyển khoản, đẩy lệnh thanh toán theo lịch</td><td class="price-col"><strong>3 tr</strong> / 1 API</td></tr>
+</tbody>
+</table>
+<p><em>API bên thứ 3 có tính chất phức tạp: Linm trao đổi báo giá riêng với REVA trước khi triển khai — chỉ thực hiện khi có đồng thuận.</em></p>
+</div>
+
+<div class="section-block api-post">
+<h3>Sau khi kết thúc dự án</h3>
+<p><strong>API kết nối mới</strong> với bên thứ 3: giá dự kiến <strong>5 triệu VND / 1 API</strong> (chuẩn). Trường hợp phức tạp — báo giá riêng, triển khai khi REVA đồng ý.</p>
+</div>
+</div>
+
+<div class="doc-thong-tin-bo-sung" data-page-numbering="exclude" id="erp-van-hanh-mo-rong">
+
+<h2>1 · ERP Linm · Chính sách bảo trì và hạng mục mở rộng (multi-tenant Foodmart)</h2>
+<p class="lead">Hệ thống ERP Linm triển khai cho Foodmart (FM) hỗ trợ <strong>multi-tenant theo đơn vị cơ sở</strong> (<code>companyCode</code>) — mỗi cửa hàng / pháp nhân có sổ chứng từ · sổ cái · báo cáo riêng; người dùng chuyển đơn vị làm việc trên giao diện. Phần dưới quy định <strong>chi phí dịch vụ vận hành</strong> sau go-live — <strong>tách rõ</strong> đổi thông tin cơ bản (tên · logo · CompanyInfo) và <strong>đổi pháp nhân</strong> (đóng PN hiện tại · chuyển sang PN mới) — cùng thêm cửa hàng · tách pháp nhân; <strong>không</strong> bao gồm phát triển tính năng nền tảng mới trừ khi có phụ lục riêng. <strong>Liên kết shell</strong> POS / app Foodmart trên cổng REVA (<code>@linm/shell-url</code>) — xem Tab 1 · mục <strong>2c</strong> — <span class="badge done">không phát sinh chi phí</span> trong HĐ cốt lõi.</p>
+
+<div class="quote-table-group quote-table-group--compact">
+<table class="deliver-table quote-table">
+<thead><tr><th>STT</th><th>Hạng mục</th><th>Chính sách chi phí (VNĐ · chưa VAT)</th></tr></thead>
+<tbody>
+<tr class="bonus-row"><td>1</td><td><strong>Đổi thông tin cơ bản</strong><br><small>Đổi tên / logo URL / CompanyInfo</small></td><td><strong>Lần đầu</strong> (trong thời gian triển khai + bảo hành): <span class="badge done">Miễn phí</span><br><strong>Các lần sau:</strong> mức tham chiếu dự kiến <strong>5 triệu / lần</strong></td></tr>
+<tr><td>2</td><td><strong>Đổi pháp nhân</strong><br><small>Đóng pháp nhân hiện tại · chuyển toàn bộ thông tin sang pháp nhân mới</small></td><td><strong>Đổi thông tin pháp nhân:</strong> <strong>10 triệu</strong><br><strong>Đổi mẫu in theo yêu cầu:</strong> báo giá tại thời điểm — mức tham chiếu dự kiến <strong>từ 20 triệu</strong></td></tr>
+<tr><td>3</td><td><strong>Thêm cửa hàng mới</strong><br><small>Tenant · map POS branch · scope user</small></td><td><strong>IT Foodmart</strong> tự thực hiện theo tài liệu Linm: <span class="badge done">Không tính phí</span><br><strong>Linm</strong> testing + hỗ trợ go-live: <strong>20 triệu / cửa hàng</strong><br>Lỗi do Foodmart tự cấu hình sai: báo giá khắc phục tại thời điểm</td></tr>
+<tr><td>4a</td><td><strong>Tách pháp nhân</strong> (1 → n) — sổ mới từ cut-off<br><small>Không migrate dữ liệu lịch sử</small></td><td><strong>100 triệu / 01 pháp nhân mới</strong><br>vd. 1 → 2 = <strong>100 triệu</strong> · 1 → 3 = <strong>200 triệu</strong><br>Bao gồm: cấu hình tenant · báo cáo · đối soát từ cut-off (cùng đợt tách)</td></tr>
+<tr><td>4b</td><td><strong>Tách / migrate dữ liệu cũ</strong> (tùy chọn)</td><td><strong>Từ 100 triệu</strong> trở lên — báo giá sau khảo sát (phụ thuộc số lượng chứng từ)</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>1a · Đổi thông tin cơ bản (tên / logo / CompanyInfo)</h3>
+<p class="lead lead--compact"><strong>Phạm vi:</strong> Cập nhật <strong>PlatformCompany</strong> (tên, logo URL), <strong>CompanyInfo</strong> (MST, địa chỉ, ngân hàng); kiểm tra hiển thị tenant trên giao diện ERP. <strong>Lần đầu</strong> (triển khai + bảo hành): <span class="badge done">Miễn phí</span> · <strong>các lần sau:</strong> mức tham chiếu dự kiến <strong>5 triệu / lần</strong>. <strong>Không bao gồm</strong> đổi pháp nhân (mục <strong>1b</strong>) · thiết kế lại mẫu in (mục <strong>1b</strong>) · white-label shell (favicon, domain) · HĐĐT / POS bên thứ ba.</p>
+
+<h3>1b · Đổi pháp nhân</h3>
+<p class="lead lead--compact"><strong>Phạm vi:</strong> <strong>Đóng pháp nhân hiện tại</strong>, thiết lập pháp nhân mới và <strong>chuyển toàn bộ thông tin</strong> hiển thị / cấu hình sang pháp nhân mới. <strong>Đổi thông tin pháp nhân:</strong> <strong>10 triệu</strong>. <strong>Đổi mẫu in theo yêu cầu</strong> (header/footer, layout chứng từ / báo cáo): báo giá tại thời điểm — mức tham chiếu dự kiến <strong>từ 20 triệu</strong>. <strong>Không bao gồm</strong> tách pháp nhân (mục <strong>1d</strong>) · migrate dữ liệu lịch sử (mục <strong>4b</strong>).</p>
+
+<h3>1c · Thêm cửa hàng</h3>
+<p class="lead lead--compact"><strong>Gói Linm 20 triệu / CH</strong> gồm: tạo tenant · gán quyền user · map <code>branchId</code> POS · master tối thiểu · smoke test (01 CT + 01 BC) · một buổi hỗ trợ go-live. <strong>Không gồm</strong> nhập số dư đầu kỳ · migrate lịch sử.</p>
+<div class="panel-note"><strong>Self-service IT Foodmart:</strong> Miễn phí khi thực hiện đúng checklist Linm cung cấp và tự nghiệm thu. Linm không chịu trách nhiệm dữ liệu sai tenant nếu chưa hoàn tất map POS / scope user.</div>
+
+<h3>1d · Tách pháp nhân</h3>
+<p class="lead lead--compact"><strong>100 triệu / 01 pháp nhân mới</strong> — tách hệ thống từ <strong>ngày cut-off</strong> (biên bản ký trước khi thực hiện). Cùng một đợt tách: tổng phí = <strong>100 triệu × số pháp nhân mới</strong>. <strong>Khác</strong> mục <strong>1b</strong> (đổi pháp nhân — đóng PN cũ · chuyển sang PN mới). <strong>Không bao gồm:</strong> phân tích · phân bổ chi phí / tài sản / công nợ giữa pháp nhân (trách nhiệm kế toán Foodmart).</p>
+<div class="contract-box contract-box--indigo">
+  <h4>Ví dụ minh họa</h4>
+  <p>Cửa hàng 1 — năm <strong>2026</strong> thuộc <strong>Pháp nhân 1</strong>. Từ <strong>2027</strong> tách thêm <strong>Pháp nhân 2</strong>; CH1 chuyển sang PN2 → <strong>01 PN mới</strong> = <strong>100 triệu</strong>. Nếu cùng đợt tách thêm <strong>Pháp nhân 3</strong> (1 → 3) → <strong>02 PN mới</strong> = <strong>200 triệu</strong>. Hệ thống ghi nhận sổ mới từ cut-off · <strong>không</strong> tách dữ liệu trước cut-off. Migrate lịch sử → mục <strong>4b</strong> (từ 100 triệu+).</p>
+</div>
+
+<h3>1e · Điều kiện chung</h3>
+<ul>
+<li>Mọi tách pháp nhân / thêm CH có sync POS: Foodmart cập nhật <strong>branchId</strong> ↔ tenant trước hoặc đồng thời go-live.</li>
+<li>User được gán thêm đơn vị: <strong>đăng xuất · đăng nhập lại</strong> sau khi admin cập nhật scope.</li>
+<li>Giá tham chiếu có hiệu lực <strong>30 ngày</strong>; thực hiện sau thời hạn — báo giá lại tại thời điểm yêu cầu.</li>
+</ul>
+
+<h2>2 · Mobile app REVA cho end-user (khách hàng cuối)</h2>
+<p class="lead"><strong>Ứng dụng di động REVA</strong> dành cho <strong>khách hàng đầu cuối</strong> (end-user): quản lý thông tin hội viên, điểm thưởng, báo cáo bảng kê chi tiêu theo khách hàng. Bổ sung <strong>phân hệ end-user</strong> trên mobile — <strong>parity Web App</strong>, gồm <strong>admin</strong> (thiết lập sự kiện, catalog, layout, deeplink) và <strong>page cho end-user</strong> (xem event, đặt mua theo sự kiện). Triển khai <strong>Android</strong> và <strong>iOS</strong> — dự kiến <strong>08 – 10/2026</strong> (song song MoZa, Thợ).</p>
+
+<table class="deliver-table quote-table">
+<thead><tr><th>Tính năng</th><th>Mô tả</th></tr></thead>
+<tbody>
+<tr><td><strong>Hội viên &amp; bảng kê</strong></td><td>Hồ sơ hội viên · điểm thưởng · báo cáo bảng kê chi tiêu theo khách hàng (parity Web REVA)</td></tr>
+<tr><td><strong>Phân hệ end-user · Admin</strong></td><td>Module quản trị trên mobile — <strong>tương đương Web App admin</strong>: thiết lập sự kiện (tên, poster, deeplink, layout, catalog, thời gian hiển thị)</td></tr>
+<tr><td><strong>Phân hệ end-user · Page khách</strong></td><td>Màn hình end-user trên mobile — <strong>tương đương Web App</strong>: xem poster/tên event · load layout · catalog · giỏ hàng · đặt mua theo sự kiện · deeplink</td></tr>
+<tr><td><strong>Đẩy đơn → POS</strong></td><td>Hệ thống <strong>tự động đẩy đơn</strong> về <strong>POS REVA</strong> sau khi khách đặt mua theo sự kiện — khách <strong>nhận hàng và thanh toán tại cửa hàng</strong> (hóa đơn POS · MBS / Tiền mặt / Chuyển khoản theo PT POS đã hỗ trợ)</td></tr>
+</tbody>
+</table>
+
+<h3>Không thuộc scope — New Feature (báo giá riêng)</h3>
+<p class="lead lead--compact">Các hạng mục dưới đây <strong>không nằm trong phạm vi</strong> báo giá mobile end-user. Khi REVA cần triển khai, Linm xếp vào scope <strong>New Feature</strong> và <strong>báo giá riêng</strong> trước kick-off.</p>
+<table class="deliver-table quote-table">
+<thead><tr><th>Hạng mục</th><th>Ghi chú</th></tr></thead>
+<tbody>
+<tr><td><strong>Cổng thanh toán online</strong></td><td>Thanh toán trực tuyến trên mobile (MoMo · VNPay · merchant gateway · …) — ngoài luồng <strong>thanh toán tại POS</strong> đã nêu</td></tr>
+<tr><td><strong>Push notification</strong></td><td>Thông báo đẩy (FCM · APNs) — cấu hình store · certificate · campaign</td></tr>
+<tr><td><strong>Tích hợp bên thứ 3 khác</strong></td><td>API / hệ thống ngoài phạm vi parity Web App + đẩy đơn POS — trao đổi báo giá theo từng luồng</td></tr>
+</tbody>
+</table>
+
+<div class="quote-table-group quote-table-group--compact">
+<table class="deliver-table quote-table">
+<thead><tr><th>Nền tảng / hạng mục</th><th>Phạm vi — Mobile app REVA (end-user)</th><th>Giá (tr)</th></tr></thead>
+<tbody>
+<tr><td><strong>Android</strong></td><td>App REVA native · hội viên · điểm · bảng kê · phân hệ end-user (admin + page) · deeplink · parity Web REVA</td><td class="price-col"><strong>2.000 USD</strong><br><small>(tương đương ~40–52 tr)</small></td></tr>
+<tr><td><strong>iOS</strong></td><td>Tương đương Android · app REVA end-user · TestFlight / App Store</td><td class="price-col"><strong>2.000 USD</strong><br><small>(tương đương ~40–52 tr)</small></td></tr>
+<tr><td><strong>Phân hệ end-user</strong><br><small>admin + page khách</small></td><td>Gói phân hệ trên mobile — <strong>parity Web App</strong>: <strong>admin</strong> (thiết lập event · catalog · layout · deeplink) + <strong>page end-user</strong> (xem event · catalog · giỏ · đặt mua)</td><td class="price-col"><strong>1.000 USD</strong><br><small>(tương đương ~20–26 tr)</small></td></tr>
+<tr class="total-row"><td colspan="2"><strong>Mobile app REVA · Android + iOS + phân hệ end-user</strong> · triển khai <strong>08 – 10/2026</strong></td><td class="price-col"><strong>5.000 USD</strong><br><small>(tương đương ~100–130 tr)</small></td></tr>
+</tbody>
+</table>
+<div class="panel-note"><strong>Điều khoản giá Android / iOS / phân hệ end-user:</strong> Giá chính thức sẽ được <strong>quyết định tại thời điểm ký kết hợp đồng thực hiện</strong>, căn cứ theo <strong>chi phí dự kiến</strong> nêu ở bảng trên (quy đổi VND theo tỷ giá tại thời điểm ký). <strong>Phân hệ end-user</strong> gồm đủ <strong>admin</strong> và <strong>page khách</strong> như Web App — luồng đặt mua theo sự kiện → POS dùng chung BFF/API với Web. Hạng mục <strong>không thuộc scope</strong> (bảng New Feature) — phát triển thêm thuộc scope <strong>New Feature</strong>, <strong>báo giá riêng</strong>. Bảng giá mang tính tham chiếu — chưa gộp vào giá trị HĐ cốt lõi 290 tr.</div>
+</div>
+
+<h2>3 · Hệ thống thuộc hạng mục khác</h2>
+<div class="subsystem-grid">
+  <div class="subsystem-card">
+    <h3>Hệ thống MoZa</h3>
+    <div class="price">200 tr</div>
+    <p class="note"><strong>+ điều khoản cổ phần:</strong> <strong>15%</strong> hoặc tương đương <strong>100 tr</strong><br><em>(một trong hai — nếu không chọn cổ phần thì thanh toán bù 100 triệu VND)</em></p>
+  </div>
+  <div class="subsystem-card">
+    <h3>Hệ thống Thợ</h3>
+    <div class="price">150 tr</div>
+    <p class="note"><strong>+ điều khoản cổ phần:</strong> <strong>15%</strong> hoặc tương đương <strong>100 tr</strong><br><em>(một trong hai — nếu không chọn cổ phần thì thanh toán bù 100 triệu VND)</em></p>
+  </div>
+</div>
+
+</div>
+
+<div class="doc-print-sheet">
+
+<h2>Lộ trình thanh toán (10 · 20 · 20 · 20 · 20 · 10)</h2>
+<p class="lead">Để đảm bảo tiến độ dự án, lộ trình theo công thức <strong>10 · 20 · 20 · 20 · 20 · 10</strong> — <strong>06 đợt</strong> trên <strong>giá trị HĐ của từng dự án</strong>. <strong>Dữ liệu 2023–2025</strong> và <strong>phân hệ ERP</strong> là <strong>hai dự án phần mềm riêng</strong> — <em>không gộp tính % chung trên tổng 290 tr</em>. <strong>Hạng mục thưởng</strong> (100 tr tối thiểu) <strong>tách riêng</strong>, thanh toán tại mốc nghiệm thu BC kế toán (<strong>31/08/2026</strong>) và BC tập đoàn (<strong>05/01/2027</strong>). <strong>Điều khoản thanh toán, nghiệm thu, xử lý lỗi và thanh lý:</strong> <a href="#dieu-khoan">Tab 6</a>.</p>
+
+<div class="section-block payment-project section-block--surface section-block--spaced">
+<h3>Dự án 1 · Dữ liệu 2023–2025 <span class="payment-project-val">(150 tr · 10·20×4·10)</span></h3>
+<div class="payment-milestone">
+  <div class="pct">10%</div>
+  <div>
+    <strong>Thanh toán 1 — Chốt báo giá &amp; đặt cọc hệ thống</strong>
+    <div class="when">Dự kiến <strong>05/07/2026</strong> · ký thỏa thuận / hợp đồng triển khai · đặt cọc khởi động dự án</div>
+  </div>
+</div>
+<div class="payment-milestone">
+  <div class="pct">20%</div>
+  <div>
+    <strong>Thanh toán 2 — Start dự án · cơ sở hạ tầng dữ liệu 2023–2025</strong>
+    <div class="when">Dự kiến <strong>15/07/2026</strong> · Linm cung cấp hạ tầng vận hành — UI login trên subdomain <a href="https://reva-erp.linm-soft.com/" target="_blank" rel="noopener noreferrer"><strong>reva-erp.linm-soft.com</strong></a></div>
+  </div>
+</div>
+<div class="payment-milestone">
+  <div class="pct">20%</div>
+  <div>
+    <strong>Thanh toán 3 — Màn hình nhập liệu · import Excel · công thức chi phí FM02-A1 Eratown</strong>
+    <div class="when">Dự kiến <strong>20/07/2026</strong> · hoàn thành màn hình nhập liệu chứng từ · chốt số liệu import Excel (danh mục, sao kê, phiếu nhập hàng) · công thức tính chi phí &amp; phân bổ chi phí trên <strong>FM02-A1 Eratown</strong></div>
+  </div>
+</div>
+<div class="payment-milestone">
+  <div class="pct">20%</div>
+  <div>
+    <strong>Thanh toán 4 — Kết nối POS API &amp; báo cáo FM02-A1 Eratown</strong>
+    <div class="when">Dự kiến <strong>31/07/2026</strong> · POS API dữ liệu 2023–2025 · phiếu nhập mua, hóa đơn, thu/chi tiền mặt, ngân hàng–sao kê (Excel) · báo cáo P&amp;L, lợi nhuận, chi phí &amp; quản trị</div>
+  </div>
+</div>
+<div class="payment-milestone">
+  <div class="pct">20%</div>
+  <div>
+    <strong>Thanh toán 5 — Chốt số liệu &amp; báo cáo 11 cửa hàng còn lại</strong>
+    <div class="when">Dự kiến <strong>15/08/2026</strong> · theo đầu mục chi phí &amp; công thức phân bổ tương tự <strong>FM02-A1 Eratown</strong></div>
+  </div>
+</div>
+<div class="payment-milestone">
+  <div class="pct">10%</div>
+  <div>
+    <strong>Thanh toán 6 — Thanh toán phần còn lại</strong>
+    <div class="when">Dự kiến <strong>31/08/2026</strong> · NT dữ liệu · <em>bảo hành theo mốc ERP</em> (<a href="#bao-tri">Tab 5</a>)</div>
+  </div>
+</div>
+</div>
+
+<div class="section-block payment-project section-block--surface">
+<h3>Dự án 2 · Phân hệ ERP (KT · BH · MH · Kho · HR · Lương) <span class="payment-project-val">(140 tr + thưởng tối thiểu · 10·20×4·10)</span></h3>
+<div class="payment-milestone">
+  <div class="pct">10%</div>
+  <div>
+    <strong>Thanh toán 1 — Chốt báo giá &amp; đặt cọc hệ thống</strong>
+    <div class="when">Dự kiến <strong>05/07/2026</strong> · ký thỏa thuận / hợp đồng triển khai · đặt cọc khởi động phân hệ ERP</div>
+  </div>
+</div>
+<div class="payment-milestone">
+  <div class="pct">20%</div>
+  <div>
+    <strong>Thanh toán 2 — Start dự án · cơ sở hạ tầng vận hành 2026</strong>
+    <div class="when">Dự kiến <strong>01/08/2026</strong> · Linm cung cấp hạ tầng vận hành — UI login trên subdomain <a href="https://reva-erp.linm-soft.com/" target="_blank" rel="noopener noreferrer"><strong>reva-erp.linm-soft.com</strong></a></div>
+  </div>
+</div>
+<div class="payment-milestone">
+  <div class="pct">20%</div>
+  <div>
+    <strong>Thanh toán 3 — Nhập liệu kế toán · API 2026 · công thức chi phí (kế thừa Dự án 1)</strong>
+    <div class="when">Dự kiến <strong>15/08/2026</strong> · hoàn thành màn hình nhập liệu kế toán · kết nối API dữ liệu 2026 · công thức tính chi phí &amp; phân bổ chi phí (kế thừa từ Dự án 1)</div>
+  </div>
+</div>
+<div class="payment-milestone">
+  <div class="pct">20%</div>
+  <div>
+    <strong>Thanh toán 4 — Nghiệm thu tổng thể phân hệ kế toán</strong>
+    <div class="when">Dự kiến <strong>31/08/2026</strong> · hóa đơn, thu/chi tiền mặt, ngân hàng–sao kê (Excel) · báo cáo P&amp;L, lợi nhuận, chi phí &amp; quản trị</div>
+  </div>
+</div>
+<div class="payment-milestone">
+  <div class="pct">20%</div>
+  <div>
+    <strong>Thanh toán 5 — API đối soát ngân hàng · kết chuyển cuối năm 2026</strong>
+    <div class="when">Dự kiến <strong>05/01/2027</strong> · kết nối API đối soát ngân hàng (API Ngân hàng, VietQR) · kết chuyển cuối năm 2026</div>
+  </div>
+</div>
+<div class="payment-milestone">
+  <div class="pct">10%</div>
+  <div>
+    <strong>Thanh toán 6 — Thanh toán phần còn lại</strong>
+    <div class="when">Sau NT đợt 5 · bảo hành 24 tháng theo mốc ERP (~<strong>08/2028</strong>) · <a href="#bao-tri">Tab 5</a></div>
+  </div>
+</div>
+</div>
+
+<div class="section-block payment-project payment-bonus section-block--surface section-block--spaced">
+<h3>Hạng mục thưởng <span class="payment-project-val">(tách từ giá trị HĐ · không gộp 10·20×4·10)</span></h3>
+<div class="payment-milestone">
+  <div class="pct">50 tr</div>
+  <div>
+    <strong>Thưởng BC kế toán — Release hệ thống báo cáo kế toán</strong>
+    <div class="when">Dự kiến <strong>31/08/2026</strong> · Nghiệm thu BC kế toán đúng hạn</div>
+  </div>
+</div>
+<div class="payment-milestone">
+  <div class="pct">50 tr</div>
+  <div>
+    <strong>Thưởng BC tập đoàn — Release hệ thống báo cáo tập đoàn</strong>
+    <div class="when">Dự kiến <strong>05/01/2027</strong> · Nghiệm thu BC tập đoàn / ban quản trị đúng hạn</div>
+  </div>
+</div>
+</div>
+</div>
+
+<p class="doc-footer"><strong>Linm Soft</strong> · Báo giá có hiệu lực theo thỏa thuận triển khai với REVA</p>
+</article>
+
+<!-- TAB 2 -->
+<article id="bao-gia-panel-phan-he" class="tien-do-doc bao-gia-doc tien-do-page tien-do-panel doc-print-sheet" data-tien-do-panel="phan-he" role="tabpanel" hidden>
+
+<p class="print-tab-label" aria-hidden="true">Phần 2 · Danh mục · Chứng từ · Báo cáo</p>
+<div class="doc-header">
+  <p class="kicker">Tham chiếu ERP Linm · map route MFE</p>
+  <h1 class="doc-title">Danh mục · Chứng từ · Báo cáo theo phân hệ</h1>
+  <p class="doc-meta">
+    Map phạm vi báo giá (Tab 1) với <strong>module · route ERP Linm</strong> — SSOT mã nguồn <code>ERP-MFE</code> · chi tiết pilot &amp; nghiệm thu: <a href="../tien-do/phase1-fm02.html#nghiem-thu">Chi tiết nghiệm thu FM02-A1 Eratown</a>
+  </p>
+</div>
+
+<p class="lead">Bảng dưới đối chiếu <strong>danh mục · chứng từ · báo cáo</strong> trong phạm vi HĐ với route triển khai trên microfrontend ERP (Finance · Sales · Master · Analytics · Supply · HR · Reva Report). Cột <strong>Gói</strong> map với hạng mục Tab 1.</p>
+
+<div class="section-block erp-outcome">
+<h3>Phân hệ ERP · Kết quả kỳ vọng (từ 2026)</h3>
+<p class="lead lead--compact"><strong>Dữ liệu 2023–2025</strong> (Dự án 1): nhập liệu, đối soát và báo cáo quản trị lịch sử. <strong>Vận hành từ 2026</strong> (Dự án 2): báo cáo <strong>cập nhật theo thời gian thực</strong>, cùng bộ chỉ tiêu với giai đoạn trước, bổ sung chọn kỳ <strong>ngày · tuần · tháng · quý · năm</strong>, báo cáo thuế, bảng Kế hoạch — Thực đạt, Dòng tiền và Dashboard. Toàn bộ sổ kế toán, kho, bán hàng, mua hàng được tổng hợp thành bộ báo cáo kế toán — quản trị cuối cùng.</p>
+</div>
+
+<div class="section-block erp-platform">
+<h3>Nền tảng REVA · POS &amp; Mua hàng</h3>
+<table class="deliver-table quote-table">
+<thead><tr><th>Thành phần</th><th>Cách tích hợp</th><th>Phạm vi HĐ</th></tr></thead>
+<tbody>
+<tr><td><strong>Nền tảng REVA</strong></td><td>Một cổng thống nhất: ERP · POS · Mua hàng &amp; Kho · các phân hệ khác — đã trao đổi, IT REVA (anh Tuấn) xác nhận</td><td>Tab 1 · mục 2b</td></tr>
+<tr class="bonus-row"><td><strong>Shell link</strong> (<code>@linm/shell-url</code>)</td><td>POS / app Foodmart mở qua menu shell trên cùng domain REVA — iframe <code>Linm.Web.ShellUrl</code>; không migrate MFE con</td><td>Tab 1 · mục 2c · miễn phí</td></tr>
+<tr><td><strong>POS</strong></td><td>Từ 2026: <strong>liên kết trực tiếp</strong> ERP trên cùng cổng REVA (cùng tên miền), không nhúng POS vào giao diện ERP · 2023–2025: đồng bộ Hóa đơn · Phiếu thu · Phiếu chi qua API</td><td>Dữ liệu + ERP</td></tr>
+<tr><td><strong>Website mua hàng REVA</strong></td><td>Chuyển sang <strong>Phân hệ Mua hàng</strong> trên ERP; Linm hỗ trợ chuyển đổi chứng từ mua hàng cũ</td><td>ERP · dự kiến 08/2026</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2><span class="phan-he-tag">Master</span> Danh mục dùng chung</h2>
+<div class="quote-table-group">
+<table class="deliver-table quote-table">
+<thead><tr><th>Danh mục</th><th>Quy mô</th><th>Master set / module</th><th>MFE · Route ERP</th><th>Gói</th></tr></thead>
+<tbody>
+<tr><td>NCC + nhóm L1/L2</td><td>575 NCC · 4+6 nhóm · mã <code>xxx.yyy.zzz</code></td><td><code>reva-ncc-hierarchy</code></td><td class="col-route">Master · /dm/doi-tuong</td><td>Dữ liệu 2023–25</td></tr>
+<tr><td>Khách hàng</td><td>~34.300 + <code>FM_KHACHLE</code></td><td><code>reva-partners</code></td><td class="col-route">Master · /dm/doi-tuong</td><td>Dữ liệu 2023–25</td></tr>
+<tr><td>Vật tư / sản phẩm</td><td>~31.700 · 60 ĐVT</td><td><code>reva-materials</code></td><td class="col-route">Master · /dm/vat-tu</td><td>Dữ liệu 2023–25</td></tr>
+<tr><td>Nhân viên</td><td>45 nhân viên · mã hệ thống <code>IMP.00001</code>…<code>IMP.00045</code> <small>(<code>IMP.NNNNN</code>)</small> · «Mã cũ» = mã FM gốc · 7 chi nhánh <em>(5 người FM02)</em></td><td><code>reva-employees</code></td><td class="col-route">HR · /ns/nhan-vien</td><td>Dữ liệu + ERP</td></tr>
+<tr><td>Phòng ban</td><td>Theo cơ cấu REVA</td><td>Master catalog</td><td class="col-route">Master · /dm/phong-ban</td><td>Dữ liệu + ERP</td></tr>
+<tr><td>Quy tắc định khoản</td><td>129 nghiệp vụ</td><td><code>reva-posting-reason-rules</code></td><td class="col-route">Master · /dm/dinh-khoan-nghiep-vu</td><td>Dữ liệu 2023–25</td></tr>
+<tr><td>Tài khoản kế toán</td><td>TT200 + TT99</td><td>seed accounts</td><td class="col-route">Master · /dm/tai-khoan</td><td>Dữ liệu 2023–25</td></tr>
+<tr><td>Kênh thanh toán</td><td>18 kênh</td><td>P1.2 mapping</td><td class="col-route">Finance · API <code>/master/payment-channels</code></td><td>Dữ liệu 2023–25</td></tr>
+<tr><td>Đơn vị cơ sở (12 CH)</td><td>FM02…FM12</td><td><code>reva-warehouses</code></td><td class="col-route">Master · /dm/don-vi-co-so</td><td>Dữ liệu 2023–25</td></tr>
+<tr><td>Kho (danh mục)</td><td>12 cửa hàng FM</td><td>warehouse seed</td><td class="col-route">Master · /dm/danh-muc-kho</td><td>Dữ liệu 2023–25</td></tr>
+</tbody>
+</table>
+<div class="panel-note"><strong>Danh mục nhân viên — quy ước mã (đã triển khai):</strong> <strong>Mã hệ thống</strong> <code>code</code> = <code>IMP.NNNNN</code> (tiền tố <code>IMP.</code> + 5 chữ số thứ tự, vd. <code>IMP.00001</code> … <code>IMP.00045</code>) · <strong>Mã cũ</strong> <code>legacyCode</code> = mã nhân viên FM gốc (cột «Mã cũ» trên form) · gán chi nhánh qua <code>branchCode</code> / <code>companyCode</code> · bộ seed <code>reva-employees</code>.</div>
+</div>
+
+<h2><span class="phan-he-tag">POS</span> Chứng từ &amp; đồng bộ POS → ERP</h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>Chứng từ</th><th>MFE · Route ERP</th><th>Connector / API</th><th>Gói</th></tr></thead>
+<tbody>
+<tr>
+  <td><strong>Hóa đơn bán</strong></td>
+  <td class="col-route">Sales · /bh/hoa-don</td>
+  <td><code>reva-fm-hoa-don</code> · POS API</td>
+  <td>Dữ liệu + ERP</td>
+</tr>
+<tr>
+  <td><strong>Phiếu thu</strong></td>
+  <td class="col-route">Finance · /kt/pt</td>
+  <td><code>reva-fm-phieu-thu</code></td>
+  <td>Dữ liệu + ERP</td>
+</tr>
+<tr>
+  <td><strong>Phiếu chi</strong></td>
+  <td class="col-route">Finance · /kt/pc</td>
+  <td><code>reva-fm-phieu-chi</code></td>
+  <td>Dữ liệu + ERP</td>
+</tr>
+<tr>
+  <td><strong>Phiếu nhập mua</strong></td>
+  <td class="col-route">Finance · /kt/pnm</td>
+  <td><code>reva-purchase-invoices-2025-12</code></td>
+  <td>Dữ liệu + ERP</td>
+</tr>
+<tr>
+  <td><strong>Báo có / báo nợ NH</strong></td>
+  <td class="col-route">Finance · /kt/pt · /kt/pc <small>(kênh Ngân hàng)</small></td>
+  <td>Định khoản BC/BN · import/API sao kê khi REVA cung cấp</td>
+  <td>Dữ liệu 2023–25</td>
+</tr>
+<tr>
+  <td><strong>Ủy nhiệm chi (UNC)</strong></td>
+  <td class="col-route">Finance · /kt/pc <small>(kênh NH · BN1)</small></td>
+  <td>Phiếu chi ngân hàng — TT NCC · nộp BHXH/thuế · import sao kê <code>UNC-*</code></td>
+  <td>Dữ liệu 2023–25</td>
+</tr>
+</tbody>
+</table>
+
+<h2><span class="phan-he-tag">Finance</span> Kế toán — Sổ · kết chuyển · cuối kỳ</h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>Loại</th><th>Tên</th><th>MFE · Route ERP</th><th>Gói</th></tr></thead>
+<tbody>
+<tr><td>Sổ cái</td><td>Sổ cái · Sổ chi tiết TK · CDPS</td><td class="col-route">Finance · /kt/so-cai · /kt/so-chi-tiet · /kt/cdps</td><td>ERP</td></tr>
+<tr><td>Sổ quỹ</td><td>Sổ quỹ · NK thu · NK chi</td><td class="col-route">Finance · /kt/so-quy · /kt/so-nhat-ky-thu-tien · /kt/so-nhat-ky-chi-tien</td><td>ERP</td></tr>
+<tr><td>Công nợ</td><td>Bảng cân đối công nợ</td><td class="col-route">Finance · /kt/cong-no</td><td>ERP</td></tr>
+<tr><td>Cuối kỳ</td><td>Kết chuyển · Phân bổ · Đóng sổ · Khóa kỳ</td><td class="col-route">Finance · /kt/ket-chuyen-cuoi-ky · /kt/phan-bo-cuoi-ky · /kt/dong-so · /kt/ky</td><td>ERP · NT 05/01/2027</td></tr>
+<tr><td>Giá vốn</td><td>Tính giá vốn · Số dư vật tư</td><td class="col-route">Finance · /kt/tinh-gia-von · /kt/so-du-vat-tu</td><td>ERP</td></tr>
+</tbody>
+</table>
+
+<h2><span class="phan-he-tag">Sales</span> Bán hàng</h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>Loại</th><th>Tên</th><th>MFE · Route ERP</th><th>Gói</th></tr></thead>
+<tbody>
+<tr><td>Chứng từ</td><td>Hóa đơn bán</td><td class="col-route">Sales · /bh/hoa-don</td><td>Dữ liệu + ERP</td></tr>
+<tr><td>Chứng từ</td><td>Đơn hàng · Trả hàng · Xuất hàng</td><td class="col-route">Sales · /bh/dh · /bh/tra-hang · /bh/xuat-hang</td><td>ERP</td></tr>
+</tbody>
+</table>
+
+<h2><span class="phan-he-tag">Supply</span> Mua hàng <small>(release 08/2026)</small></h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>Loại</th><th>Tên</th><th>MFE · Route ERP</th><th>Gói</th></tr></thead>
+<tbody>
+<tr><td>Chứng từ KT</td><td>Phiếu nhập mua (hạch toán)</td><td class="col-route">Finance · /kt/pnm</td><td>Dữ liệu + ERP</td></tr>
+<tr><td>Quy trình MH</td><td>Yêu cầu mua · Đề nghị mua · Nhận hàng</td><td class="col-route">Supply · /mh/ycmh · /mh/ddmh · /mh/nhan-hang</td><td>ERP (08/2026)</td></tr>
+<tr><td>Danh mục</td><td>NCC · nhóm đối tượng</td><td class="col-route">Master · /dm/doi-tuong · /dm/nhom-doi-tuong</td><td>Dữ liệu 2023–25</td></tr>
+</tbody>
+</table>
+
+<h2><span class="phan-he-tag">Inventory</span> Kho <small>(Supply MFE · release 08/2026)</small></h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>Loại</th><th>Tên</th><th>MFE · Route ERP</th><th>Gói</th></tr></thead>
+<tbody>
+<tr><td>Chứng từ</td><td>Phiếu nhập kho · Phiếu xuất kho</td><td class="col-route">Supply · /kho/pnk · /kho/pxk</td><td>ERP</td></tr>
+<tr><td>Chứng từ</td><td>Kiểm kho · Điều chuyển · Điều chỉnh</td><td class="col-route">Supply · /kho/kiem-kho · /kho/dieu-chuyen · /kho/dc</td><td>ERP</td></tr>
+<tr><td>Tra cứu</td><td>Tồn kho · Thẻ kho</td><td class="col-route">Supply · /kho/ton-kho · /kho/the-kho</td><td>ERP</td></tr>
+<tr><td>BC</td><td>Nhập — xuất — tồn · Tồn kho cụ thể</td><td class="col-route">Analytics · /baocao/nxt · /baocao/ton-kho-cu</td><td>ERP</td></tr>
+</tbody>
+</table>
+
+<h2><span class="phan-he-tag">HR</span> Nhân sự &amp; Lương <small>(release 08/2026)</small></h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>Loại</th><th>Tên</th><th>MFE · Route ERP</th><th>Gói</th></tr></thead>
+<tbody>
+<tr><td>Danh mục</td><td>Nhân viên · mã <code>IMP.NNNNN</code> · «Mã cũ» (<code>legacyCode</code>) · Nhóm NV · Chấm công</td><td class="col-route">HR · /ns/nhan-vien · /ns/nhom-nhan-vien · /ns/cham-cong</td><td>Dữ liệu + ERP</td></tr>
+<tr><td>Chứng từ</td><td>Bảng lương</td><td class="col-route">HR · /ns/bang-luong</td><td>ERP (08/2026)</td></tr>
+<tr><td>BC</td><td>Báo cáo lương · BHXH</td><td class="col-route">Analytics · /baocao/luong · HR · /ns/bhxh</td><td>ERP (08/2026)</td></tr>
+</tbody>
+</table>
+
+<h2><span class="phan-he-tag">Analytics</span> Báo cáo Tài chính &amp; Quản trị (ERP · từ 2026)</h2>
+<p class="lead lead--compact">Theo Phụ lục HĐ: P&amp;L cửa hàng, Doanh thu · Chi phí · Lợi nhuận, So sánh chi phí chuẩn, báo cáo tài chính B01–B03 — phân hệ <strong>Báo cáo ERP</strong> (<code>/baocao/*</code>). <strong>Từ 2026:</strong> báo cáo cập nhật theo thời gian thực; chọn kỳ <strong>ngày · tuần · tháng · quý · năm</strong>; bổ sung báo cáo thuế, Kế hoạch — Thực đạt, Dòng tiền (xem Tab 1 · mục 2a).</p>
+
+<h3>1. Sổ cái &amp; kế toán</h3>
+<table class="deliver-table quote-table">
+<thead><tr><th>Báo cáo</th><th>Route</th><th>Map Phụ lục</th><th>Gói</th></tr></thead>
+<tbody>
+<tr><td>Sổ cái (view báo cáo)</td><td class="col-route">/baocao/so-cai</td><td>Sổ cái tổng hợp</td><td>ERP</td></tr>
+<tr><td>Nhật ký chung từ</td><td class="col-route">/baocao/nhat-ky-chung-tu</td><td>NK chứng từ</td><td>ERP</td></tr>
+</tbody>
+</table>
+
+<h3>2. Sổ quỹ (thu / chi)</h3>
+<table class="deliver-table quote-table">
+<thead><tr><th>Báo cáo</th><th>Route</th><th>Map Phụ lục</th><th>Gói</th></tr></thead>
+<tbody>
+<tr><td>BC thu/chi</td><td class="col-route">/baocao/thu-chi</td><td>Bảng kê thu chi</td><td>ERP · Dữ liệu</td></tr>
+</tbody>
+</table>
+
+<h3>3. DT · CP · Lãi lỗ · BC tài chính</h3>
+<table class="deliver-table quote-table">
+<thead><tr><th>Báo cáo</th><th>Route</th><th>Map Phụ lục GĐ02</th><th>Gói</th></tr></thead>
+<tbody>
+<tr><td>Doanh thu</td><td class="col-route">/baocao/doanh-thu</td><td>Phân tích DT</td><td>Dữ liệu + ERP</td></tr>
+<tr><td>Chi phí</td><td class="col-route">/baocao/chi-phi</td><td>Benchmark CP</td><td>ERP</td></tr>
+<tr><td>Bán hàng</td><td class="col-route">/baocao/ban-hang</td><td>DT cửa hàng</td><td>Dữ liệu + ERP</td></tr>
+<tr><td>B02 — KQ HĐKD (P&amp;L)</td><td class="col-route">/baocao/b02-dn</td><td>P&amp;L / Store P&amp;L</td><td>ERP + thưởng KT</td></tr>
+<tr><td>B01 · B03</td><td class="col-route">/baocao/b01-dn · /baocao/b03-dn</td><td>BC Tài chính</td><td>ERP + thưởng KT</td></tr>
+<tr><td>Phân tích KPI</td><td class="col-route">/baocao/phan-tich</td><td>Chỉ số quản trị</td><td>ERP</td></tr>
+<tr><td>Tổng quan tài chính</td><td class="col-route">/baocao/tong-quan</td><td>Dashboard quản trị</td><td>ERP</td></tr>
+</tbody>
+</table>
+
+<h2><span class="phan-he-tag">Reva</span> Báo cáo tập đoàn &amp; ban quản trị</h2>
+<p class="lead lead--compact">Module <strong>Linm.Web.Reva.Report</strong> — ma trận 12 cửa hàng · BC quản trị 2023–2025 (tham chiếu <a href="../tien-do/phase1-fm02.html#nghiem-thu">tiến độ FM02</a>).</p>
+<table class="deliver-table quote-table">
+<thead><tr><th>Báo cáo</th><th>Route</th><th>Map nghiệm thu</th><th>Gói</th></tr></thead>
+<tbody>
+<tr><td>Doanh thu tập đoàn</td><td class="col-route">/reva/bao-cao/doanh-thu</td><td>Ma trận 12 CH</td><td>Thưởng tập đoàn</td></tr>
+<tr><td>Thu/chi tập đoàn</td><td class="col-route">/reva/bao-cao/thu-chi</td><td>Tổng hợp quỹ</td><td>Thưởng tập đoàn</td></tr>
+<tr><td><strong>Ban quản trị</strong></td><td class="col-route">/reva/bao-cao/ban-quan-tri</td><td>BC Quản trị 2023–2025</td><td>Dữ liệu + thưởng</td></tr>
+</tbody>
+</table>
+
+<h2><span class="phan-he-tag">API</span> Kết nối &amp; đồng bộ</h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>Connector / API</th><th>Chứng từ / luồng</th><th>Source (bàn giao REVA)</th><th>Chi phí</th></tr></thead>
+<tbody>
+<tr><td><code>reva-fm-hoa-don</code></td><td>POS → Hóa đơn ERP</td><td><code>Linm.Reva.WebService/Jobs</code></td><td><span class="badge done">Miễn phí (dự án)</span></td></tr>
+<tr><td><code>reva-fm-phieu-thu</code> · <code>reva-fm-phieu-chi</code></td><td>POS → PT/PC</td><td><code>RevaFmVoucherApiClient</code></td><td><span class="badge done">Miễn phí (dự án)</span></td></tr>
+<tr><td>Membership API</td><td>REVA MBS → Linm BFF</td><td>Map sang ERP</td><td><span class="badge done">Miễn phí (dự án)</span></td></tr>
+<tr><td>Ngân hàng — pull</td><td>Sao kê · đối soát BC/BN</td><td>API REVA cung cấp</td><td>2 tr / API</td></tr>
+<tr><td>Ngân hàng — push</td><td>Lịch chuyển khoản</td><td>API REVA cung cấp</td><td>3 tr / API</td></tr>
+<tr><td>API mới sau dự án</td><td>Bên thứ 3 · chưa kết nối tại REVA</td><td>—</td><td>5 tr / API (dự kiến)</td></tr>
+</tbody>
+</table>
+<p class="lead lead--compact"><a href="#bao-gia-panel-hang-muc">Tab 1 · mục 4</a> — danh mục API REVA (6 trường) · miễn phí khi <strong>đã kết nối realtime</strong> · có phí khi <strong>chưa hoạt động chính thức</strong>.</p>
+
+<p class="doc-footer"><strong>Linm Soft</strong></p>
+</article>
+
+<!-- TAB 3 -->
+<article id="bao-gia-panel-timeline" class="tien-do-doc bao-gia-doc tien-do-page tien-do-panel doc-print-sheet" data-tien-do-panel="timeline" role="tabpanel" hidden>
+
+<p class="print-tab-label" aria-hidden="true">Phần 3 · Timeline Release</p>
+<div class="doc-header">
+  <p class="kicker">Lộ trình release &amp; nghiệm thu</p>
+  <h1 class="doc-title">Timeline Release</h1>
+  <p class="doc-meta">Mốc cam kết triển khai gắn với báo giá — <strong>tách theo dự án</strong> · mỗi dự án có timeline release, nghiệm thu và lộ trình thanh toán <strong>10 · 20 · 20 · 20 · 20 · 10</strong> riêng</p>
+</div>
+
+<p class="lead">Hai dự án phần mềm độc lập: <strong>Dự án 1 · Dữ liệu 2023–2025</strong> (150 tr) và <strong>Dự án 2 · Phân hệ ERP</strong> (140 tr + thưởng tối thiểu). Chi tiết tiến độ pilot: <a href="../tien-do/phase1-fm02.html" class="hero-progress-link">báo cáo FM02-A1 Eratown</a>.</p>
+
+<!-- Dự án 1 -->
+<div class="timeline-project-wrap">
+  <div class="timeline-project timeline-project--release">
+    <div class="timeline-project-head">
+      <h2>Dự án 1 · Dữ liệu 2023–2025</h2>
+      <span class="timeline-project-val">150 tr · 10·20×4·10</span>
+    </div>
+
+    <h3>Release &amp; nghiệm thu · Thanh toán theo timeline</h3>
+    <div class="timeline timeline-release">
+      <div class="tl-item">
+        <div class="tl-date">05/07/2026</div>
+        <h4>Chốt báo giá &amp; đặt cọc · Thanh toán 10% (đợt 1)</h4>
+        <p>Ký thỏa thuận / hợp đồng triển khai · đặt cọc khởi động dự án dữ liệu.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">15/07/2026</div>
+        <h4>Start dự án · hạ tầng 2023–2025 · Thanh toán 20% (đợt 2)</h4>
+        <p>Kick-off chuẩn hóa dữ liệu · Linm cung cấp UI login trên <strong>reva-erp.linm-soft.com</strong>.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">20/07/2026</div>
+        <h4>Màn hình nhập liệu · import Excel · công thức chi phí FM02 · Thanh toán 20% (đợt 3)</h4>
+        <p>Chốt import danh mục, sao kê, phiếu nhập hàng · công thức tính &amp; phân bổ chi phí <strong>FM02-A1 Eratown</strong>.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">31/07/2026</div>
+        <h4>POS API &amp; báo cáo FM02-A1 Eratown · Thanh toán 20% (đợt 4)</h4>
+        <p>Kết nối POS API 2023–2025 · PNM, HĐ, PT/PC, sao kê NH · báo cáo P&amp;L, lợi nhuận, chi phí &amp; quản trị.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">15/08/2026</div>
+        <h4>Chốt số liệu &amp; báo cáo 11 CH còn lại · Thanh toán 20% (đợt 5)</h4>
+        <p>Báo cáo quản trị 2023–2025 · mở rộng đủ 12 cửa hàng · công thức phân bổ tương tự Eratown.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">31/08/2026</div>
+        <h4>Thanh toán 10% còn lại (đợt 6)</h4>
+        <p>Kết thúc giai đoạn thanh toán dự án dữ liệu theo timeline.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="timeline-payment-section" aria-labelledby="tl-pay-p1-title">
+    <h3 id="tl-pay-p1-title">Bảng thanh toán (10 · 20 · 20 · 20 · 20 · 10)</h3>
+    <div class="quote-table-group quote-table-group--compact">
+    <table class="deliver-table quote-table">
+    <thead><tr><th>Đợt</th><th>Tỷ lệ</th><th>Mốc / NT</th><th>Ngày dự kiến</th><th>Ghi chú</th></tr></thead>
+    <tbody>
+    <tr><td>1</td><td><strong>10%</strong></td><td>Chốt báo giá &amp; đặt cọc hệ thống</td><td>05/07/2026</td><td>Đặt cọc khởi động</td></tr>
+    <tr><td>2</td><td><strong>20%</strong></td><td>Start dự án · hạ tầng 2023–2025</td><td>15/07/2026</td><td><strong>reva-erp.linm-soft.com</strong></td></tr>
+    <tr><td>3</td><td><strong>20%</strong></td><td>Nhập liệu · import Excel · công thức chi phí FM02</td><td>20/07/2026</td><td>Danh mục · sao kê · PNM</td></tr>
+    <tr><td>4</td><td><strong>20%</strong></td><td>POS API &amp; báo cáo FM02-A1 Eratown</td><td>31/07/2026</td><td>NT pilot · P&amp;L · quản trị</td></tr>
+    <tr><td>5</td><td><strong>20%</strong></td><td>Chốt số liệu &amp; BC 11 CH còn lại</td><td>15/08/2026</td><td>BC quản trị 2023–2025</td></tr>
+    <tr><td>6</td><td><strong>10%</strong></td><td>Thanh toán phần còn lại</td><td>31/08/2026</td><td>NT dữ liệu · bảo hành theo mốc ERP (<a href="#bao-tri">Tab 5</a>)</td></tr>
+    </tbody>
+    </table>
+    </div>
+  </section>
+</div>
+
+<!-- Dự án 2 -->
+<div class="timeline-project-wrap">
+  <div class="timeline-project timeline-project--release">
+    <div class="timeline-project-head">
+      <h2>Dự án 2 · Phân hệ ERP</h2>
+      <span class="timeline-project-val">140 tr + thưởng tối thiểu · 10·20×4·10</span>
+    </div>
+    <p class="timeline-project-sub">KT · BH · MH · Kho · HR · Lương · Quản lý chi phí</p>
+
+    <h3>Release &amp; nghiệm thu · Thanh toán theo timeline</h3>
+    <div class="timeline timeline-release">
+      <div class="tl-item">
+        <div class="tl-date">05/07/2026</div>
+        <h4>Chốt báo giá &amp; đặt cọc · Thanh toán 10% (đợt 1)</h4>
+        <p>Đặt cọc khởi động phân hệ ERP.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">01/08/2026</div>
+        <h4>Start hệ thống ERP · hạ tầng 2026 · Thanh toán 20% (đợt 2)</h4>
+        <p>Kick-off phân hệ <strong>Kế toán — Tài chính</strong> và <strong>Bán hàng</strong> · UI trên <strong>reva-erp.linm-soft.com</strong>.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">01 – 14/08/2026</div>
+        <h4>Demo · đào tạo nhân sự REVA (Kế toán)</h4>
+        <p>Demo cùng Giám đốc (A Dân) · đào tạo vận hành ERP — hiệu chỉnh nếu phát sinh.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">15/08/2026</div>
+        <h4>Nhập liệu kế toán · API 2026 · công thức chi phí · Thanh toán 20% (đợt 3)</h4>
+        <p>Hoàn thành màn hình nhập liệu · kết nối API 2026 · công thức chi phí (kế thừa Dự án 1).</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">01 – 31/08/2026</div>
+        <h4>Release MH · Lương · Chi phí</h4>
+        <p>Triển khai phân hệ Mua hàng, HR/Lương, quản lý chi phí · rà soát báo cáo ban quản trị.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">31/08/2026</div>
+        <h4>Nghiệm thu tổng thể phân hệ kế toán · Thanh toán 20% (đợt 4)</h4>
+        <p>Nghiệm thu phân hệ KT · BH · báo cáo P&amp;L, lợi nhuận, chi phí &amp; quản trị.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">31/08/2026</div>
+        <h4>Release BC kế toán · Thưởng tối thiểu 50 tr</h4>
+        <p>Nghiệm thu <strong>hệ thống báo cáo kế toán</strong> đúng hạn · hạng mục thưởng tách từ HĐ.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">01/09 – 31/12/2026</div>
+        <h4>Vận hành &amp; chỉnh báo cáo</h4>
+        <p>Theo dõi — chỉnh sửa báo cáo phát sinh trong kỳ.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">05/01/2027</div>
+        <h4>API đối soát NH · kết chuyển 2026 · Thanh toán 20% (đợt 5)</h4>
+        <p>Kết nối API Ngân hàng, VietQR · kết chuyển cuối năm · <strong>thưởng BC tập đoàn tối thiểu 50 tr</strong> (tách từ HĐ).</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">~08/2028</div>
+        <h4>Thanh toán 10% còn lại (đợt 6)</h4>
+        <p>Sau NT đợt 5 · hết bảo hành 24 tháng · mốc bảo hành chung · gồm Dự án 1 · dữ liệu.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="timeline-payment-section" aria-labelledby="tl-pay-p2-title">
+    <h3 id="tl-pay-p2-title">Thanh toán ERP (10 · 20 · 20 · 20 · 20 · 10 · 140 tr)</h3>
+    <div class="quote-table-group quote-table-group--compact">
+    <table class="deliver-table quote-table">
+    <thead><tr><th>Đợt</th><th>Tỷ lệ</th><th>Mốc / NT</th><th>Ngày dự kiến</th><th>Ghi chú</th></tr></thead>
+    <tbody>
+    <tr><td>1</td><td><strong>10%</strong></td><td>Chốt báo giá &amp; đặt cọc hệ thống</td><td>05/07/2026</td><td>Đặt cọc khởi động ERP</td></tr>
+    <tr><td>2</td><td><strong>20%</strong></td><td>Start dự án · hạ tầng 2026</td><td>01/08/2026</td><td><strong>reva-erp.linm-soft.com</strong></td></tr>
+    <tr><td>3</td><td><strong>20%</strong></td><td>Nhập liệu KT · API 2026 · công thức chi phí</td><td>15/08/2026</td><td>Kế thừa Dự án 1</td></tr>
+    <tr><td>4</td><td><strong>20%</strong></td><td>NT tổng thể phân hệ kế toán</td><td>31/08/2026</td><td>KT · BH · P&amp;L · quản trị</td></tr>
+    <tr><td>5</td><td><strong>20%</strong></td><td>API đối soát NH · kết chuyển 2026</td><td>05/01/2027</td><td>API Ngân hàng · VietQR</td></tr>
+    <tr><td>6</td><td><strong>10%</strong></td><td>Thanh toán phần còn lại</td><td>~08/2028</td><td>Sau NT đợt 5 · hết bảo hành 24 tháng · gồm Dự án 1</td></tr>
+    </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section class="timeline-payment-section timeline-payment-section--bonus" aria-labelledby="tl-pay-p2-bonus-title">
+    <h3 id="tl-pay-p2-bonus-title">Hạng mục thưởng (tách từ giá trị HĐ)</h3>
+    <div class="quote-table-group quote-table-group--compact">
+    <table class="deliver-table quote-table">
+    <thead><tr><th>Hạng mục</th><th>Điều kiện NT</th><th>Ngày dự kiến</th><th>Giá tối thiểu</th></tr></thead>
+    <tbody>
+    <tr class="bonus-row"><td><strong>Release BC kế toán</strong></td><td>Nghiệm thu BC kế toán đúng hạn</td><td><strong>31/08/2026</strong></td><td class="price-col"><strong>50 tr</strong></td></tr>
+    <tr class="bonus-row"><td><strong>Release BC tập đoàn</strong></td><td>Nghiệm thu BC tập đoàn / BQT đúng hạn</td><td>05/01/2027</td><td class="price-col"><strong>50 tr</strong></td></tr>
+    </tbody>
+    </table>
+    </div>
+  </section>
+</div>
+
+<h2>Hạng mục song song (dự kiến)</h2>
+<p class="lead lead--sm">Các hạng mục mở rộng — <strong>dự án / HĐ riêng</strong>, không gộp vào 2 dự án trên.</p>
+<table class="deliver-table quote-table">
+<thead><tr><th>Hạng mục</th><th>Thời gian</th><th>Ghi chú</th></tr></thead>
+<tbody>
+<tr><td><strong>Mobile app REVA · Android + iOS + phân hệ end-user</strong></td><td><strong>08 – 10/2026</strong></td><td>2.000 USD / nền tảng + 1.000 USD phân hệ (admin + page) (~100–130 tr) · đẩy đơn sự kiện → POS · New Feature ngoài scope báo giá riêng · giá HĐ tại ký kết · song song MoZa, Thợ</td></tr>
+<tr><td>Hệ thống MoZa</td><td>08 – 10/2026</td><td>200 tr + cổ phần <strong>15%</strong> hoặc tương đương <strong>100 tr</strong></td></tr>
+<tr><td>Hệ thống Thợ</td><td>08 – 10/2026</td><td>150 tr + cổ phần <strong>15%</strong> hoặc tương đương <strong>100 tr</strong></td></tr>
+</tbody>
+</table>
+
+<p class="doc-footer"><strong>Linm Soft</strong></p>
+</article>
+
+<!-- TAB 4 · Release · Hạ tầng · Store -->
+<article id="bao-gia-panel-ban-giao" class="tien-do-doc bao-gia-doc tien-do-page tien-do-panel doc-print-sheet" data-tien-do-panel="ban-giao" role="tabpanel" hidden>
+
+<p class="print-tab-label" aria-hidden="true">Phần 4 · Bàn giao · Hạ tầng · Store</p>
+<div class="doc-header">
+  <p class="kicker">Bàn giao &amp; vận hành</p>
+  <h1 class="doc-title">Release · chuyển giao · hạ tầng · nộp store</h1>
+  <p class="doc-meta">Áp dụng cho <strong>2 dự án ERP + dữ liệu</strong> và hạng mục mở rộng <strong>Mobile app REVA end-user</strong> (Tab 1 · mục 5). Chi tiết tiến độ nghiệm thu: <a href="../tien-do/phase1-fm02.html" class="hero-progress-link">báo cáo FM02-A1 Eratown</a>.</p>
+</div>
+
+<h2>Release &amp; chuyển giao (phân tách quyền)</h2>
+<p class="lead">Linm bàn giao theo <strong>hai nhóm</strong>: lõi ERP (build + tài liệu deploy) và lớp tích hợp REVA (full source POS sync · báo cáo quản trị).</p>
+
+<div class="panel-note"><strong>Phần mềm lõi Linm Soft</strong> thuộc quyền Linm — REVA được <strong>quyền sử dụng vĩnh viễn</strong> bản build bàn giao. <strong>Code tích hợp POS–Linm</strong> (prefix Reva · job sync) thuộc quyền REVA sau thanh toán — bàn giao <strong>toàn bộ mã nguồn</strong>.</div>
+
+<div class="handover-split">
+  <div class="handover-box linm">
+    <span class="owner-tag">Thuộc quyền Linm</span>
+    <h3>ERP Service — Release &amp; Deploy</h3>
+    <p class="handover-lead">Linm bàn giao <strong>bản build triển khai</strong> và <strong>hướng dẫn deploy</strong> hệ thống ERP (không chuyển giao full source lõi platform).</p>
+    <ul class="handover-deliverables">
+      <li><strong>Docker image / release build</strong> — <code>Linm.Web.ERP.WebService</code> (API + BFF + jobs host)</li>
+      <li><strong>Hướng dẫn deploy</strong> — <code>docker-compose.yml</code> · <code>.env.template</code> · migration gate</li>
+      <li><strong>MFE ERP build</strong> — Finance · Sales · Analytics · Master · HR · Supply (artifact npm/webpack)</li>
+      <li><strong>Shell host</strong> — MFE-CORE Root-App mount route ERP</li>
+      <li><strong>Shell link · <code>@linm/shell-url</code></strong> — MFE <code>Linm.Web.ShellUrl</code> · menu Auth <code>menuType=shell</code> · liên kết POS / ứng dụng Foodmart trên cùng cổng REVA (<a href="#shell-url-reva">Tab 1 · mục 2c</a>)</li>
+      <li><strong>Tài liệu vận hành service</strong> — configuration · tenant · platform jobs</li>
+    </ul>
+    <p class="handover-lead handover-lead-foot"><em>Nghiệm thu:</em> service chạy ổn định pilot FM02 · danh mục/chứng từ/báo cáo truy cập qua build đã deploy.</p>
+  </div>
+  <div class="handover-box reva">
+    <span class="owner-tag">Thuộc quyền REVA</span>
+    <h3>Prefix Reva · Job sync POS — Full source</h3>
+    <p class="handover-lead">REVA nhận <strong>toàn bộ mã nguồn</strong> tích hợp, ETL, mapping, job đồng bộ POS và báo cáo quản trị.</p>
+    <ul class="handover-deliverables">
+      <li><strong>Job service</strong> — <code>Linm.Reva.WebService/Jobs</code> — sync POS · Docker + deploy guide</li>
+      <li><strong>Repo dữ liệu &amp; đối soát</strong> — <code>Linm.Reva.Data</code> (master CSV, scripts, spec)</li>
+      <li><strong>MFE báo cáo quản trị</strong> — <code>Linm.Web.Reva.Report</code> (<code>/reva/bao-cao/*</code>)</li>
+      <li><strong>Connector POS</strong> — <code>reva-fm-hoa-don</code> · <code>reva-fm-phieu-thu</code> · <code>reva-fm-phieu-chi</code></li>
+      <li><strong>Script đối soát</strong> — <code>reconcile-pos-*.mjs</code></li>
+    </ul>
+    <p class="handover-lead handover-lead-foot"><em>Nghiệm thu:</em> REVA tự build/deploy lớp tích hợp · chỉnh mapping · mở rộng sync 12 CH.</p>
+  </div>
+</div>
+
+<table class="deliver-table quote-table">
+<thead><tr><th>Hạng mục báo giá</th><th>Thuộc</th><th>Hình thức bàn giao</th></tr></thead>
+<tbody>
+<tr><td><strong>Dự án ERP</strong> — WebService + MFE</td><td><span class="badge partial">Linm</span></td><td>Bản build release + hướng dẫn cài đặt máy chủ</td></tr>
+<tr><td><strong>POS sync · Reva Report · Data</strong></td><td><span class="badge ok">REVA</span></td><td>Toàn bộ source code + runbook deploy</td></tr>
+<tr><td><strong>Mobile app REVA end-user</strong> (Android + iOS)</td><td><span class="badge ok">REVA</span></td><td>Full source · NT tại <strong>Demo success</strong> · nộp store sau demo — <a href="#store-submit">hướng dẫn store</a></td></tr>
+<tr class="bonus-row"><td><strong>Shell link · POS &amp; app Foodmart</strong> (<code>@linm/shell-url</code>)</td><td><span class="badge partial">Linm cấu hình</span></td><td>Menu shell trên cổng REVA · iframe <code>DefaultUrl</code> · không migrate MFE con — <span class="badge done">miễn phí</span> trong HĐ cốt lõi</td></tr>
+</tbody>
+</table>
+
+<h2 id="shell-url-ban-giao">Shell link · Linm.Web.ShellUrl</h2>
+<p class="lead lead--compact">Từ <strong>2026</strong>, POS và các ứng dụng web <strong>hiện thuộc sở hữu Foodmart</strong> (vd. BossSoft POS) được mở trên <strong>cùng cổng REVA</strong> (cùng tên miền) qua cơ chế <strong>shell link</strong> — người dùng chuyển qua lại ERP ↔ POS thuận tiện; <strong>không</strong> nhúng POS vào layout ERP dưới dạng module con microfrontend.</p>
+
+<table class="deliver-table quote-table">
+<thead><tr><th>Thành phần</th><th>Mô tả bàn giao</th><th>Chi phí</th></tr></thead>
+<tbody>
+<tr><td><strong>Package</strong> <code>@linm/shell-url</code></td><td>MFE platform <code>Linm.Web.ShellUrl</code> — mount trong Root-App · route vd. <code>/reva/pos</code></td><td rowspan="3"><span class="badge done">Không phát sinh</span><br><small>Phạm vi HĐ cốt lõi</small></td></tr>
+<tr><td><strong>Menu Auth</strong></td><td>Mục <code>menuType=shell</code> · <code>Path</code> + <code>DefaultUrl</code> (URL app Foodmart) · quyền theo role ERP</td></tr>
+<tr><td><strong>Trải nghiệm người dùng</strong></td><td>Thanh sidebar REVA · iframe load app ngoài · nút / FAB <strong>Home</strong> về dashboard ERP</td></tr>
+<tr><td><strong>Phạm vi loại trừ</strong></td><td colspan="2">Viết lại POS (hoặc app khác) thành MFE ERP native · thay đổi nghiệp vụ POS · sửa source app bên thứ ba — báo giá riêng. Foodmart / IT REVA: URL chính thức · cho phép iframe (CSP / X-Frame-Options).</td></tr>
+</tbody>
+</table>
+<div class="panel-note"><strong>Pilot tham chiếu:</strong> <code>/reva/pos</code> → <code>https://quanlyfoodmart.bosssoft.vn/</code>. Đồng bộ chứng từ POS → ERP vẫn theo connector API (mục REVA full source phía trên) — shell link chỉ là <strong>điểm vào UI</strong> trên cùng cổng.</div>
+
+<h2 id="hosting-ops" class="bao-gia-anchor-h3">Hạ tầng &amp; vận hành</h2>
+<p class="lead lead--compact">Giai đoạn pilot: Linm triển khai ERP trên server/cloud tương ứng và cung cấp <strong>domain tạm</strong> — vận hành miễn phí <strong>6 tháng</strong>. Sau 6 tháng, REVA chọn <strong>thuê tiếp cloud Linm</strong> hoặc <strong>chuyển về server/cloud do REVA tự thuê</strong>. Linm có trách nhiệm <strong>triển khai</strong> trên hạ tầng đã thống nhất và <strong>tư vấn</strong> REVA thuê hoặc rà soát server hiện có đủ điều kiện vận hành.</p>
+
+<div class="section-block section-block--surface section-block--spaced">
+<h3>Domain</h3>
+<table class="deliver-table quote-table">
+<thead><tr><th>Loại</th><th>Trách nhiệm</th><th>Chi tiết</th></tr></thead>
+<tbody>
+<tr class="bonus-row"><td><strong>Domain tạm (pilot)</strong></td><td><span class="badge partial">Linm cung cấp</span></td><td>Subdomain: <a href="https://reva-erp.linm-soft.com/" target="_blank" rel="noopener noreferrer"><strong>https://reva-erp.linm-soft.com/</strong></a> — dùng trong giai đoạn triển khai · vận hành pilot và 6 tháng miễn phí đầu</td></tr>
+<tr><td><strong>Domain chính thức</strong></td><td><span class="badge ok">REVA</span></td><td><strong>Bên REVA</strong> mua · chuẩn bị DNS · SSL · cấu hình trỏ domain. <strong>Dự kiến chuyển domain</strong> khi REVA hoàn tất mua và cấu hình domain chính thức — Linm hỗ trợ migration kỹ thuật (cutover) theo lịch thống nhất</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="hosting-spec-block">
+<div class="sprint-row">
+  <div class="sprint-box sprint-box--blue">
+    <h3>Phương án 1 · Thuê server/cloud bên Linm</h3>
+    <p class="lead lead--compact"><strong>Tháng 1–6:</strong> miễn phí vận hành (domain tạm + server pilot Linm). <strong>Từ tháng 7:</strong> chi phí theo bảng dưới nếu REVA tiếp tục thuê hạ tầng Linm.</p>
+    <ul class="task-list">
+      <li><strong>Linm:</strong> cung cấp VPS/cloud · triển khai Docker · PostgreSQL · nginx · backup · monitoring · patch bảo mật · cấu hình tenant REVA</li>
+      <li><strong>Stack:</strong> .NET 8 WebService · BFF · MFE shell + ERP microfrontends · HTTPS</li>
+      <li><strong>REVA:</strong> thanh toán phí hạ tầng từ tháng 7 (nếu giữ phương án này) · phối hợp UAT / nghiệm thu</li>
+    </ul>
+  </div>
+  <div class="sprint-box sprint-box--amber">
+    <h3>Phương án 2 · Server/cloud do REVA tự thuê</h3>
+    <p class="lead lead--compact">Sau <strong>6 tháng</strong> vận hành miễn phí (hoặc sớm hơn nếu REVA sẵn sàng), REVA chuyển ERP về <strong>server vật lý</strong> hoặc <strong>tài khoản cloud riêng</strong> do REVA thuê trực tiếp.</p>
+    <ul class="task-list">
+      <li><strong>Linm:</strong> triển khai / migration lên server/cloud REVA · tư vấn cấu hình tối thiểu (vCPU · RAM · disk · PostgreSQL) · hướng dẫn deploy (<code>docker-compose</code> · runbook)</li>
+      <li><strong>Linm — chỉ tư vấn:</strong> rà soát server hiện có của REVA có đủ điều kiện vận hành hay không; <strong>không</strong> chịu chi phí thuê máy · cloud · băng thông</li>
+      <li><strong>REVA:</strong> <strong>tự chi trả</strong> mọi chi phí server/cloud · domain chính thức · backup · vận hành hàng ngày · <strong>tự quyết định</strong> nhà cung cấp và quy mô tài nguyên</li>
+    </ul>
+  </div>
+</div>
+
+<div class="quote-table-group quote-table-group--compact">
+<table class="deliver-table quote-table quote-table--cols-3">
+<colgroup>
+  <col class="col-a">
+  <col class="col-b">
+  <col class="col-c">
+</colgroup>
+<thead><tr><th>Tiêu chí</th><th>Phương án 1 · Thuê Linm</th><th>Phương án 2 · REVA tự thuê</th></tr></thead>
+<tbody>
+<tr><td>Domain pilot</td><td colspan="2"><a href="https://reva-erp.linm-soft.com/" target="_blank" rel="noopener noreferrer">reva-erp.linm-soft.com</a> (Linm) → chuyển domain REVA khi sẵn sàng</td></tr>
+<tr><td>6 tháng đầu</td><td><span class="badge done">Miễn phí</span> (Linm vận hành)</td><td><span class="badge done">Miễn phí</span> trên hạ tầng Linm pilot · sau đó migration sang server REVA</td></tr>
+<tr><td>Chi phí server sau 6 tháng</td><td>Bảng giá Linm (mục dưới)</td><td><strong>REVA tự trả</strong> — Linm chỉ tư vấn</td></tr>
+<tr><td>Triển khai kỹ thuật</td><td>Linm</td><td>Linm triển khai / migration · REVA cung cấp quyền truy cập server</td></tr>
+<tr><td>Tư vấn cấu hình server</td><td>Linm (trong gói thuê)</td><td>Linm tư vấn · REVA quyết định &amp; thanh toán NCC</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="contract-box contract-box--indigo">
+  <h3>Chi phí hạ tầng · Phương án 1 (thuê Linm) · từ tháng 7</h3>
+  <table class="deliver-table quote-table quote-table--hosting-pricing">
+  <colgroup>
+    <col class="col-condition">
+    <col class="col-rate">
+  </colgroup>
+  <thead><tr><th>Điều kiện dung lượng data (DB + backup tenant REVA)</th><th>Đơn giá / tháng</th></tr></thead>
+  <tbody>
+  <tr><td><strong>&lt; 1 GB</strong></td><td class="price-col price-col--short"><strong>1 triệu VND</strong></td></tr>
+  <tr><td><strong>&gt; 1 GB</strong></td><td class="hosting-price-detail"><strong>500k VND/GB</strong> cố định · mỗi GB vượt ngưỡng 1 GB (cộng gói <strong>1 tr</strong> ở trên) · Linm đối soát hàng tháng</td></tr>
+  <tr class="total-row"><td colspan="2"><em>Tháng 1–6:</em> miễn phí vận hành · domain tạm <strong>reva-erp.linm-soft.com</strong> + server pilot Linm</td></tr>
+  </tbody>
+  </table>
+  <p class="contract-box-note">Áp dụng khi REVA <strong>tiếp tục Phương án 1</strong> sau giai đoạn miễn phí. Ví dụ: 3 GB → 1 tr + 2 × 500k = <strong>2 triệu VND/tháng</strong>. Chọn <strong>Phương án 2</strong>: billing server chuyển sang tài khoản cloud / nhà cung cấp do <strong>REVA</strong> trực tiếp thanh toán.</p>
+</div>
+
+<div class="quote-table-group quote-table-group--compact">
+<table class="deliver-table quote-table quote-table--cols-3">
+<colgroup>
+  <col class="col-a">
+  <col class="col-b">
+  <col class="col-c">
+</colgroup>
+<thead><tr><th>Thành phần</th><th>Công nghệ</th><th>Yêu cầu server / cloud (tối thiểu pilot 12 CH)</th></tr></thead>
+<tbody>
+<tr><td>ERP WebService + BFF</td><td><strong>.NET 8</strong> · Docker</td><td>Cụm container · <strong>2 vCPU / 4 GB RAM</strong> trở lên</td></tr>
+<tr><td>Database tenant</td><td><strong>PostgreSQL</strong></td><td>Managed hoặc VM · backup hàng ngày · ≥ 50 GB disk</td></tr>
+<tr><td>MFE ERP (Finance · Sales · …)</td><td>React · build webpack</td><td>nginx / CDN · mount qua shell host</td></tr>
+<tr><td>Job sync POS (REVA)</td><td>.NET 8 · Docker (tách release)</td><td><strong>1 vCPU / 1 GB RAM</strong> trở lên · scale khi mở 12 CH</td></tr>
+<tr><td>Mobile end-user (Android / iOS)</td><td>Native / cross-platform</td><td>Không cần server — gọi API HTTPS</td></tr>
+</tbody>
+</table>
+<div class="panel-note"><strong>Trách nhiệm Linm (cả hai phương án):</strong> triển khai phần mềm ERP trên server/cloud đã chọn · tư vấn REVA thuê mới hoặc kiểm tra server hiện có đáp ứng yêu cầu kỹ thuật. <strong>Phương án 2 — server REVA tự thuê:</strong> Linm <strong>không</strong> chi trả chi phí hạ tầng; REVA tự quyết định nhà cung cấp và ngân sách.</div>
+</div>
+
+<div class="contract-box contract-box--indigo">
+  <h3>Đề xuất RAM pilot (tổng)</h3>
+  <p class="contract-box-note"><strong>VPS Docker host ERP:</strong> ≥ 2 vCPU / <strong>4 GB RAM</strong> — WebService + BFF + nginx. <strong>PostgreSQL:</strong> managed riêng hoặc cùng host — <strong>2 vCPU / 4 GB RAM</strong> trở lên cho pilot 12 cửa hàng. MFE: build tĩnh trên nginx/CDN. Linm tư vấn REVA đối chiếu cấu hình trước khi ký hợp đồng thuê server hoặc khi migration sang hạ tầng REVA.</p>
+</div>
+
+<h2 id="store-submit" class="bao-gia-anchor-h3">Nộp Store Mobile</h2>
+<p class="lead lead--compact">Áp dụng <strong>Mobile app REVA end-user</strong> (Tab 1 · mục 5 — Android + iOS · dự kiến 08–10/2026). REVA chọn phương án trước kick-off mobile.</p>
+
+<div class="store-spec-block">
+<div class="sprint-row">
+  <div class="sprint-box sprint-box--amber">
+    <h3>Phương án 1 · Linm nộp store (cá nhân)</h3>
+    <ul class="task-list">
+      <li><strong>Linm:</strong> đóng gói APK/IPA, metadata, nộp store, xử lý reject kỹ thuật</li>
+      <li><strong>REVA:</strong> nội dung listing + ủy quyền bằng văn bản</li>
+      <li>Seller hiển thị <strong>tên cá nhân</strong> — phù hợp pilot</li>
+    </ul>
+  </div>
+  <div class="sprint-box sprint-box--green">
+    <h3>Phương án 2 · REVA doanh nghiệp (khuyến nghị)</h3>
+    <ul class="task-list">
+      <li><strong>REVA đăng ký:</strong> Apple Developer Organization + Google Play Organization</li>
+      <li>GPKD/ĐKKD · D-U-N-S · website · email doanh nghiệp · người ký thỏa thuận</li>
+      <li>Tax &amp; Banking · mời Linm vào team · nội dung listing · chứng chỉ ký iOS</li>
+      <li><strong>Linm:</strong> hướng dẫn đăng ký, signing, upload, submit review</li>
+    </ul>
+  </div>
+</div>
+
+<div class="quote-table-group quote-table-group--compact">
+<table class="deliver-table quote-table quote-table--cols-3">
+<colgroup>
+  <col class="col-a">
+  <col class="col-b">
+  <col class="col-c">
+</colgroup>
+<thead><tr><th>Tiêu chí</th><th>Phương án 1 · Linm / cá nhân</th><th>Phương án 2 · REVA doanh nghiệp</th></tr></thead>
+<tbody>
+<tr><td>Tên Seller trên store</td><td>Tên cá nhân</td><td>Tên pháp nhân REVA</td></tr>
+<tr><td>Thời gian chuẩn bị</td><td>Nhanh (vài ngày)</td><td>~1–2 tuần (D-U-N-S, duyệt Apple/Google)</td></tr>
+<tr><td>Sở hữu tài khoản store</td><td>Linm / cá nhân — REVA nhận source code</td><td>REVA — Linm chỉ được mời hỗ trợ</td></tr>
+<tr><td>Mốc nghiệm thu Mobile end-user</td><td colspan="2"><strong>Demo success</strong> (APK nội bộ / TestFlight) — <strong>không phụ thuộc</strong> ngày store approve</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<p class="doc-footer"><strong>Linm Soft</strong></p>
+</article>
+
+<!-- TAB 5 · Bảo trì phần mềm -->
+<article id="bao-gia-panel-bao-tri" class="tien-do-doc bao-gia-doc tien-do-page tien-do-panel doc-print-sheet" data-tien-do-panel="bao-tri" role="tabpanel" hidden>
+
+<p class="print-tab-label" aria-hidden="true">Phần 5 · Bảo trì phần mềm</p>
+<div class="doc-header">
+  <p class="kicker">Sau bàn giao · vận hành dài hạn</p>
+  <h1 class="doc-title">Bảo trì phần mềm</h1>
+  <p class="doc-meta">
+    Áp dụng cho <strong>Hệ thống ERP Linm</strong> và các hạng mục triển khai theo báo giá (Tab 1). <strong>Dự án 1 · Dữ liệu 2023–2025</strong> bảo hành · bảo trì <strong>theo cùng mốc thời gian hệ thống ERP</strong> (Dự án 2). Tham chiếu đợt TT 6 (10%) · bảo hành 24 tháng (Tab 3) và bàn giao (Tab 4).
+  </p>
+</div>
+
+<div class="quote-sum-grid">
+  <div class="quote-sum-grid-cards">
+    <div class="quote-sum-card featured">
+      <div class="price">2 năm</div>
+      <div class="lbl">Bảo trì miễn phí<br><small>Linm · sau nghiệm thu bàn giao</small></div>
+    </div>
+    <div class="quote-sum-card featured">
+      <div class="price">12 tr/năm</div>
+      <div class="lbl">ERP REVA (ưu đãi)<br><small>5% · giá trị HĐ cam kết 240 tr</small></div>
+    </div>
+    <div class="quote-sum-card">
+      <div class="price">10 tr/năm</div>
+      <div class="lbl">ERP · ký &gt; 2 năm<br><small>Cam kết gia hạn bảo trì dài hạn</small></div>
+    </div>
+  </div>
+</div>
+
+<h2>1 · Bảo trì miễn phí — 2 năm đầu</h2>
+<p class="lead">Linm Soft (Bên B) <strong>bảo hành · bảo trì miễn phí 02 (hai) năm</strong> đối với <strong>phần mềm do Linm phát triển và đã nghiệm thu</strong> trong phạm vi HĐ — kể từ <strong>nghiệm thu bàn giao hệ thống ERP</strong> (Dự án 2). <strong>Dự án 1 · Dữ liệu 2023–2025</strong> theo <strong>cùng mốc thời gian ERP</strong>. Chi tiết phạm vi · loại trừ: <a href="#bao-hanh-pham-vi">mục 6</a>.</p>
+
+<div class="quote-table-group quote-table-group--compact">
+<table class="deliver-table quote-table">
+<thead><tr><th>Hạng mục</th><th>Thời hạn miễn phí</th><th>Mốc bắt đầu · kết thúc</th><th>Ghi chú</th></tr></thead>
+<tbody>
+<tr class="bonus-row"><td><strong>Dự án 2 · Phân hệ ERP</strong><br><small>Mốc tham chiếu bảo hành · bảo trì</small></td><td>24 tháng</td><td>Bắt đầu: sau NT kết chuyển 2026 · dự kiến <strong>05/01/2027</strong><br>Kết thúc miễn phí: dự kiến <strong>~08/2028</strong></td><td>Trùng mốc đợt 6 · 10% (Tab 1 · Tab 3)</td></tr>
+<tr><td><strong>Dự án 1 · Dữ liệu 2023–2025</strong></td><td colspan="2"><strong>Theo mốc hệ thống ERP</strong> (cùng Dự án 2)</td><td>Đồng bộ · đối soát · báo cáo quản trị · POS sync · Reva Report — NT dữ liệu <strong>31/08/2026</strong> không phải mốc bảo hành</td></tr>
+</tbody>
+</table>
+<div class="panel-note"><strong>Lưu ý:</strong> Dự án 1 thanh toán <strong>đợt 6 (10%)</strong> tại <strong>31/08/2026</strong> (Tab 1) là <em>thanh toán cuối giai đoạn triển khai dữ liệu</em> — <strong>không</strong> phải mốc kết thúc bảo hành. Bảo hành · bảo trì cả hai dự án ERP + dữ liệu căn theo <strong>mốc NT tổng thể ERP</strong> (~05/2027 → ~08/2028).</div>
+</div>
+
+<h2>2 · Sau 2 năm — Hợp đồng bảo trì phần mềm</h2>
+<p class="lead lead--compact">Hết thời hạn bảo trì miễn phí, chi phí bảo trì áp dụng theo <strong>Hợp đồng bảo trì phần mềm</strong> ký giữa REVA và Linm Soft.</p>
+
+<div class="section-block section-block--surface section-block--spaced">
+<h3>Thời điểm ký kết và thanh toán</h3>
+<ul>
+<li><strong>Lần bảo trì thứ 1 (sau 2 năm miễn phí):</strong> REVA và Linm ký HĐ bảo trì và thanh toán <strong>trước khi kết thúc</strong> thời hạn bảo trì miễn phí 2 năm — tránh gián đoạn hỗ trợ vận hành.</li>
+<li><strong>Lần bảo trì thứ 2 trở đi:</strong> Gia hạn HĐ bảo trì và thanh toán <strong>trước khi kết thúc</strong> kỳ bảo trì phần mềm hiện hành.</li>
+</ul>
+<p><em>Linm khuyến nghị trao đổi và chốt phương án bảo trì ít nhất <strong>30 ngày</strong> trước mốc hết hạn.</em></p>
+</div>
+
+<h2>3 · Phí bảo trì sau 2 năm</h2>
+<p class="lead lead--compact">Mức phí bảo trì hàng năm (sau giai đoạn miễn phí) cho <strong>Hệ thống ERP REVA</strong> — Linm áp dụng mức ưu đãi như bảng dưới. <em>Mobile · MoZa · Thợ · API mở rộng</em> chưa nêu tại báo giá này — xem ghi chú sau bảng.</p>
+
+<table class="deliver-table quote-table">
+<thead><tr><th>Phạm vi</th><th>Cơ sở tính</th><th>Tỷ lệ / mức phí</th><th>Phí/năm (dự kiến)</th></tr></thead>
+<tbody>
+<tr class="bonus-row"><td><strong>Hệ thống ERP REVA</strong><br><small>Dự án 2 · KT · BH · MH · Kho · HR · Lương + thưởng BC<br><strong>+ Dự án 1 · Dữ liệu 2023–2025</strong> (theo mốc ERP)</small></td><td>Giá trị HĐ cam kết <strong>240 tr</strong><br><small>(140 tr phân hệ + 100 tr thưởng tối thiểu)</small></td><td><strong>5%</strong> / năm</td><td class="price-col"><strong>12 tr</strong> / năm</td></tr>
+<tr><td><strong>ERP REVA · ký bảo trì &gt; 2 năm</strong></td><td>Cam kết gia hạn liên tục từ lần 1</td><td>Mức ưu đãi cố định</td><td class="price-col"><strong>10 tr</strong> / năm</td></tr>
+</tbody>
+</table>
+
+<div class="panel-note"><strong>Ưu đãi ERP:</strong> Mức <strong>12 tr/năm</strong> (5% × 240 tr) và <strong>10 tr/năm</strong> khi ký gia hạn <strong>&gt; 2 năm</strong> áp dụng cho <strong>ERP + dữ liệu 2023–2025</strong> (Dự án 1 theo mốc ERP — không tính phí bảo trì riêng 10% trên 150 tr). Hạng mục phát triển mới hoặc mở rộng ngoài phạm vi NT được báo giá riêng.</div>
+
+<div class="section-block section-block--surface section-block--spaced">
+<h3>Hạng mục mở rộng — báo giá tại thời điểm ký HĐ</h3>
+<p class="lead lead--compact"><strong>Mobile app REVA</strong> · <strong>MoZa</strong> · <strong>Thợ</strong> · <strong>API mở rộng</strong> (Tab 1 · mục 5–6 · API sau dự án): <strong>chưa áp dụng</strong> mức bảo trì cố định tại báo giá triển khai ERP — phí bảo trì / vận hành sẽ <strong>báo giá khi ký HĐ</strong> từng hạng mục.</p>
+<ul>
+<li><strong>Ký HĐ không gồm điều khoản cổ phần</strong> (MoZa · Thợ — Tab 1 · mục 6): dự kiến tham chiếu <strong>10%/năm</strong> trên giá trị HĐ triển khai tương ứng (mức có thể điều chỉnh tại thời điểm ký).</li>
+<li><strong>Trường hợp có điều khoản cổ phần</strong> (MoZa · Thợ · <strong>15%</strong> hoặc tương đương <strong>100 tr</strong>): <strong>Linm chịu trách nhiệm vận hành và phát triển</strong> theo thỏa thuận cổ phần — <strong>không</strong> áp dụng mức bảo trì <strong>10%/năm</strong> riêng.</li>
+</ul>
+</div>
+
+<h2>4 · Hai phương án bảo trì</h2>
+<p class="lead lead--compact">REVA lựa chọn một trong hai phương án sau khi hết hạn miễn phí (hoặc khi cần hỗ trợ ngoài phạm vi bảo trì).</p>
+
+<div class="sprint-row">
+  <div class="sprint-box sprint-box--green">
+    <h3>Phương án 1 · Có gói bảo trì <span class="badge done">Khuyến nghị</span></h3>
+    <p class="lead lead--compact">REVA ký <strong>Hợp đồng bảo trì phần mềm</strong> theo mức phí mục 3.</p>
+    <ul class="task-list">
+      <li>Linm <strong>hỗ trợ không tính thêm phí</strong> cho <strong>phần hành đang hoạt động ổn định sau bàn giao</strong> — sửa lỗi, tư vấn vận hành trong phạm vi HĐ bảo trì</li>
+      <li>Phản hồi sự cố theo SLA thỏa thuận trong Phụ lục HĐ bảo trì</li>
+      <li>Cập nhật bản vá bảo mật · tương thích nền tảng (trong phạm vi build đã bàn giao)</li>
+      <li><strong>Không bao gồm:</strong> tính năng mới, tích hợp API mới, thay đổi nghiệp vụ lớn — báo giá riêng</li>
+    </ul>
+  </div>
+  <div class="sprint-box sprint-box--amber">
+    <h3>Phương án 2 · Không có gói bảo trì</h3>
+    <p class="lead lead--compact">REVA <strong>không</strong> ký gói bảo trì định kỳ; Linm hỗ trợ theo từng yêu cầu.</p>
+    <ul class="task-list">
+      <li>Linm <strong>báo giá theo ngày công</strong> thực hiện tại thời điểm REVA liên hệ</li>
+      <li>Đơn giá dự kiến: <strong>~1 triệu VND / ngày công</strong> (mức tham chiếu hiện tại — có thể điều chỉnh khi ký BB/DNTT)</li>
+      <li>Linm thực hiện sau khi REVA <strong>phê duyệt báo giá</strong> từng đợt</li>
+      <li>Phù hợp yêu cầu lẻ, khẩn cấp hoặc phạm vi nhỏ — chi phí tích lũy thường cao hơn gói bảo trì năm</li>
+    </ul>
+  </div>
+</div>
+
+<div class="quote-table-group quote-table-group--compact">
+<table class="deliver-table quote-table quote-table--cols-3">
+<colgroup>
+  <col class="col-a">
+  <col class="col-b">
+  <col class="col-c">
+</colgroup>
+<thead><tr><th>Tiêu chí</th><th>Phương án 1 · Có gói bảo trì</th><th>Phương án 2 · Không gói</th></tr></thead>
+<tbody>
+<tr><td>Phí cố định hàng năm</td><td>Có — theo mục 3 (vd. ERP <strong>12 tr</strong> hoặc <strong>10 tr</strong>)</td><td>Không — trả theo ngày công từng lần</td></tr>
+<tr><td>Sửa lỗi phạm vi đã NT</td><td><span class="badge done">Trong gói</span></td><td>Báo giá ~<strong>1 tr/ngày</strong> · chờ duyệt</td></tr>
+<tr><td>Tính năng / tích hợp mới</td><td colspan="2">Báo giá riêng — cả hai phương án</td></tr>
+<tr><td>Thời gian phản hồi</td><td>Theo SLA HĐ bảo trì</td><td>Theo lịch team · sau khi duyệt BG</td></tr>
+<tr><td>Khuyến nghị</td><td>Vận hành ERP 12 CH · liên tục</td><td>Yêu cầu đơn lẻ · thử nghiệm ngắn</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>5 · Lợi ích và trách nhiệm</h2>
+
+<h3>Lợi ích REVA (Bên A)</h3>
+<table class="deliver-table quote-table">
+<thead><tr><th>Lợi ích</th><th>Mô tả</th></tr></thead>
+<tbody>
+<tr><td><strong>Ổn định vận hành</strong></td><td>Hệ thống ERP và tích hợp duy trì hoạt động; giảm rủi ro gián đoạn nghiệp vụ kế toán · bán hàng · kho</td></tr>
+<tr><td><strong>Chi phí dự báo được</strong></td><td>Phí bảo trì ERP năm cố định (<strong>12 tr</strong> hoặc <strong>10 tr/năm</strong> ưu đãi) thay vì ngày công từng lần</td></tr>
+<tr><td><strong>Hỗ trợ chuyên môn</strong></td><td>Đội ngũ Linm am hiểu kiến trúc REVA · POS sync · báo cáo quản trị — thời gian xử lý ngắn hơn bên thứ 3</td></tr>
+<tr><td><strong>Ưu đãi dài hạn</strong></td><td>Ký bảo trì <strong>&gt; 2 năm</strong>: ERP còn <strong>10 tr/năm</strong> thay vì 12 tr/năm</td></tr>
+</tbody>
+</table>
+
+<h3>Trách nhiệm Linm Soft (Bên B)</h3>
+<table class="deliver-table quote-table">
+<thead><tr><th>Trách nhiệm</th><th>Phạm vi</th></tr></thead>
+<tbody>
+<tr><td><strong>Sửa lỗi phần mềm Linm</strong></td><td>Lỗi thuộc <strong>phần mềm do Linm phát triển</strong> · phạm vi đã nghiệm thu · tái hiện được trên môi trường thống nhất (mục 6)</td></tr>
+<tr><td><strong>Tư vấn vận hành</strong></td><td>Hướng dẫn sử dụng · cấu hình trong phạm vi đã bàn giao (gói bảo trì)</td></tr>
+<tr><td><strong>Bản vá bảo mật</strong></td><td>Patch bảo mật nền tảng · dependency (trong phạm vi build release)</td></tr>
+<tr><td><strong>Báo cáo định kỳ</strong></td><td>Tóm tắt ticket / sự cố theo kỳ (nếu có trong Phụ lục HĐ bảo trì)</td></tr>
+</tbody>
+</table>
+
+<h3>Trách nhiệm REVA (Bên A)</h3>
+<table class="deliver-table quote-table">
+<thead><tr><th>Trách nhiệm</th><th>Phạm vi</th></tr></thead>
+<tbody>
+<tr><td><strong>Môi trường vận hành</strong></td><td>Server · DB · domain · backup · SSL · tài khoản cloud — <strong>Bên A (REVA)</strong> hoặc nhà cung cấp bên thứ 3 (Tab 4) · Linm miễn trách nhiệm sự cố hạ tầng (mục 6)</td></tr>
+<tr><td><strong>Cung cấp thông tin</strong></td><td>Log · tài khoản test · mô tả sự cố · người liên hệ khi cần hỗ trợ</td></tr>
+<tr><td><strong>Thanh toán đúng hạn</strong></td><td>Phí bảo trì năm · hoặc duyệt báo giá ngày công (phương án 2)</td></tr>
+<tr><td><strong>Thay đổi ngoài phạm vi</strong></td><td>Yêu cầu tính năng mới · API mới · tùy biến lớn — trao đổi báo giá riêng</td></tr>
+</tbody>
+</table>
+
+<div class="contract-box contract-box--indigo">
+  <h3>Tóm tắt cam kết bảo trì ERP REVA</h3>
+  <ul class="task-list">
+    <li><strong>Mốc tham chiếu:</strong> Bảo hành · bảo trì căn theo <strong>NT hệ thống ERP</strong> (~05/2027) — <strong>Dự án 1 · dữ liệu 2023–2025</strong> cùng mốc, không tách riêng</li>
+    <li><strong>0 – 24 tháng:</strong> Linm bảo trì <strong>miễn phí</strong> (ERP + dữ liệu · POS sync · báo cáo quản trị)</li>
+    <li><strong>Từ năm 3 (~08/2028):</strong> HĐ bảo trì — <strong>12 tr/năm</strong> (5% × 240 tr) hoặc <strong>10 tr/năm</strong> nếu ký gia hạn <strong>&gt; 2 năm</strong></li>
+    <li><strong>Ký &amp; TT:</strong> Trước khi hết hạn miễn phí (lần 1) hoặc trước khi hết kỳ bảo trì (lần 2+)</li>
+    <li><strong>Không gói:</strong> ~<strong>1 tr/ngày công</strong> — báo giá tại thời điểm liên hệ</li>
+  </ul>
+  <p class="contract-box-note">Chi tiết SLA · giờ làm việc · <a href="#bao-hanh-pham-vi">phạm vi bảo hành · miễn trách nhiệm (mục 6)</a> · quy định trong <strong>Phụ lục Hợp đồng bảo trì phần mềm</strong> khi ký chính thức.</p>
+</div>
+
+<h2 id="bao-hanh-pham-vi">6 · Phạm vi bảo hành · Miễn trách nhiệm</h2>
+<p class="lead lead--compact">Bảo hành · bảo trì của <strong>Linm Soft (Bên B)</strong> chỉ áp dụng cho <strong>phần mềm do Linm phát triển / triển khai</strong> và đã nghiệm thu theo báo giá. Các hạng mục ngoài phạm vi này — hoặc sự cố phát sinh từ hạ tầng do <strong>Bên A (REVA)</strong> quản lý và từ <strong>bên thứ 3</strong> — thuộc diện <strong>miễn trách nhiệm</strong> của Linm (Linm có thể hỗ trợ tư vấn · báo giá riêng nếu REVA yêu cầu).</p>
+
+<h3>6a · Hạng mục được bảo hành — phần mềm phát triển bởi Linm</h3>
+<table class="deliver-table quote-table">
+<thead><tr><th>Nhóm phần mềm</th><th>Phạm vi bảo hành · bảo trì</th><th>Tham chiếu</th></tr></thead>
+<tbody>
+<tr class="bonus-row"><td><strong>ERP Linm — lõi nền tảng</strong></td><td>WebService · BFF · MFE (Finance · Sales · Analytics · Master · HR · Supply) · build release đã NT · sửa lỗi chức năng trong phạm vi HĐ</td><td>Tab 1 · mục 2 · Tab 4</td></tr>
+<tr><td><strong>Dữ liệu · tích hợp triển khai bởi Linm</strong></td><td>Job/mapping đồng bộ POS → ERP · import · đối soát · báo cáo quản trị <strong>theo spec đã NT</strong> (giai đoạn 2023–2025 + vận hành ERP)</td><td>Tab 1 · mục 1 · Tab 2</td></tr>
+<tr><td><strong>API / connector Linm triển khai</strong></td><td>Lớp kết nối Linm cài đặt trong HĐ (POS · Membership đã map · connector trong phạm vi miễn phí/có phí Tab 1)</td><td>Tab 1 · mục 4</td></tr>
+</tbody>
+</table>
+<div class="panel-note"><strong>Không thuộc bảo hành Linm (trừ khi HĐ bổ sung):</strong> mã nguồn / module do REVA hoặc bên thứ 3 tự sửa sau bàn giao · tính năng mới · tích hợp API mới · thay đổi nghiệp vụ ngoài phạm vi NT. <strong>Mobile · MoZa · Thợ · API mở rộng:</strong> điều kiện bảo trì / vận hành báo giá tại thời điểm ký HĐ (mục 3).</div>
+
+<h3>6b · Miễn trách nhiệm — hạ tầng Bên A · bên thứ 3</h3>
+<p class="lead lead--compact">Linm (Bên B) <strong>miễn trách nhiệm</strong> bảo hành · bảo trì đối với sự cố, gián đoạn hoặc mất dữ liệu khi nguyên nhân gốc thuộc một trong các nhóm sau (kể cả giai đoạn pilot Linm cung cấp domain/server — Tab 4 — nếu root cause là hạ tầng / nhà cung cấp, không phải lỗi phần mềm Linm):</p>
+
+<table class="deliver-table quote-table">
+<thead><tr><th>Nhóm loại trừ</th><th>Ví dụ cụ thể</th><th>Trách nhiệm xử lý</th></tr></thead>
+<tbody>
+<tr><td><strong>Server · domain · hạ tầng do Bên A (REVA) quản lý</strong></td><td>VPS · server vật lý · tài khoản cloud REVA · domain · DNS · SSL · firewall · backup · restore · cấu hình OS/DB do REVA vận hành (Tab 4 · Sau 6 tháng)</td><td><strong>Bên A (REVA)</strong> · Linm hỗ trợ tư vấn kỹ thuật (có thể báo giá ngày công nếu ngoài gói bảo trì)</td></tr>
+<tr><td><strong>Hạ tầng pilot do Bên B (Linm) cung cấp</strong></td><td>Domain/server Linm vận hành giai đoạn pilot (Tab 4 · 6 tháng) — sự cố do VPS · cloud · DNS · mạng · certificate do <strong>bên thứ 3</strong> cung cấp</td><td>Nhà cung cấp bên thứ 3 / phối hợp <strong>Bên B</strong> · Linm <strong>không bảo hành</strong> downtime hạ tầng; vẫn bảo hành <strong>lỗi phần mềm Linm</strong></td></tr>
+<tr><td><strong>Dịch vụ hạ tầng bên thứ 3</strong></td><td>Nhà cung cấp cloud · CDN · email · chứng chỉ · đường truyền · hosting · registry MFE/npm · GitHub Packages</td><td>Nhà cung cấp / <strong>Bên A</strong> · Linm phối hợp khi cần log phần mềm</td></tr>
+<tr><td><strong>Hệ thống · phần mềm bên thứ 3</strong></td><td>POS REVA · API ngân hàng · Membership · MoMo · cổng TT · BossSoft · ứng dụng store (Apple/Google) · ERP/module không do Linm phát triển</td><td>Đơn vị sở hữu API / <strong>Bên A</strong> · tích hợp mới báo giá riêng (Tab 1 · mục 4)</td></tr>
+<tr><td><strong>Dữ liệu · vận hành do Bên A / bên thứ 3</strong></td><td>Nhập liệu sai · thao tác người dùng · thay đổi master không theo quy trình · thay đổi credential/API bên thứ 3 không thông báo Linm</td><td><strong>Bên A (REVA)</strong></td></tr>
+<tr><td><strong>Can thiệp ngoài phạm vi Linm</strong></td><td>REVA hoặc bên thứ 3 sửa code/build/config production không qua Linm · nâng cấp DB/OS không đồng bộ với bản release Linm khuyến nghị</td><td>Bên thực hiện can thiệp · Linm hỗ trợ khôi phục theo báo giá</td></tr>
+</tbody>
+</table>
+
+<div class="section-block section-block--surface section-block--spaced">
+<h3>6c · Phân định trách nhiệm khi xử lý sự cố</h3>
+<ul>
+<li><strong>Lỗi phần mềm Linm</strong> (tái hiện trên môi trường chuẩn · cùng bản build đã NT): Linm sửa trong phạm vi bảo hành · bảo trì.</li>
+<li><strong>Sự cố hạ tầng / bên thứ 3</strong>: Linm <strong>không bảo hành</strong> — hỗ trợ xác định nguyên nhân (log, health check) trong khả năng hợp lý; chi phí khắc phục hạ tầng do Bên A hoặc bên thứ 3.</li>
+<li><strong>Sự cố hỗn hợp</strong> (phần mềm + hạ tầng): các bên phối hợp; Linm chỉ cam kết phần thuộc phần mềm Linm phát triển.</li>
+<li><strong>Giai đoạn pilot hạ tầng Linm</strong> (Tab 4 · 6 tháng đầu): Linm vận hành server/domain pilot — sự cố do nhà cung cấp cloud/DNS/mạng bên thứ 3 vẫn thuộc loại trừ; Linm điều phối khắc phục trong phạm vi dịch vụ hosting đã thỏa thuận.</li>
+</ul>
+</div>
+
+<div class="contract-box contract-box--indigo">
+  <h3>Tóm tắt — bảo hành chỉ phần mềm Linm</h3>
+  <ul class="task-list">
+    <li><strong>Có bảo hành:</strong> Lỗi chức năng phần mềm <strong>do Linm phát triển</strong> · đã nghiệm thu · trong phạm vi HĐ triển khai</li>
+    <li><strong>Miễn trách nhiệm:</strong> Server · domain · cloud do <strong>Bên A (REVA)</strong> quản lý; hạ tầng pilot do <strong>Bên B (Linm)</strong> cung cấp khi sự cố do <strong>bên thứ 3</strong>; mọi phần mềm / API / dịch vụ <strong>bên thứ 3</strong></li>
+    <li><strong>Hỗ trợ thêm:</strong> Linm có thể tư vấn hoặc báo giá ngày công (~<strong>1 tr/ngày</strong>) cho hạng mục ngoài phạm vi bảo hành</li>
+  </ul>
+</div>
+
+<p class="doc-footer"><strong>Linm Soft</strong> · Báo giá có hiệu lực theo thỏa thuận triển khai với REVA</p>
+</article>
+
+<!-- TAB 6 · Điều khoản Hợp đồng -->
+<article id="bao-gia-panel-dieu-khoan" class="tien-do-doc bao-gia-doc tien-do-page tien-do-panel doc-print-sheet" data-tien-do-panel="dieu-khoan" role="tabpanel" hidden>
+
+<p class="print-tab-label" aria-hidden="true">Phần 6 · Điều khoản triển khai</p>
+<div class="doc-header">
+  <p class="kicker">Phụ lục thỏa thuận · REVA &amp; Linm Soft</p>
+  <h1 class="doc-title">Điều khoản thanh toán, nghiệm thu, tiến độ, xử lý lỗi &amp; thanh lý</h1>
+  <p class="doc-meta">
+    <strong>Áp dụng:</strong> Dự án 1 · Dữ liệu 2023–2025 · Dự án 2 · Phân hệ ERP (Tab 1)<br>
+    <strong>Bên A (Khách hàng):</strong> Công ty REVA / Foodmart<br>
+    <strong>Bên B (Đối tác triển khai):</strong> Linm Soft<br>
+    <strong>Tham chiếu:</strong> Timeline (Tab 3) · Lộ trình thanh toán (Tab 1) · Bảo hành (<a href="#bao-tri">Tab 5</a>) · Bàn giao (<a href="#ban-giao">Tab 4</a>)
+  </p>
+</div>
+
+<p class="lead">Phụ lục này quy định <strong>điều kiện thanh toán</strong>, <strong>tiêu chí nghiệm thu</strong>, <strong>trượt mốc và gia hạn tiến độ</strong>, <strong>giấy phép sử dụng phần mềm (License)</strong>, <strong>phân loại và xử lý lỗi</strong>, cùng <strong>nguyên tắc chấm dứt, thanh lý và Biên bản thanh lý (BBTL)</strong> — nhằm đảm bảo minh bạch, đúng tiến độ và cân bằng quyền lợi hai bên. Nội dung là cơ sở thỏa thuận; chi tiết pháp lý chốt trong <strong>Hợp đồng triển khai</strong>, Biên bản nghiệm thu, Biên bản điều chỉnh tiến độ và Biên bản thanh lý kèm theo.</p>
+
+<h2>Điều 1 · Thanh toán theo tiến độ</h2>
+<p class="lead lead--compact">Thanh toán thực hiện <strong>theo từng giai đoạn / đợt</strong>, gắn với Biên bản nghiệm thu (BBNT) tương ứng — không thanh toán trước toàn bộ giá trị Hợp đồng. Mỗi dự án áp dụng lộ trình <strong>10 · 20 · 20 · 20 · 20 · 10</strong> (06 đợt) trên giá trị hợp đồng tương ứng; chi tiết mốc và ngày dự kiến tại Tab 1 và Tab 3.</p>
+
+<table class="deliver-table quote-table">
+<thead><tr><th>Đợt</th><th>Tỷ lệ tích lũy</th><th>Điều kiện kích hoạt</th><th>Điều kiện tiếp tục triển khai</th></tr></thead>
+<tbody>
+<tr><td><strong>Đợt 1</strong></td><td class="price-col"><strong>10%</strong></td><td>Ký Hợp đồng / Thỏa thuận triển khai · đặt cọc khởi động · phân bổ nhân sự khảo sát hệ thống ERP, POS và dữ liệu lịch sử</td><td>Bên B bắt đầu giai đoạn khảo sát sau khi nhận đủ đợt 1</td></tr>
+<tr><td><strong>Đợt 2</strong></td><td class="price-col"><strong>30%</strong><br><small>(10% + 20%)</small></td><td>Bên A ký duyệt <strong>Tài liệu đặc tả chỉ số (KPI Spec)</strong>, <strong>mockup layout báo cáo</strong> và phạm vi nghiệm thu giai đoạn (tham chiếu FM02-A1 Eratown hoặc phụ lục tương ứng từng dự án)</td><td>Bên B triển khai phát triển và kết nối môi trường kỹ thuật sau khi Bên A thanh toán đủ <strong>30%</strong> giá trị dự án</td></tr>
+<tr><td><strong>Đợt 3 – 5</strong></td><td class="price-col"><strong>90%</strong><br><small>(+ 20% × 3)</small></td><td>Nghiệm thu từng giai đoạn trên môi trường Staging / pilot đã thống nhất · Bên A kiểm thử và xác nhận trước khi mở rộng phạm vi kế tiếp</td><td>Bên B tiếp tục giai đoạn sau khi hoàn tất thanh toán đợt tương ứng theo biên bản nghiệm thu</td></tr>
+<tr><td><strong>Đợt 6</strong></td><td class="price-col"><strong>100%</strong><br><small>(+ 10%)</small></td><td>Nghiệm thu tổng thể (UAT) · bàn giao tài liệu hướng dẫn · chuyển sang giai đoạn bảo hành (<a href="#bao-tri">Tab 5</a>)</td><td>Khoản 10% cuối gắn với hoàn tất nghĩa vụ hai bên theo Hợp đồng</td></tr>
+</tbody>
+</table>
+
+<div class="panel-note"><strong>Hạng mục thưởng báo cáo (tối thiểu 100 triệu VND):</strong> Thanh toán riêng tại mốc nghiệm thu báo cáo kế toán (<strong>31/08/2026</strong>) và báo cáo tập đoàn (<strong>05/01/2027</strong>) — không tính vào tỷ lệ 30% nêu trên. Các hạng mục Mobile app, MoZa, Thợ và API có phí được thỏa thuận theo hợp đồng / phụ lục riêng.</div>
+
+<div class="section-block section-block--surface section-block--spaced">
+<h3>1.1 · Thanh toán theo giai đoạn</h3>
+<ul>
+<li>Bên A thanh toán <strong>từng đợt</strong> tương ứng khối lượng / giai đoạn đã nghiệm thu — căn cứ BBNT hoặc xác nhận nghiệm thu (Điều 2.2, 2.3) và bảng lộ trình Tab 1 · Tab 3.</li>
+<li>Thời hạn: trong vòng <strong>03 (ba) ngày làm việc</strong> kể từ ngày ký BBNT hoặc ngày được coi là nghiệm thu — trừ khi Hợp đồng chính thức quy định khác.</li>
+<li>Hình thức: chuyển khoản vào tài khoản do Bên B (Linm Soft) chỉ định; nội dung chuyển khoản ghi rõ <strong>tên dự án · số đợt · số Hợp đồng / PO</strong> (nếu có).</li>
+<li>Mỗi đợt thanh toán = <strong>giá trị đợt đã nghiệm thu</strong> (tỷ lệ % × giá trị HĐ dự án tương ứng), bao gồm hạng mục thưởng khi nghiệm thu riêng theo Tab 1.</li>
+</ul>
+
+<h3>1.2 · Xác nhận thanh toán — Phiếu thu</h3>
+<p class="lead lead--compact">Sau khi Bên B <strong>ghi nhận đủ số tiền</strong> từng đợt trên tài khoản, Bên B bàn giao cho Bên A:</p>
+<ul>
+<li><strong>Phiếu thu</strong> (hoặc Giấy xác nhận đã thu tiền) theo mẫu nội bộ Linm Soft — ghi rõ số tiền, ngày thu, đợt / giai đoạn, dự án và hình thức thanh toán.</li>
+<li><strong>Thông báo xác nhận thanh toán</strong> qua email, tin nhắn hoặc văn bản đến đầu mối kế toán / dự án do Bên A chỉ định (kèm thông tin đối chiếu: số tiền · ngày · nội dung đợt) — theo Điều 2.2.</li>
+</ul>
+<p>Phiếu thu / xác nhận thanh toán là căn cứ Bên A hạch toán <strong>đã chi</strong> từng đợt. Thời gian Bên B phát hành: trong vòng <strong>03 (ba) ngày làm việc</strong> kể từ ngày tiền về tài khoản Bên B.</p>
+
+<h3>1.3 · Hóa đơn giá trị gia tăng (GTGT)</h3>
+<p class="lead lead--compact">Việc xuất hóa đơn tuân thủ <strong>Luật Thuế GTGT</strong> và quy định <strong>hóa đơn điện tử</strong> hiện hành. Hai bên <strong>trao đổi và chốt một phương án</strong> trước khi ký Hợp đồng chính thức — ghi nhận trong Phụ lục hóa đơn kèm theo.</p>
+
+<table class="deliver-table quote-table quote-table--cols-3">
+<colgroup>
+  <col class="col-a">
+  <col class="col-b">
+  <col class="col-c">
+</colgroup>
+<thead><tr><th>Phương án</th><th>Mô tả</th><th>Ghi chú</th></tr></thead>
+<tbody>
+<tr class="bonus-row"><td><strong>A · Theo giai đoạn nghiệm thu</strong></td><td>Xuất hóa đơn GTGT <strong>sau mỗi đợt</strong> Bên A thanh toán — khớp số tiền đợt và nội dung BBNT tương ứng</td><td>Phù hợp kế toán REVA theo dõi chi phí từng mốc dự án</td></tr>
+<tr><td><strong>B · Một lần khi hoàn thành dự án</strong></td><td>Tạm thu từng đợt (phiếu thu / xác nhận); xuất <strong>một hóa đơn tổng</strong> khi nghiệm thu tổng thể (UAT) / kết thúc dự án</td><td>Giảm số lượng hóa đơn; cần thống nhất thời điểm ghi nhận doanh thu theo thuế</td></tr>
+<tr><td><strong>C · Theo năm (năm dương lịch)</strong></td><td>Tổng hợp khối lượng / giá trị đã nghiệm thu và đã thanh toán trong năm · xuất hóa đơn <strong>cuối năm</strong> hoặc theo kỳ năm đã thỏa thuận</td><td>Áp dụng khi dự án kéo dài nhiều năm (vd. Dự án 2 qua 2026–2027); cần phân bổ doanh thu đúng quy định</td></tr>
+</tbody>
+</table>
+
+<div class="panel-note"><strong>Trao đổi trước ký HĐ:</strong> Bên A (REVA) và Bên B (Linm Soft) thống nhất phương án A / B / C (hoặc kết hợp theo từng dự án: Dự án 1 · Dự án 2), thông tin xuất hóa đơn (tên đơn vị, MST, địa chỉ, email nhận HĐĐT) và thứ tự: <em>BBNT → thanh toán → phiếu thu → hóa đơn</em> (hoặc thứ tự khác nếu kế toán hai bên thống nhất và hợp pháp thuế).</div>
+
+<h3>1.4 · Quyền truy cập hệ thống</h3>
+<ul>
+<li>Trong giai đoạn triển khai, Bên B cung cấp quyền truy cập UAT / pilot cho nhóm kiểm thử do Bên A chỉ định.</li>
+<li>Sau nghiệm thu các đợt 4–5 (theo từng dự án), nếu Bên A chưa hoàn thành nghĩa vụ thanh toán đợt tương ứng, hai bên thống nhất có thể <strong>tạm giới hạn quyền truy cập</strong> môi trường pilot cho đến khi hoàn tất thanh toán.</li>
+<li>Mở quyền truy cập cho toàn bộ người dùng REVA (hoặc bàn giao bản build theo Tab 4) sau khi Bên A hoàn thành các nghĩa vụ tài chính theo từng giai đoạn đã nghiệm thu. Cơ chế <strong>License</strong> giai đoạn triển khai: <a href="#dieu-khoan-license">Điều 7</a>.</li>
+</ul>
+</div>
+
+<h2>Điều 2 · Nghiệm thu sản phẩm</h2>
+
+<h3>2.1 · Tiêu chí nghiệm thu</h3>
+<p class="lead lead--compact">Nghiệm thu căn cứ deliverable đã thống nhất tại Tab 1, Tab 3 và tiến độ FM02 (<a href="../tien-do/phase1-fm02.html#nghiem-thu">chi tiết nghiệm thu Eratown</a>). Bên B bàn giao kèm Biên bản mời nghiệm thu, hướng dẫn kiểm thử và môi trường demo / Staging.</p>
+
+<table class="deliver-table quote-table">
+<thead><tr><th>Loại nghiệm thu</th><th>Tiêu chí</th><th>Căn cứ</th></tr></thead>
+<tbody>
+<tr><td><strong>Nghiệm thu thiết kế</strong></td><td>KPI Spec, mockup layout báo cáo và danh mục chỉ tiêu / công thức đã được Bên A ký duyệt</td><td>Điều kiện triển khai giai đoạn phát triển (30%)</td></tr>
+<tr><td><strong>Nghiệm thu giai đoạn</strong></td><td>Module / báo cáo đúng logic và công thức đã chốt · vận hành ổn định trên môi trường pilot · Bên A hoàn tất kiểm thử</td><td>Tab 3 · đợt 3–5</td></tr>
+<tr><td><strong>Nghiệm thu tổng thể (UAT)</strong></td><td>Đủ phạm vi Hợp đồng · tài liệu bàn giao · đào tạo vận hành cơ bản</td><td>Đợt 6 · Tab 4</td></tr>
+<tr><td><strong>Nghiệm thu hạng mục thưởng</strong></td><td>Release báo cáo kế toán / tập đoàn đúng mốc cam kết</td><td>Tab 1 · mục 3</td></tr>
+</tbody>
+</table>
+
+<h3>2.2 · Hình thức ký, nghiệm thu và xác nhận</h3>
+<p class="lead lead--compact">Hai bên thống nhất <strong>chấp nhận giá trị thỏa thuận</strong> đối với ký duyệt, nghiệm thu, từ chối nghiệm thu, xác nhận thanh toán, phê duyệt CR / BBĐT và các thông báo liên quan dự án qua <strong>tất cả các kênh</strong> sau — với điều kiện xác định được người gửi và nội dung thỏa thuận rõ ràng:</p>
+
+<table class="deliver-table quote-table">
+<thead><tr><th>Kênh</th><th>Áp dụng</th><th>Ghi chú</th></tr></thead>
+<tbody>
+<tr class="bonus-row"><td><strong>Văn bản</strong></td><td>Biên bản ký tay · bản scan / PDF · công văn · phụ lục đính kèm Hợp đồng</td><td>Ưu tiên cho BBNT, BBĐT, BB thanh lý — lưu hồ sơ dự án</td></tr>
+<tr><td><strong>Email</strong></td><td>Thông báo bàn giao · mời nghiệm thu · đồng ý / từ chối NT · xác nhận đã nhận tài liệu · phê duyệt KPI Spec / mockup / CR</td><td>Gửi từ địa chỉ đầu mối đã đăng ký (Phụ lục liên hệ HĐ)</td></tr>
+<tr><td><strong>Tin nhắn</strong></td><td>Zalo · SMS · ứng dụng chat công việc (Teams, Slack, …) giữa đầu mối hai bên</td><td>Nội dung thể hiện rõ ý chí: «Đồng ý NT đợt X» · «Xác nhận đã TT» · «Duyệt mockup» · …</td></tr>
+</tbody>
+</table>
+
+<div class="section-block section-block--surface section-block--spaced">
+<h3>Điều kiện giá trị xác nhận</h3>
+<ul>
+<li>Người gửi là <strong>đại diện có thẩm quyền</strong> hoặc được ủy quyền bằng văn bản / email công ty — danh sách đầu mối (họ tên · chức danh · email · SĐT / Zalo) ghi trong Phụ lục liên hệ khi ký Hợp đồng.</li>
+<li>Nội dung phải <strong>nhận diện được đối tượng</strong>: tên dự án · đợt / giai đoạn · hạng mục (NT thiết kế, NT giai đoạn 3, thưởng BC, …).</li>
+<li>Bên nhận có thể <strong>yêu cầu bổ sung Biên bản scan</strong> trong vòng <strong>03 ngày làm việc</strong> để phục vụ kế toán / lưu trữ — không làm mất hiệu lực xác nhận đã thống nhất trên email / tin nhắn trong thời điểm đó.</li>
+<li>Thay đổi đầu mốu liên hệ: thông báo bằng email công ty trước khi áp dụng cho giao dịch mới.</li>
+</ul>
+<p class="lead lead--compact"><strong>Phạm vi áp dụng:</strong> Ký duyệt thiết kế (KPI Spec, mockup) · nghiệm thu / từ chối nghiệm thu · xác nhận Bên B đã nhận thanh toán (Điều 1.2) · thông báo Bên A đã chuyển khoản · phê duyệt CR · ký BBĐT (Điều 6) · xác nhận tiếp nhận bàn giao tài liệu.</p>
+</div>
+
+<h3>2.3 · Nghiệm thu mặc định khi quá hạn phản hồi</h3>
+<div class="contract-box contract-box--indigo">
+  <p>Kể từ ngày Bên B gửi thông báo bàn giao sản phẩm từng đợt / giai đoạn (email, tin nhắn hoặc Biên bản mời nghiệm thu — Điều 2.2), Bên A có tối đa <strong>07 (bảy) ngày làm việc</strong> để:</p>
+  <ul class="task-list">
+    <li>Xác nhận nghiệm thu (BBNT, email hoặc tin nhắn); hoặc</li>
+    <li>Thông báo từ chối nghiệm thu kèm danh sách lỗi nghiêm trọng (mức P0 — Điều 3.1) và hướng dẫn tái hiện cụ thể.</li>
+  </ul>
+  <p>Quá thời hạn trên, nếu Bên A <strong>không phản hồi</strong> trên bất kỳ kênh nào tại Điều 2.2, sản phẩm bàn giao được <strong>coi là đã nghiệm thu</strong>. Bên A thanh toán đợt tiếp theo trong vòng <strong>03 (ba) ngày làm việc</strong> kể từ ngày coi là nghiệm thu.</p>
+</div>
+
+<h3>2.4 · Trách nhiệm về dữ liệu đầu vào</h3>
+<p class="lead lead--compact">Bên B chịu trách nhiệm về <strong>tính đúng đắn của công thức toán học và logic trích xuất dữ liệu</strong> đã thống nhất trong KPI Spec. Bên B không chịu trách nhiệm nghiệm thu đối với sai lệch số liệu phát sinh từ:</p>
+<ul>
+<li>Dữ liệu nguồn (ERP cũ, POS, file Excel, sao kê ngân hàng) do Bên A cung cấp không chính xác, không đầy đủ hoặc không tuân thủ quy trình nghiệp vụ.</li>
+<li>Thay đổi danh mục, chứng từ hoặc thông số API bên thứ ba mà Bên A chưa thông báo trước khi đối soát.</li>
+<li>Sai lệch nguồn POS / hệ thống FM ngoài phạm vi connector đã nghiệm thu — Bên B hỗ trợ phân tích; việc hiệu chỉnh dữ liệu nguồn thuộc trách nhiệm Bên A.</li>
+</ul>
+
+<h3>2.5 · Phạm vi cố định và yêu cầu phát sinh (Change Request)</h3>
+<table class="deliver-table quote-table">
+<thead><tr><th>Nội dung</th><th>Quy định</th></tr></thead>
+<tbody>
+<tr><td><strong>Phạm vi cố định (Scope Freeze)</strong></td><td>Sau khi Bên A ký duyệt KPI Spec và mockup, mọi yêu cầu thay đổi công thức, cấu trúc báo cáo hoặc bổ sung báo cáo / module ngoài phụ lục đã chốt được xử lý theo quy trình <strong>Yêu cầu phát sinh (CR)</strong>.</td></tr>
+<tr><td><strong>Hiệu chỉnh trong phạm vi Hợp đồng</strong></td><td>Mỗi mẫu báo cáo hoặc module: tối đa <strong>02 (hai) lần</strong> điều chỉnh logic tính toán miễn phí, trong phạm vi KPI Spec đã ký — phục vụ hiệu chỉnh sau kiểm thử nội bộ của Bên A.</td></tr>
+<tr><td><strong>Chi phí CR</strong></td><td>Báo giá riêng theo <strong>1.000.000 VND / ngày công</strong> (8 giờ làm việc) hoặc theo báo giá cố định từng hạng mục — không cộng vào giá trị Hợp đồng gốc. CR chỉ triển khai sau khi Bên A phê duyệt báo giá bằng email, tin nhắn hoặc văn bản (Điều 2.2).</td></tr>
+</tbody>
+</table>
+
+<h2>Điều 3 · Phân loại và xử lý lỗi phần mềm</h2>
+<p class="lead lead--compact">Quy định này áp dụng trong giai đoạn triển khai (trước nghiệm thu đợt 6) và trong <strong>24 tháng bảo hành miễn phí</strong> sau nghiệm thu hệ thống ERP (<a href="#bao-tri">Tab 5</a>). Các trường hợp loại trừ bảo hành: Tab 5 · mục 6.</p>
+
+<table class="deliver-table quote-table">
+<thead><tr><th>Mức độ</th><th>Mô tả</th><th>Cam kết xử lý (Bên B)</th><th>Ảnh hưởng nghiệm thu</th></tr></thead>
+<tbody>
+<tr class="bonus-row"><td><strong>P0 · Nghiêm trọng</strong></td><td>Hệ thống hoặc báo cáo không sử dụng được; sai số liệu tổng hợp nghiêm trọng do lỗi logic phần mềm Linm (tái hiện được); mất dữ liệu do lỗi phần mềm Linm</td><td>Xử lý ưu tiên cao nhất · cập nhật môi trường Staging / pilot</td><td>Tạm hoãn nghiệm thu đợt liên quan cho đến khi khắc phục hoặc có phương án tạm thời được Bên A chấp thuận (email, tin nhắn hoặc văn bản — Điều 2.2)</td></tr>
+<tr><td><strong>P1 · Quan trọng</strong></td><td>Sai lệch một phần cột, bộ lọc hoặc công thức; còn phương án thay thế tạm thời; không làm gián đoạn toàn bộ vận hành</td><td>Khắc phục trong sprint / bản cập nhật kế tiếp theo lịch dự án</td><td>Có thể nghiệm thu <strong>có điều kiện</strong> — ghi rõ danh sách P1 và thời hạn xử lý trên BBNT</td></tr>
+<tr><td><strong>P2 · Nhẹ</strong></td><td>Giao diện, nhãn hiển thị, căn lề; hiệu năng trong ngưỡng chấp nhận; không ảnh hưởng số liệu</td><td>Xử lý theo thứ tự ưu tiên sau P0, P1</td><td>Không làm căn cứ từ chối nghiệm thu · ghi nhận vào backlog bảo hành</td></tr>
+<tr><td><strong>Ngoài phạm vi bảo hành Linm</strong></td><td>Dữ liệu đầu vào; hạ tầng do Bên A quản lý; API ngân hàng / POS / Membership bên thứ ba; thao tác người dùng; can thiệp mã nguồn / cấu hình không qua Bên B</td><td>Hỗ trợ phân tích; báo giá ngày công nếu Bên A yêu cầu hỗ trợ tích hợp</td><td>Điều 2.4 · Tab 5 · mục 6b</td></tr>
+</tbody>
+</table>
+
+<div class="section-block section-block--surface section-block--spaced">
+<h3>3.1 · Quy trình tiếp nhận và xử lý</h3>
+<ul>
+<li><strong>Bên A</strong> gửi yêu cầu xử lý kèm: môi trường, các bước tái hiện, ảnh chụp màn hình hoặc file export, kỳ báo cáo / cửa hàng liên quan, mô tả kết quả mong đợi và thực tế.</li>
+<li><strong>Bên B</strong> xác nhận tiếp nhận và phân loại mức độ trong vòng <strong>02 (hai) ngày làm việc</strong>; với lỗi P0: phản hồi sơ bộ trong vòng <strong>01 (một) ngày làm việc</strong>.</li>
+<li>Trong thời hạn bảo hành 24 tháng: lỗi thuộc phần mềm Linm đã nghiệm thu được xử lý <strong>miễn phí</strong> (Tab 5). Yêu cầu ngoài phạm vi nghiệm thu hoặc tính năng mới áp dụng quy trình CR (Điều 2.5).</li>
+</ul>
+</div>
+
+<h2>Điều 4 · Chấm dứt hợp đồng và thanh lý</h2>
+<p class="lead lead--compact">Khi hai bên thỏa thuận chấm dứt Hợp đồng trước thời hạn, việc tất toán căn cứ khối lượng đã nghiệm thu, công việc dở dang và trách nhiệm từng bên theo nguyên tắc sau.</p>
+
+<div class="contract-box">
+  <p><strong>Số tiền Bên B được quyền giữ lại hoặc thu bổ sung</strong> = (1) Tổng các đợt đã nghiệm thu hợp lệ + (2) Công việc dở dang đã thực hiện (quy đổi theo ngày công) + (3) Phí vi phạm hợp đồng (nếu có, theo từng trường hợp bên dưới).</p>
+  <p class="contract-box-note">Đơn giá công việc dở dang: <strong>1.000.000 VND / ngày công</strong> (8 giờ) — hoặc theo thỏa thuận trên Biên bản thanh lý.</p>
+</div>
+
+<h3>4.1 · Chấm dừng do phía Bên A (Khách hàng)</h3>
+<p class="lead lead--compact">Áp dụng khi Bên A: hết khả năng tài chính; thay đổi mô hình kinh doanh dẫn đến dừng dự án; không phản hồi nghiệm thu / thanh toán quá <strong>30 (ba mươi) ngày làm việc</strong> liên tục; hoặc đơn phương chấm dứt không căn cứ điều khoản Hợp đồng.</p>
+<ul>
+<li>Số tiền Bên A đã thanh toán cho các đợt đã nghiệm thu hợp lệ <strong>không được hoàn trả</strong>.</li>
+<li>Bên A thanh toán bổ sung <strong>10% – 15%</strong> giá trị phần công việc dở dang tại thời điểm chấm dứt (phí vi phạm đơn phương).</li>
+<li>Bên B có quyền tạm ngưng dịch vụ triển khai / vận hành pilot và giữ lại mã nguồn, cấu hình, tài liệu kỹ thuật chưa đủ điều kiện bàn giao theo nghĩa vụ tài chính.</li>
+</ul>
+
+<h3>4.2 · Chấm dừng do phía Bên B (Đối tác triển khai)</h3>
+<p class="lead lead--compact">Áp dụng khi Bên B không hoàn thành deliverable theo KPI Spec đã ký duyệt; lỗi logic nghiêm trọng không khắc phục được trong thời hạn đã cam kết bằng văn bản.</p>
+<ul>
+<li>Bên B hoàn trả <strong>50% – 100%</strong> số tiền nhận từ các mốc chưa nghiệm thu hợp lệ — mức cụ thể theo Biên bản thanh lý và mức độ ảnh hưởng.</li>
+<li>Bên B không được thu phí nghiệm thu đối với khối lượng chưa đạt tiêu chí Điều 2.1.</li>
+</ul>
+
+<h3>4.3 · Bất khả kháng và thỏa thuận chung</h3>
+<p class="lead lead--compact">Trường hợp bất khả kháng theo quy định pháp luật: hai bên áp dụng nguyên tắc <strong>«Làm đến đâu, thanh toán đến đấy»</strong> — kiểm tra khối lượng thực tế, nghiệm thu phần hoàn thành và tất toán; không áp dụng phí phạt cho bên bị ảnh hưởng bởi sự kiện bất khả kháng.</p>
+
+<h3 id="dieu-khoan-thanh-ly">4.4 · Biên bản thanh lý khi dự án dừng</h3>
+<p class="lead lead--compact">Khi Hợp đồng chấm dứt trước thời hạn hoặc dự án không tiếp tục triển khai, hai bên lập <strong>Biên bản thanh lý (BBTL)</strong> để tất toán tài chính, thu hồi / giữ License, bàn giao hoặc ngừng sử dụng phần mềm và export dữ liệu. BBTL áp dụng <strong>riêng từng dự án phần mềm</strong> (Dự án 1 · Dự án 2 — không gộp % chung).</p>
+
+<h4>Phân loại chấm dứt</h4>
+<table class="deliver-table quote-table">
+<thead><tr><th>Loại</th><th>Điều kiện</th><th>Xử lý tài chính</th></tr></thead>
+<tbody>
+<tr class="bonus-row"><td><strong>(A) Dừng thỏa thuận</strong></td><td>Hai bên đồng thuận dừng dự án; bất khả kháng (Điều 4.3); thay đổi ưu tiên kinh doanh có BBTL</td><td>«Làm đến đâu, thanh toán đến đấy» — đợt đã NT + WIP; <strong>không</strong> áp dụng phí vi phạm đơn phương</td></tr>
+<tr><td><strong>(B) Chấm dứt vi phạm</strong></td><td>Theo Điều 4.1 (Bên A) hoặc Điều 4.2 (Bên B)</td><td>Áp dụng đầy đủ phí phạt / hoàn trả tại mục 4.1 · 4.2 cộng WIP (nếu có)</td></tr>
+</tbody>
+</table>
+
+<h4>Quy trình BBTL</h4>
+<ul>
+<li>Bên thông báo chấm dứt gửi qua <strong>văn bản, email hoặc tin nhắn</strong> (Điều 2.2) — nêu rõ dự án, lý do, loại (A) hoặc (B).</li>
+<li>Hai bên họp / trao đổi và ký BBTL trong vòng <strong>07 ngày làm việc</strong> kể từ ngày thông báo (hoặc ngày hai bên thống nhất dừng).</li>
+<li>BBTL ghi nhận: đợt đã nghiệm thu · công việc dở dang (ngày công · đơn giá 1.000.000 VND/ngày) · số tiền Bên A còn phải trả hoặc Bên B phải hoàn · phí vi phạm (nếu loại B) · ngày <strong>cutoff</strong> ngừng triển khai / vận hành pilot.</li>
+</ul>
+
+<h4>Tài chính trên BBTL</h4>
+<p class="lead lead--compact">Căn cứ công thức tại đầu Điều 4 và loại chấm dứt (A/B). BBTL không làm thay đổi các đợt đã nghiệm thu hợp lệ trước thời điểm dừng.</p>
+
+<h4>License và quyền sử dụng phần mềm</h4>
+<ul>
+<li><strong>Chưa thanh toán đủ 90%</strong> (từng dự án): Bên B <strong>thu hồi License</strong> triển khai; Bên A ngừng truy cập service / UI deploy — chi tiết <a href="#dieu-khoan-license">Điều 7.3</a>.</li>
+<li><strong>Đã ≥ 90%</strong>: Bên A <strong>giữ License vĩnh viễn</strong> phần đã cấp; tất toán đợt 10% / UAT còn lại ghi riêng trên BBTL.</li>
+<li>Quyền sở hữu trí tuệ và phạm vi bàn giao artifact: theo <strong>Điều 5</strong> · Tab 4.</li>
+</ul>
+
+<h4>Dữ liệu nghiệp vụ và chuyển giao</h4>
+<ul>
+<li>Dữ liệu nghiệp vụ do Bên A nhập / sở hữu (master, chứng từ, sao kê, báo cáo đã import) <strong>luôn thuộc Bên A</strong> — không phụ thuộc kết quả dự án.</li>
+<li>Bên B hỗ trợ <strong>export dữ liệu</strong> (dump DB tenant REVA, file CSV/Excel đã xử lý, log import — theo khả năng kỹ thuật tại thời điểm dừng) trong vòng <strong>15 ngày làm việc</strong> sau khi ký BBTL.</li>
+<li><strong>Miễn phí tối đa 03 ngày công</strong> hỗ trợ export / handover; phần vượt tính theo <strong>1.000.000 VND / ngày công</strong> (8 giờ) trừ khi BBTL ghi khác.</li>
+<li>Bên B <strong>không xóa</strong> dữ liệu Bên A trước khi Bên A xác nhận đã nhận export đủ (email / văn bản — Điều 2.2).</li>
+</ul>
+
+<h4>Cutoff và thu hồi quyền truy cập</h4>
+<p class="lead lead--compact">Ngày cutoff ghi trên BBTL: tắt môi trường pilot / staging (theo thỏa thuận); thu hồi VPN, repo, credential cloud, tài khoản kỹ thuật Bên B cấp cho dự án. Bên A chịu trách nhiệm hạ tầng và chi phí hosting sau cutoff nếu giữ server riêng.</p>
+
+<h4>Bảo mật sau chấm dứt</h4>
+<p class="lead lead--compact">Nghĩa vụ <strong>bảo mật thông tin</strong> và NDA (nếu có trong Hợp đồng chính) <strong>vẫn hiệu lực</strong> sau BBTL. Hai bên xóa bản sao dữ liệu / tài liệu không cần thiết của bên kia trong thời hạn BBTL ghi nhận.</p>
+
+<h4>Checklist tối thiểu trên BBTL</h4>
+<table class="deliver-table quote-table quote-table--cols-3">
+<colgroup>
+  <col class="col-a">
+  <col class="col-b">
+  <col class="col-c">
+</colgroup>
+<thead><tr><th>Hạng mục</th><th>Nội dung ghi nhận</th><th>Trạng thái</th></tr></thead>
+<tbody>
+<tr><td><strong>Dự án · loại chấm dứt</strong></td><td>Tên dự án · (A) thỏa thuận / (B) vi phạm · mục 4.1 / 4.2 / 4.3</td><td>☐</td></tr>
+<tr><td><strong>Nghiệm thu · thanh toán</strong></td><td>Đợt đã NT · % đã TT · WIP (ngày công) · số tiền còn phải trả / hoàn</td><td>☐</td></tr>
+<tr><td><strong>License</strong></td><td>Thu hồi triển khai / giữ vĩnh viễn (≥ 90%) · ngày cutoff</td><td>☐</td></tr>
+<tr><td><strong>Artifact phần mềm</strong></td><td>Build / source đã · chưa bàn giao (Điều 5 · Tab 4)</td><td>☐</td></tr>
+<tr><td><strong>Export dữ liệu</strong></td><td>Phương thức · deadline 15 ngày · xác nhận Bên A đã nhận</td><td>☐</td></tr>
+<tr><td><strong>Quyền truy cập</strong></td><td>Thu hồi VPN · repo · credential · tài khoản UAT</td><td>☐</td></tr>
+<tr><td><strong>Đầu mối</strong></td><td>Liên hệ hai bên khi thực hiện BBTL (Phụ lục HĐ)</td><td>☐</td></tr>
+</tbody>
+</table>
+
+<h2>Điều 5 · Quyền sở hữu trí tuệ</h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>Tình huống</th><th>Quy định</th></tr></thead>
+<tbody>
+<tr><td><strong>Chưa hoàn thành nghĩa vụ tài chính</strong></td><td>Quyền sở hữu đối với mã nguồn, cấu hình, truy vấn và tài liệu kỹ thuật do Bên B phát triển trong phạm vi chưa thanh toán đủ thuộc <strong>Bên B</strong>. Bên A không sao chép, phân phối hoặc tái sử dụng khi chưa được cấp quyền bằng văn bản.</td></tr>
+<tr><td><strong>Đã hoàn thành thanh toán theo Hợp đồng</strong></td><td>Bên A được <strong>quyền sử dụng vĩnh viễn</strong> bản build ERP đã bàn giao; nhận <strong>toàn bộ mã nguồn</strong> lớp tích hợp REVA (POS sync, Reva Report, Data) theo Tab 4.</td></tr>
+<tr><td><strong>Nền tảng lõi Linm</strong></td><td>Bàn giao bản build release và tài liệu triển khai — không chuyển giao mã nguồn lõi nền tảng (Tab 4 · phân tách quyền sở hữu). <strong>License vĩnh viễn</strong> khi thanh toán ≥ 90%: <a href="#dieu-khoan-license">Điều 7</a>.</td></tr>
+</tbody>
+</table>
+
+<h2 id="dieu-khoan-tien-do">Điều 6 · Tiến độ dự án — trượt mốc và gia hạn</h2>
+<p class="lead lead--compact">Mốc ngày tại Tab 3 (Timeline Release) là <strong>lịch tham chiếu</strong> khi hai bên đủ điều kiện phối hợp. Mọi thay đổi ngày cam kết phải được ghi nhận bằng <strong>Biên bản điều chỉnh tiến độ (BBĐT)</strong> do đại diện có thẩm quyền hai bên ký — trừ trường hợp gia hạn tự động theo các khoản dưới đây.</p>
+
+<h3>6.1 · Nguyên tắc chung</h3>
+<ul>
+<li>Tiến độ gắn với <strong>chuỗi mốc nghiệm thu và thanh toán</strong> (Điều 1, Điều 2) — không tách riêng deadline triển khai khỏi nghĩa vụ NT / TT của Bên A.</li>
+<li>Bên gây chậm có trách nhiệm <strong>thông báo ngay</strong> qua email, tin nhắn hoặc văn bản (Điều 2.2) khi phát hiện hoặc dự kiến không đáp ứng mốc.</li>
+<li><strong>Yêu cầu phát sinh (CR)</strong> và mở rộng phạm vi (Điều 2.5) <strong>không tự động gộp</strong> vào timeline gốc — mỗi CR kèm ước lượng thời gian và mốc mới (nếu có), Bên A phê duyệt trước khi triển khai.</li>
+</ul>
+
+<h3>6.2 · Trượt mốc do phía Bên A (Khách hàng)</h3>
+<p class="lead lead--compact">Mốc cam kết của Bên B được <strong>điều chỉnh tương ứng</strong> (cộng thêm thời gian chậm trễ) khi nguyên nhân trực tiếp thuộc Bên A, gồm nhưng không giới hạn:</p>
+<table class="deliver-table quote-table">
+<thead><tr><th>Nhóm nguyên nhân</th><th>Ví dụ</th><th>Ảnh hưởng timeline</th></tr></thead>
+<tbody>
+<tr><td><strong>Chậm cung cấp đầu vào</strong></td><td>Dữ liệu master, file Excel, sao kê NH, tài liệu API, thông số kết nối POS / Membership</td><td>Đẩy mốc tương ứng <strong>bằng số ngày làm việc</strong> Bên A chậm (tính từ ngày yêu cầu trong BB mời / email đến ngày Bên A bàn giao đủ điều kiện)</td></tr>
+<tr><td><strong>Chậm phê duyệt thiết kế</strong></td><td>KPI Spec, mockup báo cáo, phụ lục phạm vi FM02 / Eratown</td><td>Đẩy mốc <strong>bắt đầu phát triển</strong> (sau 30%) và các mốc phía sau theo BBĐT</td></tr>
+<tr><td><strong>Chậm nghiệm thu / thanh toán</strong></td><td>Quá 07 ngày làm việc phản hồi NT (khi có tranh chấp hợp lệ); chậm TT đợt đã NT — chặn giai đoạn kế</td><td>Đẩy mốc giai đoạn tiếp theo cho đến khi hoàn tất NT + TT theo Điều 1</td></tr>
+<tr><td><strong>Thay đổi yêu cầu</strong></td><td>CR đã duyệt · thay đổi nghiệp vụ giữa chừng</td><td>Timeline CR <strong>tách riêng</strong> hoặc cộng thêm ngày vào BBĐT tổng thể</td></tr>
+</tbody>
+</table>
+<p class="lead lead--compact">Trong thời gian chậm do Bên A: Bên B <strong>không chịu trách nhiệm</strong> về việc trượt mốc thưởng báo cáo (Tab 1 · mục 3) và <strong>không bị coi là vi phạm</strong> cam kết tiến độ nếu đã thông báo và lập BBĐT.</p>
+
+<h3>6.3 · Trượt mốc do phía Bên B (Đối tác triển khai)</h3>
+<ul>
+<li>Bên B thông báo sớm (trước ít nhất <strong>05 ngày làm việc</strong> so với mốc Tab 3) nếu dự kiến trễ — kèm nguyên nhân và đề xuất lịch mới.</li>
+<li>Hai bên ký BBĐT trong vòng <strong>07 ngày làm việc</strong> kể từ thông báo; ghi rõ mốc cũ · mốc mới · ảnh hưởng NT / TT / thưởng BC.</li>
+<li>Trễ do lỗi khách quan nội bộ Bên B (không thuộc Bên A, CR, bất khả kháng): Bên A có quyền <strong>yêu cầu bù tiến độ</strong> (tăng nhân sự / ưu tiên) hoặc thương lượng điều chỉnh hạng mục thưởng — không tự động mất thưởng nếu Bên B khắc phục và NT đúng mốc mới trong BBĐT.</li>
+<li>Trễ nghiêm trọng, lặp lại hoặc không khắc phục: áp dụng Điều 4.2 (chấm dứt / hoàn trả) và Bên A có thể <strong>không chi trả thưởng</strong> mốc BC bị ảnh hưởng.</li>
+</ul>
+
+<h3>6.4 · Gia hạn tiến độ</h3>
+<div class="section-block section-block--surface section-block--spaced">
+<p class="lead lead--compact"><strong>Biên bản điều chỉnh tiến độ (BBĐT)</strong> là căn cứ duy nhất thay đổi ngày cam kết so với Tab 3, gồm tối thiểu:</p>
+<ul>
+<li>Tên dự án · mốc / đợt bị ảnh hưởng · ngày cũ · ngày mới · lý do · bên chịu trách nhiệm chậm trễ.</li>
+<li>Ảnh hưởng tới thanh toán (giữ nguyên % đợt) · thưởng BC (nếu có) · bảo hành (Tab 5).</li>
+</ul>
+<table class="deliver-table quote-table">
+<thead><tr><th>Loại gia hạn</th><th>Điều kiện</th><th>Giới hạn / ghi chú</th></tr></thead>
+<tbody>
+<tr class="bonus-row"><td><strong>Tự động (do Bên A)</strong></td><td>Chậm cung cấp / phê duyệt / NT+TT theo mục 6.2 — Bên B ghi nhận bằng email + phụ lục BBĐT</td><td>Cộng dồn ngày chậm; <strong>không cần</strong> phí gia hạn</td></tr>
+<tr><td><strong>Thỏa thuận (hai bên)</strong></td><td>Bất khả kháng (Điều 4.3) · thay đổi ưu tiên nguồn lực · điều chỉnh phạm vi</td><td>Ký BBĐT; timeline Tab 3 cập nhật theo bản ký</td></tr>
+<tr><td><strong>Theo CR</strong></td><td>Phát sinh ngoài KPI Spec đã chốt</td><td>Mốc CR <strong>độc lập</strong> hoặc ghi rõ cộng thêm vào BBĐT tổng</td></tr>
+</tbody>
+</table>
+<div class="panel-note"><strong>Mốc thưởng báo cáo:</strong> Ngày <strong>31/08/2026</strong> (BC kế toán) và <strong>05/01/2027</strong> (BC tập đoàn) được <strong>dời theo BBĐT</strong> khi trễ do Bên A hoặc bất khả kháng. Trễ do Bên B không thỏa thuận lại → Bên A có quyền giữ nguyên điều kiện thưởng «đúng hạn» hoặc thương lượng mức thưởng thay thế bằng văn bản.</div>
+</div>
+
+<h3>6.5 · Bất khả kháng và lịch nghỉ</h3>
+<ul>
+<li>Sự kiện bất khả kháng theo pháp luật: timeline được gia hạn tương ứng thời gian sự kiện; hai bên ký BBĐT trong <strong>15 ngày làm việc</strong> sau khi sự kiện kết thúc (hoặc khi có thể lường trước).</li>
+<li>Ngày nghỉ lễ · Tết theo lịch Việt Nam: tính vào <strong>ngày làm việc</strong> quy định tại các Điều 1–2 (không tính thứ Bảy, Chủ nhật trừ khi hai bên thỏa thuận làm việc).</li>
+</ul>
+
+<h2 id="dieu-khoan-license">Điều 7 · Giấy phép sử dụng (License)</h2>
+<p class="lead lead--compact">Quy định này áp dụng cho <strong>phần mềm do Bên B triển khai và deploy</strong> trên môi trường do Bên A sử dụng (pilot Linm, Staging / UAT, server REVA — <a href="#ban-giao">Tab 4</a>). Mục tiêu: đảm bảo <strong>tiến độ release</strong> trong giai đoạn dự án và <strong>ràng buộc nghĩa vụ thanh toán</strong> hai bên. Tính <strong>90%</strong> theo <strong>giá trị Hợp đồng từng dự án</strong> (Dự án 1 · Dự án 2 riêng — Điều 1), <strong>không gộp</strong> hạng mục thưởng BC tách riêng trừ khi thỏa thuận khác.</p>
+
+<h3>7.1 · Giai đoạn triển khai dự án (trước khi thanh toán đủ 90%)</h3>
+<p class="lead lead--compact">Kể từ khi Bên B deploy bản build / source lên môi trường Bên A (sau mốc 30% và KPI Spec — Điều 1), Bên B có quyền <strong>áp dụng cơ chế License</strong> (kích hoạt theo key, giới hạn theo môi trường hoặc thời hạn triển khai) đối với:</p>
+<ul>
+<li><strong>ERP Service</strong> — API · BFF · job host (Docker / release build).</li>
+<li><strong>MFE ERP (UI)</strong> — artifact giao diện Finance · Sales · Analytics · Master · HR · Supply đã mount trên shell host.</li>
+<li><strong>Lớp tích hợp REVA</strong> (POS sync · Reva Report · job) — khi chạy trên cùng hạ tầng triển khai dự án.</li>
+</ul>
+
+<table class="deliver-table quote-table">
+<thead><tr><th>Nội dung</th><th>Quy định</th></tr></thead>
+<tbody>
+<tr class="bonus-row"><td><strong>Mục đích License triển khai</strong></td><td>Cho phép Bên A <strong>kiểm thử · UAT · pilot vận hành</strong> theo tiến độ dự án; đồng thời ràng buộc Bên A hoàn thành <strong>thanh toán và nghiệm thu</strong> theo Điều 1 · 2.</td></tr>
+<tr><td><strong>Quyền Bên B</strong></td><td>Tạm <strong>giới hạn hoặc tạm ngưng</strong> License (không truy cập service / UI) nếu Bên A <strong>quá hạn thanh toán</strong> đợt đã nghiệm thu hoặc vi phạm nghĩa vụ tài chính theo Hợp đồng — sau thông báo <strong>03 ngày làm việc</strong> (email / tin nhắn / văn bản — Điều 2.2).</td></tr>
+<tr><td><strong>Quyền Bên A</strong></td><td>Sử dụng bản deploy <strong>đúng phạm vi dự án</strong> để nghiệm thu; không sao chép, phân phối hoặc gỡ License / reverse-engineer nhằm vượt ràng buộc thanh toán.</td></tr>
+<tr><td><strong>Thông báo</strong></td><td>Bên B cung cấp hướng dẫn kích hoạt / cập nhật License khi deploy môi trường mới; mọi thay đổi trạng thái License gửi đầu mối kỹ thuật Bên A.</td></tr>
+</tbody>
+</table>
+
+<div class="panel-note"><strong>Liên hệ quyền truy cập (Điều 1.4):</strong> Giới hạn user UAT và cơ chế License có thể áp dụng <strong>song song</strong> — nhằm bảo vệ tiến độ release và đối soát thanh toán, không thay thế nghĩa vụ nghiệm thu / BBNT.</div>
+
+<h3>7.2 · License vĩnh viễn — khi thanh toán ≥ 90%</h3>
+<p class="lead lead--compact">Khi Bên A đã thanh toán tích lũy <strong>từ 90% trở lên</strong> giá trị Hợp đồng của <strong>từng dự án</strong> (tương ứng hoàn tất đợt 5 trong lộ trình 10·20×4·10 — trước đợt 10% cuối), Bên B <strong>cung cấp License sử dụng vĩnh viễn</strong> trong phạm vi Hợp đồng và bàn giao Tab 4:</p>
+
+<table class="deliver-table quote-table quote-table--cols-3">
+<colgroup>
+  <col class="col-a">
+  <col class="col-b">
+  <col class="col-c">
+</colgroup>
+<thead><tr><th>Thành phần</th><th>Nội dung License vĩnh viễn</th><th>Ghi chú</th></tr></thead>
+<tbody>
+<tr class="bonus-row"><td><strong>Server · ERP Service</strong></td><td>Key / cấu hình License cho <strong>bản build release</strong> (WebService · BFF · jobs) trên server / cloud Bên A — <strong>quyền vận hành không thời hạn</strong> trong phạm vi tenant REVA đã triển khai</td><td>Lõi platform — build + deploy guide (Tab 4)</td></tr>
+<tr><td><strong>UI · MFE ERP</strong></td><td>Key sử dụng vĩnh viễn kèm <strong>artifact UI / source UI</strong> theo phạm vi bàn giao (MFE build hoặc source lớp REVA Report / tích hợp nếu thuộc HĐ)</td><td>Quyền sử dụng vĩnh viễn · không chuyển quyền sở hữu lõi Linm</td></tr>
+<tr><td><strong>Lớp Reva (POS sync · Report · Data)</strong></td><td>Full source đã bàn giao (Tab 4) + License vận hành <strong>không giới hạn thời gian</strong> trên môi trường REVA</td><td>Thuộc quyền REVA sau thanh toán đủ điều kiện</td></tr>
+</tbody>
+</table>
+
+<ul>
+<li>Bên B bàn giao License (key, file cấu hình, hướng dẫn kích hoạt) trong vòng <strong>07 ngày làm việc</strong> kể từ khi Bên B xác nhận Bên A đã thanh toán đủ <strong>≥ 90%</strong> dự án tương ứng (kèm phiếu thu / xác nhận — Điều 1.2).</li>
+<li><strong>Đợt 10% cuối</strong> vẫn thực hiện theo nghiệm thu UAT / bàn giao tổng thể — License vĩnh viễn <strong>không bị thu hồi</strong> khi Bên A còn nghĩa vụ đợt 6, trừ vi phạm Hợp đồng nghiêm trọng (Điều 4).</li>
+</ul>
+
+<h3>7.3 · Chấm dứt Hợp đồng và License</h3>
+<ul>
+<li>Chấm dứt Hợp đồng khi Bên A <strong>chưa thanh toán đủ 90%</strong>: Bên B có quyền <strong>thu hồi License</strong> triển khai; Bên A ngừng sử dụng bản deploy — xử lý tài chính theo Điều 4 · BBTL (<a href="#dieu-khoan-thanh-ly">Điều 4.4</a>) · quyền sở hữu theo Điều 5.</li>
+<li>Đã cấp License vĩnh viễn (≥ 90%) nhưng chưa hoàn tất đợt 10% / UAT: Bên A <strong>giữ quyền sử dụng vĩnh viễn</strong> phần đã License; hai bên tất toán phần còn lại theo <a href="#dieu-khoan-thanh-ly">BBTL (Điều 4.4)</a> hoặc hoàn thành đợt 6.</li>
+<li>Bên A <strong>không được</strong> chuyển nhượng License cho bên thứ ba ngoài tập đoàn REVA / Foodmart đã ký HĐ — trừ khi có văn bản chấp thuận của Bên B.</li>
+</ul>
+
+<div class="contract-box contract-box--indigo">
+  <h3>Điểm cần lưu ý khi ký Hợp đồng</h3>
+  <ul class="task-list">
+    <li>Thanh toán <strong>theo từng giai đoạn / đợt</strong> sau BBNT; Bên B cung cấp <strong>phiếu thu</strong> và <strong>xác nhận thanh toán</strong> trong 03 ngày làm việc kể từ khi nhận đủ tiền.</li>
+    <li><strong>Hóa đơn GTGT:</strong> chốt phương án A (theo đợt NT) · B (một lần khi hoàn thành dự án) · C (theo năm) — trao đổi trước ký HĐ, tuân quy định pháp luật.</li>
+    <li>Triển khai phát triển sau khi có KPI Spec / mockup ký duyệt và Bên A thanh toán đủ <strong>30%</strong> giá trị dự án.</li>
+    <li><strong>Ký · NT · xác nhận:</strong> chấp nhận qua <strong>văn bản, email, tin nhắn</strong> (Điều 2.2) — danh sách đầu mối ghi Phụ lục liên hệ HĐ.</li>
+    <li>Nghiệm thu trên môi trường Staging / pilot; phản hồi trong <strong>07 ngày làm việc</strong> (nghiệm thu mặc định — Điều 2.3); thanh toán đợt tiếp theo trong <strong>03 ngày làm việc</strong>.</li>
+    <li>Phân loại lỗi P0 / P1 / P2; bảo hành miễn phí <strong>24 tháng</strong> theo Tab 5.</li>
+    <li>Thay đổi phạm vi sau khi chốt thiết kế: quy trình CR · <strong>1 triệu VND / ngày công</strong> — timeline CR tách khỏi lịch gốc.</li>
+    <li><strong>Tiến độ:</strong> Tab 3 là tham chiếu; trượt mốc / gia hạn bằng <strong>BBĐT</strong> (Điều 6) — chậm do Bên A đẩy mốc tương ứng; chậm do Bên B thông báo sớm và ký BBĐT.</li>
+    <li><strong>License:</strong> giai đoạn triển khai — Linm apply License trên môi trường deploy; khi TT <strong>≥ 90%</strong> / dự án → key + UI/server <strong>vĩnh viễn</strong> (Điều 7 · Tab 4).</li>
+    <li>Chấm dứt hợp đồng: tất toán theo khối lượng thực tế; quyền sở hữu trí tuệ gắn với nghĩa vụ tài chính.</li>
+    <li><strong>Thanh lý khi dừng dự án:</strong> ký <strong>BBTL</strong> trong 07 ngày làm việc (Điều 4.4) — loại (A) thỏa thuận / (B) vi phạm; export data Bên A trong 15 ngày · miễn phí 03 ngày công handover.</li>
+  </ul>
+  <p class="contract-box-note">Phụ lục này là phần không tách rời Báo giá triển khai REVA · Linm Soft · 2026. Khi ký Hợp đồng chính thức, hai bên bổ sung <strong>Phụ lục phương án xuất hóa đơn</strong>, <strong>Phụ lục danh sách đầu mối liên hệ</strong> (email · Zalo · SĐT), <strong>mẫu Biên bản điều chỉnh tiến độ (BBĐT)</strong>, <strong>mẫu Biên bản thanh lý (BBTL)</strong>, Phụ lục SLA, mẫu Biên bản nghiệm thu — không làm thay đổi tinh thần các điều khoản trên trừ khi có thỏa thuận bằng văn bản.</p>
+</div>
+
+<p class="doc-footer"><strong>Linm Soft</strong> · Phụ lục điều khoản triển khai · Báo giá REVA · 2026</p>
+</article>
+
+<footer class="plan-footer">REVA / Foodmart · Báo giá triển khai ERP · Linm · 2026</footer>
+</div>
+
+<div id="hop-dong-modal" class="hop-dong-modal" role="dialog" aria-modal="true" aria-labelledby="hop-dong-modal-title" hidden>
+  <div class="hop-dong-modal-backdrop" data-hop-dong-modal-close aria-hidden="true"></div>
+  <div class="hop-dong-modal-card">
+    <h2 id="hop-dong-modal-title">Tạo Hợp đồng gia công</h2>
+    <p class="hop-dong-modal-lead">Hợp đồng chuẩn theo <strong>scope báo giá cốt lõi</strong> (2 dự án + thưởng) — gồm số tiền và <strong>bằng chữ</strong>. Gửi khách chỉnh sửa điều khoản trước khi ký.</p>
+    <form id="hop-dong-modal-form" autocomplete="off">
+      <div class="field field-full">
+        <label for="hop-dong-so" class="field-label">Số hợp đồng <span aria-hidden="true">*</span></label>
+        <div class="hop-dong-so-row">
+          <input type="text" id="hop-dong-so" class="field-input" name="soHopDong" required placeholder="51001-07/2026-LIC/LINM-REVA" autocomplete="off" spellcheck="false">
+          <div class="hop-dong-so-actions">
+            <button type="button" class="hop-dong-so-btn" id="hop-dong-fill-mau" title="Điền số HĐ mẫu theo quy cách LIC">Điền mẫu</button>
+            <button type="button" class="hop-dong-so-btn hop-dong-so-btn-copy" id="hop-dong-copy-so" title="Sao chép số HĐ">Sao chép</button>
+          </div>
+        </div>
+        <p class="hop-dong-so-hint"><span class="hop-dong-so-hint-label">Quy cách:</span> <code>{mã TP 2}{STT 3}-{tháng 2}/{năm 4}-LIC/LINM-{mã đối tác}</code> · <strong>LIC</strong> = License · Mẫu: <button type="button" class="hop-dong-so-hint-link" id="hop-dong-fill-mau-inline">51001-07/2026-LIC/LINM-REVA</button></p>
+      </div>
+      <div class="field field-full">
+        <label for="hop-dong-ngay" class="field-label">Ngày ký (tùy chọn)</label>
+        <input type="text" id="hop-dong-ngay" class="field-input" name="ngayKy" placeholder="______ tháng ______ năm 2026" autocomplete="off">
+      </div>
+      <div class="hop-dong-modal-actions">
+        <button type="button" class="btn btn-ghost" id="hop-dong-modal-cancel">Hủy</button>
+        <button type="submit" class="btn btn-primary">Tải Hợp đồng (.docx)</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../config.js"></script>
+<script src="../access.js"></script>
+<script src="../tien-do/tien-do-tabs.js"></script>
+<script src="../contract/doc-page-numbers.js"></script>
+<script src="bao-gia-print.js"></script>
+<script src="vendor/html-docx.js"></script>
+<script src="vendor/FileSaver.min.js"></script>
+<script src="bao-gia-export-docx.js"></script>
+<script src="bao-gia-hop-dong-modal.js"></script>
+</body>
+</html>

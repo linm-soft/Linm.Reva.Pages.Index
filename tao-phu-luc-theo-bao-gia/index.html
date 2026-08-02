@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<base href="/tao-phu-luc-theo-bao-gia/">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phụ lục theo báo giá · Foodmart (FM) ERP · Linm Soft</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="../icons/linm-logo.svg">
+<link rel="icon" type="image/png" href="../icons/linm-logo.png">
+<link rel="apple-touch-icon" href="../icons/linm-logo.png">
+<meta name="theme-color" content="#4facfe">
+<link rel="stylesheet" href="../ds-tokens.css">
+<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="../contract.css">
+<link rel="stylesheet" href="../access.css">
+<link rel="stylesheet" href="../hop-dong/hop-dong-page.css">
+<link rel="stylesheet" href="phu-luc-page.css">
+<link rel="stylesheet" href="../contract/doc-page-numbers.css">
+<style>#contract-app[hidden],#contract-app.is-locked{display:none!important}</style>
+</head>
+<body class="contract-locked hop-dong-page phu-luc-page">
+
+<div id="contract-gate" class="contract-gate" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+  <div class="contract-gate-card">
+    <div class="contract-gate-logo"><div class="dot"></div> Foodmart (FM) - Hệ thống kế toán - quản trị siêu thị</div>
+    <h1 id="gate-title">Phụ lục theo báo giá</h1>
+    <p>Nhập mã truy cập do Linm cung cấp để xem và tải bộ phụ lục đính kèm Hợp đồng.</p>
+    <form id="contract-gate-form" class="contract-gate-form" autocomplete="off">
+      <div class="field field-full">
+        <label for="contract-gate-code" class="field-label">Mã truy cập</label>
+        <input type="password" id="contract-gate-code" class="field-input" name="code" autocomplete="off" required aria-describedby="contract-gate-error">
+        <p id="contract-gate-error" class="field-message field-message-error" role="alert" hidden><span id="contract-gate-error-text" class="field-message-text"></span></p>
+      </div>
+      <button type="submit" class="btn btn-primary btn-full">Vào xem</button>
+    </form>
+    <p id="contract-gate-setup" class="contract-gate-setup" hidden></p>
+  </div>
+</div>
+
+<nav class="plan-nav plan-nav-public" id="plan-nav-public" aria-label="Điều hướng">
+  <a href="../index.html" class="nav-logo"><div class="dot"></div> Foodmart (FM) - Hệ thống kế toán - quản trị siêu thị</a>
+  <div class="nav-links">
+    <a href="../bao-gia/">Báo giá</a>
+    <a href="../hop-dong/">Hợp đồng</a>
+    <a href="../tien-do/tien-do-2026.html">Tiến độ 2026</a>
+  </div>
+  <div class="nav-right">
+    <a href="../index.html" class="nav-back">← Trang chủ</a>
+  </div>
+</nav>
+
+<div id="contract-app" class="contract-app is-locked" hidden>
+<nav class="plan-nav" aria-label="Phụ lục">
+  <a href="../index.html" class="nav-logo"><div class="dot"></div> Phụ lục theo báo giá</a>
+  <div class="nav-links">
+    <a href="../bao-gia/">Báo giá</a>
+    <a href="../hop-dong/">Hợp đồng</a>
+    <a href="../tien-do/tien-do-2026.html">Tiến độ</a>
+  </div>
+  <div class="nav-right nav-actions">
+    <button type="button" class="nav-action nav-action-print" id="phu-luc-print">In phụ lục</button>
+    <button type="button" class="nav-action nav-action-export" id="phu-luc-download-word">Tải Word (.docx)</button>
+  </div>
+</nav>
+
+<header class="hop-dong-toolbar">
+  <div class="hop-dong-toolbar-inner">
+    <h1>Phụ lục đính kèm Hợp đồng gia công</h1>
+    <p class="hop-dong-toolbar-lead"><strong>05 phụ lục</strong> đính kèm Hợp đồng (phạm vi/KPI · timeline · bàn giao · mở rộng · đầu mối).</p>
+    <form id="phu-luc-form" class="hop-dong-form" autocomplete="off">
+      <div class="field field-full">
+        <label for="phu-luc-so" class="field-label">Số hợp đồng tham chiếu <span aria-hidden="true">*</span></label>
+        <div class="hop-dong-so-row">
+          <input type="text" id="phu-luc-so" class="field-input" name="soHopDong" required placeholder="51001-07/2026-LIC/LINM-FM" spellcheck="false">
+          <div class="hop-dong-so-actions">
+            <button type="button" class="hop-dong-so-btn" id="phu-luc-fill-mau" title="Điền mẫu">Điền mẫu</button>
+            <button type="button" class="hop-dong-so-btn hop-dong-so-btn-copy" id="phu-luc-copy-so" title="Sao chép">Sao chép</button>
+          </div>
+        </div>
+        <p class="hop-dong-so-hint"><span class="hop-dong-so-hint-label">Số phụ lục:</span> <code id="phu-luc-so-pl-preview">01-PL/…</code> · cùng quy cách số HĐ LIC</p>
+      </div>
+      <div class="field field-full">
+        <label for="phu-luc-ngay" class="field-label">Ngày ký (tùy chọn)</label>
+        <input type="text" id="phu-luc-ngay" class="field-input" name="ngayKy" placeholder="______ tháng ______ năm 2026">
+      </div>
+      <button type="submit" class="btn btn-primary hop-dong-apply-btn">Cập nhật xem trước</button>
+    </form>
+  </div>
+</header>
+
+<main class="hop-dong-main">
+  <article id="phu-luc-preview" class="hop-dong-preview" aria-label="Nội dung phụ lục">
+    <div id="phu-luc-doc-body" class="hop-dong-doc-body"></div>
+  </article>
+</main>
+
+<footer class="plan-footer">Foodmart (FM) · Phụ lục theo báo giá · Linm · 2026</footer>
+</div>
+
+<script src="../config.js"></script>
+<script src="../access.js"></script>
+<script src="phu-luc-preview-data.js"></script>
+<script src="../contract/doc-page-numbers.js"></script>
+<script src="vendor/FileSaver.min.js"></script>
+<script src="vendor/html-docx.js"></script>
+<script src="phu-luc-page.js"></script>
+</body>
+</html>

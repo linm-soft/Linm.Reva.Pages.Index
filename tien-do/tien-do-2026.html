@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tiến độ triển khai ERP 2026 · FM</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="../icons/linm-logo.svg">
+<link rel="icon" type="image/png" href="../icons/linm-logo.png">
+<link rel="apple-touch-icon" href="../icons/linm-logo.png">
+<meta name="theme-color" content="#4facfe">
+<link rel="stylesheet" href="../ds-tokens.css">
+<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="../contract.css">
+<link rel="stylesheet" href="tien-do-shared.css">
+</head>
+<body>
+
+<div class="contract-app">
+
+<nav class="plan-nav">
+  <a href="../index.html" class="nav-logo"><div class="dot"></div> FM - Hệ thống kế toán - quản trị siêu thị</a>
+  <div class="nav-links">
+    <a href="../demo-plan.html">ERP Demo</a>
+    <a href="../demo-plan-kpi.html">FPC Demo</a>
+    <a href="../demo-success.html">Demo &amp; Triển khai</a>
+    <a href="tien-do-2026.html" class="active">Tiến độ (DA1 &amp; DA2)</a>
+  </div>
+  <div class="nav-right">
+    <a href="../index.html" class="nav-back">← Trang chủ</a>
+    <button type="button" class="nav-action nav-action-print" onclick="window.print()">In báo cáo</button>
+  </div>
+</nav>
+
+<div class="hero compact">
+  <div class="hero-badge">Foodmart (FM) · DA1 + DA2</div>
+  <h1>Tiến độ triển khai <span>Hệ thống ERP</span></h1>
+  <p>Triển khai <strong>02 dự án</strong>: <strong>Dự án 1</strong> — Dữ liệu lịch sử 2023–2025 và <strong>Dự án 2</strong> — ERP vận hành từ 2026. Tham chiếu: <a href="../bao-gia/" class="hero-progress-link">báo giá</a> · <a href="phase1-fm02.html" class="hero-progress-link">báo cáo 2023–2025</a>.</p>
+  <div class="hero-stats" id="hero-stats">
+    <div class="hero-stat"><div class="val">6</div><div class="lbl">Hoàn thành</div></div>
+    <div class="hero-stat"><div class="val">17</div><div class="lbl">Sẵn sàng</div></div>
+    <div class="hero-stat"><div class="val">3</div><div class="lbl">Đang triển khai</div></div>
+    <div class="hero-stat"><div class="val">1</div><div class="lbl">Chờ / Kế hoạch</div></div>
+  </div>
+</div>
+
+<div class="tien-do-tabs-wrap">
+  <div class="tien-do-tabs" role="tablist" aria-label="Tiến độ ERP 2026">
+    <button type="button" class="tien-do-tab active" role="tab" aria-selected="true" aria-controls="panel-overview" data-tien-do-tab="overview">1 · Tổng quan</button>
+    <button type="button" class="tien-do-tab" role="tab" aria-selected="false" aria-controls="panel-ct-bc" data-tien-do-tab="ct-bc">2 · Chứng từ &amp; báo cáo</button>
+    <button type="button" class="tien-do-tab" role="tab" aria-selected="false" aria-controls="panel-api" data-tien-do-tab="api">3 · API &amp; kết nối</button>
+    <button type="button" class="tien-do-tab" role="tab" aria-selected="false" aria-controls="panel-tasks" data-tien-do-tab="tasks">4 · Công việc</button>
+    <button type="button" class="tien-do-tab" role="tab" aria-selected="false" aria-controls="panel-da1" data-tien-do-tab="da1">5 · Báo cáo DA1 · 2023–2025</button>
+  </div>
+</div>
+
+<!-- TAB 1 · OVERVIEW -->
+<article id="panel-overview" class="tien-do-doc tien-do-page tien-do-panel is-active" data-tien-do-panel="overview" role="tabpanel">
+
+<div class="doc-header">
+  <p class="kicker">Foodmart (FM) · 2026</p>
+  <h1 class="doc-title">Tổng quan — Phạm vi &amp; tiến độ</h1>
+  <p class="doc-meta">
+    <strong>Kính gửi:</strong> Ban lãnh đạo &amp; Phòng Kế toán Foodmart (FM)<br>
+    <strong>Ngày cập nhật:</strong> 15/07/2026<br>
+    <strong>Tham chiếu:</strong> <a href="../bao-gia/">Báo giá</a>
+  </p>
+</div>
+
+<h2>1. Hai Dự án triển khai</h2>
+<p class="lead">Triển khai song song <strong>02 dự án phần mềm</strong>, mỗi dự án gồm <strong>06 đợt nghiệm thu</strong> theo biên bản nghiệm thu (BBNT).</p>
+
+<table class="deliver-table quote-table">
+<thead><tr><th>Dự án</th><th>Phạm vi chính</th></tr></thead>
+<tbody>
+<tr><td><strong>DA1</strong> · Dữ liệu lịch sử 2023–2025</td><td>Chuẩn hóa danh mục · Sync POS-ERP (HĐ/PT/PC) · Import chi phí/PNK · Sao kê NH · Báo cáo đối soát + quản trị 2023–2025</td></tr>
+<tr><td><strong>DA2</strong> · Phân hệ ERP vận hành từ 2026</td><td>Kế toán-tài chính · Bán hàng · Mua hàng · Kho · Nhân sự-lương · Quản lý CP · API POS · Shell link</td></tr>
+</tbody>
+</table>
+
+<hr style="margin:24px 0;border:0;border-top:1px solid var(--border-color,#e5e7eb)">
+
+<h2>2. Phạm vi theo từng Dự án</h2>
+
+<h3>DA1 · Dữ liệu lịch sử 2023–2025</h3>
+<table class="deliver-table quote-table">
+<thead><tr><th>Phân hệ</th><th>Chức năng chính</th><th>Deliverable tối thiểu</th><th>Tiêu chí NT</th></tr></thead>
+<tbody>
+<tr><td>Kế toán — tài chính</td><td>Đồng bộ POS: PT, PC; import sao kê NH</td><td>PT, PC; sổ quỹ tiền mặt; sổ cái; Bảng cân đối kế toán (B01), Báo cáo KQKD (B02), Lưu chuyển tiền tệ (B03)</td><td>Đúng công thức; drill-down; export; phân quyền</td></tr>
+<tr><td>Bán hàng / Đồng bộ POS</td><td>HĐ bán; PT, PC; thành viên (membership)</td><td>Log đồng bộ; unique key; đối soát POS-ERP</td><td>Khớp test case; không ghi trùng; có retry</td></tr>
+<tr><td>Mua hàng / Nhập liệu</td><td>Phiếu nhập mua (PNM) — Excel</td><td>Import theo dữ liệu FM</td><td>Đối soát SL/giá trị; phân bổ cửa hàng</td></tr>
+<tr><td>Báo cáo quản trị</td><td>P&amp;L cửa hàng; dòng tiền; dashboard</td><td>Chọn kỳ ngày/tuần/tháng/quý/năm</td><td>Đúng KPI Spec; drill-down; export</td></tr>
+</tbody>
+</table>
+
+<h3>DA2 · ERP vận hành từ 2026</h3>
+<table class="deliver-table quote-table">
+<thead><tr><th>Phân hệ</th><th>Chức năng chính</th><th>Deliverable tối thiểu</th><th>Tiêu chí NT</th></tr></thead>
+<tbody>
+<tr><td>Kế toán — tài chính</td><td>PT, PC; sổ cái; công nợ; khóa kỳ; B01–B03</td><td>Màn hình + báo cáo chọn kỳ</td><td>Số liệu theo chứng từ; không sai lệch trọng yếu</td></tr>
+<tr><td>Bán hàng / Đồng bộ POS</td><td>HĐ bán; trả hàng; doanh thu; thành viên (membership)</td><td>Đồng bộ POS-ERP; log; đối soát</td><td>Khớp POS/ERP; drill-down chứng từ</td></tr>
+<tr><td>Mua hàng — Kho</td><td>PNK; nhập/xuất/tồn; kiểm kê; giá vốn</td><td>Luồng mua-kho-công nợ NCC</td><td>Tồn kho/giá vốn khớp test case</td></tr>
+<tr><td>Nhân sự — Lương</td><td>DM nhân viên; chấm công; bảng lương</td><td>BC nhân sự/lương theo mẫu FM</td><td>Đúng KPI Spec; phân bổ TTCP</td></tr>
+<tr><td>Báo cáo quản trị</td><td>P&amp;L; dòng tiền; KH-thực đạt</td><td>Dashboard CEO/BQT; exception report</td><td>Export Excel/PDF; phân quyền</td></tr>
+<tr><td>Báo cáo thuế</td><td>Bảng tổng hợp chỉ tiêu phục vụ tờ khai</td><td>Export; đối soát; mẫu duyệt</td><td>Không thay thế trách nhiệm kế toán FM</td></tr>
+<tr><td>Shell link POS / ứng dụng</td><td>Menu/cổng chung ERP</td><td>Cấu hình route/mở app hiện hữu</td><td>Không rewrite POS thành MFE native</td></tr>
+<tr><td>API / Connector</td><td>REST/webhook; auth; mapping</td><td>Tài liệu endpoint; staging-prod</td><td>Idempotency; retry; audit log</td></tr>
+</tbody>
+</table>
+
+<h3>KPI trọng yếu dòng tiền</h3>
+<table class="deliver-table quote-table">
+<thead><tr><th>KPI/Chỉ số</th><th>Mô tả bắt buộc</th></tr></thead>
+<tbody>
+<tr><td>Thu tiền thực đạt (cash-in)</td><td>Doanh thu POS, QR/VNPAY, TM, CK, membership, công nợ thu</td></tr>
+<tr><td>Chi tiền thực đạt (cash-out)</td><td>NCC, mặt bằng, lương, thuế, điện nước, vay, CAPEX, CP cửa hàng</td></tr>
+<tr><td>Dự phóng 13 tuần/12 tháng</td><td>Lịch sử + lịch đến hạn + nhập tay; kịch bản cơ sở/tốt/xấu</td></tr>
+<tr><td>Kế hoạch — thực đạt</td><td>KH-TH theo kỳ, cửa hàng, pháp nhân, TTCP/TTLN</td></tr>
+<tr><td>Cảnh báo</td><td>Âm tiền; khoản đến hạn; chi bất thường; chênh lệch KH-TH lớn</td></tr>
+</tbody>
+</table>
+
+<hr style="margin:24px 0;border:0;border-top:1px solid var(--border-color,#e5e7eb)">
+
+<h2>3. Tiến độ</h2>
+<p>Hai dự án triển khai <strong>song song</strong>. Các mốc dưới đây độc lập cho từng dự án.</p>
+
+<h3>DA1 · Dữ liệu lịch sử 2023–2025</h3>
+<table class="deliver-table quote-table">
+<thead><tr><th>Đợt</th><th>Mốc nghiệm thu</th><th>Mốc dự kiến</th><th>Ghi chú</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Chốt báo giá &amp; khởi động</td><td>T0</td><td>Checklist dữ liệu/API</td></tr>
+<tr><td>2</td><td>Start — hạ tầng 2023–2025</td><td>T0+10 ngày</td><td>Staging + KPI Spec</td></tr>
+<tr><td>3</td><td>Import Excel — công thức pilot</td><td>T0+15 ngày</td><td>DM, sao kê, PNM pilot — <strong>start song song DA2</strong></td></tr>
+<tr><td>4</td><td>POS API &amp; báo cáo pilot</td><td>T0+25 ngày</td><td>P&amp;L pilot FM02/A1</td></tr>
+<tr><td>5</td><td>Mở rộng 11 CH còn lại</td><td>T0+40 ngày</td><td>Đủ 12 CH · BC 2023–2025</td></tr>
+<tr><td>6</td><td>UAT + bàn giao + 60 ngày ổn định</td><td>Sau đợt 5</td><td>Không P0/P1 trọng yếu do PM B</td></tr>
+</tbody>
+</table>
+
+<h3>DA2 · ERP vận hành từ 2026</h3>
+<table class="deliver-table quote-table">
+<thead><tr><th>Đợt</th><th>Mốc nghiệm thu</th><th>Mốc dự kiến</th><th>Ghi chú</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Chốt báo giá &amp; khởi động ERP</td><td>T0</td><td>Khởi động ERP</td></tr>
+<tr><td>2</td><td>Start ERP — hạ tầng 2026</td><td>Theo ngày chốt</td><td>UI staging/production</td></tr>
+<tr><td>3</td><td>Nhập liệu KT — API 2026</td><td>Sau start</td><td>Kế thừa DA1 — <strong>song song DA1</strong></td></tr>
+<tr><td>4</td><td>NT phân hệ KT/bán/quản trị</td><td><strong>31/08/2026</strong></td><td>P&amp;L, dòng tiền · MH/Kho/HR release 08/2026</td></tr>
+<tr><td>5</td><td>API NH — kết chuyển 2026</td><td><strong>05/01/2027</strong></td><td>VietQR, kết chuyển cuối năm</td></tr>
+<tr><td>6</td><td>UAT + bàn giao + 60 ngày ổn định</td><td>Sau đợt 5</td><td>Reset 60 ngày chỉ P0/P1 do PM B</td></tr>
+</tbody>
+</table>
+
+<hr style="margin:24px 0;border:0;border-top:1px solid var(--border-color,#e5e7eb)">
+
+<h2>4. Tiến độ triển khai thực tế</h2>
+
+<div class="progress-summary">
+  <div class="progress-card featured">
+    <div class="val">6/27</div>
+    <div class="lbl">Hạng mục hoàn thành</div>
+  </div>
+  <div class="progress-card">
+    <div class="val">17</div>
+    <div class="lbl">Sẵn sàng triển khai</div>
+    <div class="sub">Context aligned · Registry OK</div>
+  </div>
+  <div class="progress-card">
+    <div class="val">3</div>
+    <div class="lbl">Đang triển khai / sync</div>
+  </div>
+  <div class="progress-card">
+    <div class="val">1</div>
+    <div class="lbl">Chờ đối tác / Kế hoạch</div>
+  </div>
+</div>
+
+<h3>Phân kỳ triển khai</h3>
+<div class="phase-grid">
+  <div class="phase-card gd1">
+    <div class="phase-id">Phase A — Align ✅</div>
+    <h3>Chứng từ form/list · legacy-align · hoạch toán sổ</h3>
+    <div class="phase-meta">Đã Aligned: 8 CT POS+Finance · 5 Sales+Supply+Kho+HR · 3 BC · Shell · Master</div>
+  </div>
+  <div class="phase-card gd2">
+    <div class="phase-id">Phase B — Đối soát ⏳</div>
+    <h3>POS ↔ ERP · sao kê live · numeric parity legacy</h3>
+    <div class="phase-meta">Chờ Phase A hoàn tất · pilot PT/PC · import BC 62.8k GD dry-run ✅</div>
+  </div>
+  <div class="phase-card gd3">
+    <div class="phase-id">Release MH · Kho · HR 📅</div>
+    <h3>Mua hàng · Kho · Nhân sự · Báo cáo NT</h3>
+    <div class="phase-meta">08/2026 · 31/08/2026 (BC) · 05/01/2027 (Tập đoàn)</div>
+  </div>
+</div>
+
+<h3>Chú giải trạng thái (áp dụng Tab 2)</h3>
+<table class="deliver-table quote-table">
+<thead><tr><th>Trạng thái</th><th>Ý nghĩa</th></tr></thead>
+<tbody>
+<tr><td class="status-cell"><span class="badge prep">Đang chuẩn bị</span></td><td>Thiết kế · spec · chưa bắt đầu dev</td></tr>
+<tr><td class="status-cell"><span class="badge ready">Sẵn sàng triển khai</span></td><td>Spec + API đã chốt · sẵn sàng triển khai chính thức theo mốc</td></tr>
+<tr><td class="status-cell"><span class="badge deploy">Đang triển khai</span></td><td>Dev / UAT / đồng bộ dữ liệu · chưa nghiệm thu</td></tr>
+<tr><td class="status-cell"><span class="badge done">Hoàn thành</span></td><td>Nghiệm thu · vận hành chính thức</td></tr>
+</tbody>
+</table>
+
+<h3>Lộ trình release 2026 (rút gọn)</h3>
+<div class="timeline timeline-release">
+  <div class="tl-item">
+    <div class="tl-date">Q1–Q2/2026</div>
+    <h4>Go-live lõi KT · BH · đồng bộ POS</h4>
+    <p>Hóa đơn bán · Phiếu thu/chi · danh mục POS · báo cáo cơ bản — cơ chế event thời gian thực + đối soát cuối ngày.</p>
+  </div>
+  <div class="tl-item">
+    <div class="tl-date">31/08/2026</div>
+    <h4>Nghiệm thu báo cáo kế toán tiêu chuẩn</h4>
+    <p>B01 · B02 · B03 · sổ cái · sổ quỹ · sổ chi tiết · bảng kê chứng từ · P&amp;L · dòng tiền — mốc NT DA2 đợt 4.</p>
+  </div>
+  <div class="tl-item">
+    <div class="tl-date">08/2026</div>
+    <h4>Release Mua hàng · Kho · HR</h4>
+    <p>Phân hệ MH/Kho/HR theo timeline — PNK, PXK, tồn kho, bảng lương.</p>
+  </div>
+  <div class="tl-item">
+    <div class="tl-date">05/01/2027</div>
+    <h4>Nghiệm thu báo cáo tập đoàn</h4>
+    <p>DA2 đợt 5: Báo cáo tập đoàn · Ban quản trị · Kế hoạch-Thực đạt · VietQR · kết chuyển cuối năm.</p>
+  </div>
+</div>
+
+<div class="panel-note"><strong>Tracking nội bộ:</strong> Cập nhật <em>15/07/2026</em> — module context Finance (14 features) + Analytics (22 features) đã gen · SSOT <a href="../docs/tracking/reva-hop-dong-erp-review.md">reva-hop-dong-erp-review.md</a> · command <code>/review-erp-hop-dong</code>.</div>
+
+<p class="doc-footer"><strong>Linm Soft</strong></p>
+</article>
+
+<!-- TAB 2 · CHỨNG TỪ & BÁO CÁO -->
+<article id="panel-ct-bc" class="tien-do-doc tien-do-page tien-do-panel" data-tien-do-panel="ct-bc" role="tabpanel" hidden>
+
+<div class="doc-header">
+  <p class="kicker">Foodmart (FM) · Danh mục · chứng từ · báo cáo</p>
+  <h1 class="doc-title">Tiến độ theo chứng từ &amp; báo cáo</h1>
+  <p class="doc-meta">Trạng thái triển khai theo mốc từng dự án</p>
+</div>
+
+<h2><span class="phan-he-tag">DA1+DA2</span> Danh mục dùng chung</h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>Danh mục</th><th>Dự án</th><th>Route ERP</th><th>Trạng thái</th><th>Đồng bộ POS</th></tr></thead>
+<tbody>
+<tr><td>Nhà cung cấp (NCC) · Khách hàng (KH) · Đối tượng (ĐT)</td><td>DA1+DA2</td><td class="col-route">/dm/doi-tuong</td><td class="status-cell"><span class="badge done">Hoàn thành</span></td><td><code>dm-khach-hang</code> · <code>dm-nha-cung-cap</code> · đối soát cuối ngày</td></tr>
+<tr><td><strong>Hàng hóa / Vật tư</strong></td><td>DA1+DA2</td><td class="col-route">/dm/vat-tu</td><td class="status-cell"><span class="badge deploy">Đang triển khai</span></td><td><code>dm-hang-hoa</code> · đối soát cuối ngày</td></tr>
+<tr><td>Nhân viên (NV) · Phòng ban (PB)</td><td>DA2</td><td class="col-route">/ns/nhan-vien · /dm/phong-ban</td><td class="status-cell"><span class="badge done">Hoàn thành</span></td><td>ERP nội bộ · không đồng bộ POS</td></tr>
+<tr><td>Tài khoản (TK) · Định khoản NV · Kênh thanh toán</td><td>DA1+DA2</td><td class="col-route">/dm/tai-khoan · /dm/dinh-khoan-nghiep-vu</td><td class="status-cell"><span class="badge done">Hoàn thành</span></td><td>Danh mục seed ERP · không đồng bộ POS</td></tr>
+<tr><td>Đơn vị cơ sở (12 CH)</td><td>DA1+DA2</td><td class="col-route">/dm/don-vi-co-so</td><td class="status-cell"><span class="badge done">Hoàn thành</span></td><td>reva-warehouses</td></tr>
+</tbody>
+</table>
+
+<h2><span class="phan-he-tag">DA1</span> Chứng từ đồng bộ POS · Dữ liệu lịch sử 2023–2025</h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>Chứng từ</th><th>Route ERP</th><th>Trạng thái</th><th>Event <code>type</code> · đồng bộ</th><th>Mốc NT</th></tr></thead>
+<tbody>
+<tr><td><strong>Hóa đơn bán</strong></td><td class="col-route">/bh/hoa-don</td><td class="status-cell"><span class="badge done">Hoàn thành</span></td><td><code>hoa-don</code> · event + đối soát cuối ngày</td><td>Đợt 3–4</td></tr>
+<tr><td><strong>Phiếu thu (PT)</strong></td><td class="col-route">/kt/pt</td><td class="status-cell"><span class="badge deploy">Đang triển khai</span></td><td><code>phieu-thu</code> · event + đối soát cuối ngày</td><td>Đợt 4–5</td></tr>
+<tr><td><strong>Phiếu chi (PC)</strong></td><td class="col-route">/kt/pc</td><td class="status-cell"><span class="badge deploy">Đang triển khai</span></td><td><code>phieu-chi</code> · event + đối soát cuối ngày</td><td>Đợt 4–5</td></tr>
+<tr><td>Phiếu nhập mua (PNM)</td><td class="col-route">/kt/pnm</td><td class="status-cell"><span class="badge ready">Sẵn sàng</span></td><td>Nhập dữ liệu / quy trình mua hàng</td><td>Đợt 3 (pilot)</td></tr>
+<tr><td>Giấy báo có (BC) · Giấy báo nợ (BN)</td><td class="col-route">/kt/bao-co · /kt/bao-no</td><td class="status-cell"><span class="badge deploy">Đang triển khai</span></td><td>Registry seeded · sao kê CSV 62.8k GD · dry-run ✅</td><td>Đợt 5</td></tr>
+<tr><td>Ủy nhiệm chi (UNC)</td><td class="col-route">/kt/unc</td><td class="status-cell"><span class="badge deploy">Đang triển khai</span></td><td>Registry <code>uy-nhiem-chi</code> · pilot sao kê</td><td>Đợt 5</td></tr>
+<tr><td>Chuyển tiền nội bộ (CTNB)</td><td class="col-route">/kt/ctnb</td><td class="status-cell"><span class="badge deploy">Đang triển khai</span></td><td>Registry <code>chuyen-tien-noi-bo</code> · dry-run ✅</td><td>Đợt 5</td></tr>
+</tbody>
+</table>
+
+<h2><span class="phan-he-tag">DA2</span> Kế toán · tài chính — <strong>Hạng mục Báo cáo kế toán</strong> <small>NT đợt 4 · 31/08/2026</small></h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>Hạng mục</th><th>Route</th><th>Trạng thái</th><th>Mốc NT</th></tr></thead>
+<tbody>
+<tr><td>Sổ cái · Sổ quỹ tiền mặt · Sổ chi tiết TK · Bảng CDPS</td><td class="col-route">/kt/so-cai · /kt/so-quy · /kt/so-chi-tiet · /kt/cdps</td><td class="status-cell"><span class="badge deploy">Đang triển khai</span></td><td>Đợt 4 (31/08/2026)</td></tr>
+<tr><td>Bảng cân đối kế toán (B01) · Báo cáo KQKD (B02) · Lưu chuyển tiền tệ (B03)</td><td class="col-route">/baocao/b01-dn · /baocao/b02-dn · /baocao/b03-dn</td><td class="status-cell"><span class="badge deploy">Đang triển khai</span></td><td><strong>31/08/2026</strong></td></tr>
+<tr><td>Bảng kê chứng từ · Sổ tổng hợp &amp; chi tiết</td><td class="col-route">/baocao/nhat-ky-chung-tu · /kt/so-tong-hop</td><td class="status-cell"><span class="badge deploy">Đang triển khai</span></td><td>Đợt 4 (31/08/2026)</td></tr>
+<tr><td>Kết chuyển · Khóa kỳ</td><td class="col-route">/kt/ket-chuyen-cuoi-ky · /kt/ky</td><td class="status-cell"><span class="badge ready">Sẵn sàng</span></td><td>Đợt 5 (05/01/2027)</td></tr>
+<tr><td>Tính giá vốn</td><td class="col-route">/kt/tinh-gia-von</td><td class="status-cell"><span class="badge prep">Đang chuẩn bị</span></td><td>Đợt 4</td></tr>
+</tbody>
+</table>
+
+<h2><span class="phan-he-tag">DA2</span> Mua hàng · Kho <small>(Release 08/2026)</small></h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>Hạng mục</th><th>Route</th><th>Trạng thái</th><th>Mốc NT</th></tr></thead>
+<tbody>
+<tr><td>YCMH · DDMH · Nhận hàng</td><td class="col-route">/mh/ycmh · /mh/ddmh · /mh/nhan-hang</td><td class="status-cell"><span class="badge ready">Sẵn sàng</span></td><td>Đợt 4 (08/2026)</td></tr>
+<tr><td>Phiếu nhập / xuất kho</td><td class="col-route">/kho/pnk · /kho/pxk</td><td class="status-cell"><span class="badge prep">Đang chuẩn bị</span></td><td>Đợt 4 (08/2026)</td></tr>
+<tr><td>Tồn kho · Thẻ kho</td><td class="col-route">/kho/ton-kho · /kho/the-kho</td><td class="status-cell"><span class="badge prep">Đang chuẩn bị</span></td><td>Đợt 4 (08/2026)</td></tr>
+</tbody>
+</table>
+
+<h2><span class="phan-he-tag">DA2</span> Nhân sự &amp; Lương <small>(Release 08/2026)</small></h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>Hạng mục</th><th>Route</th><th>Trạng thái</th><th>Mốc NT</th></tr></thead>
+<tbody>
+<tr><td>Bảng lương · BHXH</td><td class="col-route">/ns/bang-luong · /ns/bhxh</td><td class="status-cell"><span class="badge prep">Đang chuẩn bị</span></td><td>Đợt 4 (08/2026)</td></tr>
+</tbody>
+</table>
+
+<h2><span class="phan-he-tag">DA2</span> Báo cáo quản trị — <strong>Hạng mục Báo cáo quản trị</strong> <small>NT đợt 4 · 31/08/2026</small></h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>Báo cáo</th><th>Route</th><th>Trạng thái</th><th>Mốc NT</th></tr></thead>
+<tbody>
+<tr><td>Báo cáo doanh thu · Chi phí · Bán hàng</td><td class="col-route">/baocao/doanh-thu · /baocao/chi-phi · /baocao/ban-hang</td><td class="status-cell"><span class="badge deploy">Đang triển khai</span></td><td>Đợt 4</td></tr>
+<tr><td>Sổ cái · Báo cáo Thu/chi · Tổng quan tài chính</td><td class="col-route">/baocao/so-cai · /baocao/thu-chi · /baocao/tong-quan</td><td class="status-cell"><span class="badge deploy">Đang triển khai</span></td><td>Đợt 4</td></tr>
+</tbody>
+</table>
+
+<h2><span class="phan-he-tag">DA2</span> Báo cáo quản trị — <strong>Hạng mục Báo cáo tập đoàn</strong> <small>NT đợt 5 · 05/01/2027</small></h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>Báo cáo</th><th>Route</th><th>Trạng thái</th><th>Mốc NT</th></tr></thead>
+<tbody>
+<tr><td>Báo cáo tập đoàn · Ban quản trị</td><td class="col-route">/reva/bao-cao/ban-quan-tri</td><td class="status-cell"><span class="badge ready">Sẵn sàng</span></td><td><strong>05/01/2027</strong></td></tr>
+<tr><td>Báo cáo Kế hoạch — Thực đạt (KH-TH)</td><td class="col-route">/reva/bao-cao/kh-th</td><td class="status-cell"><span class="badge ready">Sẵn sàng</span></td><td><strong>05/01/2027</strong></td></tr>
+</tbody>
+</table>
+
+<h2><span class="phan-he-tag">DA2</span> Báo cáo thuế <small>NT đợt 4</small></h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>Báo cáo</th><th>Route</th><th>Trạng thái</th><th>Mốc NT</th></tr></thead>
+<tbody>
+<tr><td>Bảng tổng hợp chỉ tiêu phục vụ tờ khai thuế</td><td class="col-route">/baocao/tai-chinh</td><td class="status-cell"><span class="badge prep">Đang chuẩn bị</span></td><td>Đợt 4</td></tr>
+</tbody>
+</table>
+
+<div class="panel-note"><strong>Đồng bộ POS:</strong> Mọi chứng từ và danh mục nguồn POS dùng <strong>cùng cơ chế</strong> — đẩy event thời gian thực + ERP đối soát cuối ngày (gọi API POS, một chiều) để bù event <strong>bị thiếu</strong>. Idempotency, audit log, retry &amp; queue. Chi tiết: <a href="#api-search-reconcile">Tab 3 — API</a>.</div>
+<div class="panel-note"><strong>Tracking nội bộ:</strong> Rà soát registry + context — <a href="../docs/tracking/reva-hop-dong-erp-review.md">reva-hop-dong-erp-review.md</a> · command <code>/review-erp-hop-dong</code> · cập nhật 15/07/2026.</div>
+
+<!-- Tổng hợp trạng thái từ SSOT: done vs ready -->
+<h2><span class="badge done" style="font-size:.85rem">✅ Đã hoàn thành</span></h2>
+<table class="deliver-table quote-table" id="items-done-table">
+  <thead><tr><th>STT</th><th>Chứng từ / Form</th><th>Route</th><th>Module</th><th>Dự án</th><th>Ghi chú</th></tr></thead>
+  <tbody><!-- JS render từ data.items status === 'done' --></tbody>
+</table>
+
+<h2><span class="badge ready" style="font-size:.85rem">📋 Sẵn sàng triển khai</span></h2>
+<table class="deliver-table quote-table" id="items-ready-table">
+  <thead><tr><th>STT</th><th>Chứng từ / Form</th><th>Route</th><th>Module</th><th>Dự án</th><th>Ghi chú</th></tr></thead>
+  <tbody><!-- JS render từ data.items status === 'ready' || 'registry-ok' --></tbody>
+</table>
+
+<div class="panel-note">🔄 Dữ liệu từ embedded JSON <code>#tien-do-data → items</code>. Nguồn: <a href="../docs/tracking/reva-hop-dong-erp-review.md">reva-hop-dong-erp-review.md</a>.</div>
+
+<p class="doc-footer"><strong>Linm Soft</strong></p>
+</article>
+
+<!-- TAB 3 · API -->
+<article id="panel-api" class="tien-do-doc tien-do-page tien-do-panel" data-tien-do-panel="api" role="tabpanel" hidden>
+
+<div class="doc-header">
+  <p class="kicker">Tiêu chuẩn API, POS và dữ liệu</p>
+  <h1 class="doc-title">API &amp; kết nối</h1>
+  <p class="doc-meta">Idempotency · Audit log · Retry &amp; queue · Đối soát · Staging/Production · Versioning</p>
+</div>
+
+<h2>Tiêu chuẩn API</h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>Tiêu chuẩn</th><th>Yêu cầu tối thiểu</th><th>Trạng thái</th></tr></thead>
+<tbody>
+<tr><td><strong>Idempotency / unique key</strong></td><td>Mã định danh duy nhất — chống ghi trùng, thiếu hoặc sai kỳ</td><td><span class="badge done">✅</span></td></tr>
+<tr><td><strong>Audit log</strong></td><td>Log thời điểm, trạng thái, lỗi, retry, mapping</td><td><span class="badge done">✅</span></td></tr>
+<tr><td><strong>Retry &amp; queue</strong></td><td>Retry khi lỗi mạng/API; danh sách chờ xử lý</td><td><span class="badge done">✅</span></td></tr>
+<tr><td><strong>Đối soát</strong></td><td>POS — ERP — ngân hàng; drill-down chứng từ</td><td><span class="badge deploy">Đang triển khai</span></td></tr>
+<tr><td><strong>Staging / Production</strong></td><td>Tách môi trường; go-live sau NT staging</td><td><span class="badge done">✅</span></td></tr>
+<tr><td><strong>Versioning</strong></td><td>Thay đổi schema/mapping — thông báo trước; NT staging</td><td><span class="badge ready">Sẵn sàng</span></td></tr>
+</tbody>
+</table>
+
+<h2>Cơ chế đồng bộ</h2>
+<p class="lead lead--compact">Tất cả chứng từ và danh mục từ POS: <strong>event thời gian thực</strong> + <strong>đối soát cuối ngày</strong> (ERP gọi API POS) để bù event bị thiếu.</p>
+<table class="deliver-table quote-table">
+<thead><tr><th>Giai đoạn</th><th>Chiều</th><th>Mô tả</th></tr></thead>
+<tbody>
+<tr><td><strong>Thời gian thực</strong></td><td>POS → ERP</td><td><code>POST /event/inbound-sync</code> khi tạo/sửa/xóa → ERP trả <strong>200</strong> ngay · xử lý bất đồng bộ</td></tr>
+<tr><td><strong>Cuối ngày</strong></td><td>ERP → POS</td><td>ERP gọi API POS · so với dữ liệu đã nhận qua event · bù event <strong>bị thiếu</strong> hoặc gửi/nhận <strong>lỗi</strong></td></tr>
+</tbody>
+</table>
+
+<h2>Tổng quan luồng</h2>
+<table class="deliver-table quote-table">
+<thead><tr><th><code>type</code></th><th>Nghiệp vụ</th><th>Đồng bộ</th></tr></thead>
+<tbody>
+<tr><td><code>hoa-don</code> · <code>phieu-thu</code> · <code>phieu-chi</code></td><td>Chứng từ</td><td>Event thời gian thực + đối soát cuối ngày</td></tr>
+<tr><td><code>dm-hang-hoa</code> · <code>dm-khach-hang</code> · <code>dm-nha-cung-cap</code></td><td>Danh mục</td><td>Event thời gian thực + đối soát cuối ngày</td></tr>
+</tbody>
+</table>
+
+<h2>Base URL</h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>Môi trường</th><th>Auth (token)</th><th>ERP API (POS gọi)</th></tr></thead>
+<tbody>
+<tr><td>Local</td><td><code>http://localhost:5001</code></td><td><code>http://localhost:8080</code></td></tr>
+<tr><td>Production</td><td><code>https://erp-auth.linm-soft.com</code></td><td><code>https://erp-api.linm-soft.com</code></td></tr>
+</tbody>
+</table>
+<p>Prefix Auth: <code>api/v1</code> · ERP API: <code>api/v1</code>. POS gọi <strong>trực tiếp</strong> ERP API — không qua BFF.</p>
+
+<h2>Xác thực &amp; đẩy event</h2>
+<p class="lead lead--compact">Token service client: <code>POST /api/v1/serviceclients/token</code>.</p>
+
+<table class="deliver-table quote-table">
+<thead><tr><th>Bước</th><th>Endpoint</th><th>Kết quả</th></tr></thead>
+<tbody>
+<tr><td><strong>① Lấy token</strong></td><td><code>POST https://erp-auth.linm-soft.com/api/v1/serviceclients/token</code></td><td><code>accessToken</code> · <code>expiresIn</code> (giây)</td></tr>
+<tr><td><strong>② Đẩy event</strong></td><td><code>POST https://erp-api.linm-soft.com/api/v1/event/inbound-sync</code></td><td><strong>200</strong> · <code>accepted: true</code></td></tr>
+<tr><td><strong>③ ERP xử lý</strong></td><td>Bất đồng bộ</td><td>Cập nhật chứng từ / danh mục</td></tr>
+</tbody>
+</table>
+
+<h3>Bước 1 · Lấy token</h3>
+<pre class="code-tree">POST /api/v1/serviceclients/token
+{
+  <span class="hl">"clientId"</span>: "fm-pos-sync",
+  <span class="hl">"clientSecret"</span>: "{secret}"
+}</pre>
+
+<table class="deliver-table quote-table">
+<thead><tr><th>Field request</th><th>Bắt buộc</th><th>Mô tả</th></tr></thead>
+<tbody>
+<tr><td><code>clientId</code></td><td>Có</td><td>Mã client do Linm cấp</td></tr>
+<tr><td><code>clientSecret</code></td><td>Có</td><td>Mật khẩu client — cấu hình env/vault</td></tr>
+<tr><td><code>scopes</code></td><td>Không</td><td>Scope yêu cầu — <code>null</code> hoặc không truyền → trả <strong>tất cả</strong> scope được phép của client</td></tr>
+</tbody>
+</table>
+
+<h4>Response token</h4>
+<pre class="code-tree">{
+  <span class="hl">"accessToken"</span>: "eyJhbGciOiJIUzI1NiIs...",
+  <span class="hl">"tokenType"</span>: "Bearer",
+  <span class="hl">"expiresIn"</span>: 3600,
+  <span class="hl">"scopes"</span>: ["basic:read", "erp:import:write"],
+  <span class="hl">"issuedAt"</span>: "2026-06-29T10:00:00Z"
+}</pre>
+
+<table class="deliver-table quote-table">
+<thead><tr><th>Field</th><th>Mô tả</th></tr></thead>
+<tbody>
+<tr><td><code>expiresIn</code></td><td>Số <strong>giây</strong> còn hiệu lực (mặc định <strong>3600</strong> = 60 phút)</td></tr>
+<tr><td><code>issuedAt</code></td><td>UTC thời điểm cấp token</td></tr>
+<tr><td><code>accessToken</code></td><td>JWT — gắn header <code>Authorization: Bearer …</code></td></tr>
+</tbody>
+</table>
+
+<h3>Vòng đời token</h3>
+<table class="deliver-table quote-table">
+<thead><tr><th>Quy tắc</th><th>Chi tiết</th></tr></thead>
+<tbody>
+<tr><td><strong>Hết hạn</strong></td><td>Gọi lại <code>POST serviceclients/token</code> (không có <code>refresh_token</code>)</td></tr>
+<tr><td><strong>Cache</strong></td><td>Lưu đến <code>issuedAt + expiresIn × 0.9</code> rồi xin lại</td></tr>
+<tr><td><strong>Gửi lại khi 401</strong></td><td>Xin token mới · gửi lại event <strong>1 lần</strong></td></tr>
+</tbody>
+</table>
+
+<h3>Bước 2 · Header</h3>
+<table class="deliver-table quote-table">
+<thead><tr><th>Header</th><th>Bắt buộc</th><th>Mô tả</th></tr></thead>
+<tbody>
+<tr><td><code>Authorization</code></td><td>Có</td><td><code>Bearer {accessToken}</code></td></tr>
+<tr><td><code>Content-Type</code></td><td>Có</td><td><code>application/json</code></td></tr>
+</tbody>
+</table>
+
+<div class="api-doc-block" id="api-inbound-sync">
+  <h3><span class="api-method">POST</span> <span class="api-path">/api/v1/event/inbound-sync</span></h3>
+  <div class="api-doc-inner">
+    <p>POS đẩy event khi có chứng từ hoặc danh mục phát sinh. Production: <code>https://erp-api.linm-soft.com/api/v1/event/inbound-sync</code>. ERP trả <strong>200 ngay</strong> — không chờ xử lý nghiệp vụ hoàn tất.</p>
+
+    <h4>Nội dung request</h4>
+    <pre class="code-tree">{
+  <span class="hl">"type"</span>: "hoa-don",
+  <span class="hl">"data"</span>: {
+    <span class="hl">"id"</span>: "70428",
+    <span class="hl">"action"</span>: "create"
+  }
+}</pre>
+
+    <table class="deliver-table quote-table">
+    <thead><tr><th>Field</th><th>Kiểu</th><th>Bắt buộc</th><th>Mô tả</th></tr></thead>
+    <tbody>
+    <tr><td><code>type</code></td><td>string</td><td>Có</td><td>Loại dữ liệu — enum bảng dưới</td></tr>
+    <tr><td><code>data</code></td><td>object</td><td>Có</td><td>Nội dung event</td></tr>
+    <tr><td><code>data.id</code></td><td>string</td><td>Có</td><td>Mã/id chứng từ hoặc danh mục trên POS</td></tr>
+    <tr><td><code>data.action</code></td><td>string</td><td>Có</td><td><code>create</code> (tạo) · <code>update</code> (sửa) · <code>delete</code> (xóa)</td></tr>
+    </tbody>
+    </table>
+
+    <h4><code>type</code> — giá trị hỗ trợ</h4>
+    <table class="deliver-table quote-table">
+    <thead><tr><th>type</th><th>Nghiệp vụ</th><th>Đồng bộ</th></tr></thead>
+    <tbody>
+    <tr><td><code>hoa-don</code></td><td>Hóa đơn bán</td><td>Event thời gian thực + đối soát cuối ngày</td></tr>
+    <tr><td><code>phieu-thu</code></td><td>Phiếu thu</td><td>Event thời gian thực + đối soát cuối ngày</td></tr>
+    <tr><td><code>phieu-chi</code></td><td>Phiếu chi</td><td>Event thời gian thực + đối soát cuối ngày</td></tr>
+    <tr><td><code>dm-hang-hoa</code></td><td>Danh mục hàng hóa</td><td>Event thời gian thực + đối soát cuối ngày</td></tr>
+    <tr><td><code>dm-khach-hang</code></td><td>Danh mục khách hàng</td><td>Event thời gian thực + đối soát cuối ngày</td></tr>
+    <tr><td><code>dm-nha-cung-cap</code></td><td>Danh mục nhà cung cấp</td><td>Event thời gian thực + đối soát cuối ngày</td></tr>
+    </tbody>
+    </table>
+
+    <h4>Response <code>200 OK</code></h4>
+    <pre class="code-tree">{
+  <span class="hl">"accepted"</span>: true,
+  <span class="hl">"eventId"</span>: "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  <span class="hl">"queueStatus"</span>: "Queued",
+  <span class="hl">"type"</span>: "hoa-don",
+  <span class="hl">"sourceId"</span>: "70428",
+  <span class="hl">"action"</span>: "create"
+}</pre>
+
+    <table class="deliver-table quote-table">
+    <thead><tr><th>HTTP</th><th>Body / ý nghĩa</th></tr></thead>
+    <tbody>
+    <tr><td><strong>200</strong></td><td>Đã nhận event · <code>accepted: true</code> · <code>queueStatus</code> Queued/Running (đang xử lý)</td></tr>
+    <tr><td><strong>400</strong></td><td><code>type</code> / <code>action</code> / <code>data.id</code> không hợp lệ</td></tr>
+    <tr><td><strong>401</strong></td><td>JWT hết hạn / thiếu</td></tr>
+    <tr><td><strong>403</strong></td><td>Không có quyền truy cập</td></tr>
+    <tr><td><strong>422</strong></td><td><code>type</code> không trong enum</td></tr>
+    </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="api-doc-block" id="api-search-reconcile">
+  <h3><span class="api-method">POST</span> <span class="api-path">Danh sách POS (đối soát cuối ngày)</span></h3>
+  <div class="api-doc-inner">
+    <p><strong>Chiều:</strong> <strong>một chiều</strong> — <strong>ERP gọi API POS</strong> (không phải POS gọi BFF ERP).</p>
+    <p><strong>Mục đích:</strong> bù cho luồng event thời gian thực. Cuối ngày ERP lấy danh sách từ POS (chứng từ + danh mục) · so với dữ liệu ERP đã nhận qua event · phát hiện event <strong>bị thiếu</strong> hoặc <strong>gửi/nhận event lỗi</strong>.</p>
+
+    <h4>Luồng đối soát</h4>
+    <table class="deliver-table quote-table">
+    <thead><tr><th>Bước</th><th>Ai thực hiện</th><th>Hành động</th></tr></thead>
+    <tbody>
+    <tr><td>①</td><td>POS</td><td>Đẩy event khi tạo/sửa/xóa chứng từ hoặc danh mục (<code>POST inbound-sync</code>)</td></tr>
+    <tr><td>②</td><td>ERP</td><td>Cuối ngày: job đối soát gọi API POS theo <code>type</code> (chứng từ / danh mục)</td></tr>
+    <tr><td>③</td><td>ERP</td><td>So khớp id POS ↔ bản ghi ERP (mã legacy / mã danh mục) + ngày (chứng từ) + số tiền (nếu có)</td></tr>
+    <tr><td>④</td><td>ERP</td><td>Thiếu hoặc lệch → bù event / nhập lại / hỗ trợ kỹ thuật</td></tr>
+    </tbody>
+    </table>
+
+    <p>Ánh xạ field: <code>Linm.Reva.Data/api/FIELD-MAPPING.md</code> · kết nối ERP <code>reva-fm-*</code>.</p>
+
+    <h4>POS — API đối soát (ERP gọi)</h4>
+    <p>Base URL (production): <code>{pos-fm-host}/api/RevaPlashform/</code> · ví dụ <code>https://foodmart-share-api.bosssoft.vn/api/RevaPlashform/</code></p>
+    <table class="deliver-table quote-table">
+    <thead><tr><th><code>type</code> event</th><th>POST POS (FM)</th><th>Khóa so khớp POS ↔ ERP</th></tr></thead>
+    <tbody>
+    <tr><td><code>hoa-don</code></td><td><code>TimHoaDon</code></td><td><code>data.id</code> ↔ <code>soHoaDon</code> / <code>posLegacyBillId</code> (<code>billId</code>)</td></tr>
+    <tr><td><code>phieu-thu</code></td><td><code>TimPhieuThu</code></td><td><code>data.id</code> ↔ <code>documentNumber</code> / <code>legacyCode</code> (<code>FM-PT-{n}</code>)</td></tr>
+    <tr><td><code>phieu-chi</code></td><td><code>TimPhieuChi</code></td><td><code>data.id</code> ↔ <code>documentNumber</code> / <code>legacyCode</code> (<code>FM-PC-{n}</code>)</td></tr>
+    <tr><td><code>dm-hang-hoa</code></td><td>API POS hàng hóa (<code>reva-materials</code>)</td><td><code>data.id</code> ↔ mã/id vật tư POS · <code>materialCode</code> / <code>legacyCode</code></td></tr>
+    <tr><td><code>dm-khach-hang</code></td><td>API POS khách hàng (<code>reva-partners</code>)</td><td><code>data.id</code> ↔ mã/id đối tượng · <code>customerCode</code> / <code>legacyCode</code></td></tr>
+    <tr><td><code>dm-nha-cung-cap</code></td><td>API POS nhà cung cấp (<code>reva-partners</code>)</td><td><code>data.id</code> ↔ mã/id NCC · <code>legacyCode</code></td></tr>
+    </tbody>
+    </table>
+
+    <h4>Xác thực (ERP → POS)</h4>
+    <table class="deliver-table quote-table">
+    <thead><tr><th>Header</th><th>Bắt buộc</th><th>Mô tả</th></tr></thead>
+    <tbody>
+    <tr><td><code>x-api-key</code></td><td>Có</td><td>API key do FM cấp cho ERP (không dùng JWT inbound-sync)</td></tr>
+    <tr><td><code>Content-Type</code></td><td>Có</td><td><code>application/json</code></td></tr>
+    </tbody>
+    </table>
+
+    <h4>Nội dung request (mẫu)</h4>
+    <pre class="code-tree">POST {pos-fm-host}/api/RevaPlashform/TimPhieuChi
+{
+  <span class="hl">"criterias"</span>: {
+    <span class="hl">"fromDate"</span>: "2026-06-01",
+    <span class="hl">"toDate"</span>: "2026-06-02"
+  },
+  <span class="hl">"pageNumber"</span>: 1,
+  <span class="hl">"pageSize"</span>: 100
+}</pre>
+
+    <h4>Tham số lọc (API POS)</h4>
+    <table class="deliver-table quote-table">
+    <thead><tr><th>Param</th><th>Kiểu</th><th>Mô tả</th></tr></thead>
+    <tbody>
+    <tr><td><code>criterias.fromDate</code> · <code>criterias.toDate</code></td><td>date</td><td>Chứng từ: ngày phát sinh trên POS · Danh mục: ngày thay đổi (theo API POS)</td></tr>
+    <tr><td><code>pageNumber</code> · <code>pageSize</code></td><td>int</td><td>Phân trang — lặp đến hết <code>totalItems</code></td></tr>
+    </tbody>
+    </table>
+
+    <h4>Trường bản ghi POS (so khớp với ERP)</h4>
+    <table class="deliver-table quote-table">
+    <thead><tr><th>Chứng từ</th><th>POS / FM (tìm kiếm)</th><th>ERP (sau event)</th><th>Ghi chú</th></tr></thead>
+    <tbody>
+    <tr><td>Hóa đơn bán</td><td><code>soHoaDon</code> · <code>ngayTao</code> · <code>tongSoTien</code></td><td><code>posLegacyBillId</code> · <code>invoiceDate</code> · <code>totalAmount</code></td><td>Tìm FM <strong>không có</strong> <code>branchId</code> — chi nhánh qua chi tiết (<code>ChiTietHoaDon</code>)</td></tr>
+    <tr><td>Phiếu thu</td><td><code>documentNumber</code> · <code>transactionDate</code> · <code>totalMoney</code></td><td><code>legacyCode</code> · <code>voucherDate</code> · <code>amount</code></td><td><code>paymentMethodCode</code> → <code>paymentChannelCode</code> (kênh thanh toán)</td></tr>
+    <tr><td>Phiếu chi</td><td><code>documentNumber</code> · <code>transactionDate</code> · <code>totalMoney</code></td><td><code>legacyCode</code> · <code>voucherDate</code> · <code>amount</code></td><td>Chi tiết: <code>ChiTietPhieuChi</code> (FIELD-MAPPING §4b)</td></tr>
+    </tbody>
+    </table>
+
+    <div class="panel-note"><strong>Lưu ý:</strong> POS chỉ <strong>đẩy event</strong>; ERP chủ động đối soát cuối ngày cho <strong>mọi</strong> <code>type</code> (chứng từ + danh mục). Không yêu cầu POS gọi API ERP. Endpoint API POS danh mục — chi tiết connector <code>reva-materials</code> / <code>reva-partners</code> trong FIELD-MAPPING.</div>
+  </div>
+</div>
+
+<h2>Gửi lại &amp; tránh trùng (gợi ý POS)</h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>Tình huống</th><th>Hành động</th></tr></thead>
+<tbody>
+<tr><td>Đẩy event trả <strong>200</strong></td><td>Coi đã nhận — ghi <code>eventId</code> nếu cần hỗ trợ kỹ thuật</td></tr>
+<tr><td>Đẩy event trả <strong>401</strong></td><td>Xin token mới · gửi lại <strong>1 lần</strong></td></tr>
+<tr><td>Đẩy event trả <strong>5xx</strong></td><td>Gửi lại sau chờ tăng dần — chưa coi là đã đồng bộ</td></tr>
+<tr><td>Gửi trùng <code>type</code> + <code>id</code> + <code>action</code></td><td>ERP ghi nhận lại theo kết nối — POS nên tránh gửi trùng sau 200</td></tr>
+<tr><td>Mọi <code>type</code> (chứng từ + danh mục)</td><td>Đẩy event thời gian thực khi tạo/sửa/xóa · ERP đối soát cuối ngày (gọi API POS)</td></tr>
+</tbody>
+</table>
+
+<div class="panel-note"><strong>Lưu ý:</strong> Không ghi <code>clientSecret</code> trên tài liệu công khai.</div>
+
+<p class="doc-footer"><strong>Linm Soft</strong></p>
+</article>
+
+<!-- TAB 4 · CÔNG VIỆC -->
+<article id="panel-tasks" class="tien-do-doc tien-do-page tien-do-panel" data-tien-do-panel="tasks" role="tabpanel" hidden>
+
+<div class="doc-header">
+  <p class="kicker">Công việc triển khai</p>
+  <h1 class="doc-title">Công việc &amp; gap theo SSOT</h1>
+  <p class="doc-meta">Từ gaps mở HD-ERP-* · skill chain ưu tiên · mốc DA1 và DA2</p>
+</div>
+
+<div class="task-board">
+  <!-- Column 1: Kế hoạch -->
+  <div class="task-column" data-column="plan">
+    <div class="task-col-header" style="border-top-color:#6366f1">
+      <span class="task-col-title">📋 Kế hoạch</span>
+      <span class="task-col-count">0</span>
+    </div>
+    <div class="task-col-body"></div>
+  </div>
+
+  <!-- Column 2: Đang triển khai -->
+  <div class="task-column" data-column="deploy">
+    <div class="task-col-header" style="border-top-color:#f59e0b">
+      <span class="task-col-title">⚙️ Đang triển khai</span>
+      <span class="task-col-count">0</span>
+    </div>
+    <div class="task-col-body"></div>
+  </div>
+
+  <!-- Column 3: Feedback -->
+  <div class="task-column" data-column="feedback">
+    <div class="task-col-header" style="border-top-color:#3b82f6">
+      <span class="task-col-title">💬 Feedback</span>
+      <span class="task-col-count">0</span>
+    </div>
+    <div class="task-col-body"></div>
+  </div>
+
+  <!-- Column 4: Fix defect -->
+  <div class="task-column" data-column="fix">
+    <div class="task-col-header" style="border-top-color:#ef4444">
+      <span class="task-col-title">🔧 Fix defect</span>
+      <span class="task-col-count">0</span>
+    </div>
+    <div class="task-col-body"></div>
+  </div>
+</div>
+
+<div class="panel-note"><strong>Priority:</strong> P1 (urgent) · P2 (normal) · P3 (low). Task auto-sync từ gaps HD-ERP + changelog. Nguồn: <a href="../docs/tracking/reva-hop-dong-erp-review.md">reva-hop-dong-erp-review.md</a> § Gaps mở.</div>
+
+<p class="doc-footer"><strong>Linm Soft</strong></p>
+</article>
+
+<!-- TAB 5 · DA1 BÁO CÁO 2023–2025 -->
+<article id="panel-da1" class="tien-do-doc tien-do-page tien-do-panel" data-tien-do-panel="da1" role="tabpanel" hidden>
+
+<div class="doc-header">
+  <p class="kicker">Dự án 1 (DA1) — Dữ liệu lịch sử 2023–2025</p>
+  <h1 class="doc-title">Báo cáo tiến độ — phân hệ báo cáo cho dữ liệu 2023–2025</h1>
+  <p class="doc-meta">
+    <strong>Kính gửi:</strong> Ban lãnh đạo &amp; Phòng Kế toán Foodmart (FM)<br>
+    <strong>Ngày:</strong> 15/07/2026<br>
+    <strong>Phạm vi pilot:</strong> Chi nhánh <strong>FM02 — Foodmart Era Town A1</strong> · mở rộng 12 cửa hàng
+  </p>
+</div>
+
+<h2>Tóm tắt</h2>
+<p class="lead">Hệ thống ERP Linm đã triển khai xong <strong>4 trên 5 hạng mục</strong> nghiệm thu pilot tại FM02. Dữ liệu bán hàng tháng 12/2025 đã đồng bộ và đối soát; hóa đơn POS khớp <strong>100%</strong> với ERP. Hạng mục còn lại cần FM cung cấp <strong>dữ liệu phiếu báo có ngân hàng</strong>.</p>
+
+<div class="progress-summary">
+  <div class="progress-card featured">
+    <div class="val">4/5</div>
+    <div class="lbl">Hạng mục hoàn thành</div>
+  </div>
+  <div class="progress-card">
+    <div class="val">1</div>
+    <div class="lbl">Đang chờ phía FM (báo có NH)</div>
+  </div>
+</div>
+
+<h2>Bảng tiến độ chi tiết</h2>
+<table class="deliver-table quote-table">
+<thead>
+<tr><th>STT</th><th>Hạng mục</th><th>Trạng thái</th><th>Ghi chú</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td><strong>Danh mục dùng chung</strong> (NCC, nhân viên, khách hàng, sản phẩm, quy tắc định khoản)</td>
+  <td class="status-cell"><span class="badge done">✅ Hoàn thành</span></td>
+  <td>Đã import vào ERP theo chuẩn FM; FM02 dùng chung danh mục hệ thống</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><strong>Kết nối API POS → ERP Linm</strong></td>
+  <td class="status-cell"><span class="badge done">✅ HĐ</span> <span class="badge sync">🔄 Thu/Chi</span></td>
+  <td>Hóa đơn: đồng bộ xong. Phiếu thu/chi: đang sync và đối soát — <strong>dự kiến 28/07/2026</strong></td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><strong>Dữ liệu chi phí — Phiếu nhập kho</strong> tháng 12/2025</td>
+  <td class="status-cell"><span class="badge done">✅ Hoàn thành</span></td>
+  <td><strong>245</strong> phiếu nhập FM02; <strong>170</strong> phiếu đã hạch toán (Posted)</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><strong>Dữ liệu phiếu báo có / báo nợ ngân hàng</strong></td>
+  <td class="status-cell"><span class="badge deploy">Đang triển khai</span> <span class="badge ready">Registry</span></td>
+  <td>Sao kê CSV <strong>62.8k</strong> GD mapped · import dry-run ✅ (08/07) · live cần <code>reconcile.env.local</code> — <a href="../docs/tracking/reva-hop-dong-erp-review.md">tracking</a></td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><strong>Báo cáo bảng kê &amp; thống kê</strong></td>
+  <td class="status-cell"><span class="badge done">✅ HĐ</span> <span class="badge sync">🔄 Thu/Chi</span></td>
+  <td>Hóa đơn T12/2025: đối soát xong. Thu/chi: đang sync — <strong>dự kiến 28/07/2026</strong></td>
+</tr>
+</tbody>
+</table>
+
+<h2>Kết quả đối soát tháng 12/2025 — FM02</h2>
+<table class="deliver-table quote-table">
+<thead>
+<tr><th>Loại chứng từ</th><th>Trạng thái</th><th>Dự kiến hoàn thành</th><th>Ghi chú</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Hóa đơn bán</strong></td>
+  <td class="status-cell"><span class="badge done">✅ Đối soát xong</span></td>
+  <td>—</td>
+  <td>POS ↔ ERP khớp <strong>100%</strong>, không lệch số tiền</td>
+</tr>
+<tr>
+  <td><strong>Phiếu thu</strong></td>
+  <td class="status-cell"><span class="badge sync">🔄 Đang sync</span></td>
+  <td><strong>28/07/2026</strong></td>
+  <td>Luồng kết nối POS → ERP đã sẵn sàng</td>
+</tr>
+<tr>
+  <td><strong>Phiếu chi</strong></td>
+  <td class="status-cell"><span class="badge sync">🔄 Đang sync</span></td>
+  <td><strong>28/07/2026</strong></td>
+  <td>Luồng kết nối POS → ERP đã sẵn sàng</td>
+</tr>
+</tbody>
+</table>
+
+<div class="panel-note">Bảng kê chi tiết và thống kê theo ngày đã có cho hóa đơn; phiếu thu/chi dự kiến hoàn tất đối soát FM02 trước <strong>28/07/2026</strong>.</div>
+
+<h2>Danh mục đã triển khai (tóm tắt)</h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>Danh mục</th><th>Quy mô</th></tr></thead>
+<tbody>
+<tr><td>Nhà cung cấp (NCC)</td><td>575 NCC + nhóm phân cấp</td></tr>
+<tr><td>Khách hàng</td><td>~34.300 khách hàng + mã bán lẻ <code>FM_KHACHLE</code></td></tr>
+<tr><td>Sản phẩm / vật tư</td><td>~31.700 mặt hàng, 60 đơn vị tính</td></tr>
+<tr><td>Nhân viên</td><td>45 nhân viên <em>(5 người thuộc FM02)</em></td></tr>
+<tr><td>Quy tắc định khoản</td><td>129 nghiệp vụ <em>(gồm báo có, báo nợ, thu/chi cửa hàng…)</em></td></tr>
+<tr><td>Tài khoản kế toán</td><td>Bộ TT200 + TT99 theo chuẩn FM</td></tr>
+<tr><td>Kênh thanh toán</td><td>18 kênh (tiền mặt, Momo, VNPay, công nợ…)</td></tr>
+</tbody>
+</table>
+
+<h2>Việc cần phối hợp từ phía FM</h2>
+<ol class="action-list">
+  <li><strong>Cung cấp dữ liệu phiếu báo có ngân hàng</strong> (file Excel/API hoặc export từ hệ thống hiện tại) để import và đối soát trên ERP.</li>
+  <li><em>(Tuỳ chọn)</em> Xác nhận danh mục tài khoản &amp; quy tắc định khoản trước khi mở rộng sang các chi nhánh FM05, FM06, FM08, FM09.</li>
+</ol>
+
+<h2>Hướng triển khai tiếp theo</h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>Giai đoạn</th><th>Nội dung</th></tr></thead>
+<tbody>
+<tr>
+  <td><strong>Ngắn hạn</strong></td>
+  <td>Hoàn tất sync &amp; đối soát phiếu thu/chi FM02 <em>(mốc <strong>28/07/2026</strong>)</em> · nhận dữ liệu báo có NH</td>
+</tr>
+<tr>
+  <td><strong>Trung hạn</strong></td>
+  <td>Mở rộng pilot sang các chi nhánh còn lại · Phiếu kết ca cửa hàng · Báo cáo quản trị theo yêu cầu</td>
+</tr>
+</tbody>
+</table>
+
+<div class="panel-note"><em>Nếu cần bảng kê chi tiết hoặc file đối soát từng ngày tháng 12/2025, vui lòng liên hệ đội triển khai Linm.</em></div>
+
+<p class="doc-footer"><strong>Đội triển khai Linm</strong></p>
+</article>
+
+</div>
+
+<!-- EMBEDDED JSON DATA -->
+<script id="tien-do-data" type="application/json">
+{
+  "meta": {
+    "lastUpdated": "15/07/2026",
+    "orgName": "Foodmart (FM)",
+    "productTitle": "DA1 + DA2",
+    "panelNote": "— cap nhat scope, timeline, milestones DA1+DA2"
+  },
+  "items": [
+    {"stt": 1, "name": "Hóa đơn bán", "route": "/bh/hoa-don", "status": "done", "module": "POS", "duAn": "DA1", "note": "Context Aligned · FM02 T12"},
+    {"stt": 2, "name": "Shell link POS", "route": "/reva/pos", "status": "done", "module": "Shell", "duAn": "DA2", "note": "Seed reva-shell menuType=shell ✅"},
+    {"stt": 3, "name": "NCC · KH · Đối tượng (ĐT) — dm/doi-tuong", "route": "/dm/doi-tuong", "status": "done", "module": "Master", "duAn": "DA1+DA2", "note": "reva-ncc-hierarchy"},
+    {"stt": 4, "name": "TK · Định khoản · Kênh TT", "route": "/dm/tai-khoan", "status": "done", "module": "Master", "duAn": "DA1+DA2", "note": "TT200/TT99 · P1.2"},
+    {"stt": 5, "name": "Nhân viên · Phòng ban", "route": "/ns/nhan-vien", "status": "done", "module": "HR", "duAn": "DA2", "note": "reva-employees"},
+    {"stt": 6, "name": "Đơn vị cơ sở (12 CH)", "route": "/dm/don-vi-co-so", "status": "done", "module": "Master", "duAn": "DA1+DA2", "note": "reva-warehouses"},
+    {"stt": 7, "name": "Phiếu thu (PT)", "route": "/kt/pt", "status": "ready", "module": "Finance", "duAn": "DA1+DA2", "note": "Context Aligned · defer-reconcile (Phase B)"},
+    {"stt": 8, "name": "Phiếu chi (PC)", "route": "/kt/pc", "status": "ready", "module": "Finance", "duAn": "DA1+DA2", "note": "Context Aligned · defer-reconcile (Phase B)"},
+    {"stt": 9, "name": "Phiếu nhập mua (PNM)", "route": "/kt/pnm", "status": "ready", "module": "Supply", "duAn": "DA1", "note": "Context Aligned · post SSOT fixed 09/07"},
+    {"stt": 10, "name": "Giấy báo có (BC)", "route": "/kt/bao-co", "status": "ready", "module": "Finance", "duAn": "DA1", "note": "Context Aligned · shell+API 200"},
+    {"stt": 11, "name": "Giấy báo nợ (BN)", "route": "/kt/bao-no", "status": "ready", "module": "Finance", "duAn": "DA1", "note": "Context Aligned · shell+API 200"},
+    {"stt": 12, "name": "Ủy nhiệm chi (UNC)", "route": "/kt/unc", "status": "ready", "module": "Finance", "duAn": "DA1", "note": "Context Aligned · uncCategory filter"},
+    {"stt": 13, "name": "Chuyển tiền nội bộ (CTNB)", "route": "/kt/ctnb", "status": "ready", "module": "Finance", "duAn": "DA1", "note": "Context Aligned · dry-run OK"},
+    {"stt": 14, "name": "Đơn hàng", "route": "/bh/dh", "status": "ready", "module": "POS", "duAn": "DA2", "note": "Context Aligned · UAT 08/2026"},
+    {"stt": 15, "name": "Xuất hàng / Trả hàng", "route": "/bh/xuat-hang", "status": "ready", "module": "POS", "duAn": "DA2", "note": "Context Aligned · UAT 08/2026"},
+    {"stt": 16, "name": "YCMH · ĐĐMH · Nhận hàng", "route": "/mh/ycmh", "status": "ready", "module": "Supply", "duAn": "DA2", "note": "Context Aligned · Release 08/2026"},
+    {"stt": 17, "name": "PNK · PXK", "route": "/kho/pnk", "status": "ready", "module": "Inventory", "duAn": "DA2", "note": "Context Aligned · review-post clean"},
+    {"stt": 18, "name": "Bảng lương · BHXH", "route": "/ns/bang-luong", "status": "ready", "module": "HR", "duAn": "DA2", "note": "Context Aligned · Release 08/2026"},
+    {"stt": 19, "name": "Báo cáo doanh thu · Chi phí · Bán hàng", "route": "/baocao/doanh-thu", "status": "ready", "module": "Analytics", "duAn": "DA2", "note": "Context Aligned · GAP-P2-94 defer"},
+    {"stt": 20, "name": "B01 · B02 · B03 (BC kế toán)", "route": "/baocao/b01-dn", "status": "ready", "module": "Analytics", "duAn": "DA2", "note": "Context Aligned · NT 31/08/2026"},
+    {"stt": 21, "name": "BC tập đoàn · Ban quản trị", "route": "/reva/bao-cao/ban-quan-tri", "status": "ready", "module": "Analytics", "duAn": "DA2", "note": "Context Aligned · NT 05/01/2027"},
+    {"stt": 22, "name": "Membership API / Connector", "route": "BFF map", "status": "ready", "module": "API", "duAn": "DA2", "note": "Context Aligned · gen-api-document"},
+    {"stt": 23, "name": "Vật tư / Hàng hóa", "route": "/dm/vat-tu", "status": "ready", "module": "Master", "duAn": "DA1+DA2", "note": "Context Aligned · defer-reconcile POS sync"},
+    {"stt": 24, "name": "PT/PC POS đối soát (FM02)", "route": "/kt/pt", "status": "deploy", "module": "Finance", "duAn": "DA1", "note": "defer Phase B · HD-ERP-P1-03"},
+    {"stt": 25, "name": "Import sao kê — BC/BN/UNC", "route": "/kt/bao-co", "status": "deploy", "module": "Finance", "duAn": "DA1", "note": "defer Phase B · HD-ERP-P1-02"},
+    {"stt": 26, "name": "B01–B03 parity legacy numeric", "route": "/baocao/b01-dn", "status": "deploy", "module": "Analytics", "duAn": "DA2", "note": "defer Phase B · HD-ERP-P1-04"},
+    {"stt": 27, "name": "API POS inbound sync", "route": "external API", "status": "wait", "module": "API", "duAn": "DA2", "note": "blocked-external · chờ FM xác nhận"}
+  ],
+  "tasks": [
+    {"id": "T1", "title": "Import bank statement live — go-live", "column": "plan", "priority": "P1", "assignee": "Linm", "dueDate": "31/08/2026", "description": "BC/BN/UNC: 62.8k GD dry-run ✅ — live cần JWT + reconcile.env.local"},
+    {"id": "T2", "title": "UNC uncCategory filter — implement list filter", "column": "plan", "priority": "P2", "assignee": "Linm", "dueDate": "21/07/2026", "description": "uncCategory filter cho list UNC · context Aligned"},
+    {"id": "T3", "title": "PT/PC POS đối soát FM02", "column": "deploy", "priority": "P1", "assignee": "Linm", "dueDate": "31/08/2026", "description": "HD-ERP-P1-03 · reconcile script + JWT + upload BossSoft All"},
+    {"id": "T4", "title": "B01–B03 parity legacy numeric", "column": "deploy", "priority": "P2", "assignee": "Linm", "dueDate": "31/08/2026", "description": "HD-ERP-P1-04 · RPT-LEG-P0-02 · cần GL legacy data"},
+    {"id": "T5", "title": "FM feedback: xác nhận API POS inbound", "column": "feedback", "priority": "P2", "assignee": "FM", "dueDate": "15/07/2026", "description": "Chờ xác nhận endpoint + x-api-key cho inbound sync"},
+    {"id": "T6", "title": "FM: upload BossSoft All cho đối soát 12 CH", "column": "feedback", "priority": "P1", "assignee": "FM", "dueDate": "20/07/2026", "description": "Cần bên FM upload file BossSoft All để reconcile PT/PC"}
+  ]
+}
+</script>
+
+<script src="tien-do-tabs.js"></script>
+<script src="module-3-items.js"></script>
+<script src="module-4-taskboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Báo cáo tiến độ DA1 · Dữ liệu 2023–2025</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="../icons/linm-logo.svg">
+<link rel="icon" type="image/png" href="../icons/linm-logo.png">
+<link rel="apple-touch-icon" href="../icons/linm-logo.png">
+<meta name="theme-color" content="#4facfe">
+<link rel="stylesheet" href="../ds-tokens.css">
+<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="../contract.css">
+<link rel="stylesheet" href="tien-do-shared.css">
+</head>
+<body>
+
+<div class="contract-app">
+
+<nav class="plan-nav">
+  <a href="../index.html" class="nav-logo"><div class="dot"></div> FM - Hệ thống kế toán - quản trị siêu thị</a>
+  <div class="nav-links">
+    <a href="../demo-plan.html">ERP Demo</a>
+    <a href="../demo-plan-kpi.html">FPC Demo</a>
+    <a href="../demo-success.html">Demo &amp; Triển khai</a>
+    <a href="tien-do-2026.html">Tiến độ (DA1 &amp; DA2)</a>
+  </div>
+  <div class="nav-right">
+    <a href="../index.html" class="nav-back">← Trang chủ</a>
+    <button type="button" class="nav-action nav-action-print" onclick="window.print()">In báo cáo</button>
+  </div>
+</nav>
+
+<div class="hero compact">
+  <div class="hero-badge">DA1 · Dữ liệu lịch sử 2023–2025</div>
+  <h1>Báo cáo tiến độ triển khai <span>phân hệ báo cáo</span></h1>
+  <p>Chuẩn hóa dữ liệu lịch sử <strong>2023–2025</strong> và triển khai báo cáo Tài chính &amp; Quản trị — pilot <strong>FM02-A1 Eratown</strong> · mở rộng 12 cửa hàng.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="val">4/5</div><div class="lbl">hạng mục hoàn thành</div></div>
+    <div class="hero-stat"><div class="val">100%</div><div class="lbl">đối soát HĐ T12</div></div>
+    <div class="hero-stat"><div class="val">28/07</div><div class="lbl">mốc thu/chi FM02</div></div>
+  </div>
+</div>
+
+<div class="tien-do-tabs-wrap">
+  <div class="tien-do-tabs" role="tablist" aria-label="Tiến độ Phase 1">
+    <button type="button" class="tien-do-tab active" role="tab" aria-selected="true" data-tien-do-tab="tien-do">Báo cáo tiến độ</button>
+    <button type="button" class="tien-do-tab" role="tab" aria-selected="false" data-tien-do-tab="nghiem-thu">Chi tiết nghiệm thu</button>
+  </div>
+</div>
+
+<article class="tien-do-doc tien-do-page tien-do-panel is-active" data-tien-do-panel="tien-do" role="tabpanel">
+
+<div class="doc-header">
+  <p class="kicker">Dự án 1 (DA1) — Dữ liệu lịch sử 2023–2025</p>
+  <h1 class="doc-title">Báo cáo tiến độ triển khai phân hệ báo cáo cho dữ liệu 2023–2025</h1>
+  <p class="doc-meta">
+    <strong>Kính gửi:</strong> Ban lãnh đạo &amp; Phòng Kế toán Foodmart (FM)<br>
+    <strong>Ngày:</strong> 15/07/2026<br>
+    <strong>Phạm vi pilot:</strong> Chi nhánh <strong>FM02 — Foodmart Era Town A1</strong> · mở rộng 12 cửa hàng
+  </p>
+</div>
+
+<h2>Tóm tắt</h2>
+<p class="lead">Hệ thống ERP Linm đã triển khai xong <strong>4 trên 5 hạng mục</strong> nghiệm thu pilot tại FM02. Dữ liệu bán hàng tháng 12/2025 đã đồng bộ và đối soát; hóa đơn POS khớp <strong>100%</strong> với ERP. Hạng mục còn lại cần FM cung cấp <strong>dữ liệu phiếu báo có ngân hàng</strong>.</p>
+
+<div class="progress-summary">
+  <div class="progress-card featured">
+    <div class="val">4/5</div>
+    <div class="lbl">Hạng mục hoàn thành</div>
+  </div>
+  <div class="progress-card">
+    <div class="val">1</div>
+    <div class="lbl">Đang chờ phía FM (báo có NH)</div>
+  </div>
+</div>
+
+<h2>Bảng tiến độ chi tiết</h2>
+<table class="deliver-table quote-table">
+<thead>
+<tr><th>STT</th><th>Hạng mục</th><th>Trạng thái</th><th>Ghi chú</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td><strong>Danh mục dùng chung</strong> (NCC, nhân viên, khách hàng, sản phẩm, quy tắc định khoản)</td>
+  <td class="status-cell"><span class="badge done">✅ Hoàn thành</span></td>
+  <td>Đã import vào ERP theo chuẩn FM; FM02 dùng chung danh mục hệ thống</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><strong>Kết nối API POS → ERP Linm</strong></td>
+  <td class="status-cell"><span class="badge done">✅ HĐ</span> <span class="badge sync">🔄 Thu/Chi</span></td>
+  <td>Hóa đơn: đồng bộ xong. Phiếu thu/chi: đang sync và đối soát — <strong>dự kiến 28/07/2026</strong></td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><strong>Dữ liệu chi phí — Phiếu nhập kho</strong> tháng 12/2025</td>
+  <td class="status-cell"><span class="badge done">✅ Hoàn thành</span></td>
+  <td><strong>245</strong> phiếu nhập FM02; <strong>170</strong> phiếu đã hạch toán (Posted)</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><strong>Dữ liệu phiếu báo có / báo nợ ngân hàng</strong></td>
+  <td class="status-cell"><span class="badge deploy">Đang triển khai</span> <span class="badge ready">Registry</span></td>
+  <td>Sao kê CSV <strong>62.8k</strong> GD mapped · import dry-run ✅ (08/07) · live cần <code>reconcile.env.local</code> — <a href="../docs/tracking/reva-hop-dong-erp-review.md">tracking</a> · post SSOT fixed 09/07 · menu package ✅</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><strong>Báo cáo bảng kê &amp; thống kê</strong></td>
+  <td class="status-cell"><span class="badge done">✅ HĐ</span> <span class="badge sync">🔄 Thu/Chi</span></td>
+  <td>Hóa đơn T12/2025: đối soát xong. Thu/chi: đang sync và đối soát — <strong>dự kiến 28/07/2026</strong> · hoạch toán SSOT clean (12/07)</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Kết quả đối soát tháng 12/2025 — FM02</h2>
+<table class="deliver-table quote-table">
+<thead>
+<tr><th>Loại chứng từ</th><th>Trạng thái</th><th>Dự kiến hoàn thành</th><th>Ghi chú</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Hóa đơn bán</strong></td>
+  <td class="status-cell"><span class="badge done">✅ Đối soát xong</span></td>
+  <td>—</td>
+  <td>POS ↔ ERP khớp <strong>100%</strong>, không lệch số tiền</td>
+</tr>
+<tr>
+  <td><strong>Phiếu thu</strong></td>
+  <td class="status-cell"><span class="badge sync">🔄 Đang sync</span></td>
+  <td><strong>28/07/2026</strong></td>
+  <td>Luồng kết nối POS → ERP đã sẵn sàng</td>
+</tr>
+<tr>
+  <td><strong>Phiếu chi</strong></td>
+  <td class="status-cell"><span class="badge sync">🔄 Đang sync</span></td>
+  <td><strong>28/07/2026</strong></td>
+  <td>Luồng kết nối POS → ERP đã sẵn sàng</td>
+</tr>
+</tbody>
+</table>
+<div class="panel-note">Bảng kê chi tiết và thống kê theo ngày đã có cho hóa đơn; phiếu thu/chi dự kiến hoàn tất đối soát FM02 trước <strong>28/07/2026</strong>.</div>
+
+<h2>Danh mục đã triển khai (tóm tắt)</h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>Danh mục</th><th>Quy mô</th></tr></thead>
+<tbody>
+<tr><td>Nhà cung cấp (NCC)</td><td>575 NCC + nhóm phân cấp</td></tr>
+<tr><td>Khách hàng</td><td>~34.300 khách hàng + mã bán lẻ <code>FM_KHACHLE</code></td></tr>
+<tr><td>Sản phẩm / vật tư</td><td>~31.700 mặt hàng, 60 đơn vị tính</td></tr>
+<tr><td>Nhân viên</td><td>45 nhân viên <em>(5 người thuộc FM02)</em></td></tr>
+<tr><td>Quy tắc định khoản</td><td>129 nghiệp vụ <em>(gồm báo có, báo nợ, thu/chi cửa hàng…)</em></td></tr>
+<tr><td>Tài khoản kế toán</td><td>Bộ TT200 + TT99 theo chuẩn FM</td></tr>
+<tr><td>Kênh thanh toán</td><td>18 kênh (tiền mặt, Momo, VNPay, công nợ…)</td></tr>
+</tbody>
+</table>
+
+<h2>Chi tiết — Quy tắc nhóm phân cấp Nhà cung cấp (NCC)</h2>
+<p>Nguồn: file Odoo <strong>«Danh mục NCC 31.3»</strong> (sheet Chuẩn) · đã import vào ERP qua bộ danh mục <code>reva-ncc-hierarchy</code>.</p>
+
+<h3>Cấu trúc 2 tầng nhóm + 3 cấp mã NCC</h3>
+<pre class="code-tree">[Nhóm L1 — theo loại hình]
+    └── [Nhóm L2 — theo ngành / dịch vụ]
+            └── [NCC — mã phân cấp xxx.yyy.zzz]</pre>
+
+<table class="deliver-table quote-table">
+<thead><tr><th>Tầng</th><th>Vai trò</th><th>Số lượng</th><th>Ví dụ</th></tr></thead>
+<tbody>
+<tr>
+  <td><strong>Nhóm L1</strong></td>
+  <td>Phân loại NCC theo <strong>loại hình kinh doanh</strong></td>
+  <td><strong>4</strong> nhóm</td>
+  <td><code>NCC-100</code> Dịch vụ · <code>NCC-200</code> Hàng hóa · <code>NCC-300</code> CCDC · <code>NCC-400</code> Nhà thầu</td>
+</tr>
+<tr>
+  <td><strong>Nhóm L2</strong></td>
+  <td>Phân loại <strong>chi tiết trong từng L1</strong></td>
+  <td><strong>6</strong> nhóm</td>
+  <td><code>NCC-100-L2-01</code> Dịch vụ tài chính · <code>NCC-200-L2-01</code> Hàng tươi sống…</td>
+</tr>
+<tr>
+  <td><strong>NCC</strong></td>
+  <td>Đối tượng giao dịch (có thể có cây cha–con)</td>
+  <td><strong>575</strong> NCC</td>
+  <td>Xem quy tắc mã bên dưới</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Bốn nhóm L1 (tiền tố mã NCC)</h3>
+<table class="deliver-table quote-table">
+<thead><tr><th>Mã L1</th><th>Tên nhóm</th><th>Áp dụng nghiệp vụ / TK</th></tr></thead>
+<tbody>
+<tr><td><strong>100</strong></td><td>Nhà cung cấp <strong>dịch vụ</strong></td><td>Ngân hàng, mặt bằng, IT, marketing, phí quản lý… → TK 641/642</td></tr>
+<tr><td><strong>200</strong></td><td>Nhà cung cấp <strong>hàng hóa</strong></td><td>Thực phẩm, FMCG, hàng tươi/khô → TK 156</td></tr>
+<tr><td><strong>300</strong></td><td>Nhà cung cấp <strong>công cụ dụng cụ</strong></td><td>Thiết bị, CCDC → TK 153</td></tr>
+<tr><td><strong>400</strong></td><td>Nhà cung cấp <strong>nhà thầu</strong></td><td>Thi công, sửa chữa → TK 627/242</td></tr>
+</tbody>
+</table>
+
+<h3>Sáu nhóm L2</h3>
+<table class="deliver-table quote-table">
+<thead><tr><th>Nhóm L2</th><th>Thuộc L1</th><th>Tên</th></tr></thead>
+<tbody>
+<tr><td><code>NCC-100-L2-01</code></td><td>100</td><td>Dịch vụ tài chính <em>(ngân hàng, ví, Fundiin…)</em></td></tr>
+<tr><td><code>NCC-100-L2-02</code></td><td>100</td><td>Dịch vụ phí quản lý, điện, nước</td></tr>
+<tr><td><code>NCC-100-L2-03</code></td><td>100</td><td>Dịch vụ Internet</td></tr>
+<tr><td><code>NCC-100-L2-04</code></td><td>100</td><td>Dịch vụ khác</td></tr>
+<tr><td><code>NCC-200-L2-01</code></td><td>200</td><td>Nhà cung cấp hàng <strong>tươi sống</strong></td></tr>
+<tr><td><code>NCC-200-L2-02</code></td><td>200</td><td>Nhà cung cấp hàng <strong>khô</strong></td></tr>
+</tbody>
+</table>
+
+<h3>Quy tắc mã NCC — 3 cấp (<code>AAA.BBB.CCC</code>)</h3>
+<table class="deliver-table quote-table">
+<thead><tr><th>Cấp</th><th>Định dạng</th><th>Ví dụ</th><th>Ý nghĩa</th></tr></thead>
+<tbody>
+<tr><td><strong>Cấp 0 — NCC mẹ</strong></td><td><code>AAA.BBB.000</code> → <code>AAA.BBB</code></td><td><code>100.001</code></td><td>Hãng / tổ chức gốc <em>(MB, ACB, C.P. Vietnam…)</em></td></tr>
+<tr><td><strong>Cấp 1 — NCC con</strong></td><td><code>AAA.BBB.CCC</code></td><td><code>100.001.001</code></td><td>Chi nhánh / NPP — <code>parentCode = 100.001</code></td></tr>
+<tr><td><strong>Cấp 2 — NCC cháu</strong></td><td><code>AAA.BBB.CCC</code></td><td><code>100.001.021</code></td><td>Điểm giao dịch theo <strong>cửa hàng</strong> <em>(FM02, FM06…)</em></td></tr>
+</tbody>
+</table>
+
+<h3>Ví dụ thực tế trên ERP</h3>
+<pre class="code-tree"><span class="hl">100.001</span>          NGÂN HÀNG TMCP QUÂN ĐỘI          (NCC mẹ)
+  ├── <span class="hl">100.001.001</span>   MB pháp nhân STTP VN
+  ├── <span class="hl">100.001.002</span>   MB nội bộ
+  ├── <span class="hl">100.001.021</span>   MB — FM02
+  ├── <span class="hl">100.001.022</span>   MB — FM06
+  └── <span class="hl">100.001.024</span>   MB — FM09
+
+<span class="hl">200.001</span>          C.P. VIETNAM LIVESTOCK            (NCC mẹ hàng hóa)
+  ├── <span class="hl">200.001.001</span>   C.P. — Heo (tất cả CH)
+  └── <span class="hl">200.001.002</span>   C.P. — Xúc xích (FM06)</pre>
+<p><strong>118 NCC</strong> có <code>parentCode</code> (thuộc cây cha–con); các NCC còn lại gắn trực tiếp vào nhóm L2.</p>
+
+<h3>Quy tắc khi thêm NCC mới trên ERP</h3>
+<table class="deliver-table quote-table">
+<thead><tr><th>Hành động</th><th>Quy tắc sinh mã</th></tr></thead>
+<tbody>
+<tr><td>Thêm <strong>nhóm L1</strong> mới</td><td><code>formatCode</code> 3 chữ số → mã nhóm <code>NCC-{formatCode}</code></td></tr>
+<tr><td>Thêm <strong>nhóm L2</strong></td><td>Mã <code>NCC-{L1}-L2-{nn}</code> · <code>parentCode</code> trỏ về L1</td></tr>
+<tr><td>Thêm <strong>NCC con</strong></td><td><code>{mã cha}.{seq 3 số}</code> — ví dụ <code>200.001.003</code></td></tr>
+<tr><td>Mã kết thúc <code>.000</code></td><td>Hệ thống chuẩn hóa bỏ đuôi → mã ERP <code>AAA.BBB</code></td></tr>
+</tbody>
+</table>
+<p>Mỗi NCC gắn <strong>một nhóm L2</strong> (<code>customerGroupCode</code>) và TK công nợ mặc định <strong>3311</strong>. Các trường bổ sung từ Odoo: MST, hình thức thanh toán, ngày công nợ, tài khoản ngân hàng, hợp đồng, % chiết khấu/hỗ trợ…</p>
+
+<h2>Việc cần phối hợp từ phía FM</h2>
+<ol class="action-list">
+  <li><strong>Cung cấp dữ liệu phiếu báo có ngân hàng</strong> (file Excel/API hoặc export từ hệ thống hiện tại) để import và đối soát trên ERP.</li>
+  <li><em>(Tuỳ chọn)</em> Xác nhận danh mục tài khoản &amp; quy tắc định khoản trước khi mở rộng sang các chi nhánh FM05, FM06, FM08, FM09.</li>
+</ol>
+
+<h2>Hướng triển khai tiếp theo</h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>Giai đoạn</th><th>Nội dung</th></tr></thead>
+<tbody>
+<tr>
+  <td><strong>Ngắn hạn</strong></td>
+  <td>Hoàn tất sync &amp; đối soát phiếu thu/chi FM02 <em>(mốc <strong>28/07/2026</strong>)</em> · nhận dữ liệu báo có NH</td>
+</tr>
+<tr>
+  <td><strong>Trung hạn</strong></td>
+  <td>Mở rộng pilot sang các chi nhánh còn lại · Phiếu kết ca cửa hàng · Báo cáo quản trị (doanh thu, tiền tồn) theo yêu cầu Phase 1</td>
+</tr>
+</tbody>
+</table>
+
+<div class="panel-note"><em>Nếu cần bảng kê chi tiết hoặc file đối soát từng ngày tháng 12/2025, vui lòng liên hệ đội triển khai Linm.</em></div>
+
+<p class="doc-footer"><strong>Đội triển khai Linm</strong></p>
+
+</article>
+
+<article class="tien-do-doc tien-do-page tien-do-panel" data-tien-do-panel="nghiem-thu" role="tabpanel" hidden>
+
+<div class="doc-header">
+  <p class="kicker">Nghiệm thu DA1</p>
+  <h1 class="doc-title">Chi tiết nghiệm thu — Phân hệ báo cáo · Dữ liệu 2023–2025</h1>
+  <p class="doc-meta">
+    <strong>Dự án 1 (DA1)</strong> — Dữ liệu lịch sử 2023–2025<br>
+    <em>Chuẩn hóa dữ liệu POS → Linm Soft · Báo cáo Tài chính &amp; Quản trị · 12 cửa hàng</em><br>
+    <strong>Pilot hiện tại:</strong> FM02 (Foodmart Era Town A1)
+  </p>
+</div>
+
+<p class="lead">Bảng dưới map <strong>tiêu chí nghiệm thu</strong> với <strong>danh mục · chứng từ · báo cáo</strong> đã triển khai trên ERP Linm.</p>
+
+<h2>Tổng quan 3 giai đoạn</h2>
+<div class="phase-grid">
+  <div class="phase-card gd1">
+    <div class="phase-id">Giai đoạn 01 · 02 tuần</div>
+    <h3>Chuẩn hóa dữ liệu — 1 cửa hàng</h3>
+    <p class="phase-meta">Pilot <strong>FM02</strong> · dữ liệu 2023–2025 · đối soát sổ sách</p>
+    <span class="badge partial">🔄 4/5 tiêu chí</span>
+  </div>
+  <div class="phase-card gd2">
+    <div class="phase-id">Giai đoạn 02 · 02 tuần</div>
+    <h3>Mở rộng 12 CH &amp; Báo cáo TC/QT</h3>
+    <p class="phase-meta">UI/API báo cáo <strong>đã có</strong> · dữ liệu FM02 đang hoàn thiện</p>
+    <span class="badge sync">🔄 Đang triển khai</span>
+  </div>
+  <div class="phase-card gd3">
+    <div class="phase-id">Giai đoạn 03 · 01 tuần</div>
+    <h3>Chuyển giao hệ thống</h3>
+    <p class="phase-meta">Mã nguồn · build · tài liệu · đào tạo</p>
+    <span class="badge pending">⏳ Chờ NT tổng</span>
+  </div>
+</div>
+
+<h2>GĐ01 — Tiêu chí nghiệm thu &amp; đối chiếu pilot FM02</h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>STT</th><th>Tiêu chí</th><th>Trạng thái FM02</th><th>Bằng chứng / ghi chú</th></tr></thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>Danh mục KH, NCC, Nhân sự, Hàng hóa, DT &amp; CP <strong>chuẩn hóa thống nhất</strong></td>
+  <td class="status-cell"><span class="badge done">✅</span></td>
+  <td>Master sets FM import ERP — xem bảng danh mục bên dưới</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>Dữ liệu lịch sử 2023–2025 <strong>làm sạch</strong> tại 1 cửa hàng</td>
+  <td class="status-cell"><span class="badge partial">🔄</span></td>
+  <td>HĐ T12/2025 ✅ 100%; PT/PC 🔄 (mốc <strong>28/07/2026</strong>); PNM 245 phiếu (170 Posted)</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>Số liệu <strong>đối soát</strong> hồ sơ &amp; sổ sách kế toán</td>
+  <td class="status-cell"><span class="badge partial">🔄</span></td>
+  <td>Script <code>reconcile-pos-*.mjs</code> · thư mục <code>doi-soat-12-2025/</code></td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>Bộ dữ liệu chuẩn <strong>trên hệ thống</strong>, truy xuất báo cáo</td>
+  <td class="status-cell"><span class="badge partial">🔄</span></td>
+  <td>ERP route + API hoạt động; thiếu báo có NH &amp; PT/PC đối soát xong</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><strong>Bên B xác nhận</strong> kết quả chuẩn hóa</td>
+  <td class="status-cell"><span class="badge wait">⏳</span></td>
+  <td>Chờ BB nghiệm thu GĐ01 sau hoàn tất mục 2–4</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Danh mục đã triển khai (map ERP)</h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>Danh mục</th><th>Quy mô</th><th>Master set / module</th><th>ERP (tham chiếu)</th><th>NT</th></tr></thead>
+<tbody>
+<tr><td>Nhà cung cấp + nhóm L1/L2</td><td>575 NCC · 4+6 nhóm</td><td><code>reva-ncc-hierarchy</code></td><td class="col-route">Master · Đối tượng/NCC</td><td><span class="badge done">✅</span></td></tr>
+<tr><td>Khách hàng</td><td>~34.300 + <code>FM_KHACHLE</code></td><td><code>reva-partners</code></td><td class="col-route">Master · Khách hàng</td><td><span class="badge done">✅</span></td></tr>
+<tr><td>Sản phẩm / vật tư</td><td>~31.700 · 60 ĐVT</td><td><code>reva-materials</code></td><td class="col-route">Master · Vật tư</td><td><span class="badge done">✅</span></td></tr>
+<tr><td>Nhân viên</td><td>45 (5 FM02)</td><td>HR master</td><td class="col-route">HR · Nhân viên</td><td><span class="badge done">✅</span></td></tr>
+<tr><td>Quy tắc định khoản</td><td>129 nghiệp vụ</td><td><code>reva-posting-reason-rules</code></td><td class="col-route">Master · Định khoản</td><td><span class="badge done">✅</span></td></tr>
+<tr><td>Tài khoản kế toán</td><td>TT200 + TT99</td><td>seed accounts</td><td class="col-route">Master · Tài khoản</td><td><span class="badge done">✅</span></td></tr>
+<tr><td>Kênh thanh toán</td><td>18 kênh</td><td>P1.2 mapping</td><td class="col-route">Master · Kênh TT</td><td><span class="badge done">✅</span></td></tr>
+<tr><td>Đơn vị cơ sở (12 CH)</td><td>FM02…FM09…</td><td><code>reva-warehouses</code></td><td class="col-route">PlatformCompany</td><td><span class="badge done">✅</span></td></tr>
+</tbody>
+</table>
+
+<h2>Chứng từ &amp; đồng bộ POS → ERP</h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>Chứng từ</th><th>Route ERP</th><th>Connector / API</th><th>Dữ liệu FM02 T12</th><th>NT</th></tr></thead>
+<tbody>
+<tr>
+  <td><strong>Hóa đơn bán</strong></td>
+  <td class="col-route">/bh/hoa-don</td>
+  <td><code>reva-fm-hoa-don</code> · POS API</td>
+  <td><span class="badge done">✅ 100%</span></td>
+  <td><span class="badge done">✅</span></td>
+</tr>
+<tr>
+  <td><strong>Phiếu thu</strong></td>
+  <td class="col-route">/kt/pt</td>
+  <td><code>reva-fm-phieu-thu</code></td>
+  <td><span class="badge sync">🔄 28/07</span></td>
+  <td><span class="badge sync">🔄</span></td>
+</tr>
+<tr>
+  <td><strong>Phiếu chi</strong></td>
+  <td class="col-route">/kt/pc</td>
+  <td><code>reva-fm-phieu-chi</code></td>
+  <td><span class="badge sync">🔄 28/07</span></td>
+  <td><span class="badge sync">🔄</span></td>
+</tr>
+<tr>
+  <td><strong>Phiếu nhập mua</strong></td>
+  <td class="col-route">/kt/pnm</td>
+  <td><code>reva-purchase-invoices-2025-12</code></td>
+  <td><span class="badge partial">🟡 170/245 Posted</span></td>
+  <td><span class="badge partial">🔄</span></td>
+</tr>
+<tr>
+  <td><strong>Giấy báo có / Giấy báo nợ</strong></td>
+  <td class="col-route">/kt/bao-co · /kt/bao-no</td>
+  <td>Định khoản BC/BN sẵn sàng</td>
+  <td><span class="badge wait">⏳ Chờ FM</span></td>
+  <td><span class="badge wait">⏳</span></td>
+</tr>
+<tr>
+  <td><strong>Ủy nhiệm chi (UNC)</strong></td>
+  <td class="col-route">/kt/unc</td>
+  <td>Import sao kê · rule UNC-BHXH/BN001</td>
+  <td><span class="badge partial">🟡 Pilot</span></td>
+  <td><span class="badge partial">🔄</span></td>
+</tr>
+</tbody>
+</table>
+
+<h2>Báo cáo Tài chính &amp; Quản trị (GĐ02)</h2>
+<p class="lead" style="font-size:.88rem">P&amp;L cửa hàng, DT/CP/LN, Benchmark chi phí, Store P&amp;L, Ban quản trị. ERP đã có UI/API — cột <strong>Dữ liệu FM02</strong> phản ánh pilot.</p>
+
+<h3>1. Sổ cái &amp; báo cáo kế toán</h3>
+<table class="deliver-table quote-table">
+<thead><tr><th>Báo cáo</th><th>Route</th><th>UI</th><th>Dữ liệu FM02</th></tr></thead>
+<tbody>
+<tr><td>Sổ cái</td><td class="col-route">/kt/so-cai</td><td>✅</td><td>🟡</td></tr>
+<tr><td>Sổ chi tiết TK</td><td class="col-route">/kt/so-chi-tiet</td><td>✅</td><td>🟡</td></tr>
+<tr><td>Cân đối phát sinh</td><td class="col-route">/kt/cdps</td><td>✅</td><td>🟡</td></tr>
+<tr><td>Nhật ký chung từ</td><td class="col-route">/baocao/nhat-ky-chung-tu</td><td>✅</td><td>🟡</td></tr>
+</tbody>
+</table>
+
+<h3>2. Sổ quỹ tiền mặt (thu / chi)</h3>
+<table class="deliver-table quote-table">
+<thead><tr><th>Báo cáo</th><th>Route</th><th>UI</th><th>Dữ liệu FM02</th></tr></thead>
+<tbody>
+<tr><td>Sổ quỹ</td><td class="col-route">/kt/so-quy</td><td>✅</td><td>🔄</td></tr>
+<tr><td>NK thu tiền</td><td class="col-route">/kt/so-nhat-ky-thu-tien</td><td>✅</td><td>🔄</td></tr>
+<tr><td>NK chi tiền</td><td class="col-route">/kt/so-nhat-ky-chi-tien</td><td>✅</td><td>🔄</td></tr>
+<tr><td>BC thu/chi</td><td class="col-route">/baocao/thu-chi</td><td>✅</td><td>🔄</td></tr>
+</tbody>
+</table>
+
+<h3>3. Báo cáo DT · CP · Lãi lỗ · Quản trị</h3>
+<table class="deliver-table quote-table">
+<thead><tr><th>Báo cáo</th><th>Route</th><th>Mô tả</th><th>UI</th><th>Dữ liệu FM02</th></tr></thead>
+<tbody>
+<tr><td>Doanh thu</td><td class="col-route">/baocao/doanh-thu</td><td>Phân tích DT</td><td>✅</td><td>✅</td></tr>
+<tr><td>Chi phí</td><td class="col-route">/baocao/chi-phi</td><td>Benchmark CP</td><td>✅</td><td>🟡</td></tr>
+<tr><td>Bán hàng</td><td class="col-route">/baocao/ban-hang</td><td>DT cửa hàng</td><td>✅</td><td>✅</td></tr>
+<tr><td>Bảng cân đối kế toán (B01) · Lưu chuyển tiền tệ (B03)</td><td class="col-route">/baocao/b01-dn · b03-dn</td><td>BC Tài chính</td><td>✅</td><td>🟡 / 🔄</td></tr>
+<tr><td>Báo cáo KQKD (B02) · P&amp;L</td><td class="col-route">/baocao/b02-dn</td><td>P&amp;L / Store P&amp;L</td><td>✅</td><td>🟡</td></tr>
+<tr><td>Phân tích KPI</td><td class="col-route">/baocao/phan-tich</td><td>Chỉ số quản trị</td><td>✅</td><td>🟡</td></tr>
+<tr><td>Báo cáo doanh thu tập đoàn</td><td class="col-route">/reva/bao-cao/doanh-thu</td><td>Ma trận 12 CH</td><td>✅</td><td>⬜ parity</td></tr>
+<tr><td>Báo cáo thu/chi tập đoàn</td><td class="col-route">/reva/bao-cao/thu-chi</td><td>Tổng hợp quỹ</td><td>✅</td><td>⬜</td></tr>
+<tr><td><strong>BC Ban quản trị tập đoàn</strong></td><td class="col-route">/reva/bao-cao/ban-quan-tri</td><td>BC Quản trị tập đoàn</td><td>✅</td><td>⬜</td></tr>
+</tbody>
+</table>
+
+<h2>GĐ02 — Tiêu chí báo cáo (đối chiếu)</h2>
+<table class="deliver-table quote-table">
+<thead><tr><th>STT</th><th>Tiêu chí</th><th>Trạng thái</th><th>Ghi chú</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>12 CH chuẩn hóa cùng cấu trúc</td><td><span class="badge partial">🔄</span></td><td>Master chung ✅; dữ liệu POS đang mở rộng từ FM02</td></tr>
+<tr><td>2</td><td>P&amp;L từng CH &amp; toàn hệ thống</td><td><span class="badge partial">🔄</span></td><td><code>/baocao/b02-dn</code> (BC KQKD) + FM ma trận — chờ đủ GL FM02</td></tr>
+<tr><td>3</td><td>BC phân tích DT, CP, LN</td><td><span class="badge partial">🔄</span></td><td>DT ✅ · CP 🟡 · LN sau PT/PC</td></tr>
+<tr><td>4</td><td>Benchmark CP · Store P&amp;L</td><td><span class="badge partial">🔄</span></td><td>UI sẵn · parity BossSoft ⬜</td></tr>
+<tr><td>5</td><td>BC nhất quán với dữ liệu chuẩn hóa</td><td><span class="badge partial">🔄</span></td><td>Đối soát HĐ ✅; thu/chi 🔄</td></tr>
+<tr><td>6</td><td>Bên B xác nhận bộ số liệu &amp; BC</td><td><span class="badge wait">⏳</span></td><td>Sau NT GĐ01 + hoàn thiện FM02</td></tr>
+</tbody>
+</table>
+
+<h2>GĐ03 — Nghiệm thu &amp; bàn giao</h2>
+<p class="lead">Chi tiết release · hạ tầng · nộp store: <a href="../bao-gia/#ban-giao">Báo giá · Tab 4</a>.</p>
+
+<div class="handover-split">
+  <div class="handover-box linm">
+    <span class="owner-tag">Thuộc quyền Linm</span>
+    <h3>ERP Service — Release &amp; Deploy</h3>
+    <p class="handover-lead">Linm bàn giao <strong>bản build triển khai</strong> và <strong>hướng dẫn deploy</strong> hệ thống ERP (không chuyển giao full source lõi platform).</p>
+    <ul class="handover-deliverables">
+      <li><strong>Docker image / release build</strong> — <code>Linm.Web.ERP.WebService</code> (API + BFF + jobs host)</li>
+      <li><strong>Hướng dẫn deploy</strong> — <code>docker-compose.yml</code> · <code>.env.template</code> · migration gate</li>
+      <li><strong>MFE ERP build</strong> — Finance · Sales · Analytics · Master · HR · Supply (artifact npm/webpack)</li>
+      <li><strong>Shell host</strong> — MFE-CORE Root-App mount route ERP</li>
+      <li><strong>Tài liệu vận hành service</strong> — configuration · tenant · platform jobs (khung chung)</li>
+    </ul>
+    <p class="handover-lead" style="margin-top:12px;margin-bottom:0"><em>Nghiệm thu:</em> service chạy ổn định pilot FM02 · báo cáo/danh mục/chứng từ truy cập được qua build đã deploy.</p>
+  </div>
+  <div class="handover-box reva">
+    <span class="owner-tag">Thuộc quyền FM</span>
+    <h3>Prefix FM · Job sync POS — Full source</h3>
+    <p class="handover-lead">FM nhận <strong>toàn bộ mã nguồn</strong> tích hợp, ETL, mapping, job đồng bộ POS và báo cáo quản trị — kèm <strong>hướng dẫn cấu trúc source</strong> và <strong>hướng dẫn triển khai</strong> lớp tích hợp.</p>
+    <ul class="handover-deliverables">
+      <li><strong>Job service (tách release)</strong> — <code>Linm.Reva.WebService/Jobs</code> — sync POS độc lập · Docker + deploy guide</li>
+      <li><strong>Repo dữ liệu &amp; đối soát</strong> — <code>Linm.Reva.Data</code> (master CSV, scripts, spec Phase 1)</li>
+      <li><strong>MFE báo cáo quản trị</strong> — <code>Linm.Web.Reva.Report</code> (<code>/reva/bao-cao/*</code>)</li>
+      <li><strong>Job sync POS → ERP</strong> — connector <code>reva-fm-hoa-don</code> · <code>reva-fm-phieu-thu</code> · <code>reva-fm-phieu-chi</code> <em>(đang tách sang <code>Linm.Reva.WebService/Jobs</code>)</em></li>
+      <li><strong>Converter &amp; mapping</strong> — <code>RevaFmPayloadConverter</code> · <code>RevaFmMappingRegistry</code> · lookup định khoản FM</li>
+      <li><strong>Master sets FM</strong> — <code>data/master/sets/reva-*</code> (NCC, materials, posting rules, PNM T12…)</li>
+      <li><strong>Script đối soát</strong> — <code>reconcile-pos-*.mjs</code> · output <code>doi-soat-12-2025/</code></li>
+      <li><strong>Tài liệu</strong> — source structure · hướng dẫn triển khai connector/job · runbook sync</li>
+    </ul>
+    <p class="handover-lead" style="margin-top:12px;margin-bottom:0"><em>Nghiệm thu:</em> FM tự build/deploy lớp tích hợp · chỉnh mapping · mở rộng sync 12 CH theo tài liệu bàn giao.</p>
+  </div>
+</div>
+
+<h3>Cấu trúc source FM (tóm tắt)</h3>
+
+<div class="panel-note split-plan">
+  <span class="split-tag">Kế hoạch tách repo · release riêng</span><br>
+  <strong><code>Linm.Reva.WebService/Jobs</code></strong> — service/job đồng bộ POS sẽ được <strong>tách</strong> khỏi <code>Linm.Web.ERP.WebService</code> để FM release độc lập (Docker image + deploy guide riêng). Hiện pilot FM02 vẫn chạy job trên ERP host; mã nguồn <code>RevaFm*</code> và connector <code>reva-fm-*</code> là bản chuyển tiếp sẽ migrate sang repo mới trước bàn giao GĐ03.
+</div>
+
+<pre class="repo-tree">Linm.Reva.WebService/         # <strong>FM — tách release (đang chuẩn bị)</strong>
+├── Jobs/                     # Platform job: sync POS → ERP
+│   ├── connectors/           # reva-fm-hoa-don · phieu-thu · phieu-chi
+│   ├── RevaFmPayloadConverter · RevaFmApiClient · mapping registry
+│   └── docker-compose · README deploy job service
+│
+│   <em>← migrate từ Linm.Web.ERP.WebService (Domains/Pos/Sync, DataSync handlers)</em>
+
+Linm.Reva.Data/
+├── data/master/              # CSV seed FM (reva-ncc-hierarchy, materials…)
+├── data-sync/                # JSON mẫu POS API
+├── scripts/
+│   ├── reconcile-pos-hoa-don.mjs
+│   ├── reconcile-pos-phieu-thu-chi.mjs
+│   └── reconcile.env
+└── docs/phase1/              # Spec · báo cáo NT
+
+Linm.Web.Reva.Report/         # MFE @linm/reva-report
+├── src/pages/reva/           # DoanhThuTapDoan · ThuChiTapDoan · BanQuanTri
+└── docs/plan/                # reports-finance-management-plan.md
+
+Linm.Web.ERP.WebService/      # <em>phần FM tạm thời trong repo Linm (pre-split)</em>
+├── api/.../Domains/Pos/Services/Sync/
+│   ├── RevaFmPayloadConverter.cs
+│   ├── RevaFmApiClient.cs · RevaFmVoucherApiClient.cs
+│   └── RevaFmMappingRegistry.cs · RevaFmLookupService.cs
+├── Services/DataSync/        # External sync handlers (reva-fm-*)
+├── data/master/sets/reva-*   # manifest import DataSync
+└── docs/data-sync-inbound-api.md</pre>
+
+<h3>Bảng đối chiếu bàn giao GĐ03</h3>
+<table class="deliver-table quote-table">
+<thead><tr><th>STT</th><th>Tiêu chí GĐ03</th><th>Thuộc</th><th>Hạng mục bàn giao</th><th>NT</th></tr></thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>Mã nguồn đầy đủ (repo / ZIP)</td>
+  <td><span class="badge reva-owner">FM</span></td>
+  <td><code>Linm.Reva.Data</code> · <code>Linm.Web.Reva.Report</code> · <code>Linm.Reva.WebService/Jobs</code> <em>(tách release)</em> · <code>RevaFm*</code> interim trong ERP</td>
+  <td><span class="badge partial">🔄</span></td>
+</tr>
+<tr>
+  <td>1b</td>
+  <td>Release build triển khai</td>
+  <td><span class="badge linm">Linm</span></td>
+  <td>Image Docker WebService · artifact MFE ERP · không kèm full source lõi</td>
+  <td><span class="badge partial">🔄</span></td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>Build + tài liệu deploy</td>
+  <td><span class="badge linm">Linm</span> + <span class="badge reva-owner">REVA</span></td>
+  <td>Linm: <code>docker-compose</code> ERP · FM: deploy <code>Linm.Reva.WebService/Jobs</code> + connector sync</td>
+  <td><span class="badge partial">🔄</span></td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>Hướng dẫn vận hành &amp; khai thác BC</td>
+  <td><span class="badge linm">Linm</span> + <span class="badge reva-owner">REVA</span></td>
+  <td>Linm: route ERP/MFE · FM: runbook sync POS · đối soát · ma trận báo cáo</td>
+  <td><span class="badge partial">🔄</span></td>
+</tr>
+<tr>
+  <td>3b</td>
+  <td>Hướng dẫn cấu trúc source</td>
+  <td><span class="badge reva-owner">FM</span></td>
+  <td>Sơ đồ repo · namespace <code>RevaFm*</code> · connector manifest · mapping TK/kênh TT</td>
+  <td><span class="badge partial">🔄</span></td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>Đào tạo nhân sự Bên B</td>
+  <td>Cả hai</td>
+  <td>Linm: vận hành ERP build · FM: vận hành sync &amp; chỉnh mapping</td>
+  <td><span class="badge wait">⏳</span></td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>BB nghiệm thu tổng thể</td>
+  <td>—</td>
+  <td>Sau hoàn tất GĐ01–02 pilot + bàn giao GĐ03</td>
+  <td><span class="badge wait">⏳</span></td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>Bộ dữ liệu &amp; báo cáo bàn giao đầy đủ</td>
+  <td><span class="badge reva-owner">FM</span></td>
+  <td>Master đã import · đối soát FM02 · BC trên ERP (xem tab Báo cáo tiến độ)</td>
+  <td><span class="badge partial">🔄</span></td>
+</tr>
+</tbody>
+</table>
+
+<h3>Job đồng bộ POS (thuộc bàn giao FM)</h3>
+<div class="panel-note split-plan">
+  <span class="split-tag">Vị trí source</span>
+  Pilot: job chạy trên <code>Linm.Web.ERP.WebService</code> (platform job host). Bàn giao GĐ03: tách sang <strong><code>Linm.Reva.WebService/Jobs</code></strong> — FM build &amp; release image job service độc lập, ERP chỉ nhận dữ liệu qua API/DataSync inbound.
+</div>
+<table class="deliver-table quote-table">
+<thead><tr><th>Connector / Job</th><th>Chứng từ</th><th>Source (hiện tại → tách)</th><th>Trạng thái FM02</th></tr></thead>
+<tbody>
+<tr><td><code>reva-fm-hoa-don</code></td><td>Hóa đơn bán POS</td><td><code>RevaFmPayloadConverter</code> → <code>Linm.Reva.WebService/Jobs</code></td><td><span class="badge done">✅</span></td></tr>
+<tr><td><code>reva-fm-phieu-thu</code></td><td>Phiếu thu</td><td><code>RevaFmVoucherApiClient</code> → Jobs</td><td><span class="badge sync">🔄</span></td></tr>
+<tr><td><code>reva-fm-phieu-chi</code></td><td>Phiếu chi</td><td>↑ → Jobs</td><td><span class="badge sync">🔄</span></td></tr>
+<tr><td>Platform job schedule</td><td>Chạy sync theo lịch / manual</td><td>ERP host <em>(tạm)</em> → <code>Linm.Reva.WebService</code></td><td><span class="badge partial">🔄 tách</span></td></tr>
+<tr><td>Đối soát sau sync</td><td>Verify POS ↔ ERP</td><td><code>Linm.Reva.Data/scripts/reconcile-pos-*.mjs</code></td><td><span class="badge partial">🔄</span></td></tr>
+</tbody>
+</table>
+
+<div class="panel-note">
+  <strong>Phân tách quyền:</strong> phần mềm lõi Linm ERP thuộc Linm · tích hợp sync POS–FM thuộc FM (bàn giao full source). Tham chiếu: <a href="tien-do-2026.html">Tiến độ (DA1 &amp; DA2)</a>.
+</div>
+
+<p class="doc-footer"><strong>Đội triển khai Linm</strong></p>
+
+</article>
+
+<footer class="plan-footer">DA1 — Dữ liệu lịch sử 2023–2025 · Foodmart (FM) · Linm · 2026</footer>
+</div>
+
+<script src="tien-do-tabs.js"></script>
+</body>
+</html>

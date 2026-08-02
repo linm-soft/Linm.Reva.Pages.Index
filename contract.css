@@ -1,0 +1,16 @@
+/* Reva - H? th?ng k? to�n - qu?n tr? si�u th? — Hợp đồng triển khai (contract/index.html) */
+.quote-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:24px 0}
+.quote-sum-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:18px;text-align:center}
+.quote-sum-card.featured{border:2px solid var(--green);background:var(--green-light)}
+.quote-sum-card .price{font-size:1.5rem;font-weight:900;color:var(--navy);line-height:1.2}
+.quote-sum-card.featured .price{color:var(--green)}
+.quote-sum-card .lbl{font-size:.72rem;color:var(--txt2);margin-top:6px}
+.quote-table .price-col{text-align:right;font-weight:700;color:var(--navy);white-space:nowrap}
+.quote-table tr.total-row td{background:var(--slate2);font-weight:700;border-top:2px solid var(--border)}
+.quote-table tr.total-row .price-col{color:var(--green);font-size:.95rem}
+.quote-table tr.subtotal-row td{background:var(--slate);font-weight:600}
+.badge.proposed{background:var(--indigo-light);color:var(--indigo)}
+.badge.contract{background:var(--green-light);color:var(--green)}
+.badge.separate{background:var(--amber-light);color:var(--amber)}
+.flow-diagram{background:var(--navy);color:rgba(255,255,255,.85);border-radius:var(--radius);padding:20px 22px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.72rem;line-height:1.7;overflow-x:auto;margin:20px 0}
+.flow-diagram .hl{color:var(--green-mid)}

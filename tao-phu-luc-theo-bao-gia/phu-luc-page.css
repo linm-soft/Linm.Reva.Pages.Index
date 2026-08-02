@@ -1,0 +1,258 @@
+/* Trang /tao-phu-luc-theo-bao-gia — preview desktop khớp In (border từng PL; ký không viền) */
+
+/* ── Desktop: mỗi phụ lục = một “tờ” riêng ── */
+@media screen {
+  .phu-luc-page .hop-dong-main {
+    background: #d8dee8;
+  }
+
+  .phu-luc-page .hop-dong-preview {
+    max-width: 820px;
+    margin: 0 auto;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .phu-luc-page .hop-dong-doc-body .phu-luc-cover,
+  .phu-luc-page .hop-dong-doc-body .phu-luc-section:not(.phu-luc-section--bo-sung) {
+    background: #fff;
+    padding: 48px 56px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    box-shadow: 0 8px 28px rgba(15, 23, 42, 0.08);
+  }
+
+  .phu-luc-page .hop-dong-doc-body .phu-luc-section {
+    margin-top: 24px;
+  }
+
+  .phu-luc-page .hop-dong-doc-body .phu-luc-signature-block {
+    margin-top: 24px;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .phu-luc-page .hop-dong-doc-body .phu-luc-bo-sung-screen-label {
+    display: block;
+    max-width: 820px;
+    margin: 28px auto 8px;
+    padding: 8px 12px;
+    text-align: center;
+    font-size: 0.82rem;
+    color: #64748b;
+    font-style: italic;
+  }
+
+  /* Thông tin bổ sung — nền trắng, không khung viền (giống phần ký) */
+  .phu-luc-page .hop-dong-doc-body .phu-luc-bo-sung-doc {
+    max-width: 820px;
+    margin: 24px auto 0;
+    background: #fff;
+    padding: 48px 56px;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .phu-luc-page .hop-dong-doc-body .phu-luc-bo-sung-doc .phu-luc-section--bo-sung {
+    margin-top: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .phu-luc-page .hop-dong-doc-body .phu-luc-section--bo-sung .part-heading {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 6px;
+  }
+}
+
+/* ── Bảng dữ liệu (không áp viền cho bảng chữ ký) ── */
+.phu-luc-page .hop-dong-doc-body table:not(.signature-table),
+.phu-luc-page .hop-dong-doc-body table.deliver-table,
+.phu-luc-page .hop-dong-doc-body table.quote-table {
+  display: table !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+  border: 1px solid #333 !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+  font-size: 12pt !important;
+  font-family: 'Times New Roman', Times, serif !important;
+  background: #fff !important;
+  margin: 12px 0 !important;
+  table-layout: auto !important;
+}
+
+.phu-luc-page .hop-dong-doc-body table thead {
+  display: table-header-group !important;
+}
+
+.phu-luc-page .hop-dong-doc-body table tbody,
+.phu-luc-page .hop-dong-doc-body table tfoot {
+  display: table-row-group !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.phu-luc-page .hop-dong-doc-body table tr {
+  display: table-row !important;
+}
+
+.phu-luc-page .hop-dong-doc-body table:not(.signature-table) th,
+.phu-luc-page .hop-dong-doc-body table:not(.signature-table) td {
+  display: table-cell !important;
+  border: 1px solid #333 !important;
+  padding: 6px 8px !important;
+  vertical-align: top !important;
+  text-align: left !important;
+  font-size: inherit !important;
+}
+
+.phu-luc-page .hop-dong-doc-body table:not(.signature-table) th {
+  background: #eef2f7 !important;
+  font-weight: bold !important;
+}
+
+.phu-luc-page .hop-dong-doc-body ul,
+.phu-luc-page .hop-dong-doc-body ol {
+  margin: 2px 0 4px 22px;
+  padding: 0;
+}
+
+.phu-luc-page .hop-dong-doc-body li {
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+}
+
+.phu-luc-page .hop-dong-doc-body h3 {
+  margin: 6px 0 2px;
+}
+
+.phu-luc-page .hop-dong-doc-body .signature-table {
+  border: none !important;
+  box-shadow: none !important;
+  margin: 12px 0 !important;
+}
+
+.phu-luc-page .hop-dong-doc-body .signature-table td {
+  border: none !important;
+  background: transparent !important;
+  padding: 16px 12px 12px !important;
+  text-align: center !important;
+}
+
+.phu-luc-page .hop-dong-doc-body .sig-stamp-gap {
+  display: block;
+  height: 96px;
+  min-height: 96px;
+}
+
+.phu-luc-page .hop-dong-doc-body .subsystem-card {
+  border: 1px solid #cbd5e1;
+  padding: 10px 12px;
+  margin: 8px 0;
+  border-radius: 4px;
+}
+
+.phu-luc-page .hop-dong-doc-body .contract-box {
+  border: 1px solid #94a3b8;
+  border-left: 4px solid #2563eb;
+  padding: 12px 14px;
+  margin: 14px 0;
+  background: #f8fafc;
+}
+
+.phu-luc-page .hop-dong-doc-body tr.bonus-row td {
+  background: #faf8f0 !important;
+}
+
+.phu-luc-page #phu-luc-so-pl-preview {
+  font-size: 0.9em;
+}
+
+@media (max-width: 720px) {
+  .phu-luc-page .hop-dong-doc-body .phu-luc-cover,
+  .phu-luc-page .hop-dong-doc-body .phu-luc-section:not(.phu-luc-section--bo-sung) {
+    padding: 24px 18px;
+  }
+
+  .phu-luc-page .hop-dong-doc-body .phu-luc-bo-sung-doc {
+    padding: 24px 18px;
+  }
+}
+
+@media print {
+  .phu-luc-page .hop-dong-doc-body .phu-luc-cover,
+  .phu-luc-page .hop-dong-doc-body .phu-luc-section,
+  .phu-luc-page .hop-dong-doc-body .phu-luc-signature-block {
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+  }
+
+  .phu-luc-page .hop-dong-doc-body .phu-luc-section:not(.phu-luc-section--bo-sung) {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  .phu-luc-page .hop-dong-doc-body .phu-luc-signature-block {
+    page-break-before: auto;
+    break-before: auto;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-top: 20px;
+  }
+
+  .phu-luc-page .hop-dong-doc-body .phu-luc-cover {
+    page-break-before: auto;
+    break-before: auto;
+  }
+
+  .phu-luc-page .hop-dong-doc-body .signature-table,
+  .phu-luc-page .hop-dong-doc-body .signature-table td {
+    border: none !important;
+  }
+
+  .phu-luc-bo-sung-screen-label {
+    display: none !important;
+  }
+
+  body.phu-luc-page:not(.phu-luc-print-bo-sung) .phu-luc-bo-sung-doc {
+    display: none !important;
+  }
+
+  body.phu-luc-page.phu-luc-print-bo-sung .phu-luc-main-doc,
+  body.phu-luc-page.phu-luc-print-bo-sung .phu-luc-bo-sung-screen-label {
+    display: none !important;
+  }
+
+  body.phu-luc-page.phu-luc-print-bo-sung .phu-luc-bo-sung-doc,
+  body.phu-luc-page.phu-luc-print-bo-sung .phu-luc-bo-sung-doc .phu-luc-section--bo-sung {
+    display: block !important;
+    page-break-before: auto;
+    break-before: auto;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  body.phu-luc-page.phu-luc-print-bo-sung .phu-luc-bo-sung-doc .phu-luc-section {
+    page-break-before: auto;
+    break-before: auto;
+  }
+}

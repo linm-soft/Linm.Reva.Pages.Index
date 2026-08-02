@@ -1,0 +1,33 @@
+/* Linm DS tokens — parity Input / FieldMessage (common-field-control · filter-row-field-layout) */
+:root {
+  --ds-color-text-primary: #000000;
+  --ds-color-text-secondary: #4a4a4a;
+  --ds-color-text-tertiary: #6d6d6d;
+  --ds-color-text-placeholder: #b2b2b2;
+  --ds-color-text-disabled: rgba(0, 0, 0, 0.5);
+  --ds-color-text-field-label: var(--ds-color-text-secondary);
+  --ds-font-size-field-label: 13px;
+  --ds-font-weight-field-label: 500;
+  --ds-color-bg-white: #ffffff;
+  --ds-color-bg-disabled: #eeeeee;
+  --ds-color-error: #c33a00;
+  --ds-color-warning: #eb9114;
+  --ds-color-info: #005ba8;
+  --ds-color-border: #babcbe;
+  --ds-border: 1px solid #babcbe;
+  --ds-focus-shadow: 0 0 4px #babcbe;
+  --ds-radius-md: 4px;
+  --ds-height-input-desktop: 32px;
+  --ds-height-input-mobile: 40px;
+  --ds-font-size-input-desktop: 14px;
+  --ds-font-size-input-mobile: 16px;
+  --ds-font-size-button: 12px;
+  --ds-font-weight-label-desktop: 600;
+  --ds-padding-input-desktop: 6px 8px;
+  --ds-padding-input-mobile: 9px 8px;
+  --ds-gap-label-control: 4px;
+  --ds-gap-control-message: 4px;
+  --ds-field-message-min-height: 18px;
+  --ds-color-primary: #2563eb;
+  --ds-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}

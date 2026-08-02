@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<base href="/hop-dong/">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hợp đồng gia công · Foodmart (FM) ERP · Linm Soft</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="../icons/linm-logo.svg">
+<link rel="icon" type="image/png" href="../icons/linm-logo.png">
+<link rel="apple-touch-icon" href="../icons/linm-logo.png">
+<meta name="theme-color" content="#4facfe">
+<link rel="stylesheet" href="../ds-tokens.css">
+<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="../contract.css">
+<link rel="stylesheet" href="../access.css">
+<link rel="stylesheet" href="../bao-gia/bao-gia-hop-dong-modal.css">
+<link rel="stylesheet" href="hop-dong-page.css">
+<link rel="stylesheet" href="../contract/doc-page-numbers.css">
+<style>#contract-app[hidden],#contract-app.is-locked{display:none!important}</style>
+</head>
+<body class="contract-locked hop-dong-page">
+
+<div id="contract-gate" class="contract-gate" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+  <div class="contract-gate-card">
+    <div class="contract-gate-logo"><div class="dot"></div> Foodmart (FM) - Hệ thống kế toán - quản trị siêu thị</div>
+    <h1 id="gate-title">Hợp đồng gia công</h1>
+    <p>Nhập mã truy cập do Linm cung cấp để xem và tải Hợp đồng.</p>
+    <form id="contract-gate-form" class="contract-gate-form" autocomplete="off">
+      <div class="field field-full">
+        <label for="contract-gate-code" class="field-label">Mã truy cập</label>
+        <input type="password" id="contract-gate-code" class="field-input" name="code" autocomplete="off" required aria-describedby="contract-gate-error">
+        <p id="contract-gate-error" class="field-message field-message-error" role="alert" hidden><span id="contract-gate-error-text" class="field-message-text"></span></p>
+      </div>
+      <button type="submit" class="btn btn-primary btn-full">Vào xem</button>
+    </form>
+    <p id="contract-gate-setup" class="contract-gate-setup" hidden></p>
+  </div>
+</div>
+
+<nav class="plan-nav plan-nav-public" id="plan-nav-public" aria-label="Điều hướng">
+  <a href="../index.html" class="nav-logo"><div class="dot"></div> Foodmart (FM) - Hệ thống kế toán - quản trị siêu thị</a>
+  <div class="nav-links">
+    <a href="../demo-success.html">Demo &amp; Triển khai</a>
+    <a href="../tien-do/tien-do-2026.html">Tiến độ 2026</a>
+    <a href="../tien-do/phase1-fm02.html">Báo cáo 2023–2025</a>
+    <a href="../demo-plan.html">Plan Demo</a>
+  </div>
+  <div class="nav-right">
+    <a href="../index.html" class="nav-back">← Trang chủ</a>
+  </div>
+</nav>
+
+<div id="contract-app" class="contract-app is-locked" hidden>
+<nav class="plan-nav" aria-label="Hợp đồng">
+  <a href="../index.html" class="nav-logo"><div class="dot"></div> Hợp đồng gia công</a>
+  <div class="nav-links">
+    <a href="../bao-gia/">Báo giá</a>
+    <a href="../tao-phu-luc-theo-bao-gia/">Phụ lục</a>
+    <a href="../phieu-xac-nhan-thanh-toan/">Phiếu XNTT</a>
+    <a href="../tien-do/tien-do-2026.html">Tiến độ</a>
+  </div>
+  <div class="nav-right nav-actions">
+    <button type="button" class="nav-action nav-action-print" id="hop-dong-print">In</button>
+    <button type="button" class="nav-action nav-action-export" id="hop-dong-download-word">Tải Word (.docx)</button>
+  </div>
+</nav>
+
+<header class="hop-dong-toolbar">
+  <div class="hop-dong-toolbar-inner">
+    <h1>Hợp đồng gia công phần mềm</h1>
+    <p class="hop-dong-toolbar-lead">Triển khai Foodmart (FM) · ERP Linm &amp; tích hợp · 2026</p>
+    <form id="hop-dong-form" class="hop-dong-form" autocomplete="off">
+      <div class="field field-full">
+        <label for="hop-dong-so" class="field-label">Số hợp đồng <span aria-hidden="true">*</span></label>
+        <div class="hop-dong-so-row">
+          <input type="text" id="hop-dong-so" class="field-input" name="soHopDong" required placeholder="51001-07/2026-LIC/LINM-FM" spellcheck="false">
+          <div class="hop-dong-so-actions">
+            <button type="button" class="hop-dong-so-btn" id="hop-dong-fill-mau" title="Điền mẫu">Điền mẫu</button>
+            <button type="button" class="hop-dong-so-btn hop-dong-so-btn-copy" id="hop-dong-copy-so" title="Sao chép">Sao chép</button>
+          </div>
+        </div>
+        <p class="hop-dong-so-hint"><span class="hop-dong-so-hint-label">Quy cách:</span> <code>{mã TP 2}{STT 3}-{tháng 2}/{năm 4}-LIC/LINM-{mã đối tác}</code> · <strong>LIC</strong> = License</p>
+      </div>
+      <div class="field field-full">
+        <label for="hop-dong-ngay" class="field-label">Ngày ký (tùy chọn)</label>
+        <input type="text" id="hop-dong-ngay" class="field-input" name="ngayKy" placeholder="______ tháng ______ năm 2026">
+      </div>
+      <button type="submit" class="btn btn-primary hop-dong-apply-btn">Cập nhật xem trước</button>
+    </form>
+  </div>
+</header>
+
+<main class="hop-dong-main">
+  <div class="hop-dong-preview-wrap" id="hop-dong-preview-wrap">
+    <div class="hop-dong-lawyer-gap-toggle">
+      <label for="hop-dong-lawyer-gap-cb">
+        <input type="checkbox" id="hop-dong-lawyer-gap-cb" name="showLawyerGap">
+        <span><strong>So sánh bản luật sư</strong> — tô highlight trực tiếp trong HĐ (vàng = Bên A thiếu · đỏ = gap vs DOCX luật sư). Bỏ chọn để xem bản sạch.</span>
+      </label>
+    </div>
+    <div class="hop-dong-lawyer-gap-panel" id="hop-dong-lawyer-gap-panel" hidden aria-live="polite"></div>
+    <article id="hop-dong-preview" class="hop-dong-preview" aria-label="Nội dung Hợp đồng">
+      <div id="hop-dong-doc-body" class="hop-dong-doc-body"></div>
+    </article>
+  </div>
+</main>
+
+<footer class="plan-footer">Foodmart (FM) · Hợp đồng gia công ERP · Linm · 2026</footer>
+</div>
+
+<script src="../config.js"></script>
+<script src="../access.js"></script>
+<script src="hop-dong-preview-data.js"></script>
+<script src="../contract/doc-page-numbers.js"></script>
+<script src="vendor/FileSaver.min.js"></script>
+<script src="vendor/html-docx.js"></script>
+<script src="hop-dong-page.js"></script>
+</body>
+</html>

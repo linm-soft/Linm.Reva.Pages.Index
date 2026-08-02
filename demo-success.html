@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo &amp; Triển khai · FM</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="icons/linm-logo.svg">
+<link rel="icon" type="image/png" href="icons/linm-logo.png">
+<link rel="apple-touch-icon" href="icons/linm-logo.png">
+<meta name="theme-color" content="#4facfe">
+<link rel="stylesheet" href="ds-tokens.css">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="contract.css">
+<style>
+/* Demo success specific styles */
+.demo-hero-note {
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 24px auto 0;
+  max-width: 680px;
+  text-align: left;
+  font-size: .85rem;
+  color: rgba(255,255,255,.8);
+  line-height: 1.5;
+}
+.demo-hero-note strong { color: #fff; }
+
+.demo-header-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.demo-email-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background: var(--green);
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: .85rem;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background .15s;
+}
+.demo-email-btn:hover { background: #047857; }
+.demo-email-btn:active { transform: scale(.97); }
+.demo-email-btn.copied { background: #0d9488; }
+
+/* Force hidden for admin-only buttons */
+[data-admin-only][hidden] { display: none !important; }
+
+.email-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: .85rem;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(0,0,0,.2);
+  opacity: 0;
+  transition: transform .3s ease, opacity .3s ease;
+  z-index: 999;
+  pointer-events: none;
+}
+.email-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* Results grid */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+/* Next plan timeline */
+.next-plan-timeline {
+  display: flex;
+  gap: 0;
+  margin: 20px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+}
+.npt-seg {
+  flex: 1;
+  padding: 16px 14px;
+  text-align: center;
+  color: #fff;
+  font-size: .82rem;
+  line-height: 1.5;
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.npt-seg .npt-date { font-weight: 800; font-size: .9rem; }
+.npt-seg .npt-label { opacity: .9; font-size: .78rem; }
+.npt-1 { background: #6366f1; }
+.npt-2 { background: #d97706; }
+.npt-3 { background: #059669; }
+
+/* Task board */
+.task-board { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+@media(max-width:720px){ .task-board { grid-template-columns:1fr } }
+.task-column { background:var(--gray-0); border-radius:8px; overflow:hidden; border:1px solid var(--gray-2) }
+.task-col-header { padding:8px 10px; border-top:3px solid; display:flex; justify-content:space-between; align-items:center; font-weight:600; font-size:.82rem }
+.task-col-count { background:var(--gray-2); padding:1px 8px; border-radius:8px; font-size:.72rem }
+.task-col-body { padding:6px 8px; min-height:80px }
+.task-card { padding:8px; margin-bottom:6px; background:#fff; border:1px solid var(--gray-2); border-radius:6px; font-size:.82rem }
+.task-card .task-title { font-weight:600; margin-bottom:4px }
+.task-card .task-meta { display:flex; gap:6px; flex-wrap:wrap; font-size:.72rem; color:var(--gray-5) }
+.priority-p1 { background:#fef2f2; color:#dc2626; padding:1px 6px; border-radius:4px }
+.priority-p2 { background:#fff7ed; color:#d97706; padding:1px 6px; border-radius:4px }
+.priority-p3 { background:#f3f4f6; color:#6b7280; padding:1px 6px; border-radius:4px }
+
+/* Results highlight box */
+.agenda-highlight-box {
+  background: var(--green-light);
+  border: 1px solid var(--green);
+  border-left: 4px solid var(--green);
+  border-radius: 0 8px 8px 0;
+  padding: 14px 18px;
+  margin: 16px 0;
+  font-size: .84rem;
+  color: var(--txt2);
+  line-height: 1.55;
+}
+
+/* Agenda feature card (reuse from demo-plan) */
+.agenda-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--slate);
+}
+.agenda-feature .f-icon { font-size: 1.15rem; flex-shrink: 0; margin-top: 1px; }
+.agenda-feature .f-text { font-size: .82rem; color: var(--txt2); line-height: 1.45; }
+.agenda-feature .f-text strong { display: block; color: var(--navy); margin-bottom: 2px; }
+
+/* Email preview modal */
+.email-preview-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.email-preview-overlay.is-open { display: flex; }
+.email-preview-modal {
+  background: #fff;
+  border-radius: var(--radius);
+  max-width: 680px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 16px 48px rgba(0,0,0,.2);
+}
+.email-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1;
+}
+.email-preview-header h3 { font-size: .95rem; font-weight: 800; color: var(--navy); margin: 0; }
+.email-preview-close {
+  width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border);
+  background: #fff; font-size: 1.1rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--txt2); font-family: inherit;
+}
+.email-preview-close:hover { background: var(--slate2); }
+.email-preview-body {
+  padding: 20px 22px;
+  font-size: .85rem;
+  line-height: 1.65;
+  color: var(--txt2);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.email-preview-footer {
+  padding: 14px 22px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.email-preview-footer .btn-copy {
+  padding: 8px 18px; background: var(--green); color: #fff; border: none;
+  border-radius: 8px; font-weight: 700; font-size: .82rem; cursor: pointer; font-family: inherit;
+}
+.email-preview-footer .btn-copy:hover { background: #047857; }
+
+/* ── Print styles ── */
+@media print {
+  .plan-nav { display: none !important; }
+  .nav-action-print { display: none !important; }
+  .nav-links { display: none !important; }
+  .demo-header-actions { display: none !important; }
+  .email-preview-overlay { display: none !important; }
+  .email-toast { display: none !important; }
+  .site-footer { display: none !important; }
+  .contract-app { padding: 0; }
+  .hero { padding: 20px; }
+  main { padding: 10px 0; }
+  .print-page-break { page-break-before: always; }
+}
+</style>
+</head>
+<body>
+
+<div class="contract-app">
+
+<nav class="plan-nav">
+  <a href="index.html" class="nav-logo"><div class="dot"></div> FM - Hệ thống kế toán - quản trị siêu thị</a>
+  <div class="nav-links">
+    <a href="demo-plan.html">ERP Demo</a>
+    <a href="demo-plan-kpi.html">FPC Demo</a>
+    <a href="demo-success.html" class="active">Demo &amp; Triển khai</a>
+    <a href="tien-do/tien-do-2026.html">Tiến độ (DA1 &amp; DA2)</a>
+  </div>
+  <div class="nav-right">
+    <a href="index.html" class="nav-back">← Trang chủ</a>
+    <button type="button" class="nav-action nav-action-print" onclick="window.print()">In</button>
+    <button type="button" class="nav-action nav-action-export" id="email-trigger-btn" data-admin-only hidden>📧 Gửi email</button>
+  </div>
+</nav>
+
+<div class="hero compact" style="background:linear-gradient(135deg,#064e3b,#065f46,#047857)">
+  <div class="hero-badge"><span class="badge done" style="font-size:.82rem">✅ Đã demo · Đợi KH kiểm thử</span></div>
+  <h1>Trạng thái <span>triển khai ERP</span></h1>
+  <p>Ngày demo: <strong>15/07/2026</strong> · Trạng thái: <strong>Đã demo, đợi khách hàng kiểm thử</strong></p>
+
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="val">14</div><div class="lbl">Tính năng đã demo</div></div>
+    <div class="hero-stat"><div class="val">14</div><div class="lbl">Đợi kiểm thử</div></div>
+    <div class="hero-stat"><div class="val">0</div><div class="lbl">Cần cải thiện</div></div>
+  </div>
+
+  <div class="demo-hero-note" style="max-width:720px">
+    <strong>Trạng thái hiện tại:</strong> Foodmart (FM) đã demo toàn bộ 14 tính năng ngày 15/07. Hiện đang đợi KH kiểm thử và nhập liệu test data theo kế hoạch <strong>15→18/07</strong>. KH kiểm thử và feedback trong quá trình nhập thử.
+  </div>
+
+  <div class="demo-header-actions">
+    <button type="button" class="demo-email-btn" id="copy-email-btn" data-admin-only hidden>
+      <span>📋</span> Copy Email gửi khách hàng
+    </button>
+  </div>
+</div>
+
+<main>
+
+  <!-- ── Section: Danh mục đã triển khai ── -->
+  <section class="page-section">
+    <div class="section-tag">Trạng thái</div>
+    <h2 class="section-title">✅ Danh mục <span>đã demo</span></h2>
+    <div id="delivered-tables"></div>
+    <div class="agenda-highlight-box" style="background:var(--indigo-light);border-color:var(--indigo);border-left-color:var(--indigo)">
+      <strong>Ghi nhận:</strong> Toàn bộ 8 chứng từ lõi (Hóa đơn bán, Phiếu thu, Phiếu chi, PNM, BC, BN, UNC, CTNB) + 5 báo cáo kế toán tiêu chuẩn (Sổ quỹ, Sổ chi tiết TK, Sổ tổng hợp & Sổ cái, Nhật ký chứng từ, Doanh thu/Chi phí) đã demo. Import sao kê NH — Manual Đã demo, gợi ý import để đảm bảo real time 3 khung: 8:30 (tồn trước) · 14:00 (trong ngày) · 16:50 (cuối ngày). KH đang kiểm thử và nhập liệu test.
+    </div>
+  </section>
+
+  <!-- ── Section: Kết quả đạt được ── -->
+  <section class="page-section">
+    <div class="section-tag">Kết quả đạt được</div>
+    <h2 class="section-title">Tính năng <span>đã chốt</span></h2>
+    <div class="results-grid" id="results-grid"></div>
+    <div class="agenda-highlight-box" id="feedback-box"></div>
+  </section>
+
+  <!-- ── Section: Kế hoạch tiếp theo ── -->
+  <section class="page-section print-page-break">
+    <div class="section-tag">Sắp tới</div>
+    <h2 class="section-title">📅 Kế hoạch <span>triển khai tiếp theo</span></h2>
+    <div class="next-plan-timeline" id="plan-timeline"></div>
+    <h3 style="margin:20px 0 12px;font-size:.9rem">Chi tiết các giai đoạn</h3>
+    <div class="task-board" id="task-board"></div>
+    <div class="panel-note" style="margin-top:16px" id="plan-note"></div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-top">
+      <div class="site-footer-brand">
+        <strong>Linm Soft</strong>
+        <span>Đối tác phát triển - triển khai - vận hành phần mềm quản trị doanh nghiệp - ERP - Tích Hợp - Cloud</span>
+      </div>
+      <nav class="site-footer-links" aria-label="Liên kết tài liệu">
+        <a href="demo-plan.html">Kế hoạch demo</a>
+        <a href="demo-success.html">Demo &amp; Triển khai</a>
+        <a href="tien-do/tien-do-2026.html">Tiến độ (DA1 &amp; DA2)</a>
+      </nav>
+    </div>
+    <p class="site-footer-copy">© 2026 Linm Soft · Tài liệu dành riêng Foodmart (FM) · Tiến độ demo ngày 15/07/2026</p>
+  </div>
+</footer>
+
+</div>
+
+<!-- Email preview modal -->
+<div class="email-preview-overlay" id="email-preview-overlay">
+  <div class="email-preview-modal">
+    <div class="email-preview-header">
+      <h3>📧 Email gửi khách hàng</h3>
+      <button type="button" class="email-preview-close" id="email-preview-close">✕</button>
+    </div>
+    <div class="email-preview-body" id="email-body-content"></div>
+    <div class="email-preview-footer">
+      <button type="button" class="btn-copy" id="email-preview-copy-btn">📋 Copy nội dung</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast notification -->
+<div class="email-toast" id="email-toast">Đã copy vào clipboard!</div>
+
+<!-- Embedded JSON data -->
+<script id="demo-success-data" type="application/json">
+{
+  "meta": {
+    "clientName": "Foodmart (FM)",
+    "productTitle": "FM - Hệ thống kế toán - quản trị siêu thị",
+    "demoDate": "15/07/2026",
+    "demoStatus": "success"
+  },
+  "delivered": [
+    {"stt": 1, "name": "Hóa đơn bán hàng", "route": "/bh/hoa-don", "status": "approved", "note": "POS sync real-time · Đã demo"},
+    {"stt": 2, "name": "Phiếu thu tiền mặt", "route": "/kt/pt", "status": "approved", "note": "Định khoản tự động · Đã demo"},
+    {"stt": 3, "name": "Phiếu chi tiền mặt", "route": "/kt/pc", "status": "approved", "note": "Đã demo"},
+    {"stt": 4, "name": "Phiếu nhập mua", "route": "/kt/pnm", "status": "approved", "note": "D1 T12 · D2 UAT · Đã demo"},
+    {"stt": 5, "name": "Giấy báo có", "route": "/kt/bao-co", "status": "approved", "note": "API 200 · shell wired · Đã demo"},
+    {"stt": 6, "name": "Giấy báo nợ", "route": "/kt/bao-no", "status": "approved", "note": "API 200 · shell wired · Đã demo"},
+    {"stt": 7, "name": "Ủy nhiệm chi", "route": "/kt/unc", "status": "approved", "note": "uncCategory filter · Đã demo"},
+    {"stt": 8, "name": "Chuyển tiền nội bộ", "route": "/kt/ctnb", "status": "approved", "note": "Dry-run OK · Đã demo"},
+    {"stt": 9, "name": "Sổ quỹ tiền mặt", "route": "/kt/so-quy", "status": "approved", "note": "Đã demo"},
+    {"stt": 10, "name": "Sổ chi tiết tài khoản", "route": "/kt/so-chi-tiet", "status": "approved", "note": "Đã demo"},
+    {"stt": 11, "name": "Sổ tổng hợp · Sổ cái", "route": "/kt/so-tong-hop · /kt/so-cai", "status": "approved", "note": "TT200+TT99 · Đã demo"},
+    {"stt": 12, "name": "Bảng kê chứng từ (NKCT)", "route": "/baocao/nhat-ky-chung-tu", "status": "approved", "note": "Đã demo"},
+    {"stt": 13, "name": "Báo cáo doanh thu / chi phí", "route": "/baocao/doanh-thu · /baocao/chi-phi", "status": "approved", "note": "Đã demo"},
+    {"stt": 14, "name": "Import sao kê NH (BC/BN/UNC/CTNB)", "route": "/kt/bao-co", "status": "approved", "note": "Manual Đã demo · Gợi ý import 3 khung: 8:30 (tồn trước) · 14:00 (trong ngày) · 16:50 (cuối ngày)"}
+  ],
+  "results": [
+    {"icon": "🧾", "title": "Hoá đơn POS sync thời gian thực", "detail": "12 cửa hàng đồng bộ real-time · Event-driven · Đối soát cuối ngày tự động"},
+    {"icon": "💰", "title": "Phiếu thu/chi tự động định khoản", "detail": "Mẫu định khoản theo nghiệp vụ · TK Nợ/Có mặc định · Kiểm tra cân đối"},
+    {"icon": "🏦", "title": "Import sao kê NH — Manual Đã demo", "detail": "Gợi ý import 3 khung đảm bảo real time: 8:30 (tồn trước) · 14:00 (trong ngày) · 16:50 (cuối ngày) · Đối soát & tạo BC/BN/UNC/CTNB tự động"},
+    {"icon": "📊", "title": "Báo cáo kế toán tiêu chuẩn", "detail": "Sổ quỹ (/kt/so-quy) · Sổ chi tiết TK (/kt/so-chi-tiet) · Sổ tổng hợp & Sổ cái (/kt/so-tong-hop, /kt/so-cai) · NKCT (/baocao/nhat-ky-chung-tu) · Doanh thu/Chi phí (/baocao/doanh-thu, /baocao/chi-phi)"}
+  ],
+  "feedback": "Khách hàng đang trong quá trình nhập thử và sẽ gửi feedback tổng hợp sau khi hoàn tất test data (dự kiến 18/07). Một số góp ý ban đầu về giao diện hiển thị và mapping đối tượng đã được ghi nhận để cải thiện.",
+  "nextPlan": {
+    "milestone": "20/07/2026",
+    "phase1": {"label": "Nhập test data", "date": "15 → 18/07/2026", "color": "#6366f1"},
+    "phase2": {"label": "Clean up test data", "date": "19/07/2026", "color": "#d97706"},
+    "phase3": {"label": "Nhập & đối soát real-time", "date": "20/07 →", "color": "#059669"},
+    "tasks": [
+      {"id": "T1", "title": "FM nhập test data — 8 chứng từ lõi", "column": "deploy", "priority": "P1", "assignee": "FM", "dueDate": "15-18/07"},
+      {"id": "T2", "title": "Xác nhận test data OK", "column": "feedback", "priority": "P1", "assignee": "FM", "dueDate": "18/07"},
+      {"id": "T3", "title": "Clean up all test data (DB + migrations)", "column": "plan", "priority": "P1", "assignee": "Linm", "dueDate": "19/07"},
+      {"id": "T4", "title": "Bắt đầu nhập dữ liệu thực tế theo ngày", "column": "plan", "priority": "P1", "assignee": "FM", "dueDate": "20/07"},
+      {"id": "T5", "title": "Đối soát cuối ngày — POS ↔ ERP", "column": "plan", "priority": "P1", "assignee": "FM + Linm", "dueDate": "20/07 →"},
+      {"id": "T6", "title": "Kiểm tra & xác nhận số liệu báo cáo", "column": "feedback", "priority": "P2", "assignee": "FM", "dueDate": "25/07"},
+      {"id": "T7", "title": "Nghiệm thu báo cáo kế toán tiêu chuẩn", "column": "plan", "priority": "P2", "assignee": "Linm", "dueDate": "31/08/2026"}
+    ]
+  }
+}
+</script>
+
+<script>
+(function() {
+  'use strict';
+
+  // ── Role gate ──
+  var urlParams = new URLSearchParams(location.search);
+  var isAdmin = urlParams.get('role') === 'admin';
+  document.querySelectorAll('[data-admin-only]').forEach(function(el) {
+    if (isAdmin) {
+      el.hidden = false;
+      el.removeAttribute('hidden');
+    } else {
+      el.hidden = true;
+      el.setAttribute('hidden', '');
+    }
+  });
+
+  var data = JSON.parse(document.getElementById('demo-success-data')?.textContent || '{}');
+
+  function escapeHtml(str) {
+    if (!str) return '';
+    var d = document.createElement('div');
+    d.appendChild(document.createTextNode(str));
+    return d.innerHTML;
+  }
+
+  function statusLabel(s) {
+    var map = {
+      'approved': '<span class="badge done">Đã demo</span>',
+      'demo-only': '<span class="badge ready">Đã demo</span>',
+      'improve': '<span class="badge prep">Cần cải thiện</span>',
+      'new-suggest': '<span class="badge deploy">Đề xuất mới</span>'
+    };
+    return map[s] || '<span class="badge ready">Đã demo</span>';
+  }
+
+  // ── Render delivered table ──
+  function renderDelivered() {
+    var container = document.getElementById('delivered-tables');
+    if (!container) return;
+
+    var html = '';
+    var items = data.delivered || [];
+
+    // Approved items
+    var approved = items.filter(function(i) { return i.status === 'approved'; });
+    html += '<h3 style="margin-bottom:8px;font-size:.9rem">✅ Đã demo (' + approved.length + ')</h3>';
+    html += '<table class="deliver-table quote-table" style="margin-bottom:20px">';
+    html += '<thead><tr><th>STT</th><th>Tính năng</th><th>Route</th><th>Trạng thái</th><th>Ghi chú</th></tr></thead><tbody>';
+    approved.forEach(function(item, idx) {
+      html += '<tr><td>' + (idx + 1) + '</td>' +
+        '<td><strong>' + escapeHtml(item.name) + '</strong></td>' +
+        '<td><code>' + escapeHtml(item.route || '—') + '</code></td>' +
+        '<td>' + statusLabel(item.status) + '</td>' +
+        '<td>' + escapeHtml(item.note || '') + '</td></tr>';
+    });
+    html += '</tbody></table>';
+
+    container.innerHTML = html;
+  }
+
+  // ── Render task board ──
+  function renderTaskBoard() {
+    var container = document.getElementById('task-board');
+    if (!container) return;
+    var tasks = data.nextPlan?.tasks || [];
+    var columns = ['plan', 'deploy', 'feedback', 'fix'];
+    var colConfig = {
+      'plan': {title: '📋 Kế hoạch', color: '#6366f1'},
+      'deploy': {title: '⚙️ Đang triển khai', color: '#f59e0b'},
+      'feedback': {title: '💬 Feedback', color: '#3b82f6'},
+      'fix': {title: '🔧 Fix defect', color: '#ef4444'}
+    };
+
+    var html = '';
+    columns.forEach(function(col) {
+      var colTasks = tasks.filter(function(t) { return t.column === col; });
+      html += '<div class="task-column" data-column="' + col + '">' +
+        '<div class="task-col-header" style="border-top-color:' + colConfig[col].color + '">' +
+          '<span class="task-col-title">' + colConfig[col].title + '</span>' +
+          '<span class="task-col-count">' + colTasks.length + '</span>' +
+        '</div>' +
+        '<div class="task-col-body">';
+      if (colTasks.length === 0) {
+        html += '<div style="text-align:center;padding:16px;color:var(--txt3);font-size:.78rem">Chưa có</div>';
+      } else {
+        colTasks.forEach(function(t) {
+          var priorityBadge = '';
+          if (t.priority === 'P1') priorityBadge = '<span class="priority-p1">P1</span>';
+          else if (t.priority === 'P2') priorityBadge = '<span class="priority-p2">P2</span>';
+          else if (t.priority === 'P3') priorityBadge = '<span class="priority-p3">P3</span>';
+          html += '<div class="task-card">' +
+            '<div class="task-title">' + escapeHtml(t.title) + '</div>' +
+            '<div class="task-meta">' +
+              priorityBadge +
+              (t.assignee ? '<span>' + escapeHtml(t.assignee) + '</span>' : '') +
+              (t.dueDate ? '<span>📅 ' + escapeHtml(t.dueDate) + '</span>' : '') +
+            '</div></div>';
+        });
+      }
+      html += '</div></div>';
+    });
+    container.innerHTML = html;
+  }
+
+  renderDelivered();
+  renderResults();
+  renderFeedback();
+  renderPlanTimeline();
+  renderTaskBoard();
+  renderPlanNote();
+
+  // ── Render results grid ──
+  function renderResults() {
+    var container = document.getElementById('results-grid');
+    if (!container) return;
+    var items = data.results || [];
+    container.innerHTML = items.map(function(r) {
+      return '<div class="agenda-feature">' +
+        '<span class="f-icon">' + escapeHtml(r.icon) + '</span>' +
+        '<span class="f-text"><strong>' + escapeHtml(r.title) + '</strong>' + escapeHtml(r.detail) + '</span></div>';
+    }).join('');
+  }
+
+  // ── Render feedback box ──
+  function renderFeedback() {
+    var container = document.getElementById('feedback-box');
+    if (!container) return;
+    var fb = data.feedback || '';
+    container.innerHTML = '<strong>Phản hồi từ khách hàng:</strong> "' + escapeHtml(fb) + '"';
+  }
+
+  // ── Render plan timeline ──
+  function renderPlanTimeline() {
+    var container = document.getElementById('plan-timeline');
+    if (!container) return;
+    var np = data.nextPlan || {};
+    container.innerHTML =
+      '<div class="npt-seg npt-1">' +
+        '<span class="npt-date">' + escapeHtml(np.phase1?.date || '') + '</span>' +
+        '<span class="npt-label">' + escapeHtml(np.phase1?.label || '') + '</span>' +
+        '<span style="font-size:.7rem;opacity:.8">FM nhập liệu thử nghiệm</span>' +
+      '</div>' +
+      '<div class="npt-seg npt-2">' +
+        '<span class="npt-date">' + escapeHtml(np.phase2?.date || '') + '</span>' +
+        '<span class="npt-label">' + escapeHtml(np.phase2?.label || '') + '</span>' +
+        '<span style="font-size:.7rem;opacity:.8">Xoá toàn bộ dữ liệu test</span>' +
+      '</div>' +
+      '<div class="npt-seg npt-3">' +
+        '<span class="npt-date">' + escapeHtml(np.phase3?.date || '') + '</span>' +
+        '<span class="npt-label">' + escapeHtml(np.phase3?.label || '') + '</span>' +
+        '<span style="font-size:.7rem;opacity:.8">Dữ liệu thực tế theo ngày</span>' +
+      '</div>';
+  }
+
+  // ── Render plan note ──
+  function renderPlanNote() {
+    var container = document.getElementById('plan-note');
+    if (!container) return;
+    container.innerHTML = '⏱️ Sau 20/07: Nhập liệu và đối soát dữ liệu thực tế theo ngày. Mốc nghiệm thu báo cáo kế toán: <strong>31/08/2026</strong>.';
+  }
+
+  // ── Email content ──
+  function getEmailContent() {
+    var items = data.delivered || [];
+    var approved = items.filter(function(i) { return i.status === 'approved'; });
+    var taskList = (data.nextPlan?.tasks || []).map(function(t) {
+      return '   • [' + t.priority + '] ' + t.title + ' — ' + (t.assignee || '') + ' (hạn: ' + (t.dueDate || '') + ')';
+    }).join('\n');
+
+    return [
+      'Kính gửi Quý doanh nghiệp Foodmart (FM),',
+      '',
+      'Linm Soft xin gửi lời cảm ơn đến Quý doanh nghiệp đã tham gia buổi demo hệ thống ERP vào ngày 15/07/2026.',
+      '',
+      '═══════════════════════════════════════',
+      'KẾT QUẢ DEMO',
+      '═══════════════════════════════════════',
+      '',
+      '✅ Linm đã demo thành công ' + approved.length + ' tính năng ERP tới FM, hiện đang chờ FM kiểm thử.',
+      '',
+      'Danh mục đã demo:',
+      approved.map(function(item, idx) {
+        return '  ' + (idx + 1) + '. ' + item.name + ' (' + item.route + ') — ' + item.note;
+      }).join('\n'),
+      '',
+      '───────────────────────────────────────',
+      'KẾ HOẠCH TIẾP THEO',
+      '───────────────────────────────────────',
+      '',
+      '📅 Giai đoạn 1 (15→18/07): FM nhập test data — 8 chứng từ lõi + 5 báo cáo KT tiêu chuẩn',
+      '🧹 Giai đoạn 2 (19/07): Clean up all test data',
+      '🚀 Giai đoạn 3 (20/07→): Nhập & đối soát dữ liệu thực tế theo ngày',
+      '',
+      'Task chi tiết:',
+      taskList,
+      '',
+      '───────────────────────────────────────',
+      'Tài liệu tham khảo:',
+      '• Xem trên trang: https://fm-erp.linm-soft.com/shell/trien-khai-erp (tab Demo &amp; Triển khai)',
+      '',
+      '───────────────────────────────────────',
+      '',
+      'Chúng tôi sẽ cập nhật tiến độ và gửi báo cáo định kỳ.',
+      '',
+      'Trân trọng,',
+      'Linm Soft',
+      'Đinh Bộ Lĩnh — Kỹ sư/Chuyên viên phát triển phần mềm - Linm Soft',
+      'ĐT: 0775 909 978 · Email: linmsoft@gmail.com',
+      'Website: https://linm-soft.com'
+    ].join('\n');
+  }
+
+  // ── Toast ──
+  function showToast(msg) {
+    var toast = document.getElementById('email-toast');
+    if (!toast) return;
+    toast.textContent = msg || 'Đã copy vào clipboard!';
+    toast.classList.add('show');
+    setTimeout(function() { toast.classList.remove('show'); }, 2500);
+  }
+
+  function copyToClipboard(text, label) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function() {
+        showToast(label || 'Đã copy vào clipboard!');
+      })['catch'](function() { fallbackCopy(text, label); });
+    } else { fallbackCopy(text, label); }
+  }
+
+  function fallbackCopy(text, label) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); showToast(label); } catch(e) { showToast('Không thể copy.'); }
+    document.body.removeChild(ta);
+  }
+
+  // ── Copy Email button ──
+  var copyBtn = document.getElementById('copy-email-btn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      var content = getEmailContent();
+      var overlay = document.getElementById('email-preview-overlay');
+      var body = document.getElementById('email-body-content');
+      if (overlay && body) {
+        body.textContent = content;
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  }
+
+  // ── Email preview modal ──
+  var overlay = document.getElementById('email-preview-overlay');
+  var closeBtn = document.getElementById('email-preview-close');
+  var previewCopyBtn = document.getElementById('email-preview-copy-btn');
+
+  function closeEmailPreview() {
+    if (overlay) overlay.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  if (closeBtn) closeBtn.addEventListener('click', closeEmailPreview);
+  if (overlay) {
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) closeEmailPreview();
+    });
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && overlay && overlay.classList.contains('is-open')) {
+      closeEmailPreview();
+    }
+  });
+
+  if (previewCopyBtn) {
+    previewCopyBtn.addEventListener('click', function() {
+      var content = getEmailContent();
+      copyToClipboard(content, '📋 Đã copy email vào clipboard!');
+    });
+  }
+
+  var emailTrigger = document.getElementById('email-trigger-btn');
+  if (emailTrigger) {
+    emailTrigger.addEventListener('click', function() {
+      var content = getEmailContent();
+      var body = document.getElementById('email-body-content');
+      if (overlay && body) {
+        body.textContent = content;
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

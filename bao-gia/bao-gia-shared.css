@@ -1,0 +1,1079 @@
+/* Báo giá — extends tien-do doc layout (link tien-do-shared.css in HTML) */
+.bao-gia-doc {
+  max-width: 1024px;
+}
+
+/* Tab panels — override UA [hidden] when .is-active (parity tien-do/phase1-fm02) */
+.bao-gia-doc.tien-do-panel {
+  display: none;
+}
+
+.bao-gia-doc.tien-do-panel.is-active {
+  display: block !important;
+}
+
+.bao-gia-doc.tien-do-panel[hidden]:not(.is-active) {
+  display: none !important;
+}
+
+/* Tab bar — căn giữa (6 tab) */
+.contract-app .tien-do-tabs-wrap {
+  max-width: 1024px;
+}
+
+.contract-app .tien-do-tabs {
+  justify-content: center;
+}
+
+.quote-hero-stats .hero-stat .val {
+  font-size: 1.35rem;
+}
+
+.quote-sum-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
+  margin: 24px 0 32px;
+}
+
+.quote-sum-grid-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.quote-sum-grid-cards .quote-sum-card {
+  flex: 0 1 170px;
+  min-width: 150px;
+  max-width: 190px;
+}
+
+.quote-sum-card-total {
+  width: 100%;
+  padding: 22px 20px;
+  text-align: center;
+}
+
+.quote-sum-card-total .price {
+  font-size: 1.85rem;
+  color: var(--navy);
+}
+
+.quote-sum-card-total .lbl {
+  font-size: .85rem;
+  margin-top: 8px;
+}
+
+@media (max-width: 640px) {
+  .quote-sum-grid-cards .quote-sum-card {
+    flex: 1 1 calc(50% - 8px);
+    max-width: none;
+  }
+}
+
+.quote-sum-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 16px;
+  text-align: center;
+  background: #fff;
+}
+
+.quote-sum-card.featured {
+  border-color: var(--green);
+  background: var(--green-light, #f0fdf4);
+}
+
+.quote-sum-card .price {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--navy);
+  line-height: 1.2;
+}
+
+.quote-sum-card .lbl {
+  font-size: .78rem;
+  color: var(--txt3);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+.quote-sum-card .sub {
+  font-size: .72rem;
+  color: var(--txt3);
+  margin-top: 4px;
+}
+
+.section-block {
+  margin: 32px 0;
+  padding: 20px 22px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fafbfc;
+}
+
+.section-block h3 {
+  margin-top: 0;
+}
+
+.bonus-row td.price-col {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.payment-milestone {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 16px;
+  align-items: start;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.payment-milestone:last-child {
+  border-bottom: none;
+}
+
+.payment-milestone .pct {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--navy);
+  min-width: 48px;
+}
+
+.payment-milestone .when {
+  font-size: .82rem;
+  color: var(--txt3);
+}
+
+.payment-project h3 {
+  font-size: .95rem;
+  color: var(--navy);
+  margin-top: 0;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.payment-project-val {
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--txt3);
+}
+
+.timeline-project {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 22px 28px;
+  margin: 28px 0 32px;
+  background: #fafbfc;
+}
+
+.timeline-project-wrap {
+  margin: 28px 0 36px;
+}
+
+.timeline-project-wrap .timeline-project--release {
+  margin: 0;
+  border-radius: var(--radius) var(--radius) 0 0;
+  border-bottom: none;
+  padding-bottom: 24px;
+}
+
+.timeline-payment-section {
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--green-light, #d1fae5);
+  border-radius: 0 0 var(--radius) var(--radius);
+  padding: 20px 22px 24px;
+  margin: 0;
+  background: #fff;
+}
+
+.timeline-payment-section + .timeline-payment-section {
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+}
+
+.timeline-payment-section--bonus {
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.timeline-payment-section h3 {
+  font-size: .88rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: .3px;
+}
+
+.timeline-project--release .timeline {
+  margin-bottom: 0;
+}
+
+.timeline-project-wrap + .timeline-project-wrap {
+  margin-top: 40px;
+}
+
+/* Nhóm bảng + ghi chú — giữ nguyên khối khi in */
+.quote-table-group {
+  margin: 0 0 20px;
+}
+
+/* Bảng báo giá — chuẩn cột, viền, khoảng cách */
+.bao-gia-doc table.deliver-table,
+.bao-gia-doc table.quote-table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  overflow: visible;
+  margin: 16px 0 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.bao-gia-doc table.deliver-table th,
+.bao-gia-doc table.deliver-table td,
+.bao-gia-doc table.quote-table th,
+.bao-gia-doc table.quote-table td {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.bao-gia-doc table.deliver-table th,
+.bao-gia-doc table.quote-table th {
+  background: var(--slate2);
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.bao-gia-doc table.quote-table--cols-3 col.col-a {
+  width: 26%;
+}
+
+.bao-gia-doc table.quote-table--cols-3 col.col-b {
+  width: 24%;
+}
+
+.bao-gia-doc table.quote-table--cols-3 col.col-c {
+  width: 50%;
+}
+
+/* Bảng API REVA — 3 cột: trạng thái · điều kiện · tính phí */
+.bao-gia-doc table.quote-table--api-pricing col.col-a {
+  width: 22%;
+}
+
+.bao-gia-doc table.quote-table--api-pricing col.col-b {
+  width: 46%;
+}
+
+.bao-gia-doc table.quote-table--api-pricing col.col-c {
+  width: 32%;
+}
+
+.bao-gia-doc table.quote-table--api-pricing th,
+.bao-gia-doc table.quote-table--api-pricing td {
+  vertical-align: middle;
+  padding: 12px 14px;
+  line-height: 1.45;
+}
+
+.bao-gia-doc table.quote-table--api-pricing td:first-child {
+  font-size: .84rem;
+}
+
+.bao-gia-doc table.quote-table--api-pricing .api-fee-col {
+  text-align: left;
+  white-space: normal;
+  font-weight: 400;
+  color: var(--txt2);
+}
+
+.bao-gia-doc table.quote-table--api-pricing .api-fee-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  max-width: 100%;
+}
+
+.bao-gia-doc table.quote-table--api-pricing .api-fee-cell .badge {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.bao-gia-doc table.quote-table--api-pricing .api-fee-cell small {
+  display: block;
+  font-size: .75rem;
+  color: var(--txt3);
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.section-block.api-reva > .deliver-table {
+  margin-top: 12px;
+  margin-bottom: 14px;
+}
+
+.section-block.api-reva > p:last-child {
+  margin-bottom: 0;
+  font-size: .82rem;
+  color: var(--txt3);
+}
+
+.bao-gia-doc table.quote-table--cols-5 col.col-a {
+  width: 8%;
+}
+
+.bao-gia-doc table.quote-table--cols-5 col.col-b {
+  width: 12%;
+}
+
+.bao-gia-doc table.quote-table--cols-5 col.col-c {
+  width: 34%;
+}
+
+.bao-gia-doc table.quote-table--cols-5 col.col-d {
+  width: 18%;
+}
+
+.bao-gia-doc table.quote-table--cols-5 col.col-e {
+  width: 28%;
+}
+
+.bao-gia-doc .contract-box table.deliver-table {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.bao-gia-doc .contract-box .quote-table--hosting-pricing col.col-condition {
+  width: 22%;
+}
+
+.bao-gia-doc .contract-box .quote-table--hosting-pricing col.col-rate {
+  width: 78%;
+}
+
+.bao-gia-doc .contract-box .quote-table--hosting-pricing .price-col--short {
+  text-align: right;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.bao-gia-doc .contract-box .quote-table--hosting-pricing .hosting-price-detail {
+  text-align: left;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.5;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.bao-gia-doc .contract-box .quote-table--hosting-pricing tr.total-row td {
+  text-align: left;
+  white-space: normal;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.bao-gia-doc .contract-box .contract-box-note {
+  margin-top: 12px;
+}
+
+.bao-gia-doc .hosting-spec-block,
+.bao-gia-doc .store-spec-block {
+  margin: 20px 0 28px;
+}
+
+.bao-gia-doc .hosting-spec-block .sprint-row,
+.bao-gia-doc .store-spec-block .sprint-row {
+  margin-bottom: 0;
+}
+
+.bao-gia-doc .hosting-spec-block .quote-table-group,
+.bao-gia-doc .store-spec-block .quote-table-group {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.bao-gia-doc .hosting-spec-block .quote-table-group table,
+.bao-gia-doc .store-spec-block .quote-table-group table {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Mobile — giữ layout bảng thật (không tách thead/tbody) */
+@media (max-width: 720px) {
+  .bao-gia-doc table.deliver-table,
+  .bao-gia-doc table.quote-table {
+    display: table !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto;
+    table-layout: auto;
+  }
+
+  .bao-gia-doc table.deliver-table thead,
+  .bao-gia-doc table.quote-table thead {
+    display: table-header-group !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .bao-gia-doc table.deliver-table tbody,
+  .bao-gia-doc table.quote-table tbody {
+    display: table-row-group !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .bao-gia-doc table.deliver-table tr,
+  .bao-gia-doc table.quote-table tr {
+    display: table-row !important;
+  }
+
+  .bao-gia-doc table.deliver-table th,
+  .bao-gia-doc table.deliver-table td,
+  .bao-gia-doc table.quote-table th,
+  .bao-gia-doc table.quote-table td {
+    display: table-cell !important;
+  }
+}
+
+.timeline-project-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--green-light, #d1fae5);
+}
+
+.timeline-project-head h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--navy);
+  border: none;
+  padding: 0;
+}
+
+.timeline-project-val {
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--green);
+  white-space: nowrap;
+}
+
+.timeline-project-sub {
+  font-size: .82rem;
+  color: var(--txt3);
+  margin: 0 0 20px;
+}
+
+.timeline-project h3 {
+  font-size: .88rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 24px 0 12px;
+  text-transform: uppercase;
+  letter-spacing: .3px;
+}
+
+.timeline-project .timeline {
+  margin-bottom: 8px;
+}
+
+.api-free {
+  border-left: 4px solid var(--green);
+}
+
+.api-paid {
+  border-left: 4px solid var(--amber, #d97706);
+}
+
+.api-post {
+  border-left: 4px solid var(--navy);
+}
+
+.api-reva {
+  border-left: 4px solid var(--blue, #2563eb);
+}
+
+.api-reva-inventory {
+  border-left: 4px solid var(--navy);
+  background: #fff;
+}
+
+.erp-outcome {
+  border-left: 4px solid var(--green);
+  background: #fff;
+}
+
+.erp-platform {
+  border-left: 4px solid var(--blue, #2563eb);
+  background: #fff;
+}
+
+.bao-gia-doc .lead--compact {
+  font-size: .88rem;
+  margin-bottom: 14px;
+}
+
+.bao-gia-doc .lead--sm {
+  font-size: .88rem;
+}
+
+.bonus-heading-note {
+  font-weight: 600;
+  color: var(--txt2);
+}
+
+.hero-progress-link {
+  color: var(--green-mid);
+  text-decoration: underline;
+}
+
+.price-col--center {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.section-block--surface {
+  background: #fff;
+}
+
+.section-block--spaced {
+  margin-bottom: 16px;
+}
+
+.subsystem-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  background: #fff;
+}
+
+.subsystem-card h3 {
+  margin-top: 0;
+}
+
+.subsystem-card .price {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--navy);
+}
+
+.subsystem-card .note {
+  font-size: .85rem;
+  margin: 12px 0 0;
+}
+
+.bao-gia-anchor-h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 36px 0 8px;
+}
+
+.handover-lead-foot {
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+.sprint-box--blue {
+  border-top: 3px solid var(--blue);
+}
+
+.sprint-box--amber {
+  border-top: 3px solid var(--amber);
+}
+
+.sprint-box--green {
+  border-top: 3px solid var(--green);
+}
+
+.contract-box--indigo {
+  border-left-color: var(--indigo);
+  margin-top: 16px;
+}
+
+.contract-box-note {
+  font-size: .85rem;
+  color: var(--txt2);
+  margin: 0;
+}
+
+.subsystem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.timeline-release .tl-item h4 {
+  color: var(--navy);
+}
+
+.timeline-release .tl-date {
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: .3px;
+  margin-bottom: 4px;
+}
+
+.phan-he-tag {
+  display: inline-block;
+  font-size: .68rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--green-light, #ecfdf5);
+  color: var(--green);
+  margin-right: 4px;
+}
+
+/* Print — tab label hidden on screen */
+.print-tab-label {
+  display: none;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    /* Không header/footer cố định — margin vừa đủ nội dung + header Chrome (title) */
+    margin: 14mm 14mm 14mm;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body:not(.contract-locked) #contract-app {
+    display: block !important;
+  }
+
+  body.contract-locked #contract-app {
+    display: none !important;
+  }
+
+  body.bao-gia-printing {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .contract-gate,
+  .plan-nav,
+  .tien-do-tabs-wrap,
+  .hero,
+  footer.plan-footer,
+  .nav-action-print,
+  .nav-action-export,
+  .doc-footer {
+    display: none !important;
+  }
+
+  .print-tab-label {
+    display: block !important;
+    margin: 0 0 8px;
+    padding: 2mm 0 4px;
+    border-bottom: 1pt solid #a7f3d0;
+    font-size: 7pt;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    line-height: 1.25;
+    color: #047857;
+  }
+
+  /* All tab panels — override tien-do-shared + [hidden] + .is-active */
+  .bao-gia-doc.tien-do-panel,
+  .bao-gia-doc.tien-do-panel[hidden],
+  .bao-gia-doc.tien-do-panel:not(.is-active),
+  .tien-do-panel.bao-gia-doc {
+    display: block !important;
+    visibility: visible !important;
+    max-width: none;
+    margin: 0 auto 20px;
+    padding: 0 0 8mm;
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  /* Mỗi tab (trừ tab 1) luôn bắt đầu trang mới khi in */
+  .bao-gia-doc.tien-do-panel[data-tien-do-panel]:not([data-tien-do-panel="hang-muc"]) {
+    break-before: page;
+    page-break-before: always;
+    padding-top: 5mm;
+  }
+
+  .bao-gia-doc.tien-do-panel[data-tien-do-panel="hang-muc"] {
+    padding-top: 3mm;
+  }
+
+  /* Đệm đầu/cuối trang khi khối nội dung đứng đầu/cuối sau ngắt trang */
+  .bao-gia-doc h2,
+  .bao-gia-doc h3 {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    break-after: avoid;
+    page-break-after: avoid;
+    margin-top: 5mm;
+    margin-bottom: 4mm;
+  }
+
+  /* Tiêu đề + đoạn/bảng kế — không tách (tránh cắt chữ giữa dòng như Điều 7) */
+  .bao-gia-doc h2 + p,
+  .bao-gia-doc h2 + ul,
+  .bao-gia-doc h2 + ol,
+  .bao-gia-doc h2 + div,
+  .bao-gia-doc h2 + table,
+  .bao-gia-doc h3 + p,
+  .bao-gia-doc h3 + ul,
+  .bao-gia-doc h3 + ol,
+  .bao-gia-doc h3 + div,
+  .bao-gia-doc h3 + table {
+    break-before: avoid;
+    page-break-before: avoid;
+  }
+
+  .bao-gia-doc p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .bao-gia-doc .contract-box,
+  .bao-gia-doc .panel-note,
+  .bao-gia-doc .section-block,
+  .bao-gia-doc .quote-table-group,
+  .bao-gia-doc .payment-milestone,
+  .bao-gia-doc .handover-box {
+    margin-top: 5mm;
+    margin-bottom: 5mm;
+  }
+
+  .bao-gia-doc p.lead,
+  .bao-gia-doc ul,
+  .bao-gia-doc ol {
+    margin-bottom: 5mm;
+  }
+
+  .bao-gia-doc .doc-header {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+  }
+
+  /* Reset mobile table layout — bắt buộc để row không bị cắt đôi */
+  table.deliver-table,
+  table.quote-table {
+    display: table !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+    table-layout: auto;
+    border-collapse: collapse;
+  }
+
+  table.deliver-table thead,
+  table.quote-table thead {
+    display: table-header-group !important;
+  }
+
+  table.deliver-table tbody,
+  table.quote-table tbody {
+    display: table-row-group !important;
+    width: auto !important;
+    min-width: 0 !important;
+  }
+
+  table.deliver-table tfoot,
+  table.quote-table tfoot {
+    display: table-footer-group !important;
+  }
+
+  table.deliver-table tr,
+  table.quote-table tr {
+    display: table-row !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  table.deliver-table th,
+  table.deliver-table td,
+  table.quote-table th,
+  table.quote-table td {
+    display: table-cell !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    border: 0.5pt solid #bbb !important;
+    padding: 5pt 7pt 10pt !important;
+    vertical-align: top !important;
+  }
+
+  table.deliver-table th,
+  table.quote-table th {
+    background: #eef1f5 !important;
+    font-weight: 700 !important;
+    padding-top: 11pt !important;
+    padding-bottom: 9pt !important;
+  }
+
+  table.deliver-table thead,
+  table.quote-table thead {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .bao-gia-doc table.deliver-table,
+  .bao-gia-doc table.quote-table {
+    border-radius: 0 !important;
+    margin-top: 5mm;
+    margin-bottom: 8mm;
+  }
+
+  .bao-gia-doc .hosting-spec-block .quote-table-group table,
+  .bao-gia-doc .store-spec-block .quote-table-group table {
+    margin-top: 0;
+  }
+
+  .bao-gia-doc .contract-box table.deliver-table {
+    margin-top: 8px;
+  }
+
+  .hosting-spec-block .sprint-box,
+  .store-spec-block .sprint-box {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 12px;
+    border: 1pt solid #ccc;
+    padding: 12px 14px;
+  }
+
+  .deliver-table {
+    width: 100%;
+    font-size: 8pt;
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  .deliver-table thead {
+    display: table-header-group;
+  }
+
+  .deliver-table tr.total-row,
+  .quote-table tr.total-row {
+    break-before: avoid;
+    page-break-before: avoid;
+  }
+
+  .quote-table-group {
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  .quote-table-group--compact {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .quote-table-group .panel-note {
+    break-before: avoid;
+    page-break-before: avoid;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-top: 10px;
+  }
+
+  .panel-note {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    break-before: avoid;
+    page-break-before: avoid;
+  }
+
+  .section-block .deliver-table + .panel-note {
+    margin-top: 12px;
+  }
+
+  .quote-sum-card,
+  .payment-milestone,
+  .handover-box,
+  .contract-box,
+  .subsystem-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .section-block {
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  .section-block > h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* Timeline — cho phép ngắt trang; bảng TT tách section riêng */
+  .timeline-project-wrap,
+  .timeline-project,
+  .timeline-project--release,
+  .timeline,
+  .timeline-release {
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  .timeline-project--release {
+    border: 1pt solid #ccc;
+    border-radius: 0;
+    padding: 14px 16px 12px;
+    margin: 0 0 0;
+    background: #fafbfc;
+  }
+
+  .timeline-project-head {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .timeline-project h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .tl-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-top: 3mm;
+    margin-bottom: 2mm;
+  }
+
+  .bao-gia-doc .tl-item h4,
+  .bao-gia-doc .tl-item p,
+  .bao-gia-doc .timeline-release .tl-date {
+    color: #111 !important;
+  }
+
+  /* Bảng TT nối timeline — không ép sang trang mới (tránh trang trống sau mục cuối) */
+  .timeline-project--release + .timeline-payment-section {
+    break-before: avoid;
+    page-break-before: avoid;
+  }
+
+  .timeline-payment-section {
+    break-before: auto;
+    page-break-before: auto;
+    break-inside: auto;
+    page-break-inside: auto;
+    border: 1pt solid #ccc;
+    border-top: 2pt solid #a7f3d0;
+    border-radius: 0;
+    padding: 14px 16px 16px;
+    margin: 0 0 12px;
+    background: #fff;
+  }
+
+  .timeline-payment-section + .timeline-payment-section {
+    break-before: auto;
+    page-break-before: auto;
+    break-inside: auto;
+    page-break-inside: auto;
+    border-top: 1pt solid #ccc;
+  }
+
+  .timeline-payment-section .quote-table-group--compact {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .timeline-payment-section .quote-table-group {
+    margin-bottom: 0;
+  }
+
+  .timeline-payment-section h3 {
+    margin-top: 0;
+  }
+
+  .timeline-project-wrap + .timeline-project-wrap {
+    break-before: page;
+    page-break-before: always;
+    margin-top: 0;
+  }
+
+  .timeline-project-wrap + .timeline-project-wrap .timeline-project--release {
+    break-before: auto;
+    page-break-before: auto;
+  }
+
+  .quote-sum-grid-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .quote-sum-grid-cards .quote-sum-card {
+    flex: 0 1 calc(33% - 8px);
+    min-width: 120px;
+    max-width: none;
+  }
+
+  .handover-split,
+  .sprint-row,
+  .subsystem-grid {
+    display: block;
+  }
+
+  .handover-split .handover-box,
+  .sprint-row .sprint-box,
+  .subsystem-grid .subsystem-card {
+    margin-bottom: 12px;
+  }
+
+  .bao-gia-doc a {
+    color: #111 !important;
+    text-decoration: none;
+  }
+
+  .bao-gia-doc.tien-do-page {
+    border-top: 1pt solid #a7f3d0;
+  }
+
+  /* Override tien-do-shared.css @media print (load trước — specificity + body.bao-gia-printing) */
+  body.bao-gia-printing .tien-do-panel.bao-gia-doc,
+  body.bao-gia-printing .bao-gia-doc.tien-do-panel[hidden],
+  body.bao-gia-printing .bao-gia-doc.tien-do-panel:not(.is-active) {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  body.bao-gia-printing .tien-do-doc.bao-gia-doc {
+    padding: 0 !important;
+    max-width: none !important;
+  }
+}
